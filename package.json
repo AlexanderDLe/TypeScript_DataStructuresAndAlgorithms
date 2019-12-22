@@ -1,0 +1,19 @@
+{
+    "name": "typescript_datastructuresandalgorithms",
+    "version": "1.0.0",
+    "description": "Data Structures and Algorithms in TypeScript",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AlexanderDLe/TypeScript_DataStructuresAndAlgorithms.git"
+    },
+    "author": "Alexander Le",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/AlexanderDLe/TypeScript_DataStructuresAndAlgorithms/issues"
+    },
+    "homepage": "https://github.com/AlexanderDLe/TypeScript_DataStructuresAndAlgorithms#readme"
+}
