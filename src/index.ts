@@ -1,3 +1,9 @@
-let message: string = 'Hello World!';
+import TreesMain from './Trees/TreesMain';
+import ArraysMain from './Arrays/ArraysMain';
 
-console.log(message);
+function main() {
+    // TreesMain();
+    ArraysMain();
+}
+
+main();
