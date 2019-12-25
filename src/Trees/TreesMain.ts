@@ -1,5 +1,7 @@
+import RangeSum from './RangeSum';
+
 const TreesMain = () => {
-    console.log('Testing Trees.');
+    RangeSum();
 };
 
 export default TreesMain;

@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var ArraysMain_1 = __importDefault(require("./Arrays/ArraysMain"));
+var TreesMain_1 = __importDefault(require("./Trees/TreesMain"));
 function main() {
-    // TreesMain();
-    ArraysMain_1.default();
+    TreesMain_1.default();
+    //ArraysMain();
 }
 main();
