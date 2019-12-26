@@ -1,4 +1,7 @@
 "use strict";
+/**
+ * 1295. Find Numbers with Even Number of Digits
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 var Solution = function (nums) {
     var count = 0;

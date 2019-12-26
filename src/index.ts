@@ -1,9 +1,11 @@
 import TreesMain from './Trees/TreesMain';
 import ArraysMain from './Arrays/ArraysMain';
+import { LinkedListMain } from './LinkedLists/LinkedListMain';
 
 function main() {
-    TreesMain();
     //ArraysMain();
+    LinkedListMain();
+    // TreesMain();
 }
 
 main();

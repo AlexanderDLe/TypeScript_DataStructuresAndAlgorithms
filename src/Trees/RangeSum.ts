@@ -1,4 +1,8 @@
-import { TreeNode } from './TreeClass';
+/**
+ * 938. Range Sum of BST
+ */
+
+import { TreeNode } from '../DataStructures/TreeClass';
 
 const Solution = (root: TreeNode<number>, L: number, R: number): number => {
     let result = 0;

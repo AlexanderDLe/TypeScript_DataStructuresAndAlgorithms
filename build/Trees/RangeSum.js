@@ -1,6 +1,9 @@
 "use strict";
+/**
+ * 938. Range Sum of BST
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
-var TreeClass_1 = require("./TreeClass");
+var TreeClass_1 = require("../DataStructures/TreeClass");
 var Solution = function (root, L, R) {
     var result = 0;
     var traversalSum = function (n) {
