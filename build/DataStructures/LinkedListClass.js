@@ -34,3 +34,15 @@ var LinkedList = /** @class */ (function () {
     return LinkedList;
 }());
 exports.LinkedList = LinkedList;
+exports.PrintList = function (head) {
+    var n = head;
+    var str = '';
+    while (n) {
+        str += n.val;
+        if (n.next) {
+            str += '->';
+        }
+        n = n.next;
+    }
+    console.log(str);
+};

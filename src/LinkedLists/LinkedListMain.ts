@@ -1,5 +1,9 @@
 import ConvertBinaryNumberInLinkedList from './ConvertBinaryNumberInList';
+import ReverseLinkedList from './ReverseLinkedList';
 
-export const LinkedListMain = () => {
-    ConvertBinaryNumberInLinkedList();
+const LinkedListMain = () => {
+    // ConvertBinaryNumberInLinkedList();
+    ReverseLinkedList();
 };
+
+export default LinkedListMain;

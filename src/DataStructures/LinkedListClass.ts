@@ -33,3 +33,16 @@ export class LinkedList<T> {
         console.log(str);
     }
 }
+
+export const PrintList = <T>(head: ListNode<T> | null): void => {
+    let n: ListNode<T> | null = head;
+    let str = '';
+    while (n) {
+        str += n.val;
+        if (n.next) {
+            str += '->';
+        }
+        n = n.next;
+    }
+    console.log(str);
+};
