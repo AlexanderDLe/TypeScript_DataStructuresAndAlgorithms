@@ -8,3 +8,15 @@ export class TreeNode<T> {
         this.right = null;
     }
 }
+
+export const BinaryPreorderTraversal = <T>(root: TreeNode<T> | null): void => {
+    let str = '';
+    const recurse = <T>(root: TreeNode<T> | null): void => {
+        if (!root) return;
+        str += root.val + ' | ';
+        recurse(root.left);
+        recurse(root.right);
+    };
+    recurse(root);
+    console.log(str);
+};

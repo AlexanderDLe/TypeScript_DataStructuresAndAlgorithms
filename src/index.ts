@@ -4,8 +4,8 @@ import { LinkedListMain } from './LinkedLists/LinkedListMain';
 
 function main() {
     //ArraysMain();
-    LinkedListMain();
-    // TreesMain();
+    //LinkedListMain();
+    TreesMain();
 }
 
 main();
