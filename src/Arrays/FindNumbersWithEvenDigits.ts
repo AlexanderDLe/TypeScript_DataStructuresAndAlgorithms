@@ -12,9 +12,7 @@ const Solution = (nums: number[]): number => {
     return count;
 };
 
-const FindNumbersWithEvenDigits = (): void => {
+export default (): void => {
     const nums = [12, 345, 2, 6, 7896];
     console.log(Solution(nums));
 };
-
-export default FindNumbersWithEvenDigits;

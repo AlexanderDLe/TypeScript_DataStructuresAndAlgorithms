@@ -20,9 +20,8 @@ var reverseList = function (head) {
     head = q;
     return head;
 };
-var ReverseLinkedList = function () {
+exports.default = (function () {
     var nums = [1, 2, 3, 4, 5];
     var list = new LinkedListClass_1.LinkedList(nums);
     LinkedListClass_1.PrintList(reverseList(list.head));
-};
-exports.default = ReverseLinkedList;
+});

@@ -27,8 +27,7 @@ var SolutionB = function (head) {
     }
     return result;
 };
-var ConvertBinaryNumberInLinkedList = function () {
+exports.default = (function () {
     var list = new LinkedListClass_1.LinkedList([1, 0, 1]);
     console.log(SolutionB(list.head));
-};
-exports.default = ConvertBinaryNumberInLinkedList;
+});

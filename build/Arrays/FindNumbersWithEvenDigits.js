@@ -13,8 +13,7 @@ var Solution = function (nums) {
     }
     return count;
 };
-var FindNumbersWithEvenDigits = function () {
+exports.default = (function () {
     var nums = [12, 345, 2, 6, 7896];
     console.log(Solution(nums));
-};
-exports.default = FindNumbersWithEvenDigits;
+});

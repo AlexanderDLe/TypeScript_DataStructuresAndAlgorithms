@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 /**
  * 647. Palindromic Substrings
  */
-Object.defineProperty(exports, '__esModule', { value: true });
-var Utilities_1 = require('../utils/Utilities');
-var countSubstrings = function(s) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var Utilities_1 = require("../utils/Utilities");
+var countSubstrings = function (s) {
     var count = 0;
     var matrix = [];
     for (var _i = 0, s_1 = s; _i < s_1.length; _i++) {
@@ -20,7 +20,8 @@ var countSubstrings = function(s) {
             if (row === col - 1 && s[col] === s[row]) {
                 matrix[row][col] = 1;
                 count++;
-            } else if (matrix[row + 1][col - 1] === 1 && s[col] === s[row]) {
+            }
+            else if (matrix[row + 1][col - 1] === 1 && s[col] === s[row]) {
                 matrix[row][col] = 1;
                 count++;
             }
@@ -29,8 +30,7 @@ var countSubstrings = function(s) {
     Utilities_1.PrintMatrix(matrix);
     return count;
 };
-var PalindromicSubstrings = function() {
+exports.default = (function () {
     var str = 'aabaaca';
     console.log(countSubstrings(str));
-};
-exports.default = PalindromicSubstrings;
+});

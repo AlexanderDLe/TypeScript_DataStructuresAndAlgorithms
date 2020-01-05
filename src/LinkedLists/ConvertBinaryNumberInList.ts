@@ -30,9 +30,7 @@ const SolutionB = (head: ListNode<number> | null): number => {
     return result;
 };
 
-const ConvertBinaryNumberInLinkedList = () => {
+export default () => {
     const list = new LinkedList([1, 0, 1]);
     console.log(SolutionB(list.head));
 };
-
-export default ConvertBinaryNumberInLinkedList;

@@ -27,10 +27,8 @@ const reverseList = (
     return head;
 };
 
-const ReverseLinkedList = () => {
+export default () => {
     let nums = [1, 2, 3, 4, 5];
     let list = new LinkedList(nums);
     PrintList(reverseList(list.head));
 };
-
-export default ReverseLinkedList;

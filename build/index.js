@@ -3,11 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var DPMain_1 = __importDefault(require("./DP/DPMain"));
+var RecursionMain_1 = __importDefault(require("./Recursion/RecursionMain"));
 function main() {
-    //ArraysMain();
-    DPMain_1.default();
+    // ArraysMain();
+    // DPMain();
     // LinkedListMain();
+    RecursionMain_1.default();
     // TreesMain();
 }
 main();

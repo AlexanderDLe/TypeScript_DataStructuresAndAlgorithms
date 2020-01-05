@@ -30,9 +30,7 @@ const countSubstrings = (s: string): number => {
     return count;
 };
 
-const PalindromicSubstrings = (): void => {
+export default (): void => {
     let str = 'aabaaca';
     console.log(countSubstrings(str));
 };
-
-export default PalindromicSubstrings;
