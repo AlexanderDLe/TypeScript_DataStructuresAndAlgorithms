@@ -6,11 +6,11 @@ import StacksMain from './Stacks/StacksMain';
 import DPMain from './DP/DPMain';
 
 function main() {
-    // ArraysMain();
+    ArraysMain();
     // DPMain();
     // LinkedListMain();
     // RecursionMain();
-    StacksMain();
+    // StacksMain();
     // TreesMain();
 }
 

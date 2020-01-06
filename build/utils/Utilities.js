@@ -24,3 +24,14 @@ exports.PrintMatrix = function (matrix) {
     str += ']\n';
     console.log(str);
 };
+exports.PrintObject = function (obj) {
+    var str = '{\n';
+    for (var item in obj) {
+        str += '\t';
+        if (obj.hasOwnProperty(item)) {
+            str += item + ": " + obj[item] + "\n";
+        }
+    }
+    str += '}\n';
+    console.log(str);
+};

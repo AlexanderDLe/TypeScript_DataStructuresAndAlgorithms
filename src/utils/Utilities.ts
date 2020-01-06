@@ -24,3 +24,16 @@ export const PrintMatrix = (matrix: any[][]): void => {
     str += ']\n';
     console.log(str);
 };
+
+export const PrintObject = (obj: any): void => {
+    let str = '{\n';
+
+    for (let item in obj) {
+        str += '\t';
+        if (obj.hasOwnProperty(item)) {
+            str += `${item}: ${obj[item]}\n`;
+        }
+    }
+    str += '}\n';
+    console.log(str);
+};
