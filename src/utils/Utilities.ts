@@ -25,7 +25,10 @@ export const PrintMatrix = (matrix: any[][]): void => {
     console.log(str);
 };
 
-export const PrintObject = (obj: any): void => {
+type ObjectLiteral = {
+    [key in string | number]: any;
+};
+export const PrintObject = (obj: ObjectLiteral): void => {
     let str = '{\n';
 
     for (let item in obj) {
