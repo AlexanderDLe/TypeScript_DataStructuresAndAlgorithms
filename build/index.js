@@ -3,13 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var StacksMain_1 = __importDefault(require("./Stacks/StacksMain"));
+var StringsMain_1 = __importDefault(require("./Strings/StringsMain"));
 function main() {
     // ArraysMain();
     // DPMain();
     // LinkedListMain();
     // RecursionMain();
-    StacksMain_1.default();
+    // StacksMain();
+    StringsMain_1.default();
     // TreesMain();
 }
 main();
