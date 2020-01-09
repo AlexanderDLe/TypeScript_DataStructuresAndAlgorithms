@@ -7,12 +7,12 @@ import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 
 function main() {
-    // ArraysMain();
+    ArraysMain();
     // DPMain();
     // LinkedListMain();
     // RecursionMain();
     // StacksMain();
-    StringsMain();
+    // StringsMain();
     // TreesMain();
 }
 
