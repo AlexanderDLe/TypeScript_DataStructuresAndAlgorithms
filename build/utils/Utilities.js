@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PrintArray = function (arr) {
-    var str = '[ ';
-    for (var i = 0; i < arr.length; i++) {
+exports.PrintArray = (arr) => {
+    let str = '[ ';
+    for (let i = 0; i < arr.length; i++) {
         str += arr[i];
         if (i < arr.length - 1) {
             str += ' | ';
@@ -11,11 +11,11 @@ exports.PrintArray = function (arr) {
     str += ' ]';
     console.log(str);
 };
-exports.PrintMatrix = function (matrix) {
-    var str = '[\n';
-    for (var i = 0; i < matrix.length; i++) {
+exports.PrintMatrix = (matrix) => {
+    let str = '[\n';
+    for (let i = 0; i < matrix.length; i++) {
         str += '\t[ ';
-        for (var j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix[i].length; j++) {
             str += matrix[i][j];
             str += j < matrix[i].length - 1 ? ' | ' : '';
         }
@@ -24,12 +24,12 @@ exports.PrintMatrix = function (matrix) {
     str += ']\n';
     console.log(str);
 };
-exports.PrintObject = function (obj) {
-    var str = '{\n';
-    for (var item in obj) {
+exports.PrintObject = (obj) => {
+    let str = '{\n';
+    for (let item in obj) {
         str += '\t';
         if (obj.hasOwnProperty(item)) {
-            str += item + ": " + obj[item] + "\n";
+            str += `${item}: ${obj[item]}\n`;
         }
     }
     str += '}\n';

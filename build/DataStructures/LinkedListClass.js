@@ -1,27 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ListNode = /** @class */ (function () {
-    function ListNode(val) {
+class ListNode {
+    constructor(val) {
         this.val = val;
         this.next = null;
         this.prev = null;
     }
-    return ListNode;
-}());
+}
 exports.ListNode = ListNode;
-var LinkedList = /** @class */ (function () {
-    function LinkedList(vals) {
+class LinkedList {
+    constructor(vals) {
         this.head = new ListNode(vals[0]);
-        var n = this.head;
-        for (var i = 1; i < vals.length; i++) {
-            var t = new ListNode(vals[i]);
+        let n = this.head;
+        for (let i = 1; i < vals.length; i++) {
+            let t = new ListNode(vals[i]);
             n.next = t;
             n = t;
         }
     }
-    LinkedList.prototype.print = function () {
-        var n = this.head;
-        var str = '';
+    print() {
+        let n = this.head;
+        let str = '';
         while (n) {
             str += n.val;
             if (n.next) {
@@ -30,13 +29,12 @@ var LinkedList = /** @class */ (function () {
             n = n.next;
         }
         console.log(str);
-    };
-    return LinkedList;
-}());
+    }
+}
 exports.LinkedList = LinkedList;
-exports.PrintList = function (head) {
-    var n = head;
-    var str = '';
+exports.PrintList = (head) => {
+    let n = head;
+    let str = '';
     while (n) {
         str += n.val;
         if (n.next) {

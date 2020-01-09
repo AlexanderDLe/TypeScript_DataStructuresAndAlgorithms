@@ -3,19 +3,19 @@
  * 226. Invert Binary Tree
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var TreeClass_1 = require("../DataStructures/TreeClass");
-var invertTree = function (root) {
+const TreeClass_1 = require("../DataStructures/TreeClass");
+const invertTree = (root) => {
     if (!root)
         return root;
-    var temp = root.left;
+    let temp = root.left;
     root.left = root.right;
     root.right = temp;
     invertTree(root.left);
     invertTree(root.right);
     return root;
 };
-var InvertBinaryTree = function () {
-    var t = new TreeClass_1.TreeNode(4);
+const InvertBinaryTree = () => {
+    const t = new TreeClass_1.TreeNode(4);
     t.left = new TreeClass_1.TreeNode(2);
     t.right = new TreeClass_1.TreeNode(7);
     t.left.left = new TreeClass_1.TreeNode(1);

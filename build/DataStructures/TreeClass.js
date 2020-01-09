@@ -1,17 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var TreeNode = /** @class */ (function () {
-    function TreeNode(val) {
+class TreeNode {
+    constructor(val) {
         this.val = val;
         this.left = null;
         this.right = null;
     }
-    return TreeNode;
-}());
+}
 exports.TreeNode = TreeNode;
-exports.BinaryPreorderTraversal = function (root) {
-    var str = '';
-    var recurse = function (root) {
+exports.BinaryPreorderTraversal = (root) => {
+    let str = '';
+    const recurse = (root) => {
         if (!root)
             return;
         str += root.val + ' | ';

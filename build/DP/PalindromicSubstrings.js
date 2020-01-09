@@ -3,20 +3,19 @@
  * 647. Palindromic Substrings
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var Utilities_1 = require("../utils/Utilities");
-var countSubstrings = function (s) {
-    var count = 0;
-    var matrix = [];
-    for (var _i = 0, s_1 = s; _i < s_1.length; _i++) {
-        var char = s_1[_i];
+const Utilities_1 = require("../utils/Utilities");
+const countSubstrings = (s) => {
+    let count = 0;
+    let matrix = [];
+    for (let char of s) {
         matrix.push(new Array(s.length).fill(0));
     }
-    for (var i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
         matrix[i][i] = 1;
         count++;
     }
-    for (var col = 1; col < s.length; col++) {
-        for (var row = 0; row < col; row++) {
+    for (let col = 1; col < s.length; col++) {
+        for (let row = 0; row < col; row++) {
             if (row === col - 1 && s[col] === s[row]) {
                 matrix[row][col] = 1;
                 count++;
@@ -30,7 +29,7 @@ var countSubstrings = function (s) {
     Utilities_1.PrintMatrix(matrix);
     return count;
 };
-exports.default = (function () {
-    var str = 'aabaaca';
+exports.default = () => {
+    let str = 'aabaaca';
     console.log(countSubstrings(str));
-});
+};

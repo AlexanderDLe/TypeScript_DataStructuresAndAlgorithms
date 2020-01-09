@@ -3,10 +3,10 @@
  * 938. Range Sum of BST
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var TreeClass_1 = require("../DataStructures/TreeClass");
-var Solution = function (root, L, R) {
-    var result = 0;
-    var traversalSum = function (n) {
+const TreeClass_1 = require("../DataStructures/TreeClass");
+const Solution = (root, L, R) => {
+    let result = 0;
+    const traversalSum = (n) => {
         if (!n)
             return;
         if (n.val >= L && n.val <= R) {
@@ -18,15 +18,15 @@ var Solution = function (root, L, R) {
     traversalSum(root);
     return result;
 };
-var RangeSum = function () {
-    var t = new TreeClass_1.TreeNode(10);
+const RangeSum = () => {
+    const t = new TreeClass_1.TreeNode(10);
     t.left = new TreeClass_1.TreeNode(5);
     t.right = new TreeClass_1.TreeNode(15);
     t.left.left = new TreeClass_1.TreeNode(3);
     t.left.right = new TreeClass_1.TreeNode(7);
     t.right.right = new TreeClass_1.TreeNode(18);
-    var L = 7;
-    var R = 15;
+    const L = 7;
+    const R = 15;
     console.log(Solution(t, L, R));
 };
 exports.default = RangeSum;

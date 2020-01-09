@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        // Compiling to es6 to use additional features
+        "target": "es6",
+        "lib": ["es6", "dom"],
         "module": "commonjs",
         "outDir": "./build",
         "rootDir": "./src",

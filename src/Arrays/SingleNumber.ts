@@ -5,14 +5,19 @@
 import { PrintArray } from '../utils/Utilities';
 
 const singleNumber = (nums: number[]): number => {
-    let set = new Set([]);
+    let set: any = new Set([]);
     let result: number;
 
     for (let i of nums) {
         if (set.has(i)) set.delete(i);
         else set.add(i);
     }
-    set.forEach(val => {
+    // for-of loop works only when compiling to es6
+    for (let i of set.values()) {
+        result = i;
+    }
+    // forEach loop works with either es5/es6
+    set.forEach((val: number) => {
         result = val;
     });
 

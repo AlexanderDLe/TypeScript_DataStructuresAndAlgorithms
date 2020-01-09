@@ -3,24 +3,28 @@
  * 136. Single Number
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var Utilities_1 = require("../utils/Utilities");
-var singleNumber = function (nums) {
-    var set = new Set([]);
-    var result;
-    for (var _i = 0, nums_1 = nums; _i < nums_1.length; _i++) {
-        var i = nums_1[_i];
+const Utilities_1 = require("../utils/Utilities");
+const singleNumber = (nums) => {
+    let set = new Set([]);
+    let result;
+    for (let i of nums) {
         if (set.has(i))
             set.delete(i);
         else
             set.add(i);
     }
-    set.forEach(function (val) {
+    // for-of loop works only when compiling to es6
+    for (let i of set.values()) {
+        result = i;
+    }
+    // forEach loop works with either es5/es6
+    set.forEach((val) => {
         result = val;
     });
     return result;
 };
-exports.default = (function () {
-    var nums = [4, 1, 2, 1, 2];
+exports.default = () => {
+    const nums = [4, 1, 2, 1, 2];
     Utilities_1.PrintArray(nums);
     console.log(singleNumber(nums));
-});
+};
