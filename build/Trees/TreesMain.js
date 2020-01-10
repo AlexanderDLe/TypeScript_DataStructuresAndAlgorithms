@@ -3,9 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const InvertBinaryTree_1 = __importDefault(require("./InvertBinaryTree"));
+const MergeTwoBinaryTrees_1 = __importDefault(require("./MergeTwoBinaryTrees"));
 const TreesMain = () => {
     //RangeSum();
-    InvertBinaryTree_1.default();
+    // InvertBinaryTree();
+    MergeTwoBinaryTrees_1.default();
 };
 exports.default = TreesMain;
