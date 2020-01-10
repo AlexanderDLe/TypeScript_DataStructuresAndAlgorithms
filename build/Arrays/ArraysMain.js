@@ -3,11 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SingleNumber_1 = __importDefault(require("./SingleNumber"));
+const MoveZeroes_1 = __importDefault(require("./MoveZeroes"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
     // TwoSum2();
-    SingleNumber_1.default();
+    // SingleNumber();
+    MoveZeroes_1.default();
 };
 exports.default = ArraysMain;
