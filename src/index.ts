@@ -7,8 +7,8 @@ import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 
 function main() {
-    // ArraysMain();
-    DPMain();
+    ArraysMain();
+    // DPMain();
     // LinkedListMain();
     // RecursionMain();
     // StacksMain();

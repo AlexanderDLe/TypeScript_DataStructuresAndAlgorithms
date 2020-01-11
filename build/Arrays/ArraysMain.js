@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const BestTimeToBuyAndSellStock_1 = __importDefault(require("./BestTimeToBuyAndSellStock"));
+const MaximumSubarray_1 = __importDefault(require("./MaximumSubarray"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -12,6 +12,7 @@ const ArraysMain = () => {
     // MoveZeroes();
     // MajorityElement();
     // FindDisappearedNumbersInArray();
-    BestTimeToBuyAndSellStock_1.default();
+    // BestTimeToBuyAndSellStock();
+    MaximumSubarray_1.default();
 };
 exports.default = ArraysMain;
