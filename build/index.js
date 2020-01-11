@@ -3,14 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ArraysMain_1 = __importDefault(require("./Arrays/ArraysMain"));
+const TreesMain_1 = __importDefault(require("./Trees/TreesMain"));
 function main() {
-    ArraysMain_1.default();
+    // ArraysMain();
     // DPMain();
     // LinkedListMain();
     // RecursionMain();
     // StacksMain();
     // StringsMain();
-    // TreesMain();
+    TreesMain_1.default();
 }
 main();
