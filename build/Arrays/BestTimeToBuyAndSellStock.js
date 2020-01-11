@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 /**
  * 121. Best Time To Buy And Sell Stock
  */
-Object.defineProperty(exports, '__esModule', { value: true });
-const maxProfit = prices => {
+Object.defineProperty(exports, "__esModule", { value: true });
+const maxProfit = (prices) => {
     let min = Number.MAX_VALUE;
     let max = 0;
     for (let i = 0; i < prices.length; i++) {
