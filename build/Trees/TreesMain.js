@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const PathSum3_1 = __importDefault(require("./PathSum3"));
+const FlattenBinaryTree_1 = __importDefault(require("./FlattenBinaryTree"));
 const TreesMain = () => {
     //RangeSum();
     // InvertBinaryTree();
@@ -11,6 +11,7 @@ const TreesMain = () => {
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
     // SymmetricTree();
-    PathSum3_1.default();
+    // PathSum3();
+    FlattenBinaryTree_1.default();
 };
 exports.default = TreesMain;

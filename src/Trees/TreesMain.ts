@@ -5,6 +5,7 @@ import MaximumDepthOfBinaryTree from './MaxDepthBinaryTree';
 import DiameterOfBinaryTree from './DiameterOfBinaryTree';
 import SymmetricTree from './SymmetricTree';
 import PathSum3 from './PathSum3';
+import FlattenBinaryTree from './FlattenBinaryTree';
 
 const TreesMain = () => {
     //RangeSum();
@@ -13,7 +14,8 @@ const TreesMain = () => {
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
     // SymmetricTree();
-    PathSum3();
+    // PathSum3();
+    FlattenBinaryTree();
 };
 
 export default TreesMain;
