@@ -4,6 +4,7 @@ import TwoSum2 from './TwoSum2';
 import SingleNumber from './SingleNumber';
 import MoveZeroes from './MoveZeroes';
 import MajorityElement from './MajorityElement';
+import FindDisappearedNumbersInArray from './FindDisappearedNumbers';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -11,7 +12,8 @@ const ArraysMain = () => {
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
-    MajorityElement();
+    // MajorityElement();
+    FindDisappearedNumbersInArray();
 };
 
 export default ArraysMain;
