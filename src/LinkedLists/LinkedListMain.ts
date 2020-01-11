@@ -1,9 +1,11 @@
 import ConvertBinaryNumberInLinkedList from './ConvertBinaryNumberInList';
 import ReverseLinkedList from './ReverseLinkedList';
+import MergedTwoSortedLists from './MergeTwoSortedLists';
 
 const LinkedListMain = () => {
-    ConvertBinaryNumberInLinkedList();
+    // ConvertBinaryNumberInLinkedList();
     // ReverseLinkedList();
+    MergedTwoSortedLists();
 };
 
 export default LinkedListMain;
