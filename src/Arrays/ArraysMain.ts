@@ -5,6 +5,7 @@ import SingleNumber from './SingleNumber';
 import MoveZeroes from './MoveZeroes';
 import MajorityElement from './MajorityElement';
 import FindDisappearedNumbersInArray from './FindDisappearedNumbers';
+import BestTimeToBuyAndSellStock from './BestTimeToBuyAndSellStock';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -13,7 +14,8 @@ const ArraysMain = () => {
     // SingleNumber();
     // MoveZeroes();
     // MajorityElement();
-    FindDisappearedNumbersInArray();
+    // FindDisappearedNumbersInArray();
+    BestTimeToBuyAndSellStock();
 };
 
 export default ArraysMain;

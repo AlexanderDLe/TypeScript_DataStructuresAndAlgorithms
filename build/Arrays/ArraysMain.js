@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const FindDisappearedNumbers_1 = __importDefault(require("./FindDisappearedNumbers"));
+const BestTimeToBuyAndSellStock_1 = __importDefault(require("./BestTimeToBuyAndSellStock"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -11,6 +11,7 @@ const ArraysMain = () => {
     // SingleNumber();
     // MoveZeroes();
     // MajorityElement();
-    FindDisappearedNumbers_1.default();
+    // FindDisappearedNumbersInArray();
+    BestTimeToBuyAndSellStock_1.default();
 };
 exports.default = ArraysMain;
