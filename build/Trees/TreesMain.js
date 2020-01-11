@@ -3,13 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SymmetricTree_1 = __importDefault(require("./SymmetricTree"));
+const PathSum3_1 = __importDefault(require("./PathSum3"));
 const TreesMain = () => {
     //RangeSum();
     // InvertBinaryTree();
     // MergeTwoBinaryTrees();
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
-    SymmetricTree_1.default();
+    // SymmetricTree();
+    PathSum3_1.default();
 };
 exports.default = TreesMain;

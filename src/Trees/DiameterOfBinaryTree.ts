@@ -2,7 +2,6 @@
  * 543. Diameter of Binary Tree
  */
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
-
 type Node = TreeNode<number> | null;
 
 const findHeight = (n: Node): number => {
