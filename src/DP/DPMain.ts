@@ -1,7 +1,9 @@
 import PalindromicSubstrings from './PalindromicSubstrings';
+import ClimbingStairs from './ClimbingStairs';
 
 const DPMain = () => {
-    PalindromicSubstrings();
+    // PalindromicSubstrings();
+    ClimbingStairs();
 };
 
 export default DPMain;
