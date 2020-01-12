@@ -8,11 +8,11 @@ import DPMain from './DP/DPMain';
 
 function main() {
     // ArraysMain();
-    DPMain();
+    // DPMain();
     // LinkedListMain();
     // RecursionMain();
     // StacksMain();
-    // StringsMain();
+    StringsMain();
     // TreesMain();
 }
 
