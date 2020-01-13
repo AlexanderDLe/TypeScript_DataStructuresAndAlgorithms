@@ -11,8 +11,8 @@ function main() {
     // DPMain();
     // LinkedListMain();
     // RecursionMain();
-    // StacksMain();
-    StringsMain();
+    StacksMain();
+    // StringsMain();
     // TreesMain();
 }
 
