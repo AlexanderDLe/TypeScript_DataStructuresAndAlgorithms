@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MaximumSubarray_1 = __importDefault(require("./MaximumSubarray"));
+const ShortestUnsortedContinuousSubarray_1 = __importDefault(require("./ShortestUnsortedContinuousSubarray"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -13,6 +13,7 @@ const ArraysMain = () => {
     // MajorityElement();
     // FindDisappearedNumbersInArray();
     // BestTimeToBuyAndSellStock();
-    MaximumSubarray_1.default();
+    // MaximumSubarray();
+    ShortestUnsortedContinuousSubarray_1.default();
 };
 exports.default = ArraysMain;

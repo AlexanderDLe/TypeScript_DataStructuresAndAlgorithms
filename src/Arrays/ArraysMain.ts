@@ -7,6 +7,7 @@ import MajorityElement from './MajorityElement';
 import FindDisappearedNumbersInArray from './FindDisappearedNumbers';
 import BestTimeToBuyAndSellStock from './BestTimeToBuyAndSellStock';
 import MaximumSubarray from './MaximumSubarray';
+import ShortestUnsortedContinuousSubarray from './ShortestUnsortedContinuousSubarray';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -17,7 +18,8 @@ const ArraysMain = () => {
     // MajorityElement();
     // FindDisappearedNumbersInArray();
     // BestTimeToBuyAndSellStock();
-    MaximumSubarray();
+    // MaximumSubarray();
+    ShortestUnsortedContinuousSubarray();
 };
 
 export default ArraysMain;
