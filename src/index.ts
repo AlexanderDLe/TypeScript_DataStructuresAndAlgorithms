@@ -9,9 +9,9 @@ import DPMain from './DP/DPMain';
 function main() {
     // ArraysMain();
     // DPMain();
-    // LinkedListMain();
+    LinkedListMain();
     // RecursionMain();
-    StacksMain();
+    // StacksMain();
     // StringsMain();
     // TreesMain();
 }

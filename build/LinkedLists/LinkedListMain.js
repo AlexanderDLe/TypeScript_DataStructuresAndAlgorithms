@@ -3,10 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MergeTwoSortedLists_1 = __importDefault(require("./MergeTwoSortedLists"));
+const LinkedListCycle_1 = __importDefault(require("./LinkedListCycle"));
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
     // ReverseLinkedList();
-    MergeTwoSortedLists_1.default();
+    // MergedTwoSortedLists();
+    LinkedListCycle_1.default();
 };
 exports.default = LinkedListMain;
