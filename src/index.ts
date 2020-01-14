@@ -13,11 +13,11 @@ function main() {
     // BinaryMain();
     // DPMain();
     // LinkedListMain();
-    QueuesMain();
+    // QueuesMain();
     // RecursionMain();
     // StacksMain();
     // StringsMain();
-    // TreesMain();
+    TreesMain();
 }
 
 main();

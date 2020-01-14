@@ -6,6 +6,8 @@ import DiameterOfBinaryTree from './DiameterOfBinaryTree';
 import SymmetricTree from './SymmetricTree';
 import PathSum3 from './PathSum3';
 import FlattenBinaryTree from './FlattenBinaryTree';
+import BinaryTreeInorderTraversal from './BinaryTreeInorderTraversal';
+import BinaryPreorderTraversal from './BinaryTreeInorderTraversal';
 
 const TreesMain = () => {
     //RangeSum();
@@ -15,7 +17,8 @@ const TreesMain = () => {
     // DiameterOfBinaryTree();
     // SymmetricTree();
     // PathSum3();
-    FlattenBinaryTree();
+    // FlattenBinaryTree();
+    BinaryPreorderTraversal();
 };
 
 export default TreesMain;
