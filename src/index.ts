@@ -14,10 +14,10 @@ function main() {
     // DPMain();
     // LinkedListMain();
     // QueuesMain();
-    // RecursionMain();
+    RecursionMain();
     // StacksMain();
     // StringsMain();
-    TreesMain();
+    // TreesMain();
 }
 
 main();

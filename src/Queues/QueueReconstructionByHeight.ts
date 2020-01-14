@@ -1,7 +1,7 @@
 /**
  * 406. Queue Reconstruction By Height
  */
-import { PrintMatrix, PrintArray } from '../utils/Utilities';
+import { PrintMatrix } from '../utils/Utilities';
 
 const reconstructPeople = (people: number[][]): number[][] => {
     let result: number[][] = [];
