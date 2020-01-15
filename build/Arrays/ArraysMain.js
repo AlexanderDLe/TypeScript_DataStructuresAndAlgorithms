@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ShortestUnsortedContinuousSubarray_1 = __importDefault(require("./ShortestUnsortedContinuousSubarray"));
+const TopKFrequentElements_1 = __importDefault(require("./TopKFrequentElements"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -14,6 +14,7 @@ const ArraysMain = () => {
     // FindDisappearedNumbersInArray();
     // BestTimeToBuyAndSellStock();
     // MaximumSubarray();
-    ShortestUnsortedContinuousSubarray_1.default();
+    // ShortestUnsortedContinuousSubarray();
+    TopKFrequentElements_1.default();
 };
 exports.default = ArraysMain;

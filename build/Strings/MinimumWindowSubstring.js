@@ -7,16 +7,16 @@ const minWindow = (s, t) => {
     let result = '';
     let L = 0;
     let R = -1;
-    let map = {};
+    let table = {};
     for (const c of t)
-        map[c] = (map[c] || 0) + 1;
-    let count = Object.keys(map).length;
+        table[c] = (table[c] || 0) + 1;
+    let count = Object.keys(table).length;
     while (R < s.length) {
         if (count > 0) {
             R++;
-            if (map.hasOwnProperty(s[R]))
-                map[s[R]]--;
-            if (map[s[R]] === 0)
+            if (table.hasOwnProperty(s[R]))
+                table[s[R]]--;
+            if (table[s[R]] === 0)
                 count--;
         }
         else {
@@ -24,20 +24,19 @@ const minWindow = (s, t) => {
             if (!result || len < result.length) {
                 result = s.slice(L, R + 1);
             }
-            let c = 0;
             do {
-                if (map.hasOwnProperty(s[L]))
-                    map[s[L]]++;
-                if (map[s[L]] > 0)
+                if (table.hasOwnProperty(s[L]))
+                    table[s[L]]++;
+                if (table[s[L]] > 0)
                     count++;
                 L++;
-            } while ((L < R && !map.hasOwnProperty(s[L])) || map[s[L]] < 1);
+            } while (L < R && !table.hasOwnProperty(s[L]));
         }
     }
     return result;
 };
 exports.default = () => {
-    const S = 'aaflslflsldkalskaaa';
-    const T = 'aaa';
+    const S = 'ADOBECODEBANC';
+    const T = 'ABC';
     console.log(minWindow(S, T));
 };

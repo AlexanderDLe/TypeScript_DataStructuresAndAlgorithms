@@ -8,6 +8,7 @@ import FindDisappearedNumbersInArray from './FindDisappearedNumbers';
 import BestTimeToBuyAndSellStock from './BestTimeToBuyAndSellStock';
 import MaximumSubarray from './MaximumSubarray';
 import ShortestUnsortedContinuousSubarray from './ShortestUnsortedContinuousSubarray';
+import TopKFrequentElements from './TopKFrequentElements';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -19,7 +20,8 @@ const ArraysMain = () => {
     // FindDisappearedNumbersInArray();
     // BestTimeToBuyAndSellStock();
     // MaximumSubarray();
-    ShortestUnsortedContinuousSubarray();
+    // ShortestUnsortedContinuousSubarray();
+    TopKFrequentElements();
 };
 
 export default ArraysMain;
