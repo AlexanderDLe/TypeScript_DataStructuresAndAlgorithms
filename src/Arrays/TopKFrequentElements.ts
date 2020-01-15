@@ -7,6 +7,7 @@ import { PrintArray, PrintObject } from '../utils/Utilities';
 type Table = {
     [key: number]: number;
 };
+
 const topKFrequentWithObject = (nums: number[], k: number): number[] => {
     let table: Table = {};
     let result = [];

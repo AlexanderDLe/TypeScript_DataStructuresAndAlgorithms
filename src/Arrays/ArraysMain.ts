@@ -9,6 +9,7 @@ import BestTimeToBuyAndSellStock from './BestTimeToBuyAndSellStock';
 import MaximumSubarray from './MaximumSubarray';
 import ShortestUnsortedContinuousSubarray from './ShortestUnsortedContinuousSubarray';
 import TopKFrequentElements from './TopKFrequentElements';
+import ProductOfArrayExceptSelf from './ProductOfArrayExceptSelf';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -21,7 +22,8 @@ const ArraysMain = () => {
     // BestTimeToBuyAndSellStock();
     // MaximumSubarray();
     // ShortestUnsortedContinuousSubarray();
-    TopKFrequentElements();
+    // TopKFrequentElements();
+    ProductOfArrayExceptSelf();
 };
 
 export default ArraysMain;
