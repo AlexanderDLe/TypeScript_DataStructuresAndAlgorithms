@@ -22,7 +22,7 @@ const findUnsortedSubarray = (nums: number[]): number => {
 };
 
 export default () => {
-    const nums = [2, 1, 5, 3, 4];
+    const nums = [2, 6, 4, 8, 10, 9, 15];
 
     console.log(findUnsortedSubarray(nums));
 };
