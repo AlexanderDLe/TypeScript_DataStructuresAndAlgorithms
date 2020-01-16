@@ -11,6 +11,7 @@ import ShortestUnsortedContinuousSubarray from './ShortestUnsortedContinuousSuba
 import TopKFrequentElements from './TopKFrequentElements';
 import ProductOfArrayExceptSelf from './ProductOfArrayExceptSelf';
 import FindTheDuplicateNumber from './FindTheDuplicateNumber';
+import GroupAnagrams from './GroupAnagrams';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -25,7 +26,8 @@ const ArraysMain = () => {
     // ShortestUnsortedContinuousSubarray();
     // TopKFrequentElements();
     // ProductOfArrayExceptSelf();
-    FindTheDuplicateNumber();
+    // FindTheDuplicateNumber();
+    GroupAnagrams();
 };
 
 export default ArraysMain;
