@@ -3,12 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ArraysMain_1 = __importDefault(require("./Arrays/ArraysMain"));
+const HeapsMain_1 = __importDefault(require("./Heaps/HeapsMain"));
 function main() {
-    ArraysMain_1.default();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // LinkedListMain();
+    HeapsMain_1.default();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
