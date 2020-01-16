@@ -10,6 +10,7 @@ import MaximumSubarray from './MaximumSubarray';
 import ShortestUnsortedContinuousSubarray from './ShortestUnsortedContinuousSubarray';
 import TopKFrequentElements from './TopKFrequentElements';
 import ProductOfArrayExceptSelf from './ProductOfArrayExceptSelf';
+import FindTheDuplicateNumber from './FindTheDuplicateNumber';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -21,9 +22,10 @@ const ArraysMain = () => {
     // FindDisappearedNumbersInArray();
     // BestTimeToBuyAndSellStock();
     // MaximumSubarray();
-    ShortestUnsortedContinuousSubarray();
+    // ShortestUnsortedContinuousSubarray();
     // TopKFrequentElements();
     // ProductOfArrayExceptSelf();
+    FindTheDuplicateNumber();
 };
 
 export default ArraysMain;

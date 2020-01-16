@@ -10,11 +10,11 @@ import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 
 function main() {
-    // ArraysMain();
+    ArraysMain();
     // BinaryMain();
     // DPMain();
     // LinkedListMain();
-    MatrixMain();
+    // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
