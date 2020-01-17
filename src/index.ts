@@ -16,12 +16,12 @@ function main() {
     // DPMain();
     // LinkedListMain();
     // HeapsMain();
-    // MatrixMain();
+    MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
     // StringsMain();
-    TreesMain();
+    // TreesMain();
 }
 
 main();
