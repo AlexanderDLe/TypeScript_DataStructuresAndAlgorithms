@@ -15,13 +15,13 @@ function main() {
     // BinaryMain();
     // DPMain();
     // LinkedListMain();
-    HeapsMain();
+    // HeapsMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
     // StringsMain();
-    // TreesMain();
+    TreesMain();
 }
 
 main();

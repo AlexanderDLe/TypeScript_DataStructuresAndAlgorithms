@@ -3,18 +3,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const HeapsMain_1 = __importDefault(require("./Heaps/HeapsMain"));
+const TreesMain_1 = __importDefault(require("./Trees/TreesMain"));
 function main() {
     // ArraysMain();
     // BinaryMain();
     // DPMain();
     // LinkedListMain();
-    HeapsMain_1.default();
+    // HeapsMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
     // StringsMain();
-    // TreesMain();
+    TreesMain_1.default();
 }
 main();
