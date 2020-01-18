@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const GroupAnagrams_1 = __importDefault(require("./GroupAnagrams"));
+const ContainerWithMostWater_1 = __importDefault(require("./ContainerWithMostWater"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -18,6 +18,7 @@ const ArraysMain = () => {
     // TopKFrequentElements();
     // ProductOfArrayExceptSelf();
     // FindTheDuplicateNumber();
-    GroupAnagrams_1.default();
+    // GroupAnagrams();
+    ContainerWithMostWater_1.default();
 };
 exports.default = ArraysMain;

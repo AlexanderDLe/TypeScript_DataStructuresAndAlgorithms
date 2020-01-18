@@ -12,6 +12,7 @@ import TopKFrequentElements from './TopKFrequentElements';
 import ProductOfArrayExceptSelf from './ProductOfArrayExceptSelf';
 import FindTheDuplicateNumber from './FindTheDuplicateNumber';
 import GroupAnagrams from './GroupAnagrams';
+import ContainerWithMostWater from './ContainerWithMostWater';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -27,7 +28,8 @@ const ArraysMain = () => {
     // TopKFrequentElements();
     // ProductOfArrayExceptSelf();
     // FindTheDuplicateNumber();
-    GroupAnagrams();
+    // GroupAnagrams();
+    ContainerWithMostWater();
 };
 
 export default ArraysMain;
