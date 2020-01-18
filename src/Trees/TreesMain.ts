@@ -9,6 +9,7 @@ import FlattenBinaryTree from './FlattenBinaryTree';
 import BinaryTreeInorderTraversal from './BinaryTreeInorderTraversal';
 import BinaryPreorderTraversal from './BinaryTreeInorderTraversal';
 import BinaryTreeLevelOrderTraversal from './BinaryTreeLevelOrderTraversal';
+import UniqueBinaryTrees from './UniqueBinaryTrees';
 
 const TreesMain = () => {
     //RangeSum();
@@ -20,7 +21,8 @@ const TreesMain = () => {
     // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
-    BinaryTreeLevelOrderTraversal();
+    // BinaryTreeLevelOrderTraversal();
+    UniqueBinaryTrees();
 };
 
 export default TreesMain;
