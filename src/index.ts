@@ -11,7 +11,7 @@ import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 
 function main() {
-    ArraysMain();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // LinkedListMain();
@@ -20,7 +20,7 @@ function main() {
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    // StringsMain();
+    StringsMain();
     // TreesMain();
 }
 
