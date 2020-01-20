@@ -1,39 +1,45 @@
+import { decode } from 'querystring';
+
 /**
  * 394. Decode String
  */
 
 const decodeString = (s: string): string => {
-    const decode = (num: number, encoded: string): string => {
-        let str = '';
+    let stack: string[] = [];
+
+    const decode = (repeats: number, encoded: string): string => {
+        let substr = '';
+
         for (let i = 0; i < encoded.length; i++) {
             if (!isNaN(Number(encoded[i]))) {
                 // Is a number
+                // 1. Get the entire number
                 let index = i;
-                let innerSubstr = '';
-                let stack: string[] = [];
-
-                // Get entire number
                 while (!isNaN(Number(encoded[index]))) index++;
-                let repeats = Number(encoded.slice(i, index));
+                let num = Number(encoded.slice(i, index));
 
-                // Get encoded substring
+                // 2. Get inner substring
+                let innerSubstr = '';
                 stack.push(encoded[index++]);
-
                 while (stack.length) {
                     if (encoded[index] === ']') {
                         stack.pop();
                         if (!stack.length) break;
                     }
                     if (encoded[index] === '[') stack.push('[');
-                    innerSubstr += encoded[index];
-                    index++;
+                    innerSubstr += encoded[index++];
                 }
-                str += decode(repeats, innerSubstr);
+                substr += decode(num, innerSubstr);
                 i = index;
-            } else str += encoded[i];
+            } else {
+                // Is not a number
+                substr += encoded[i];
+            }
         }
-        return str.repeat(num);
+
+        return substr.repeat(repeats);
     };
+
     return decode(1, s);
 };
 

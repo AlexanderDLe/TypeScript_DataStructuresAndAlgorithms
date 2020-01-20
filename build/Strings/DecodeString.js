@@ -1,22 +1,22 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 394. Decode String
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 const decodeString = (s) => {
-    const decode = (num, encoded) => {
-        let str = '';
+    let stack = [];
+    const decode = (repeats, encoded) => {
+        let substr = '';
         for (let i = 0; i < encoded.length; i++) {
             if (!isNaN(Number(encoded[i]))) {
                 // Is a number
+                // 1. Get the entire number
                 let index = i;
-                let innerSubstr = '';
-                let stack = [];
-                // Get entire number
                 while (!isNaN(Number(encoded[index])))
                     index++;
-                let repeats = Number(encoded.slice(i, index));
-                // Get encoded substring
+                let num = Number(encoded.slice(i, index));
+                // 2. Get inner substring
+                let innerSubstr = '';
                 stack.push(encoded[index++]);
                 while (stack.length) {
                     if (encoded[index] === ']') {
@@ -26,16 +26,17 @@ const decodeString = (s) => {
                     }
                     if (encoded[index] === '[')
                         stack.push('[');
-                    innerSubstr += encoded[index];
-                    index++;
+                    innerSubstr += encoded[index++];
                 }
-                str += decode(repeats, innerSubstr);
+                substr += decode(num, innerSubstr);
                 i = index;
             }
-            else
-                str += encoded[i];
+            else {
+                // Is not a number
+                substr += encoded[i];
+            }
         }
-        return str.repeat(num);
+        return substr.repeat(repeats);
     };
     return decode(1, s);
 };
