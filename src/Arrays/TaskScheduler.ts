@@ -39,28 +39,30 @@ const leastInterval = (tasks: string[], n: number): number => {
     return result;
 };
 
-// Efficient Math Solution
 const leastIntervalB = (tasks: string[], n: number): number => {
-    let counter: number[] = new Array(26).fill(0);
-    let max = 0;
+    if (!n) return tasks.length;
+
+    let total = tasks.length;
     let maxCount = 0;
-
+    let max = 0;
+    let map: Map = {};
     for (let task of tasks) {
-        let num = counter[task.charCodeAt(0) - 65]++;
+        map[task] = (map[task] || 0) + 1;
 
-        if (max === num) maxCount++;
-        else if (max < num) {
-            max = num;
+        if (map[task] > max) {
+            max = map[task];
             maxCount = 1;
+        } else if (map[task] === max) {
+            maxCount++;
         }
     }
-    let partCount = max - 1;
-    let partLength = n - (maxCount - 1);
-    let emptySlots = partCount * partLength;
-    let availableTasks = tasks.length - max * maxCount;
-    let idles = Math.max(0, emptySlots - availableTasks);
 
-    return tasks.length + idles;
+    let parts = max - 1;
+    let maxes = max * maxCount;
+    let spaces = parts * (n - maxCount + 1);
+    let remaining = total - maxes;
+    let idles = Math.max(0, spaces - remaining);
+    return total + idles;
 };
 
 export default () => {
