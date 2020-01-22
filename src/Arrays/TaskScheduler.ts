@@ -52,9 +52,7 @@ const leastIntervalB = (tasks: string[], n: number): number => {
         if (map[task] > max) {
             max = map[task];
             maxCount = 1;
-        } else if (map[task] === max) {
-            maxCount++;
-        }
+        } else if (map[task] === max) maxCount++;
     }
 
     let parts = max - 1;

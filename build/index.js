@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ArraysMain_1 = __importDefault(require("./Arrays/ArraysMain"));
+const RecursionMain_1 = __importDefault(require("./Recursion/RecursionMain"));
 function main() {
-    ArraysMain_1.default();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // LinkedListMain();
@@ -13,7 +13,7 @@ function main() {
     // MathMain();
     // MatrixMain();
     // QueuesMain();
-    // RecursionMain();
+    RecursionMain_1.default();
     // StacksMain();
     // StringsMain();
     // TreesMain();

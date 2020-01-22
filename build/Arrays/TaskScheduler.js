@@ -47,9 +47,8 @@ const leastIntervalB = (tasks, n) => {
             max = map[task];
             maxCount = 1;
         }
-        else if (map[task] === max) {
+        else if (map[task] === max)
             maxCount++;
-        }
     }
     let parts = max - 1;
     let maxes = max * maxCount;
