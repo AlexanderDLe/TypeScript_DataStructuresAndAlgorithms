@@ -13,6 +13,7 @@ import ProductOfArrayExceptSelf from './ProductOfArrayExceptSelf';
 import FindTheDuplicateNumber from './FindTheDuplicateNumber';
 import GroupAnagrams from './GroupAnagrams';
 import ContainerWithMostWater from './ContainerWithMostWater';
+import TaskScheduler from './TaskScheduler';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -29,7 +30,8 @@ const ArraysMain = () => {
     // ProductOfArrayExceptSelf();
     // FindTheDuplicateNumber();
     // GroupAnagrams();
-    ContainerWithMostWater();
+    // ContainerWithMostWater();
+    TaskScheduler();
 };
 
 export default ArraysMain;

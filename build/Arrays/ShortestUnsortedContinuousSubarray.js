@@ -7,10 +7,10 @@ const findUnsortedSubarray = (nums) => {
     let n = nums.length;
     let start = -1;
     let end = -2;
-    let max = nums[0];
     let min = nums[n - 1];
+    let max = nums[0];
     for (let i = 1; i < n; i++) {
-        let j = n - 1 - i;
+        let j = n - i - 1;
         max = Math.max(max, nums[i]);
         if (nums[i] < max)
             end = i;
