@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const UniqueBinaryTrees_1 = __importDefault(require("./UniqueBinaryTrees"));
+const ConstructBSTFromPreorderAndInorder_1 = __importDefault(require("./ConstructBSTFromPreorderAndInorder"));
 const TreesMain = () => {
     //RangeSum();
     // InvertBinaryTree();
@@ -15,6 +15,7 @@ const TreesMain = () => {
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
     // BinaryTreeLevelOrderTraversal();
-    UniqueBinaryTrees_1.default();
+    // UniqueBinaryTrees();
+    ConstructBSTFromPreorderAndInorder_1.default();
 };
 exports.default = TreesMain;

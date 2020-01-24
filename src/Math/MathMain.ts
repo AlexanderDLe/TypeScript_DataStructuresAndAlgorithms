@@ -1,3 +1,1 @@
-export default () => {
-    TaskScheduler();
-};
+export default () => {};
