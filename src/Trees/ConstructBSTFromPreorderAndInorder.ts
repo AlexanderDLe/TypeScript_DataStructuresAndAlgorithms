@@ -36,10 +36,6 @@ const buildTreeIndexing = (preorder: number[], inorder: number[]): Node => {
         const rootIndex = map[preorder[preStart]];
         const numsLeft = rootIndex - inStart;
 
-        console.log(`preStart: ${preStart}`);
-        console.log(`inStart: ${inStart}`);
-        console.log(`inEnd: ${inEnd} \n`);
-
         t.left = build(preStart + 1, inStart, rootIndex - 1);
         t.right = build(preStart + numsLeft + 1, rootIndex + 1, inEnd);
 

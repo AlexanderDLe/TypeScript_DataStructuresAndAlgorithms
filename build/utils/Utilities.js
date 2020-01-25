@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PrintArray = (arr) => {
+    if (!arr)
+        return;
     let str = '[ ';
     for (let i = 0; i < arr.length; i++) {
         str += arr[i];

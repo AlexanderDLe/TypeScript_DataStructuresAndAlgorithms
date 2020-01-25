@@ -1,4 +1,5 @@
 export const PrintArray = (arr: any[]): void => {
+    if (!arr) return;
     let str = '[ ';
     for (let i = 0; i < arr.length; i++) {
         str += arr[i];
