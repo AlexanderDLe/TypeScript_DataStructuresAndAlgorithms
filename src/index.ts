@@ -18,9 +18,9 @@ function main() {
     // LinkedListMain();
     // HeapsMain();
     // MathMain();
-    // MatrixMain();
+    MatrixMain();
     // QueuesMain();
-    RecursionMain();
+    // RecursionMain();
     // StacksMain();
     // StringsMain();
     // TreesMain();
