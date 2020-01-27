@@ -14,6 +14,7 @@ import FindTheDuplicateNumber from './FindTheDuplicateNumber';
 import GroupAnagrams from './GroupAnagrams';
 import ContainerWithMostWater from './ContainerWithMostWater';
 import TaskScheduler from './TaskScheduler';
+import SortColors from './SortColors';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -31,7 +32,8 @@ const ArraysMain = () => {
     // FindTheDuplicateNumber();
     // GroupAnagrams();
     // ContainerWithMostWater();
-    TaskScheduler();
+    // TaskScheduler();
+    SortColors();
 };
 
 export default ArraysMain;
