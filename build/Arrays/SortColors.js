@@ -1,16 +1,20 @@
-'use strict';
+"use strict";
 /**
  * 75. Sort Colors
  */
-Object.defineProperty(exports, '__esModule', { value: true });
-const sortColors = nums => {
+Object.defineProperty(exports, "__esModule", { value: true });
+const sortColors = (nums) => {
+    if (!nums.length)
+        return;
     let map = {};
-    for (let num of nums) map[num] = (map[num] || 0) + 1;
+    for (let num of nums)
+        map[num] = (map[num] || 0) + 1;
     let i = 0;
     for (let num in map) {
         while (map[num]) {
-            nums[i++] = Number(num);
+            nums[i] = Number(num);
             map[num]--;
+            i++;
         }
     }
 };
