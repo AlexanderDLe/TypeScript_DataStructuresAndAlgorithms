@@ -14,13 +14,13 @@ import DPMain from './DP/DPMain';
 function main() {
     // ArraysMain();
     // BinaryMain();
-    DPMain();
+    // DPMain();
     // LinkedListMain();
     // HeapsMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();
-    // RecursionMain();
+    RecursionMain();
     // StacksMain();
     // StringsMain();
     // TreesMain();

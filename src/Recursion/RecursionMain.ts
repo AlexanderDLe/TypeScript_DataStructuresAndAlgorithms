@@ -4,6 +4,7 @@ import Subsets from './Subsets';
 import CombinationSum from './CombinationSum';
 import TargetSum from './TargetSum';
 import LetterCombinationsOfAPhoneNumber from './LetterCombinationsOfAPhoneNumber';
+import SubarraySumEqualsK from './SubarraySumEqualsK';
 
 export default () => {
     // Permutations();
@@ -11,5 +12,6 @@ export default () => {
     // Subsets();
     // CombinationSum();
     // TargetSum();
-    LetterCombinationsOfAPhoneNumber();
+    // LetterCombinationsOfAPhoneNumber();
+    SubarraySumEqualsK();
 };
