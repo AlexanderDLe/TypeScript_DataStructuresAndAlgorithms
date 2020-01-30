@@ -20,10 +20,10 @@ function main() {
     // MathMain();
     // MatrixMain();
     // QueuesMain();
-    RecursionMain();
+    // RecursionMain();
     // StacksMain();
     // StringsMain();
-    // TreesMain();
+    TreesMain();
 }
 
 main();
