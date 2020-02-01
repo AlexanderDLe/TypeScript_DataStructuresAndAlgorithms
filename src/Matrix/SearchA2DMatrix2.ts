@@ -8,7 +8,6 @@ const searchMatrix = (matrix: number[][], target: number): boolean => {
     let row = 0;
 
     while (col >= 0 && row <= matrix.length - 1) {
-        console.log(matrix[row][col]);
         if (target == matrix[row][col]) return true;
         else if (target < matrix[row][col]) col--;
         else if (target > matrix[row][col]) row++;

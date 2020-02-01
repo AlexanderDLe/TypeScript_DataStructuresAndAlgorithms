@@ -4,6 +4,7 @@ import HouseRobber1 from './HouseRobber1';
 import HouseRobber3 from './HouseRobber3';
 import BestTimeToBuyAndSellStockWithCooldown from './BestTimeToBuyAndSellStockWithCooldown';
 import PerfectSquares from './PerfectSquares';
+import PartitionEqualSubsetSum from './PartitionEqualSubsetSum';
 
 const DPMain = () => {
     // PalindromicSubstrings();
@@ -11,7 +12,8 @@ const DPMain = () => {
     // HouseRobber1();
     // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
-    PerfectSquares();
+    // PerfectSquares();
+    PartitionEqualSubsetSum();
 };
 
 export default DPMain;

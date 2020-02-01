@@ -33,7 +33,7 @@ const ArraysMain = () => {
     // GroupAnagrams();
     // ContainerWithMostWater();
     // TaskScheduler();
-    SortColors();
+    // SortColors();
 };
 
 export default ArraysMain;
