@@ -3,8 +3,8 @@
  */
 
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
-
 type Node = TreeNode<number> | null;
+
 const invertTree = (root: Node): Node => {
     if (!root) return root;
     let temp = root.left;

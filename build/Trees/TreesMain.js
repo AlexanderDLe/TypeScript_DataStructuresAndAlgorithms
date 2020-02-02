@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ImplementPrefixTrie_1 = __importDefault(require("./ImplementPrefixTrie"));
+const LowestCommonAncestorOfABST_1 = __importDefault(require("./LowestCommonAncestorOfABST"));
 const TreesMain = () => {
     //RangeSum();
     // InvertBinaryTree();
@@ -17,6 +17,7 @@ const TreesMain = () => {
     // BinaryTreeLevelOrderTraversal();
     // UniqueBinaryTrees();
     // ConstructBSTFromPreorderAndInorderTraversal();
-    ImplementPrefixTrie_1.default();
+    // ImplementPrefixTrie();
+    LowestCommonAncestorOfABST_1.default();
 };
 exports.default = TreesMain;

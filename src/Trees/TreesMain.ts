@@ -12,6 +12,7 @@ import BinaryTreeLevelOrderTraversal from './BinaryTreeLevelOrderTraversal';
 import UniqueBinaryTrees from './UniqueBinaryTrees';
 import ConstructBSTFromPreorderAndInorderTraversal from './ConstructBSTFromPreorderAndInorder';
 import ImplementPrefixTrie from './ImplementPrefixTrie';
+import LowestCommonAncestorOfBST from './LowestCommonAncestorOfABST';
 
 const TreesMain = () => {
     //RangeSum();
@@ -26,7 +27,8 @@ const TreesMain = () => {
     // BinaryTreeLevelOrderTraversal();
     // UniqueBinaryTrees();
     // ConstructBSTFromPreorderAndInorderTraversal();
-    ImplementPrefixTrie();
+    // ImplementPrefixTrie();
+    LowestCommonAncestorOfBST();
 };
 
 export default TreesMain;
