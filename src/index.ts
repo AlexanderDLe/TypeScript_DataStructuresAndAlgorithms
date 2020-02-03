@@ -14,7 +14,7 @@ import DPMain from './DP/DPMain';
 function main() {
     // ArraysMain();
     // BinaryMain();
-    // DPMain();
+    DPMain();
     // LinkedListMain();
     // HeapsMain();
     // MathMain();
@@ -23,7 +23,7 @@ function main() {
     // RecursionMain();
     // StacksMain();
     // StringsMain();
-    TreesMain();
+    // TreesMain();
 }
 
 main();

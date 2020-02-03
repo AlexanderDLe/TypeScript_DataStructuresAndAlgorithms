@@ -1,11 +1,12 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 236. Lowest Common Ancestor of a Binary Tree
  */
-const TreeClass_1 = require('../DataStructures/TreeClass');
+const TreeClass_1 = require("../DataStructures/TreeClass");
 const checkSubtree = (root, p, q) => {
-    if (!root) return 0;
+    if (!root)
+        return 0;
     let result = 0;
     const que = [];
     que.push(root);
@@ -13,26 +14,35 @@ const checkSubtree = (root, p, q) => {
         let len = que.length;
         while (len) {
             const front = que.shift();
-            if (front === p || front === q) result++;
-            if (front.left) que.push(front.left);
-            if (front.right) que.push(front.right);
+            if (front === p || front === q)
+                result++;
+            if (front.left)
+                que.push(front.left);
+            if (front.right)
+                que.push(front.right);
             len--;
         }
     }
     return result;
 };
 const lowestCommonAncestorA = (root, p, q) => {
-    if (!root || root === p || root === q) return root;
+    if (!root || root === p || root === q)
+        return root;
     const res = checkSubtree(root.left, p, q);
-    if (res === 0) return lowestCommonAncestorA(root.right, p, q);
-    if (res === 2) return lowestCommonAncestorA(root.left, p, q);
-    if (res === 1) return root;
+    if (res === 0)
+        return lowestCommonAncestorA(root.right, p, q);
+    if (res === 2)
+        return lowestCommonAncestorA(root.left, p, q);
+    if (res === 1)
+        return root;
 };
 const lowestCommonAncestorB = (root, p, q) => {
-    if (!root || root === p || root === q) return root;
+    if (!root || root === p || root === q)
+        return root;
     const left = lowestCommonAncestorB(root.left, p, q);
     const right = lowestCommonAncestorB(root.right, p, q);
-    if (left && right) return root;
+    if (!left && !right)
+        return root;
     return left ? left : right;
 };
 exports.default = () => {

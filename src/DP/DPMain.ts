@@ -5,6 +5,7 @@ import HouseRobber3 from './HouseRobber3';
 import BestTimeToBuyAndSellStockWithCooldown from './BestTimeToBuyAndSellStockWithCooldown';
 import PerfectSquares from './PerfectSquares';
 import PartitionEqualSubsetSum from './PartitionEqualSubsetSum';
+import LongestIncreasingSubsequence from './LongestIncreasingSubsequence';
 
 const DPMain = () => {
     // PalindromicSubstrings();
@@ -13,7 +14,8 @@ const DPMain = () => {
     // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
     // PerfectSquares();
-    PartitionEqualSubsetSum();
+    // PartitionEqualSubsetSum();
+    LongestIncreasingSubsequence();
 };
 
 export default DPMain;
