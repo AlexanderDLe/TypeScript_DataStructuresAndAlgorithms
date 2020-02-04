@@ -1,6 +1,8 @@
 "use strict";
 /**
  * 121. Best Time To Buy And Sell Stock
+ * Iterate through array, constantly update min value
+ * and update max if price - min is greater.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const maxProfit = (prices) => {

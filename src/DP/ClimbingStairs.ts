@@ -1,5 +1,9 @@
 /**
  * 70. Climbing Stairs
+ *
+ * DP Approach: Solve subproblems.
+ * To get to n, you must have taken a limited
+ * number of options to get there.
  */
 
 const climbStairsDP = (n: number): number => {

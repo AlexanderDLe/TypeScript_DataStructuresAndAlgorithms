@@ -1,5 +1,7 @@
 /**
  * 121. Best Time To Buy And Sell Stock
+ * Iterate through array, constantly update min value
+ * and update max if price - min is greater.
  */
 
 const maxProfit = (prices: number[]): number => {

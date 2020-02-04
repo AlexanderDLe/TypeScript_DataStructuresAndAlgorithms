@@ -1,8 +1,11 @@
 /**
  * 300. Longest Increasing Subsequence
+ *
+ * DP Strategy - Bottom-Up Approach.
+ * On each iteration i, starting from 1, to n
+ * inner loop from 0 to i
+ * set arr[i] to max or either itself or arr[j] + 1.
  */
-
-import { PrintArray } from '../utils/Utilities';
 
 const lengthOfLIS = (nums: number[]): number => {
     if (nums.length === 1) return 1;

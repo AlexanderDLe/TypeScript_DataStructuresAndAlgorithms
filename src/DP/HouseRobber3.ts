@@ -1,5 +1,8 @@
 /**
  * 337. House Robber 3
+ * DP Approach:
+ * On each node, you must essentially ask the question:
+ * Which is greater? root val + grandchildren vals OR children vals?
  */
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 
@@ -15,25 +18,12 @@ const rob = (root: Node): number => {
     return Math.max(root.val + val, rob(root.left) + rob(root.right));
 };
 
-const robB = (root: Node): number => {
-    const helper = (node: Node): number[] => {
-        if (!node) return [0, 0];
-        const [lr, ln] = helper(node.left);
-        const [rr, rn] = helper(node.right);
-        return [
-            node.val + ln + rn,
-            Math.max(lr + rr, ln + rn, lr + rn, ln + rr)
-        ];
-    };
-    return Math.max(...helper(root));
-};
-
 export default () => {
     const t = new TreeNode(3);
     t.left = new TreeNode(2);
     t.right = new TreeNode(3);
     t.left.right = new TreeNode(3);
     t.right.right = new TreeNode(1);
-    console.log(robB(t));
+    console.log(rob(t));
     BinaryPreorderTraversal(t);
 };
