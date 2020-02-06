@@ -1,7 +1,7 @@
 /**
  * 104. Maximum Depth of Binary Tree
  */
-import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
+import { TreeNode } from '../DataStructures/TreeClass';
 
 type Node = TreeNode<number> | null;
 

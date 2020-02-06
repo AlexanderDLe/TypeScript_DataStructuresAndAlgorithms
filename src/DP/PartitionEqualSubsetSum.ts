@@ -1,5 +1,11 @@
 /**
  * 416. Partition Equal Subset Sum
+ *
+ * Goal is to find if an array can be split into 2 equal subsets.
+ *
+ * To solve, we need to create a DP array stretching from 0 to SUM(nums) / 2
+ * We want determine if DP[target] is reachable - to do so, we solve subproblems that
+ * determines if DP[i] is reachable starting from DP[0] (base case).
  */
 import { PrintArray } from '../utils/Utilities';
 const canPartition = (nums: number[]): boolean => {
@@ -43,6 +49,6 @@ const canPartitionKnapsack = (nums: number[]): boolean => {
 };
 
 export default () => {
-    const nums = [3, 5, 6, 2];
+    const nums = [1, 5, 11, 5];
     console.log(canPartitionKnapsack(nums));
 };

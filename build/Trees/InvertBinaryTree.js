@@ -1,6 +1,8 @@
 "use strict";
 /**
  * 226. Invert Binary Tree
+ *
+ * Recurse through binary tree and swap left and right nodes.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");

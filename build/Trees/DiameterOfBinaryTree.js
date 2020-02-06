@@ -2,6 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 543. Diameter of Binary Tree
+ *
+ * A diameter of the binary tree is determined by the
+ * longest continuous line of nodes through the tree.
+ *
+ * A diameter of the current node is determined by the
+ * sum of the heights of its left and right subtrees.
+ *
+ * Recurse through the tree and eventually return the
+ * greatest value (aka diameter) seen.
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
 const findHeight = (n) => {

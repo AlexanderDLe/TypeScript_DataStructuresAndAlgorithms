@@ -2,6 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 236. Lowest Common Ancestor of a Binary Tree
+ *
+ * If root is null, p, or q, then return root.
+ * Why p or q? Because if root is p or q, then root is the LCA.
+ *
+ * Otherwise, recurse through the left and right subtree for LCA.
+ * If both left and right return a node, then root is the LCA.
+ * If left returns null, right will return LCA.
+ * If right returns null, left will return LCA.
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
 const checkSubtree = (root, p, q) => {
@@ -41,7 +49,7 @@ const lowestCommonAncestorB = (root, p, q) => {
         return root;
     const left = lowestCommonAncestorB(root.left, p, q);
     const right = lowestCommonAncestorB(root.right, p, q);
-    if (!left && !right)
+    if (left && right)
         return root;
     return left ? left : right;
 };

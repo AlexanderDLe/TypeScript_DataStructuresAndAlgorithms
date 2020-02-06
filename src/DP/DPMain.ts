@@ -14,8 +14,8 @@ const DPMain = () => {
     // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
     // PerfectSquares();
-    // PartitionEqualSubsetSum();
-    LongestIncreasingSubsequence();
+    PartitionEqualSubsetSum();
+    // LongestIncreasingSubsequence();
 };
 
 export default DPMain;

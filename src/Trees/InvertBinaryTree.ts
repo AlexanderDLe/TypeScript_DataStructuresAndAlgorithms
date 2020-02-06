@@ -1,5 +1,7 @@
 /**
  * 226. Invert Binary Tree
+ *
+ * Recurse through binary tree and swap left and right nodes.
  */
 
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';

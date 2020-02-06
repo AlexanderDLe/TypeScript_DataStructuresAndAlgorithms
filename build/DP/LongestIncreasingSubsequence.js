@@ -9,21 +9,20 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const lengthOfLIS = (nums) => {
-    if (nums.length === 1)
-        return 1;
+    if (nums.length < 2)
+        return nums.length;
     let max = 0;
-    let len = nums.length;
-    let arr = new Array(len).fill(1);
-    for (let i = 1; i < len; i++) {
+    let DP = new Array(nums.length).fill(1);
+    for (let i = 1; i < nums.length; i++) {
         for (let j = 0; j < i; j++) {
-            if (nums[i] > nums[j])
-                arr[i] = Math.max(arr[i], arr[j] + 1);
-            max = Math.max(max, arr[i]);
+            if (nums[j] < nums[i])
+                DP[i] = Math.max(DP[i], DP[j] + 1);
+            max = Math.max(max, DP[i]);
         }
     }
     return max;
 };
 exports.default = () => {
-    const nums = [2];
+    const nums = [10, 9, 2, 5, 3, 7, 101, 18];
     console.log(lengthOfLIS(nums));
 };

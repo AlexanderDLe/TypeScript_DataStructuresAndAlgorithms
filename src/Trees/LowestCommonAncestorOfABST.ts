@@ -1,5 +1,13 @@
 /**
  * 236. Lowest Common Ancestor of a Binary Tree
+ *
+ * If root is null, p, or q, then return root.
+ * Why p or q? Because if root is p or q, then root is the LCA.
+ *
+ * Otherwise, recurse through the left and right subtree for LCA.
+ * If both left and right return a node, then root is the LCA.
+ * If left returns null, right will return LCA.
+ * If right returns null, left will return LCA.
  */
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
@@ -35,7 +43,7 @@ const lowestCommonAncestorB = (root: Node, p: Node, q: Node): Node => {
     if (!root || root === p || root === q) return root;
     const left = lowestCommonAncestorB(root.left, p, q);
     const right = lowestCommonAncestorB(root.right, p, q);
-    if (!left && !right) return root;
+    if (left && right) return root;
     return left ? left : right;
 };
 

@@ -1,5 +1,10 @@
 /**
  * 114. Flatten Binary Tree To Linked List
+ *
+ * Flatten tree using recursion:
+ * One every node starting from the furthest left (postorder),
+ * take left node and insert between the current node and the current right node.
+ * reattach the previous right node to the end of the newly attached node.
  */
 
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
