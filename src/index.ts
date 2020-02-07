@@ -10,11 +10,13 @@ import RecursionMain from './Recursion/RecursionMain';
 import StacksMain from './Stacks/StacksMain';
 import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
+import GraphsMain from './Graphs/GraphsMain';
 
 function main() {
     // ArraysMain();
     // BinaryMain();
-    DPMain();
+    // DPMain();
+    GraphsMain();
     // LinkedListMain();
     // HeapsMain();
     // MathMain();
