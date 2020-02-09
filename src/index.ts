@@ -16,7 +16,7 @@ function main() {
     // ArraysMain();
     // BinaryMain();
     // DPMain();
-    GraphsMain();
+    // GraphsMain();
     // LinkedListMain();
     // HeapsMain();
     // MathMain();
@@ -24,7 +24,7 @@ function main() {
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    // StringsMain();
+    StringsMain();
     // TreesMain();
 }
 
