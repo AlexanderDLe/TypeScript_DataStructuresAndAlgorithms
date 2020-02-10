@@ -17,14 +17,14 @@ function main() {
     // BinaryMain();
     // DPMain();
     // GraphsMain();
-    // LinkedListMain();
+    LinkedListMain();
     // HeapsMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    StringsMain();
+    // StringsMain();
     // TreesMain();
 }
 
