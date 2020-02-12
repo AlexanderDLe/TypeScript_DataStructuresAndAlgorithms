@@ -11,6 +11,7 @@ import StacksMain from './Stacks/StacksMain';
 import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 import GraphsMain from './Graphs/GraphsMain';
+import IntervalsMain from './Intervals/IntervalsMain';
 
 function main() {
     // ArraysMain();
@@ -19,12 +20,13 @@ function main() {
     // GraphsMain();
     // LinkedListMain();
     // HeapsMain();
+    IntervalsMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    StringsMain();
+    // StringsMain();
     // TreesMain();
 }
 
