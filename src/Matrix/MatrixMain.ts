@@ -3,11 +3,13 @@ import UniquePaths from './UniquePaths';
 import MinimumPathSum from './MinimumPathSum';
 import NumberOfIslands from './NumberOfIslands';
 import SearchA2DMatrix2 from './SearchA2DMatrix2';
+import MaximalSquare from './MaximalSquare';
 
 export default () => {
     // RotateImage();
     // UniquePaths();
     // MinimumPathSum();
     // NumberOfIslands();
-    SearchA2DMatrix2();
+    // SearchA2DMatrix2();
+    MaximalSquare();
 };

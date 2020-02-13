@@ -20,9 +20,9 @@ function main() {
     // GraphsMain();
     // LinkedListMain();
     // HeapsMain();
-    IntervalsMain();
+    // IntervalsMain();
     // MathMain();
-    // MatrixMain();
+    MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
