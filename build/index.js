@@ -3,17 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MatrixMain_1 = __importDefault(require("./Matrix/MatrixMain"));
+const LinkedListMain_1 = __importDefault(require("./LinkedLists/LinkedListMain"));
 function main() {
     // ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
-    // LinkedListMain();
+    LinkedListMain_1.default();
     // HeapsMain();
     // IntervalsMain();
     // MathMain();
-    MatrixMain_1.default();
+    // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();

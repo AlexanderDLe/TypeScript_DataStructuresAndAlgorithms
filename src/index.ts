@@ -18,11 +18,11 @@ function main() {
     // BinaryMain();
     // DPMain();
     // GraphsMain();
-    // LinkedListMain();
+    LinkedListMain();
     // HeapsMain();
     // IntervalsMain();
     // MathMain();
-    MatrixMain();
+    // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();

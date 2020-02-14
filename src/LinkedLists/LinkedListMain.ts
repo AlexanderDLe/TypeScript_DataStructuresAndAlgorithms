@@ -2,6 +2,7 @@ import ConvertBinaryNumberInLinkedList from './ConvertBinaryNumberInList';
 import ReverseLinkedList from './ReverseLinkedList';
 import MergedTwoSortedLists from './MergeTwoSortedLists';
 import LinkedListCycle from './LinkedListCycle';
+import LinkedListCycle2 from './LinkedListCycle2';
 import PalindromeLinkedList from './PalindromeLinkedList';
 import IntersectionOfTwoLinkedLists from './IntersectionOfTwoLinkedList';
 import SortList from './SortList';
@@ -13,7 +14,8 @@ const LinkedListMain = () => {
     // LinkedListCycle();
     // PalindromeLinkedList();
     // IntersectionOfTwoLinkedLists();
-    SortList();
+    // SortList();
+    LinkedListCycle2();
 };
 
 export default LinkedListMain;
