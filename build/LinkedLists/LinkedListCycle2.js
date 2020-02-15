@@ -6,10 +6,14 @@
  * If not, then return null.
  * If so, break out of the first loop.
  *
- * With extra memory: Check if node has been encountered before.
+ * With extra memory:
+ * Store node in array.
+ * Check if node has been encountered before.
+ * Return that node.
  *
- * Without extra memory: The distance from head to slow is the same
- * as the distance from fast to cycle head.
+ * Without extra memory:
+ * The distance from head to slow is the same
+ * as the distance from fast to cycle-head.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
