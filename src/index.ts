@@ -14,13 +14,13 @@ import GraphsMain from './Graphs/GraphsMain';
 import IntervalsMain from './Intervals/IntervalsMain';
 
 function main() {
-    ArraysMain();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
-    // LinkedListMain();
     // HeapsMain();
     // IntervalsMain();
+    LinkedListMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();
