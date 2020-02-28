@@ -16,6 +16,7 @@ import ContainerWithMostWater from './ContainerWithMostWater';
 import TaskScheduler from './TaskScheduler';
 import SortColors from './SortColors';
 import FindFirstAndLostPositionOfElement from './FindFirstAndLastPositionofElement';
+import SearchInRotatedSortedArray from './SearchInRotatedSortedArray';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -35,7 +36,8 @@ const ArraysMain = () => {
     // ContainerWithMostWater();
     // TaskScheduler();
     // SortColors();
-    FindFirstAndLostPositionOfElement();
+    // FindFirstAndLostPositionOfElement();
+    SearchInRotatedSortedArray();
 };
 
 export default ArraysMain;

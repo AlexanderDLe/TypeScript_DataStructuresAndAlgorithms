@@ -4,6 +4,7 @@ import MinimumPathSum from './MinimumPathSum';
 import NumberOfIslands from './NumberOfIslands';
 import SearchA2DMatrix2 from './SearchA2DMatrix2';
 import MaximalSquare from './MaximalSquare';
+import WordSearch from './WordSearch';
 
 export default () => {
     // RotateImage();
@@ -11,5 +12,6 @@ export default () => {
     // MinimumPathSum();
     // NumberOfIslands();
     // SearchA2DMatrix2();
-    MaximalSquare();
+    // MaximalSquare();
+    WordSearch();
 };
