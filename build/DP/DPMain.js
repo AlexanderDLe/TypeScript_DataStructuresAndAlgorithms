@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const PartitionEqualSubsetSum_1 = __importDefault(require("./PartitionEqualSubsetSum"));
+const CoinChange_1 = __importDefault(require("./CoinChange"));
 const DPMain = () => {
     // PalindromicSubstrings();
     // ClimbingStairs();
@@ -11,7 +11,8 @@ const DPMain = () => {
     // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
     // PerfectSquares();
-    PartitionEqualSubsetSum_1.default();
+    // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();
+    CoinChange_1.default();
 };
 exports.default = DPMain;
