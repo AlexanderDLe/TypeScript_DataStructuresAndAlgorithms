@@ -24,7 +24,7 @@ const coinChange = (coins: number[], amount: number): number => {
             if (coin <= i) DP[i] = Math.min(DP[i], DP[i - coin] + 1);
         }
     }
-
+    PrintArray(DP);
     return DP[amount] > amount ? -1 : DP[amount];
 };
 

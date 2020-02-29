@@ -7,6 +7,7 @@ import PerfectSquares from './PerfectSquares';
 import PartitionEqualSubsetSum from './PartitionEqualSubsetSum';
 import LongestIncreasingSubsequence from './LongestIncreasingSubsequence';
 import CoinChange from './CoinChange';
+import JumpGame from './JumpGame';
 
 const DPMain = () => {
     // PalindromicSubstrings();
@@ -17,7 +18,8 @@ const DPMain = () => {
     // PerfectSquares();
     // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();
-    CoinChange();
+    // CoinChange();
+    JumpGame();
 };
 
 export default DPMain;

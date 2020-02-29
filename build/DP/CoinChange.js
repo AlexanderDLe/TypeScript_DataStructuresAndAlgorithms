@@ -14,6 +14,7 @@
  * otherwise return the minimal coins value.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const Utilities_1 = require("../utils/Utilities");
 const coinChange = (coins, amount) => {
     let DP = new Array(amount + 1).fill(amount + 1);
     DP[0] = 0;
@@ -23,6 +24,7 @@ const coinChange = (coins, amount) => {
                 DP[i] = Math.min(DP[i], DP[i - coin] + 1);
         }
     }
+    Utilities_1.PrintArray(DP);
     return DP[amount] > amount ? -1 : DP[amount];
 };
 exports.default = () => {
