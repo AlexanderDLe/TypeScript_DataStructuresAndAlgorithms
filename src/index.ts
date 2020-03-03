@@ -16,11 +16,11 @@ import IntervalsMain from './Intervals/IntervalsMain';
 function main() {
     // ArraysMain();
     // BinaryMain();
-    DPMain();
+    // DPMain();
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
-    // LinkedListMain();
+    LinkedListMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();

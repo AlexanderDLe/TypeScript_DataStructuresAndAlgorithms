@@ -7,6 +7,7 @@ import PalindromeLinkedList from './PalindromeLinkedList';
 import IntersectionOfTwoLinkedLists from './IntersectionOfTwoLinkedList';
 import SortList from './SortList';
 import RemoveNthNodeFromList from './RemoveNthNodeFromList';
+import AddTwoNumbers from './AddTwoNumbers';
 
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
@@ -17,7 +18,8 @@ const LinkedListMain = () => {
     // IntersectionOfTwoLinkedLists();
     // SortList();
     // LinkedListCycle2();
-    RemoveNthNodeFromList();
+    // RemoveNthNodeFromList();
+    AddTwoNumbers();
 };
 
 export default LinkedListMain;

@@ -3,15 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const DPMain_1 = __importDefault(require("./DP/DPMain"));
+const LinkedListMain_1 = __importDefault(require("./LinkedLists/LinkedListMain"));
 function main() {
     // ArraysMain();
     // BinaryMain();
-    DPMain_1.default();
+    // DPMain();
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
-    // LinkedListMain();
+    LinkedListMain_1.default();
     // MathMain();
     // MatrixMain();
     // QueuesMain();
