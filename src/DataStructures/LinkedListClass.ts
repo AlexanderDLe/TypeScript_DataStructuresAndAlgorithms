@@ -8,6 +8,21 @@ export class ListNode<T> {
         this.prev = null;
     }
 }
+
+export class RandomListNode<T> {
+    val: T;
+    next: RandomListNode<T> | null;
+    prev: RandomListNode<T> | null;
+    random: RandomListNode<T> | null;
+
+    constructor(val: T) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+        this.random = null;
+    }
+}
+
 export class LinkedList<T> {
     head: ListNode<T>;
     constructor(vals: T[]) {

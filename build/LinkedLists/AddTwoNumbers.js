@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 /**
  *  2. Add Two Numbers
  */
-Object.defineProperty(exports, '__esModule', { value: true });
-const LinkedListClass_1 = require('../DataStructures/LinkedListClass');
-const LinkedListClass_2 = require('../DataStructures/LinkedListClass');
+Object.defineProperty(exports, "__esModule", { value: true });
+const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
+const LinkedListClass_2 = require("../DataStructures/LinkedListClass");
 const addTwoNumbers = (l1, l2) => {
     let carry = 0;
     let dummy = new LinkedListClass_1.ListNode(0);

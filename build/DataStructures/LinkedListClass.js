@@ -8,6 +8,15 @@ class ListNode {
     }
 }
 exports.ListNode = ListNode;
+class RandomListNode {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+        this.random = null;
+    }
+}
+exports.RandomListNode = RandomListNode;
 class LinkedList {
     constructor(vals) {
         this.head = new ListNode(vals[0]);

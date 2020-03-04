@@ -2,7 +2,7 @@
  * 160. Intersection of Two Linked Lists
  */
 
-import { ListNode, PrintList } from '../DataStructures/LinkedListClass';
+import { ListNode } from '../DataStructures/LinkedListClass';
 
 type Node = ListNode<number> | null;
 
