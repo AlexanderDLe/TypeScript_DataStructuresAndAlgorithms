@@ -17,6 +17,7 @@ import TaskScheduler from './TaskScheduler';
 import SortColors from './SortColors';
 import FindFirstAndLostPositionOfElement from './FindFirstAndLastPositionofElement';
 import SearchInRotatedSortedArray from './SearchInRotatedSortedArray';
+import NextPermutation from './NextPermutation';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -37,7 +38,8 @@ const ArraysMain = () => {
     // TaskScheduler();
     // SortColors();
     // FindFirstAndLostPositionOfElement();
-    SearchInRotatedSortedArray();
+    // SearchInRotatedSortedArray();
+    NextPermutation();
 };
 
 export default ArraysMain;

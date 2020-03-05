@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SearchInRotatedSortedArray_1 = __importDefault(require("./SearchInRotatedSortedArray"));
+const NextPermutation_1 = __importDefault(require("./NextPermutation"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -23,6 +23,7 @@ const ArraysMain = () => {
     // TaskScheduler();
     // SortColors();
     // FindFirstAndLostPositionOfElement();
-    SearchInRotatedSortedArray_1.default();
+    // SearchInRotatedSortedArray();
+    NextPermutation_1.default();
 };
 exports.default = ArraysMain;

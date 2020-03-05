@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 /**
  *  138. Copy List With Random Pointer
  */
-Object.defineProperty(exports, '__esModule', { value: true });
-const LinkedListClass_1 = require('../DataStructures/LinkedListClass');
-const copyRandomList = head => {
+Object.defineProperty(exports, "__esModule", { value: true });
+const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
+const copyRandomList = (head) => {
     let dummy = new LinkedListClass_1.RandomListNode(0);
     let newHead = dummy;
     let n = head;
@@ -18,7 +18,8 @@ const copyRandomList = head => {
         n = n.next;
     }
     for (let i = 0; i < oldArr.length; i++) {
-        if (oldArr[i].random === null) newArr[i].random = null;
+        if (oldArr[i].random === null)
+            newArr[i].random = null;
         else {
             let index = oldArr.indexOf(oldArr[i].random);
             newArr[i].random = newArr[index];
