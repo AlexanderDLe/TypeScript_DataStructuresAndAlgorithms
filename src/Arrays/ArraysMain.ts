@@ -18,6 +18,7 @@ import SortColors from './SortColors';
 import FindFirstAndLostPositionOfElement from './FindFirstAndLastPositionofElement';
 import SearchInRotatedSortedArray from './SearchInRotatedSortedArray';
 import NextPermutation from './NextPermutation';
+import MaxProductSubarray from './MaximumProductSubarray';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -39,7 +40,8 @@ const ArraysMain = () => {
     // SortColors();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
-    NextPermutation();
+    // NextPermutation();
+    MaxProductSubarray();
 };
 
 export default ArraysMain;
