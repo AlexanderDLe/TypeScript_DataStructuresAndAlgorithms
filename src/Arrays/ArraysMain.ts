@@ -19,6 +19,7 @@ import FindFirstAndLostPositionOfElement from './FindFirstAndLastPositionofEleme
 import SearchInRotatedSortedArray from './SearchInRotatedSortedArray';
 import NextPermutation from './NextPermutation';
 import MaxProductSubarray from './MaximumProductSubarray';
+import LRUCache from './LRUCache';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -41,7 +42,8 @@ const ArraysMain = () => {
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();
-    MaxProductSubarray();
+    // MaxProductSubarray();
+    LRUCache();
 };
 
 export default ArraysMain;

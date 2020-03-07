@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MaximumProductSubarray_1 = __importDefault(require("./MaximumProductSubarray"));
+const LRUCache_1 = __importDefault(require("./LRUCache"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -25,6 +25,7 @@ const ArraysMain = () => {
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();
-    MaximumProductSubarray_1.default();
+    // MaxProductSubarray();
+    LRUCache_1.default();
 };
 exports.default = ArraysMain;
