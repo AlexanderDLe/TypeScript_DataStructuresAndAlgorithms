@@ -20,6 +20,7 @@ import SearchInRotatedSortedArray from './SearchInRotatedSortedArray';
 import NextPermutation from './NextPermutation';
 import MaxProductSubarray from './MaximumProductSubarray';
 import LRUCache from './LRUCache';
+import LongestSubstringWithoutRepeatingCharacters from './LongestSubstrWithoutRepeatingChars';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -43,7 +44,8 @@ const ArraysMain = () => {
     // SearchInRotatedSortedArray();
     // NextPermutation();
     // MaxProductSubarray();
-    LRUCache();
+    // LRUCache();
+    LongestSubstringWithoutRepeatingCharacters();
 };
 
 export default ArraysMain;

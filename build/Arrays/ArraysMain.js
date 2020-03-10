@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const LRUCache_1 = __importDefault(require("./LRUCache"));
+const LongestSubstrWithoutRepeatingChars_1 = __importDefault(require("./LongestSubstrWithoutRepeatingChars"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -26,6 +26,7 @@ const ArraysMain = () => {
     // SearchInRotatedSortedArray();
     // NextPermutation();
     // MaxProductSubarray();
-    LRUCache_1.default();
+    // LRUCache();
+    LongestSubstrWithoutRepeatingChars_1.default();
 };
 exports.default = ArraysMain;
