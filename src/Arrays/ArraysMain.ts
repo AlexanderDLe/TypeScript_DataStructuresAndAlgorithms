@@ -21,6 +21,7 @@ import NextPermutation from './NextPermutation';
 import MaxProductSubarray from './MaximumProductSubarray';
 import LRUCache from './LRUCache';
 import LongestSubstringWithoutRepeatingCharacters from './LongestSubstrWithoutRepeatingChars';
+import LongestPalindromicSubstring from './LongestPalindromicSubstring';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -45,7 +46,8 @@ const ArraysMain = () => {
     // NextPermutation();
     // MaxProductSubarray();
     // LRUCache();
-    LongestSubstringWithoutRepeatingCharacters();
+    // LongestSubstringWithoutRepeatingCharacters();
+    LongestPalindromicSubstring();
 };
 
 export default ArraysMain;

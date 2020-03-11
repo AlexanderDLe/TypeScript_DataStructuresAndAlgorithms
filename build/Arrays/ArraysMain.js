@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const LongestSubstrWithoutRepeatingChars_1 = __importDefault(require("./LongestSubstrWithoutRepeatingChars"));
+const LongestPalindromicSubstring_1 = __importDefault(require("./LongestPalindromicSubstring"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -27,6 +27,7 @@ const ArraysMain = () => {
     // NextPermutation();
     // MaxProductSubarray();
     // LRUCache();
-    LongestSubstrWithoutRepeatingChars_1.default();
+    // LongestSubstringWithoutRepeatingCharacters();
+    LongestPalindromicSubstring_1.default();
 };
 exports.default = ArraysMain;
