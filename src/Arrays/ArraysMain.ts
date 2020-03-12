@@ -22,6 +22,7 @@ import MaxProductSubarray from './MaximumProductSubarray';
 import LRUCache from './LRUCache';
 import LongestSubstringWithoutRepeatingCharacters from './LongestSubstrWithoutRepeatingChars';
 import LongestPalindromicSubstring from './LongestPalindromicSubstring';
+import SquaresOfASortedArray from './SquaresOfASortedArray';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -47,7 +48,8 @@ const ArraysMain = () => {
     // MaxProductSubarray();
     // LRUCache();
     // LongestSubstringWithoutRepeatingCharacters();
-    LongestPalindromicSubstring();
+    // LongestPalindromicSubstring();
+    SquaresOfASortedArray();
 };
 
 export default ArraysMain;

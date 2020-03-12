@@ -28,11 +28,33 @@ const longestPalindrome = (s) => {
                 }
                 matrix[row][col] = 1;
             }
+            if (row > col - max.length)
+                break;
+        }
+    }
+    return max;
+};
+const longestPalindromeB = (s) => {
+    let max = '';
+    // Iterate through string
+    for (let i = 0; i < s.length; i++) {
+        // Every iteration, j will be 0 or 1 (even or odd)
+        for (let j = 0; j < 2; j++) {
+            let left = i;
+            let right = i + j;
+            // expand palindrome outwards while outermost values are equal
+            while (s[left] && s[left] === s[right]) {
+                left--;
+                right++;
+            }
+            if (right - left - 1 > max.length) {
+                max = s.substring(left + 1, right);
+            }
         }
     }
     return max;
 };
 exports.default = () => {
-    const s = 'aaaa';
-    console.log(longestPalindrome(s));
+    const s = 'aabbaca';
+    console.log(longestPalindromeB(s));
 };
