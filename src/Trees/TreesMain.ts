@@ -13,6 +13,7 @@ import UniqueBinaryTrees from './UniqueBinaryTrees';
 import ConstructBSTFromPreorderAndInorderTraversal from './ConstructBSTFromPreorderAndInorder';
 import ImplementPrefixTrie from './ImplementPrefixTrie';
 import LowestCommonAncestorOfBST from './LowestCommonAncestorOfABST';
+import ValidateBinarySearchTree from './ValidateBinarySearchTree';
 
 const TreesMain = () => {
     //RangeSum();
@@ -28,7 +29,8 @@ const TreesMain = () => {
     // UniqueBinaryTrees();
     // ConstructBSTFromPreorderAndInorderTraversal();
     // ImplementPrefixTrie();
-    LowestCommonAncestorOfBST();
+    // LowestCommonAncestorOfBST();
+    ValidateBinarySearchTree();
 };
 
 export default TreesMain;
