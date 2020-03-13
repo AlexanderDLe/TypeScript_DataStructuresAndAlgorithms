@@ -20,6 +20,20 @@ const isValidBST = (root) => {
     let rightDFS = DFS(root.right, root.val, Number.POSITIVE_INFINITY);
     return leftDFS && rightDFS ? true : false;
 };
+const isValidBSTB = (root) => {
+    if (!root)
+        return true;
+    const DFS = (root, min, max) => {
+        if (!root)
+            return true;
+        if (min !== null && root.val <= min)
+            return false;
+        if (max !== null && root.val >= max)
+            return false;
+        return DFS(root.left, min, root.val) && DFS(root.right, root.val, max);
+    };
+    return DFS(root, null, null);
+};
 exports.default = () => {
     const t1 = new TreeClass_1.TreeNode(2);
     t1.left = new TreeClass_1.TreeNode(1);
@@ -29,5 +43,5 @@ exports.default = () => {
     t2.right = new TreeClass_1.TreeNode(4);
     t2.right.left = new TreeClass_1.TreeNode(3);
     t2.right.right = new TreeClass_1.TreeNode(6);
-    console.log(isValidBST(t2));
+    console.log(isValidBSTB(t1));
 };
