@@ -30,7 +30,7 @@ const isValidBSTB = (root: Node): boolean => {
 
     return DFS(root, null, null);
 };
-
+//
 export default () => {
     const t1 = new TreeNode(2);
     t1.left = new TreeNode(1);
