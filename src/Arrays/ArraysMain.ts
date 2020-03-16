@@ -23,6 +23,7 @@ import LRUCache from './LRUCache';
 import LongestSubstringWithoutRepeatingCharacters from './LongestSubstrWithoutRepeatingChars';
 import LongestPalindromicSubstring from './LongestPalindromicSubstring';
 import SquaresOfASortedArray from './SquaresOfASortedArray';
+import ThreeSum from './ThreeSum';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -49,7 +50,8 @@ const ArraysMain = () => {
     // LRUCache();
     // LongestSubstringWithoutRepeatingCharacters();
     // LongestPalindromicSubstring();
-    SquaresOfASortedArray();
+    // SquaresOfASortedArray();
+    ThreeSum();
 };
 
 export default ArraysMain;

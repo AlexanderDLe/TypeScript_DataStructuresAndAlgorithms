@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SquaresOfASortedArray_1 = __importDefault(require("./SquaresOfASortedArray"));
+const ThreeSum_1 = __importDefault(require("./ThreeSum"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -29,6 +29,7 @@ const ArraysMain = () => {
     // LRUCache();
     // LongestSubstringWithoutRepeatingCharacters();
     // LongestPalindromicSubstring();
-    SquaresOfASortedArray_1.default();
+    // SquaresOfASortedArray();
+    ThreeSum_1.default();
 };
 exports.default = ArraysMain;

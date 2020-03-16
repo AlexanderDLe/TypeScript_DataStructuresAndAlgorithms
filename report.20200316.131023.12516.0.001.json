@@ -1,0 +1,153 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200316.131023.12516.0.001.json",
+    "dumpEventTime": "2020-03-16T13:10:23Z",
+    "dumpEventTimeStamp": "1584389423632",
+    "processId": 12516,
+    "cwd": "E:\\Coding\\TypeScript_DataStructuresAndAlgorithms",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "build/index.js"
+    ],
+    "nodejsVersion": "v12.15.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.15.0",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.15.0/node-v12.15.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.15.0/node-v12.15.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.15.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Pro N",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 64340312,
+        "nice": 0,
+        "sys": 13042984,
+        "idle": 55032046,
+        "irq": 3789375
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 65612312,
+        "nice": 0,
+        "sys": 6745781,
+        "idle": 60057140,
+        "irq": 259343
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 79099203,
+        "nice": 0,
+        "sys": 4520890,
+        "idle": 48795140,
+        "irq": 115359
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 69964000,
+        "nice": 0,
+        "sys": 3143828,
+        "idle": 59307406,
+        "irq": 121296
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 64354781,
+        "nice": 0,
+        "sys": 6700937,
+        "idle": 61359531,
+        "irq": 148359
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 64375328,
+        "nice": 0,
+        "sys": 4344562,
+        "idle": 63695359,
+        "irq": 135171
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 67764828,
+        "nice": 0,
+        "sys": 4438328,
+        "idle": 60212093,
+        "irq": 128500
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+        "speed": 3499,
+        "user": 68818468,
+        "nice": 0,
+        "sys": 3853812,
+        "idle": 59742968,
+        "irq": 122781
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "bc:5f:f4:ea:37:63",
+        "address": "2600:1700:7860:c630::2a",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "bc:5f:f4:ea:37:63",
+        "address": "2600:1700:7860:c630:10f8:d8db:9f8f:f8f6",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "bc:5f:f4:ea:37:63",
+        "address": "2600:1700:7860:c630:5133:a8d:5669:e21e",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Ethernet",
+        "interna
