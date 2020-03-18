@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ThreeSum_1 = __importDefault(require("./ThreeSum"));
+const BurstBalloons_1 = __importDefault(require("./BurstBalloons"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -30,6 +30,7 @@ const ArraysMain = () => {
     // LongestSubstringWithoutRepeatingCharacters();
     // LongestPalindromicSubstring();
     // SquaresOfASortedArray();
-    ThreeSum_1.default();
+    // ThreeSum();
+    BurstBalloons_1.default();
 };
 exports.default = ArraysMain;
