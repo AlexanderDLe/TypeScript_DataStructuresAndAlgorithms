@@ -8,6 +8,7 @@ import PartitionEqualSubsetSum from './PartitionEqualSubsetSum';
 import LongestIncreasingSubsequence from './LongestIncreasingSubsequence';
 import CoinChange from './CoinChange';
 import JumpGame from './JumpGame';
+import BurstBalloons from './BurstBalloons';
 
 const DPMain = () => {
     // PalindromicSubstrings();
@@ -19,7 +20,8 @@ const DPMain = () => {
     // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();
     // CoinChange();
-    JumpGame();
+    // JumpGame();
+    BurstBalloons();
 };
 
 export default DPMain;

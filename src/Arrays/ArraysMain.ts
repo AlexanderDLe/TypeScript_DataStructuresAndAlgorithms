@@ -24,7 +24,6 @@ import LongestSubstringWithoutRepeatingCharacters from './LongestSubstrWithoutRe
 import LongestPalindromicSubstring from './LongestPalindromicSubstring';
 import SquaresOfASortedArray from './SquaresOfASortedArray';
 import ThreeSum from './ThreeSum';
-import BurstBalloons from './BurstBalloons';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -53,7 +52,6 @@ const ArraysMain = () => {
     // LongestPalindromicSubstring();
     // SquaresOfASortedArray();
     // ThreeSum();
-    BurstBalloons();
 };
 
 export default ArraysMain;

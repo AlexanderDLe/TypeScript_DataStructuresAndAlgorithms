@@ -16,7 +16,7 @@ import IntervalsMain from './Intervals/IntervalsMain';
 function main() {
     // ArraysMain();
     // BinaryMain();
-    // DPMain();
+    DPMain();
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
@@ -26,7 +26,7 @@ function main() {
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    StringsMain();
+    // StringsMain();
     // TreesMain();
 }
 

@@ -4,6 +4,7 @@ import DecodeString from './DecodeString';
 import FindAllAnagramsInAString from './FindAllAnagramsInAString';
 import WordBreak from './WordBreak';
 import ReverseString from './ReverseString';
+import FizzBuzz from './FizzBuzz';
 
 export default () => {
     // ValidParentheses();
@@ -11,5 +12,6 @@ export default () => {
     // DecodeString();
     // FindAllAnagramsInAString();
     // WordBreak();
-    ReverseString();
+    // ReverseString();
+    FizzBuzz();
 };
