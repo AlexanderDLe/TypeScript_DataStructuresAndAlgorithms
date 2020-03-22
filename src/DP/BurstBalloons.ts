@@ -32,8 +32,8 @@ const maxCoinsB = (nums: number[]): number => {
     let dp = [...Array(n + 2)].map(() => Array(n + 2).fill(0));
 
     for (let window = 1; window <= n; window++) {
-        for (let left = 1; left + window <= n + 1; left++) {
-            const right = left + window - 1;
+        for (let left = 1; left + window - 1 <= n; left++) {
+            let right = left + window - 1;
             for (let burst = left; burst <= right; burst++) {
                 dp[left][right] = Math.max(
                     dp[left][right],
