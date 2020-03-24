@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CopyListWithRandomPointer_1 = __importDefault(require("./CopyListWithRandomPointer"));
+const DeleteNodeInLinkedList_1 = __importDefault(require("./DeleteNodeInLinkedList"));
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
     // ReverseLinkedList();
@@ -15,6 +15,7 @@ const LinkedListMain = () => {
     // LinkedListCycle2();
     // RemoveNthNodeFromList();
     // AddTwoNumbers();
-    CopyListWithRandomPointer_1.default();
+    // CopyListWithRandomPointer();
+    DeleteNodeInLinkedList_1.default();
 };
 exports.default = LinkedListMain;

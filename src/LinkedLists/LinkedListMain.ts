@@ -9,6 +9,7 @@ import SortList from './SortList';
 import RemoveNthNodeFromList from './RemoveNthNodeFromList';
 import AddTwoNumbers from './AddTwoNumbers';
 import CopyListWithRandomPointer from './CopyListWithRandomPointer';
+import DeleteNodeFromLinkedList from './DeleteNodeInLinkedList';
 
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
@@ -21,7 +22,8 @@ const LinkedListMain = () => {
     // LinkedListCycle2();
     // RemoveNthNodeFromList();
     // AddTwoNumbers();
-    CopyListWithRandomPointer();
+    // CopyListWithRandomPointer();
+    DeleteNodeFromLinkedList();
 };
 
 export default LinkedListMain;
