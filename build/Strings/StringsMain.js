@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const FizzBuzz_1 = __importDefault(require("./FizzBuzz"));
+const ValidAnagram_1 = __importDefault(require("./ValidAnagram"));
 exports.default = () => {
     // ValidParentheses();
     // MinimumWindowSubstring();
@@ -11,5 +11,6 @@ exports.default = () => {
     // FindAllAnagramsInAString();
     // WordBreak();
     // ReverseString();
-    FizzBuzz_1.default();
+    // FizzBuzz();
+    ValidAnagram_1.default();
 };
