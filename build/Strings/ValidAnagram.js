@@ -1,10 +1,11 @@
-'use strict';
+"use strict";
 /**
  *  242. Valid Anagram
  */
-Object.defineProperty(exports, '__esModule', { value: true });
+Object.defineProperty(exports, "__esModule", { value: true });
 const isAnagram = (s, t) => {
-    if (s.length !== t.length) return false;
+    if (s.length !== t.length)
+        return false;
     let table = {};
     let count = 0;
     for (let c of s) {
@@ -12,7 +13,8 @@ const isAnagram = (s, t) => {
         count++;
     }
     for (let c of t) {
-        if (!table[c]) return false;
+        if (!table[c])
+            return false;
         else {
             table[c]--;
             count--;

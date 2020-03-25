@@ -26,8 +26,8 @@ function main() {
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    StringsMain();
-    // TreesMain();
+    // StringsMain();
+    TreesMain();
 }
 
 main();
