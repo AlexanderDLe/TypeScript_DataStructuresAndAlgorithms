@@ -6,6 +6,7 @@ import WordBreak from './WordBreak';
 import ReverseString from './ReverseString';
 import FizzBuzz from './FizzBuzz';
 import ValidAnagram from './ValidAnagram';
+import RomanToInteger from './RomanToInteger';
 
 export default () => {
     // ValidParentheses();
@@ -15,5 +16,6 @@ export default () => {
     // WordBreak();
     // ReverseString();
     // FizzBuzz();
-    ValidAnagram();
+    // ValidAnagram();
+    RomanToInteger();
 };
