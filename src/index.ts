@@ -14,7 +14,7 @@ import GraphsMain from './Graphs/GraphsMain';
 import IntervalsMain from './Intervals/IntervalsMain';
 
 function main() {
-    // ArraysMain();
+    ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
@@ -26,7 +26,7 @@ function main() {
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    StringsMain();
+    // StringsMain();
     // TreesMain();
 }
 

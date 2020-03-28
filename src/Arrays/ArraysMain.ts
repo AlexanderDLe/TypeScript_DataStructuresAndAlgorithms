@@ -25,6 +25,7 @@ import LongestPalindromicSubstring from './LongestPalindromicSubstring';
 import SquaresOfASortedArray from './SquaresOfASortedArray';
 import ThreeSum from './ThreeSum';
 import ContainsDuplicate from './ContainsDuplicate';
+import BestTimeToBuyAndSellStock2 from './BestTimeToBuyAndSellStock2';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -53,7 +54,8 @@ const ArraysMain = () => {
     // LongestPalindromicSubstring();
     // SquaresOfASortedArray();
     // ThreeSum();
-    ContainsDuplicate();
+    // ContainsDuplicate();
+    BestTimeToBuyAndSellStock2();
 };
 
 export default ArraysMain;

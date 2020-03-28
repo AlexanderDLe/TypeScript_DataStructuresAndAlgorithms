@@ -1,12 +1,9 @@
-'use strict';
+"use strict";
 /**
  *  13. Roman To isInteger
- * 
-    If the current integer is smaller than the integer to its right,
-    then simply subtract the smaller integer - otherwise, add.
  */
-Object.defineProperty(exports, '__esModule', { value: true });
-const romanToInt = s => {
+Object.defineProperty(exports, "__esModule", { value: true });
+const romanToInt = (s) => {
     const T = {
         I: 1,
         V: 5,
@@ -18,8 +15,10 @@ const romanToInt = s => {
     };
     let total = T[s[s.length - 1]];
     for (let i = s.length - 2; i >= 0; i--) {
-        if (T[s[i]] < T[s[i + 1]]) total -= T[s[i]];
-        else total += T[s[i]];
+        if (T[s[i]] < T[s[i + 1]])
+            total -= T[s[i]];
+        else
+            total += T[s[i]];
     }
     return total;
 };
