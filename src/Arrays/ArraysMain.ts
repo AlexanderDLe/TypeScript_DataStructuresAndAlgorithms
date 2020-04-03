@@ -26,6 +26,7 @@ import SquaresOfASortedArray from './SquaresOfASortedArray';
 import ThreeSum from './ThreeSum';
 import ContainsDuplicate from './ContainsDuplicate';
 import BestTimeToBuyAndSellStock2 from './BestTimeToBuyAndSellStock2';
+import PascalsTriangle from './PascalsTriangle';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
@@ -55,7 +56,8 @@ const ArraysMain = () => {
     // SquaresOfASortedArray();
     // ThreeSum();
     // ContainsDuplicate();
-    BestTimeToBuyAndSellStock2();
+    // BestTimeToBuyAndSellStock2();
+    PascalsTriangle();
 };
 
 export default ArraysMain;

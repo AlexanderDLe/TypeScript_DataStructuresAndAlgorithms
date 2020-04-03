@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const BestTimeToBuyAndSellStock2_1 = __importDefault(require("./BestTimeToBuyAndSellStock2"));
+const PascalsTriangle_1 = __importDefault(require("./PascalsTriangle"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
@@ -32,6 +32,7 @@ const ArraysMain = () => {
     // SquaresOfASortedArray();
     // ThreeSum();
     // ContainsDuplicate();
-    BestTimeToBuyAndSellStock2_1.default();
+    // BestTimeToBuyAndSellStock2();
+    PascalsTriangle_1.default();
 };
 exports.default = ArraysMain;
