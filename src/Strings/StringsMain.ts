@@ -7,6 +7,7 @@ import ReverseString from './ReverseString';
 import FizzBuzz from './FizzBuzz';
 import ValidAnagram from './ValidAnagram';
 import RomanToInteger from './RomanToInteger';
+import FirstUniqueCharInAString from './FirstUniqueCharacterInString';
 
 export default () => {
     // ValidParentheses();
@@ -17,5 +18,6 @@ export default () => {
     // ReverseString();
     // FizzBuzz();
     // ValidAnagram();
-    RomanToInteger();
+    // RomanToInteger();
+    FirstUniqueCharInAString();
 };

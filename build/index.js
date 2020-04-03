@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MathMain_1 = __importDefault(require("./Math/MathMain"));
+const StringsMain_1 = __importDefault(require("./Strings/StringsMain"));
 function main() {
     // ArraysMain();
     // BinaryMain();
@@ -12,12 +12,12 @@ function main() {
     // HeapsMain();
     // IntervalsMain();
     // LinkedListMain();
-    MathMain_1.default();
+    // MathMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    // StringsMain();
+    StringsMain_1.default();
     // TreesMain();
 }
 main();

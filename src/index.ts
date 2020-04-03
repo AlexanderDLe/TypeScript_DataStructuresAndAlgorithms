@@ -21,12 +21,12 @@ function main() {
     // HeapsMain();
     // IntervalsMain();
     // LinkedListMain();
-    MathMain();
+    // MathMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
-    // StringsMain();
+    StringsMain();
     // TreesMain();
 }
 

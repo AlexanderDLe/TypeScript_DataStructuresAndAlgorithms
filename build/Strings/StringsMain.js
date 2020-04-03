@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const RomanToInteger_1 = __importDefault(require("./RomanToInteger"));
+const FirstUniqueCharacterInString_1 = __importDefault(require("./FirstUniqueCharacterInString"));
 exports.default = () => {
     // ValidParentheses();
     // MinimumWindowSubstring();
@@ -13,5 +13,6 @@ exports.default = () => {
     // ReverseString();
     // FizzBuzz();
     // ValidAnagram();
-    RomanToInteger_1.default();
+    // RomanToInteger();
+    FirstUniqueCharacterInString_1.default();
 };
