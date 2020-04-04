@@ -14,8 +14,8 @@ import GraphsMain from './Graphs/GraphsMain';
 import IntervalsMain from './Intervals/IntervalsMain';
 
 function main() {
-    ArraysMain();
-    // BinaryMain();
+    // ArraysMain();
+    BinaryMain();
     // DPMain();
     // GraphsMain();
     // HeapsMain();
