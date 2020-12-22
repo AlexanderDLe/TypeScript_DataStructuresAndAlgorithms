@@ -20,7 +20,7 @@ const TreesMain = () => {
     //RangeSum();
     // InvertBinaryTree();
     // MergeTwoBinaryTrees();
-    // MaximumDepthOfBinaryTree();
+    MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
     // SymmetricTree();
     // PathSum3();
@@ -32,7 +32,7 @@ const TreesMain = () => {
     // ImplementPrefixTrie();
     // LowestCommonAncestorOfBST();
     // ValidateBinarySearchTree();
-    ConvertedSortedArrayIntoBST();
+    // ConvertedSortedArrayIntoBST();
 };
 
 export default TreesMain;

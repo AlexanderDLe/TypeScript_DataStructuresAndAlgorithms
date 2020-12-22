@@ -16,5 +16,5 @@ const reverseString = (s: string[]): void => {
 
 export default () => {
     const s = ['h', 'e', 'l', 'l', 'o'];
-    console.log(reverseString(s));
+    reverseString(s);
 };

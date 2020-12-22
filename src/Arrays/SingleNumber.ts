@@ -6,6 +6,26 @@ import { PrintArray } from '../utils/Utilities';
 
 const singleNumber = (nums: number[]): number => {
     let set: any = new Set([]);
+    let res: number = 0;
+
+    for (let i of nums) {
+        if (set.has(i)) set.delete(i);
+        else set.add(i);
+    }
+    set.forEach((val: number) => {
+        res = val;
+    });
+
+    return res;
+};
+
+export default () => {
+    const nums = [4, 1, 2, 1, 2];
+    PrintArray(nums);
+    console.log(singleNumber(nums));
+};
+/* const singleNumber = (nums: number[]): number => {
+    let set: any = new Set([]);
     let result: number;
 
     for (let i of nums) {
@@ -28,4 +48,4 @@ export default () => {
     const nums = [4, 1, 2, 1, 2];
     PrintArray(nums);
     console.log(singleNumber(nums));
-};
+}; */

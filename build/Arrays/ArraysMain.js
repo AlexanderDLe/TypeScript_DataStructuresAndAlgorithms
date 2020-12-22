@@ -3,12 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const PascalsTriangle_1 = __importDefault(require("./PascalsTriangle"));
+const SingleNumber_1 = __importDefault(require("./SingleNumber"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
     // TwoSum2();
-    // SingleNumber();
+    SingleNumber_1.default();
     // MoveZeroes();
     // MajorityElement();
     // FindDisappearedNumbersInArray();
@@ -33,6 +33,6 @@ const ArraysMain = () => {
     // ThreeSum();
     // ContainsDuplicate();
     // BestTimeToBuyAndSellStock2();
-    PascalsTriangle_1.default();
+    // PascalsTriangle();
 };
 exports.default = ArraysMain;
