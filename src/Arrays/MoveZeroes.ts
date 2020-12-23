@@ -4,6 +4,18 @@
 
 import { PrintArray } from '../utils/Utilities';
 
+const moveZeroes = (nums: number[]): void => {
+    let searchLength = nums.length;
+    for (let i = 0; i < searchLength; i++) {
+        if (nums[i] === 0) {
+            nums.push(0);
+            nums.splice(i, 1);
+            searchLength--;
+            i--;
+        }
+    }
+};
+
 const moveZeroesSwapping = (nums: number[]): void => {
     if (nums.length < 2) return;
     let L = 0,
@@ -22,21 +34,8 @@ const moveZeroesSwapping = (nums: number[]): void => {
     }
 };
 
-const moveZeroesSplicing = (nums: number[]): void => {
-    if (!nums.length) return;
-    let len = nums.length;
-    for (let i = 0; i < len; i++) {
-        if (nums[i] === 0) {
-            nums.splice(i, 1);
-            nums.push(0);
-            i--;
-            len--;
-        }
-    }
-};
-
 export default () => {
     const nums = [0, 1, 0, 3, 12];
-    moveZeroesSplicing(nums);
+    moveZeroes(nums);
     PrintArray(nums);
 };

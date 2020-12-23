@@ -10,7 +10,7 @@ const romanToInt = (s: string): number => {
         L: 50,
         C: 100,
         D: 500,
-        M: 1000
+        M: 1000,
     };
     let total = T[s[s.length - 1]];
 

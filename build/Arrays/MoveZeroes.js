@@ -4,6 +4,17 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
+const moveZeroes = (nums) => {
+    let searchLength = nums.length;
+    for (let i = 0; i < searchLength; i++) {
+        if (nums[i] === 0) {
+            nums.push(0);
+            nums.splice(i, 1);
+            searchLength--;
+            i--;
+        }
+    }
+};
 const moveZeroesSwapping = (nums) => {
     if (nums.length < 2)
         return;
@@ -23,21 +34,8 @@ const moveZeroesSwapping = (nums) => {
         }
     }
 };
-const moveZeroesSplicing = (nums) => {
-    if (!nums.length)
-        return;
-    let len = nums.length;
-    for (let i = 0; i < len; i++) {
-        if (nums[i] === 0) {
-            nums.splice(i, 1);
-            nums.push(0);
-            i--;
-            len--;
-        }
-    }
-};
 exports.default = () => {
     const nums = [0, 1, 0, 3, 12];
-    moveZeroesSplicing(nums);
+    moveZeroes(nums);
     Utilities_1.PrintArray(nums);
 };

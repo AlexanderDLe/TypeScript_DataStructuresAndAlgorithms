@@ -3,12 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SingleNumber_1 = __importDefault(require("./SingleNumber"));
+const ContainsDuplicate_1 = __importDefault(require("./ContainsDuplicate"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
     // TwoSum2();
-    SingleNumber_1.default();
+    // SingleNumber();
     // MoveZeroes();
     // MajorityElement();
     // FindDisappearedNumbersInArray();
@@ -31,7 +31,7 @@ const ArraysMain = () => {
     // LongestPalindromicSubstring();
     // SquaresOfASortedArray();
     // ThreeSum();
-    // ContainsDuplicate();
+    ContainsDuplicate_1.default();
     // BestTimeToBuyAndSellStock2();
     // PascalsTriangle();
 };

@@ -4,6 +4,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const isAnagram = (s, t) => {
+    console.log(s.split('').sort());
+    console.log(t.split('').sort());
+    return s.split('').sort().join() == t.split('').sort().join();
+};
+const isAnagramOld = (s, t) => {
     if (s.length !== t.length)
         return false;
     let table = {};
@@ -26,5 +31,5 @@ exports.default = () => {
     const s = 'anagram';
     const t = 'nagaram';
     const r = 'nagrana';
-    console.log(isAnagram(s, r));
+    console.log(isAnagram(s, t));
 };

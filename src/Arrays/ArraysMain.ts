@@ -32,7 +32,7 @@ const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
     // TwoSum2();
-    SingleNumber();
+    // SingleNumber();
     // MoveZeroes();
     // MajorityElement();
     // FindDisappearedNumbersInArray();
@@ -55,7 +55,7 @@ const ArraysMain = () => {
     // LongestPalindromicSubstring();
     // SquaresOfASortedArray();
     // ThreeSum();
-    // ContainsDuplicate();
+    ContainsDuplicate();
     // BestTimeToBuyAndSellStock2();
     // PascalsTriangle();
 };

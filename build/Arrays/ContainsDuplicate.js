@@ -4,6 +4,15 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const containsDuplicate = (nums) => {
+    let set = new Set([]);
+    for (let i of nums) {
+        if (set.has(i))
+            return true;
+        set.add(i);
+    }
+    return false;
+};
+const containsDuplicateOld = (nums) => {
     const table = {};
     for (let num of nums) {
         table[num] = (table[num] || 0) + 1;

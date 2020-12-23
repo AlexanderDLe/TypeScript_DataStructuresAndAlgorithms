@@ -11,7 +11,7 @@ const romanToInt = (s) => {
         L: 50,
         C: 100,
         D: 500,
-        M: 1000
+        M: 1000,
     };
     let total = T[s[s.length - 1]];
     for (let i = s.length - 2; i >= 0; i--) {

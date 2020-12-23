@@ -8,6 +8,18 @@ type Node = TreeNode<number> | null;
 const sortedArrayToBST = (nums: number[]): Node => {
     if (!nums.length) return null;
 
+    let mid = Math.floor(nums.length / 2);
+    let node: Node = new TreeNode(nums[mid]);
+
+    node.left = sortedArrayToBST(nums.slice(0, mid));
+    node.right = sortedArrayToBST(nums.slice(mid + 1, nums.length));
+
+    return node;
+};
+
+const sortedArrayToBSTOld = (nums: number[]): Node => {
+    if (!nums.length) return null;
+
     const createNode = (left: number, right: number): Node => {
         if (left > right) return null;
         let mid = Math.floor((left + right) / 2);

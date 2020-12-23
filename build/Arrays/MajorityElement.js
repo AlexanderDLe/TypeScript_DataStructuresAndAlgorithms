@@ -4,6 +4,19 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const majorityElement = (nums) => {
+    let result;
+    let map = {};
+    let max = 0;
+    for (let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+        if (map[num] > max) {
+            max = map[num];
+            result = num;
+        }
+    }
+    return result;
+};
+const majorityElementB = (nums) => {
     let majority = Math.floor(nums.length / 2);
     let map = {};
     for (const i of nums) {

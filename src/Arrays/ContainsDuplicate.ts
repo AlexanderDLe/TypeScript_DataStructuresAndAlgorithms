@@ -3,6 +3,16 @@
  */
 
 const containsDuplicate = (nums: number[]): boolean => {
+    let set = new Set([]);
+
+    for (let i of nums) {
+        if (set.has(i)) return true;
+        set.add(i);
+    }
+    return false;
+};
+
+const containsDuplicateOld = (nums: number[]): boolean => {
     const table: { [key: number]: number } = {};
 
     for (let num of nums) {

@@ -13,7 +13,7 @@ import DeleteNodeFromLinkedList from './DeleteNodeInLinkedList';
 
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
-    // ReverseLinkedList();
+    ReverseLinkedList();
     // MergedTwoSortedLists();
     // LinkedListCycle();
     // PalindromeLinkedList();
@@ -23,7 +23,7 @@ const LinkedListMain = () => {
     // RemoveNthNodeFromList();
     // AddTwoNumbers();
     // CopyListWithRandomPointer();
-    DeleteNodeFromLinkedList();
+    // DeleteNodeFromLinkedList();
 };
 
 export default LinkedListMain;

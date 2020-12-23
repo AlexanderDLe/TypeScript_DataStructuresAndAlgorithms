@@ -3,6 +3,14 @@
  */
 
 const maxProfit = (prices: number[]): number => {
+    let total = 0;
+    for (let i = prices.length - 1; i > 0; i--) {
+        total += Math.max(0, prices[i] - prices[i - 1]);
+    }
+    return total;
+};
+
+const maxProfitOld = (prices: number[]): number => {
     let profit = 0;
     let curr = prices[prices.length - 1];
 

@@ -4,16 +4,16 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const titleToNumber = (s) => {
-    let number = 0;
-    let exponent = 0;
+    let total = 0;
+    let exp = 0;
     for (let i = s.length - 1; i >= 0; i--) {
         let val = s.charCodeAt(i) - 64;
-        number += val * Math.pow(26, exponent);
-        exponent++;
+        total += Math.pow(26, exp) * val;
+        exp++;
     }
-    return number;
+    return total;
 };
 exports.default = () => {
-    const str = 'AAA';
+    const str = 'AB';
     console.log(titleToNumber(str));
 };

@@ -7,6 +7,15 @@ const TreeClass_1 = require("../DataStructures/TreeClass");
 const sortedArrayToBST = (nums) => {
     if (!nums.length)
         return null;
+    let mid = Math.floor(nums.length / 2);
+    let node = new TreeClass_1.TreeNode(nums[mid]);
+    node.left = sortedArrayToBST(nums.slice(0, mid));
+    node.right = sortedArrayToBST(nums.slice(mid + 1, nums.length));
+    return node;
+};
+const sortedArrayToBSTOld = (nums) => {
+    if (!nums.length)
+        return null;
     const createNode = (left, right) => {
         if (left > right)
             return null;

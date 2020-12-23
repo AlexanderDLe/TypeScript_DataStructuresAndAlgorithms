@@ -4,6 +4,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const maxProfit = (prices) => {
+    let total = 0;
+    for (let i = prices.length - 1; i > 0; i--) {
+        total += Math.max(0, prices[i] - prices[i - 1]);
+    }
+    return total;
+};
+const maxProfitOld = (prices) => {
     let profit = 0;
     let curr = prices[prices.length - 1];
     for (let i = prices.length - 2; i >= 0; i--) {

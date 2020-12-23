@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
 const reverseList = (head) => {
     if (!head)
-        return head;
+        return null;
     let p = head;
     let q = null;
     let r = null;
@@ -14,11 +14,17 @@ const reverseList = (head) => {
         r = q;
         q = p;
         p = p.next;
-        if (q)
-            q.next = r;
+        q.next = r;
     }
-    head = q;
-    return head;
+    return q;
+};
+const reverseListRecursively = (head) => {
+    if (!head || !head.next)
+        return null;
+    let p = reverseListRecursively(head.next);
+    head.next.next = head;
+    head.next = null;
+    return p;
 };
 exports.default = () => {
     let nums = [1, 2, 3, 4, 5];

@@ -3,19 +3,19 @@
  */
 
 const titleToNumber = (s: string): number => {
-    let number = 0;
-    let exponent = 0;
+    let total = 0;
+    let exp = 0;
 
     for (let i = s.length - 1; i >= 0; i--) {
         let val = s.charCodeAt(i) - 64;
-        number += val * Math.pow(26, exponent);
-        exponent++;
+        total += Math.pow(26, exp) * val;
+        exp++;
     }
 
-    return number;
+    return total;
 };
 
 export default () => {
-    const str = 'AAA';
+    const str = 'AB';
     console.log(titleToNumber(str));
 };

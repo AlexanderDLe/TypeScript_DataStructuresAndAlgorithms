@@ -4,27 +4,33 @@
 import {
     ListNode,
     LinkedList,
-    PrintList
+    PrintList,
 } from '../DataStructures/LinkedListClass';
 
-const reverseList = (
-    head: ListNode<number> | null
-): ListNode<number> | null => {
-    if (!head) return head;
+type Node = ListNode<number> | null;
 
-    let p: ListNode<number> | null = head;
-    let q: ListNode<number> | null = null;
-    let r: ListNode<number> | null = null;
+const reverseList = (head: Node): Node => {
+    if (!head) return null;
+    let p: Node = head;
+    let q: Node = null;
+    let r: Node = null;
 
     while (p) {
         r = q;
         q = p;
         p = p.next;
-        if (q) q.next = r;
+        q.next = r;
     }
 
-    head = q;
-    return head;
+    return q;
+};
+
+const reverseListRecursively = (head: Node): Node => {
+    if (!head || !head.next) return null;
+    let p = reverseListRecursively(head.next);
+    head.next.next = head;
+    head.next = null;
+    return p;
 };
 
 export default () => {

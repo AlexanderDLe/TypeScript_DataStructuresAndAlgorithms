@@ -3,6 +3,12 @@
  */
 
 const isAnagram = (s: string, t: string): boolean => {
+    console.log(s.split('').sort());
+    console.log(t.split('').sort());
+    return s.split('').sort().join() == t.split('').sort().join();
+};
+
+const isAnagramOld = (s: string, t: string): boolean => {
     if (s.length !== t.length) return false;
     let table: { [key: string]: number } = {};
     let count = 0;
@@ -28,5 +34,5 @@ export default () => {
     const t = 'nagaram';
     const r = 'nagrana';
 
-    console.log(isAnagram(s, r));
+    console.log(isAnagram(s, t));
 };

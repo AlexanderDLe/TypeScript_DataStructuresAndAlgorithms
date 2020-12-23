@@ -15,9 +15,9 @@ export default () => {
     // DecodeString();
     // FindAllAnagramsInAString();
     // WordBreak();
-    ReverseString();
+    // ReverseString();
     // FizzBuzz();
     // ValidAnagram();
-    // RomanToInteger();
+    RomanToInteger();
     // FirstUniqueCharInAString();
 };
