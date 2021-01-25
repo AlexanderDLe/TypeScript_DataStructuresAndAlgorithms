@@ -4,6 +4,7 @@
 import { ListNode } from '../DataStructures/LinkedListClass';
 
 type Node = ListNode<number> | null;
+
 const hasCycle = (head: Node): boolean => {
     if (!head || !head.next) return false;
     let s = head;

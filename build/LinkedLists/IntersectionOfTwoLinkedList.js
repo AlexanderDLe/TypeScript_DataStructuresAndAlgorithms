@@ -4,18 +4,18 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
-const getLength = (head) => {
-    let count = 0;
-    let n = head;
-    while (n) {
-        count++;
-        n = n.next;
-    }
-    return count;
-};
 const getIntersectionNode = (headA, headB) => {
     if (!headA || !headB)
         return null;
+    const getLength = (head) => {
+        let count = 0;
+        let n = head;
+        while (n) {
+            count++;
+            n = n.next;
+        }
+        return count;
+    };
     let aLen = getLength(headA);
     let bLen = getLength(headB);
     let diff = Math.abs(aLen - bLen);

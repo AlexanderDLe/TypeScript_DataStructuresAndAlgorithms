@@ -12,7 +12,7 @@ import BurstBalloons from './BurstBalloons';
 
 const DPMain = () => {
     // PalindromicSubstrings();
-    // ClimbingStairs();
+    ClimbingStairs();
     // HouseRobber1();
     // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
@@ -21,7 +21,7 @@ const DPMain = () => {
     // LongestIncreasingSubsequence();
     // CoinChange();
     // JumpGame();
-    BurstBalloons();
+    // BurstBalloons();
 };
 
 export default DPMain;

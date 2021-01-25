@@ -4,6 +4,21 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const maxArea = (height) => {
+    let result = 0;
+    let L = 0;
+    let R = height.length - 1;
+    while (L < R) {
+        let lowerHeight = Math.min(height[L], height[R]);
+        let area = lowerHeight * (R - L);
+        result = Math.max(result, area);
+        if (height[L] < height[R])
+            L++;
+        else
+            R--;
+    }
+    return result;
+};
+const maxAreaB = (height) => {
     let L = 0;
     let R = height.length - 1;
     let result = 0;

@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * 448. Find All Numbers Disappeared In An Array
  */
 const Utilities_1 = require("../utils/Utilities");
+const findDisappearedNumbers = (nums) => {
+    let result = [];
+    for (let i = 0; i < nums.length; i++) {
+        let numToFlip = Math.abs(nums[i]);
+        nums[numToFlip - 1] = -Math.abs(nums[numToFlip - 1]);
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0)
+            result.push(i + 1);
+    }
+    return result;
+};
 const findDisappearedNumbersSwapping = (nums) => {
     let result = [];
     for (let i = 0; i < nums.length; i++) {
@@ -51,5 +63,5 @@ const findDisappearedNumbersFlipping = (nums) => {
 };
 exports.default = () => {
     const nums = [4, 3, 2, 7, 8, 2, 3, 1];
-    Utilities_1.PrintArray(findDisappearedNumbersFlipping(nums));
+    Utilities_1.PrintArray(findDisappearedNumbers(nums));
 };

@@ -1,6 +1,7 @@
 /**
  * 20. Valid Parentheses
  */
+
 type Parens = {
     [key: string]: string;
 };
@@ -17,9 +18,9 @@ const isValid = (s: string): boolean => {
 };
 
 export default () => {
-    const s1 = '([)]';
+    const s1 = '[';
     const s2 = '{[]}';
     const s3 = '()[]{}';
-    if (isValid(s3)) console.log('True');
+    if (isValid(s1)) console.log('True');
     else console.log('False');
 };

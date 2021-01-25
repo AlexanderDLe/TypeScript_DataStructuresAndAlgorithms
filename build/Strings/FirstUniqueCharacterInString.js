@@ -3,6 +3,20 @@
  *  387. First Unique Character In A String
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const firstUniqueChar = (s) => {
+    let result = -1;
+    let map = {};
+    for (let i = 0; i < s.length; i++) {
+        let char = s[i];
+        map[char] = (map[char] || 0) + 1;
+    }
+    for (let char in map) {
+        if (map[char] == 1) {
+            return s.indexOf(char);
+        }
+    }
+    return result;
+};
 const firstUniqChar = (s) => {
     let arr = new Array(26).fill(0);
     let test = 'a';
@@ -17,5 +31,5 @@ const firstUniqChar = (s) => {
 };
 exports.default = () => {
     const str = 'leetcode';
-    console.log(firstUniqChar(str));
+    console.log(firstUniqueChar(str));
 };

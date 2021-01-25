@@ -7,6 +7,35 @@ const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
 const isPalindrome = (head) => {
     if (!head || !head.next)
         return true;
+    let s = head;
+    let f = head;
+    let q = null;
+    let r = null;
+    while (f && f.next) {
+        r = q;
+        q = s;
+        s = s.next;
+        f = f.next;
+        if (f)
+            f = f.next;
+        if (q)
+            q.next = r;
+    }
+    if (f && !f.next) {
+        s = s.next;
+    }
+    while (q && s) {
+        if (q.val !== s.val) {
+            return false;
+        }
+        q = q.next;
+        s = s.next;
+    }
+    return true;
+};
+const isPalindromeOld = (head) => {
+    if (!head || !head.next)
+        return true;
     let s = head; // Slow
     let f = head; // Fast
     let q = null; // Follow s
@@ -30,6 +59,8 @@ const isPalindrome = (head) => {
             q.next = r;
     }
     s = head;
+    LinkedListClass_1.PrintList(s);
+    LinkedListClass_1.PrintList(f);
     while (s && f) {
         if (s.val !== f.val)
             return false;
@@ -39,7 +70,7 @@ const isPalindrome = (head) => {
     return true;
 };
 exports.default = () => {
-    const nums = [1, 3, 2, 3, 1];
+    const nums = [1, 4, -1, 4, 1];
     const list = new LinkedListClass_1.LinkedList(nums);
     console.log(isPalindrome(list.head));
 };

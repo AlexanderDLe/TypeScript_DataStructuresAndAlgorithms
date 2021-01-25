@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const BurstBalloons_1 = __importDefault(require("./BurstBalloons"));
+const ClimbingStairs_1 = __importDefault(require("./ClimbingStairs"));
 const DPMain = () => {
     // PalindromicSubstrings();
-    // ClimbingStairs();
+    ClimbingStairs_1.default();
     // HouseRobber1();
     // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
@@ -15,6 +15,6 @@ const DPMain = () => {
     // LongestIncreasingSubsequence();
     // CoinChange();
     // JumpGame();
-    BurstBalloons_1.default();
+    // BurstBalloons();
 };
 exports.default = DPMain;

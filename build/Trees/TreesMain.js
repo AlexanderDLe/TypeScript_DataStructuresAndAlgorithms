@@ -3,14 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ConvertSortedArrayIntoBST_1 = __importDefault(require("./ConvertSortedArrayIntoBST"));
+const SymmetricTree_1 = __importDefault(require("./SymmetricTree"));
 const TreesMain = () => {
-    //RangeSum();
+    // RangeSum();
     // InvertBinaryTree();
     // MergeTwoBinaryTrees();
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
-    // SymmetricTree();
+    SymmetricTree_1.default();
     // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
@@ -20,6 +20,6 @@ const TreesMain = () => {
     // ImplementPrefixTrie();
     // LowestCommonAncestorOfBST();
     // ValidateBinarySearchTree();
-    ConvertSortedArrayIntoBST_1.default();
+    // ConvertedSortedArrayIntoBST();
 };
 exports.default = TreesMain;

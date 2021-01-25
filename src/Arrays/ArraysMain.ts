@@ -27,10 +27,15 @@ import ThreeSum from './ThreeSum';
 import ContainsDuplicate from './ContainsDuplicate';
 import BestTimeToBuyAndSellStock2 from './BestTimeToBuyAndSellStock2';
 import PascalsTriangle from './PascalsTriangle';
+import MissingNumber from './MissingNumber';
+import IntersectionOfTwoArrays2 from './IntersectionOfTwoArrays2';
+import RemoveDuplicatesFromSortedArray from './RemoveDuplicatesFromSortedArray';
 
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
+    // IntersectionOfTwoArrays2();
+    RemoveDuplicatesFromSortedArray();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
@@ -55,9 +60,10 @@ const ArraysMain = () => {
     // LongestPalindromicSubstring();
     // SquaresOfASortedArray();
     // ThreeSum();
-    ContainsDuplicate();
+    // ContainsDuplicate();
     // BestTimeToBuyAndSellStock2();
     // PascalsTriangle();
+    // MissingNumber();
 };
 
 export default ArraysMain;

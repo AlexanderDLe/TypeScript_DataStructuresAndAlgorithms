@@ -4,7 +4,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * 1. Two Sum 1
  */
 const Utilities_1 = require("../utils/Utilities");
-let twoSum = (nums, target) => {
+const twoSum = (nums, target) => {
+    let obj = {};
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] in obj) {
+            return [i, obj[nums[i]]];
+        }
+        obj[target - nums[i]] = i;
+    }
+};
+let twoSumOld = (nums, target) => {
     let answer = [0, 0];
     let map = {};
     for (let i = 0; i < nums.length; i++) {

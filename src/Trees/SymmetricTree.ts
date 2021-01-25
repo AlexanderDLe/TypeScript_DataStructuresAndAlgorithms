@@ -4,6 +4,7 @@
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 
 type Node = TreeNode<number> | null;
+
 const isSymmetric = (root: Node): boolean => {
     if (!root) return true;
     let result: boolean = true;

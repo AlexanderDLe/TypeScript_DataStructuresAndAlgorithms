@@ -6,7 +6,10 @@ import { ListNode } from '../DataStructures/LinkedListClass';
 
 type Node = ListNode<number> | null;
 
-const getLength = (head: Node): number => {
+const getIntersectionNode = (headA: Node, headB: Node): Node => {
+    if (!headA || !headB) return null;
+
+    const getLength = (head: Node): number => {
     let count = 0;
     let n = head;
     while (n) {
@@ -14,10 +17,8 @@ const getLength = (head: Node): number => {
         n = n.next;
     }
     return count;
-};
-const getIntersectionNode = (headA: Node, headB: Node): Node => {
-    if (!headA || !headB) return null;
-
+    };
+    
     let aLen = getLength(headA);
     let bLen = getLength(headB);
     let diff = Math.abs(aLen - bLen);

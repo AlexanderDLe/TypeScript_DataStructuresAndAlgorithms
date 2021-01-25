@@ -8,9 +8,12 @@ import FizzBuzz from './FizzBuzz';
 import ValidAnagram from './ValidAnagram';
 import RomanToInteger from './RomanToInteger';
 import FirstUniqueCharInAString from './FirstUniqueCharacterInString';
+import PartitionLabels from './PartitionLabels';
+import CountAndSay from './CountAndSay';
 
 export default () => {
     // ValidParentheses();
+    // PartitionLabels();
     // MinimumWindowSubstring();
     // DecodeString();
     // FindAllAnagramsInAString();
@@ -18,6 +21,7 @@ export default () => {
     // ReverseString();
     // FizzBuzz();
     // ValidAnagram();
-    RomanToInteger();
+    // RomanToInteger();
     // FirstUniqueCharInAString();
+    CountAndSay();
 };

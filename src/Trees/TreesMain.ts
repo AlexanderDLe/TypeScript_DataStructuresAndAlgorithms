@@ -17,12 +17,12 @@ import ValidateBinarySearchTree from './ValidateBinarySearchTree';
 import ConvertedSortedArrayIntoBST from './ConvertSortedArrayIntoBST';
 
 const TreesMain = () => {
-    //RangeSum();
+    // RangeSum();
     // InvertBinaryTree();
     // MergeTwoBinaryTrees();
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
-    // SymmetricTree();
+    SymmetricTree();
     // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
@@ -32,7 +32,7 @@ const TreesMain = () => {
     // ImplementPrefixTrie();
     // LowestCommonAncestorOfBST();
     // ValidateBinarySearchTree();
-    ConvertedSortedArrayIntoBST();
+    // ConvertedSortedArrayIntoBST();
 };
 
 export default TreesMain;

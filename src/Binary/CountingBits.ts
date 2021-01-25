@@ -6,6 +6,18 @@ import { PrintArray } from '../utils/Utilities';
 
 const countBits = (num: number): number[] => {
     let result: number[] = [];
+    result.push(0);
+
+    for (let i = 0; i <= num; i++) {
+        result[i] = result[i >> 1] + (i & 1);
+        console.log(i.toString(2) + ' r[i >> 1]: ' + result[i >> 1] + ' and (i & 1): ' + (i & 1) + ' total: ' + result[i]);
+    }
+
+    return result;
+}
+
+const countBitsOld = (num: number): number[] => {
+    let result: number[] = [];
 
     for (let i = 0; i <= num; i++) {
         let count = 0;
@@ -22,5 +34,5 @@ const countBits = (num: number): number[] => {
 };
 
 export default () => {
-    PrintArray(countBits(5));
+    PrintArray(countBits(10));
 };

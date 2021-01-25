@@ -13,12 +13,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * greatest value (aka diameter) seen.
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
+const diameterOfBinaryTree = (root) => {
+    let diameter = 0;
+    const findHeight = (n) => {
+        if (!n)
+            return 0;
+        return Math.max(findHeight(n.left), findHeight(n.right)) + 1;
+    };
+    const DFS = (n) => {
+        if (!n)
+            return;
+        let currHeight = findHeight(n.left) + findHeight(n.right);
+        diameter = Math.max(diameter, currHeight);
+        DFS(n.left);
+        DFS(n.right);
+    };
+    DFS(root);
+    return diameter;
+};
 const findHeight = (n) => {
     if (!n)
         return 0;
     return Math.max(findHeight(n.left), findHeight(n.right)) + 1;
 };
-const diameterOfBinaryTree = (root) => {
+const diameterOfBinaryTreeOld = (root) => {
     if (!root)
         return 0;
     const currentDiameter = findHeight(root.left) + findHeight(root.right);

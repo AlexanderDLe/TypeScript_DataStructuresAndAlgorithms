@@ -13,10 +13,10 @@ import DeleteNodeFromLinkedList from './DeleteNodeInLinkedList';
 
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
-    ReverseLinkedList();
+    // ReverseLinkedList();
     // MergedTwoSortedLists();
     // LinkedListCycle();
-    // PalindromeLinkedList();
+    PalindromeLinkedList();
     // IntersectionOfTwoLinkedLists();
     // SortList();
     // LinkedListCycle2();

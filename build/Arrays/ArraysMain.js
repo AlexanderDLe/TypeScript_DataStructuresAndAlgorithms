@@ -3,10 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ContainsDuplicate_1 = __importDefault(require("./ContainsDuplicate"));
+const RemoveDuplicatesFromSortedArray_1 = __importDefault(require("./RemoveDuplicatesFromSortedArray"));
 const ArraysMain = () => {
     // FindNumbersWithEvenDigits();
     // TwoSum1();
+    // IntersectionOfTwoArrays2();
+    RemoveDuplicatesFromSortedArray_1.default();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
@@ -31,8 +33,9 @@ const ArraysMain = () => {
     // LongestPalindromicSubstring();
     // SquaresOfASortedArray();
     // ThreeSum();
-    ContainsDuplicate_1.default();
+    // ContainsDuplicate();
     // BestTimeToBuyAndSellStock2();
     // PascalsTriangle();
+    // MissingNumber();
 };
 exports.default = ArraysMain;

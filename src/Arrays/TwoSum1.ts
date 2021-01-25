@@ -6,7 +6,20 @@ import { PrintArray, PrintObject } from '../utils/Utilities';
 interface ObjectLiteral {
     [key: number]: number;
 }
-let twoSum = (nums: number[], target: number): number[] => {
+const twoSum = (nums: number[], target: number): number[] => {
+    let obj: ObjectLiteral = {};
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] in obj) {
+            return [i, obj[nums[i]]];
+        }
+        
+        obj[target - nums[i]] = i;
+    }
+}
+
+
+let twoSumOld = (nums: number[], target: number): number[] => {
     let answer = [0, 0];
     let map: ObjectLiteral = {};
 

@@ -3,13 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ReverseLinkedList_1 = __importDefault(require("./ReverseLinkedList"));
+const PalindromeLinkedList_1 = __importDefault(require("./PalindromeLinkedList"));
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
-    ReverseLinkedList_1.default();
+    // ReverseLinkedList();
     // MergedTwoSortedLists();
     // LinkedListCycle();
-    // PalindromeLinkedList();
+    PalindromeLinkedList_1.default();
     // IntersectionOfTwoLinkedLists();
     // SortList();
     // LinkedListCycle2();

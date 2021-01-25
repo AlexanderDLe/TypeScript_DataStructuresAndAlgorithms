@@ -13,11 +13,33 @@
 import { TreeNode } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 
+const diameterOfBinaryTree = (root: Node): number => {
+    let diameter = 0;
+
+    const findHeight = (n: Node): number => {
+        if (!n) return 0;
+        return Math.max(findHeight(n.left), findHeight(n.right)) + 1;
+    }
+
+    const DFS = (n: Node): void => {
+        if (!n) return;
+        let currHeight = findHeight(n.left) + findHeight(n.right);
+        diameter = Math.max(diameter, currHeight);
+
+        DFS(n.left);
+        DFS(n.right);
+    }
+
+    DFS(root);
+    return diameter;
+}
+
+
 const findHeight = (n: Node): number => {
     if (!n) return 0;
     return Math.max(findHeight(n.left), findHeight(n.right)) + 1;
 };
-const diameterOfBinaryTree = (root: Node): number => {
+const diameterOfBinaryTreeOld = (root: Node): number => {
     if (!root) return 0;
     const currentDiameter = findHeight(root.left) + findHeight(root.right);
     const leftDiameter = diameterOfBinaryTree(root.left);

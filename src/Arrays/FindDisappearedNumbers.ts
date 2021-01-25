@@ -3,6 +3,20 @@
  */
 import { PrintArray } from '../utils/Utilities';
 
+const findDisappearedNumbers = (nums: number[]): number[] => {
+    let result: number[] = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        let numToFlip = Math.abs(nums[i]);
+        nums[numToFlip - 1] = - Math.abs(nums[numToFlip - 1]);
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) result.push(i + 1);
+    }
+
+    return result;
+}
+
 const findDisappearedNumbersSwapping = (nums: number[]): number[] => {
     let result: number[] = [];
 
@@ -51,5 +65,5 @@ const findDisappearedNumbersFlipping = (nums: number[]): number[] => {
 
 export default () => {
     const nums = [4, 3, 2, 7, 8, 2, 3, 1];
-    PrintArray(findDisappearedNumbersFlipping(nums));
+    PrintArray(findDisappearedNumbers(nums));
 };
