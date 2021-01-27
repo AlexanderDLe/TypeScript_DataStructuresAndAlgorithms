@@ -5,6 +5,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const Utilities_1 = require("../utils/Utilities");
 const permute = (nums) => {
+    let res = [];
+    res.push(nums);
+    const recurse = (index) => {
+        for (let i = index; i < nums.length; i++) {
+            for (let j = i + 1; j < nums.length; j++) {
+                [nums[i], nums[j]] = [nums[j], nums[i]];
+                res.push([...nums]);
+                recurse(i + 1);
+                [nums[i], nums[j]] = [nums[j], nums[i]];
+            }
+        }
+    };
+    recurse(0);
+    return res;
+};
+const permuteB = (nums) => {
     let result = [];
     const recursion = (index) => {
         if (index === nums.length) {

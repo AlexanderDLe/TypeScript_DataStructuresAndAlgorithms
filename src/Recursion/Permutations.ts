@@ -4,6 +4,26 @@
 import { PrintMatrix } from '../utils/Utilities';
 
 const permute = (nums: number[]): number[][] => {
+    let res: number[][] = [];
+    res.push(nums);
+    
+    const recurse = (index: number): void => {
+        for (let i = index; i < nums.length; i++) {
+            for (let j = i + 1; j < nums.length; j++) {
+                [nums[i], nums[j]] = [nums[j], nums[i]];
+                res.push([...nums]);
+                recurse(i + 1);
+                [nums[i], nums[j]] = [nums[j], nums[i]];
+            }
+        }
+    }
+
+    recurse(0);
+
+    return res;
+}
+
+const permuteB = (nums: number[]): number[][] => {
     let result: number[][] = [];
 
     const recursion = (index: number) => {

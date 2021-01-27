@@ -7,11 +7,11 @@ import LetterCombinationsOfAPhoneNumber from './LetterCombinationsOfAPhoneNumber
 import SubarraySumEqualsK from './SubarraySumEqualsK';
 
 export default () => {
-    // Permutations();
+    Permutations();
     // GenerateParentheses();
     // Subsets();
     // CombinationSum();
     // TargetSum();
     // LetterCombinationsOfAPhoneNumber();
-    SubarraySumEqualsK();
+    // SubarraySumEqualsK();
 };

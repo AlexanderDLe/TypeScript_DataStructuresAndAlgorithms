@@ -10,6 +10,9 @@ import RomanToInteger from './RomanToInteger';
 import FirstUniqueCharInAString from './FirstUniqueCharacterInString';
 import PartitionLabels from './PartitionLabels';
 import CountAndSay from './CountAndSay';
+import ValidPalindrome from './ValidPalindrome';
+import ImplementStrStr from './ImplementStrStr';
+import ReverseInteger from './ReverseInteger';
 
 export default () => {
     // ValidParentheses();
@@ -23,5 +26,8 @@ export default () => {
     // ValidAnagram();
     // RomanToInteger();
     // FirstUniqueCharInAString();
-    CountAndSay();
+    // CountAndSay();
+    // ValidPalindrome();
+    // ImplementStrStr();
+    ReverseInteger();
 };

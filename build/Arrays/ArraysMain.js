@@ -3,12 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const RemoveDuplicatesFromSortedArray_1 = __importDefault(require("./RemoveDuplicatesFromSortedArray"));
+const LongestCommonPrefix_1 = __importDefault(require("./LongestCommonPrefix"));
 const ArraysMain = () => {
+    // MergeSortedArray();
+    LongestCommonPrefix_1.default();
     // FindNumbersWithEvenDigits();
     // TwoSum1();
     // IntersectionOfTwoArrays2();
-    RemoveDuplicatesFromSortedArray_1.default();
+    // RemoveDuplicatesFromSortedArray();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();

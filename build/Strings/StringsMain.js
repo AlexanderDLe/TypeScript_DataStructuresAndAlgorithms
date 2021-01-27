@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CountAndSay_1 = __importDefault(require("./CountAndSay"));
+const ReverseInteger_1 = __importDefault(require("./ReverseInteger"));
 exports.default = () => {
     // ValidParentheses();
     // PartitionLabels();
@@ -16,5 +16,8 @@ exports.default = () => {
     // ValidAnagram();
     // RomanToInteger();
     // FirstUniqueCharInAString();
-    CountAndSay_1.default();
+    // CountAndSay();
+    // ValidPalindrome();
+    // ImplementStrStr();
+    ReverseInteger_1.default();
 };

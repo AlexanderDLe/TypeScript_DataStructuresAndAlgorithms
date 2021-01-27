@@ -30,12 +30,16 @@ import PascalsTriangle from './PascalsTriangle';
 import MissingNumber from './MissingNumber';
 import IntersectionOfTwoArrays2 from './IntersectionOfTwoArrays2';
 import RemoveDuplicatesFromSortedArray from './RemoveDuplicatesFromSortedArray';
+import MergeSortedArray from './MergeSortedArray';
+import LongestCommonPrefix from './LongestCommonPrefix';
 
 const ArraysMain = () => {
+    // MergeSortedArray();
+    LongestCommonPrefix();
     // FindNumbersWithEvenDigits();
     // TwoSum1();
     // IntersectionOfTwoArrays2();
-    RemoveDuplicatesFromSortedArray();
+    // RemoveDuplicatesFromSortedArray();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
