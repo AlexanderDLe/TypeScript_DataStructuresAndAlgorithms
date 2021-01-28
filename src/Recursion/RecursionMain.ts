@@ -7,9 +7,9 @@ import LetterCombinationsOfAPhoneNumber from './LetterCombinationsOfAPhoneNumber
 import SubarraySumEqualsK from './SubarraySumEqualsK';
 
 export default () => {
-    Permutations();
+    // Permutations();
     // GenerateParentheses();
-    // Subsets();
+    Subsets();
     // CombinationSum();
     // TargetSum();
     // LetterCombinationsOfAPhoneNumber();

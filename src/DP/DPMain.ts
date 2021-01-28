@@ -11,8 +11,8 @@ import JumpGame from './JumpGame';
 import BurstBalloons from './BurstBalloons';
 
 const DPMain = () => {
-    // PalindromicSubstrings();
-    ClimbingStairs();
+    PalindromicSubstrings();
+    // ClimbingStairs();
     // HouseRobber1();
     // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();

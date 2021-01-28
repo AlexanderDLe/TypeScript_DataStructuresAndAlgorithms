@@ -20,7 +20,6 @@ const inorderTraversalRecursive = (root: Node): number[] => {
     DFS(root);
     return result;
 };
-
 const inorderTraversalIterative = (root: Node): number[] => {
     let result: number[] = [];
     let stack: Node[] = [];

@@ -5,6 +5,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 const Utilities_1 = require("../utils/Utilities");
 const dailyTemperatures = (T) => {
+    let stack = [];
+    let result = new Array(T.length).fill(0);
+    for (let i = T.length - 1; i >= 0; i--) {
+        let currTemp = T[i];
+        while (stack.length) {
+            let prevTemp = T[stack[stack.length - 1]];
+            if (currTemp < prevTemp) {
+                result[i] = stack[stack.length - 1] - i;
+                break;
+            }
+            else {
+                stack.pop();
+            }
+        }
+        stack.push(i);
+    }
+    return result;
+};
+const dailyTemperaturesB = (T) => {
     let result = new Array(T.length).fill(0);
     let stack = [];
     for (let i = T.length - 1; i >= 0; i--) {

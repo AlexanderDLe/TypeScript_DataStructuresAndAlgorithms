@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const RecursionMain_1 = __importDefault(require("./Recursion/RecursionMain"));
+const DPMain_1 = __importDefault(require("./DP/DPMain"));
 function main() {
     // ArraysMain();
     // BinaryMain();
-    // DPMain();
+    DPMain_1.default();
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
@@ -15,7 +15,7 @@ function main() {
     // MathMain();
     // MatrixMain();
     // QueuesMain();
-    RecursionMain_1.default();
+    // RecursionMain();
     // StacksMain();
     // StringsMain();
     // TreesMain();

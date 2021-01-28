@@ -15,6 +15,7 @@ import ImplementPrefixTrie from './ImplementPrefixTrie';
 import LowestCommonAncestorOfBST from './LowestCommonAncestorOfABST';
 import ValidateBinarySearchTree from './ValidateBinarySearchTree';
 import ConvertedSortedArrayIntoBST from './ConvertSortedArrayIntoBST';
+import KthSmallestElementInBST from './KthSmallestElementInBST';
 
 const TreesMain = () => {
     // RangeSum();
@@ -22,7 +23,7 @@ const TreesMain = () => {
     // MergeTwoBinaryTrees();
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
-    SymmetricTree();
+    // SymmetricTree();
     // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
@@ -33,6 +34,8 @@ const TreesMain = () => {
     // LowestCommonAncestorOfBST();
     // ValidateBinarySearchTree();
     // ConvertedSortedArrayIntoBST();
+    // BinaryTreeInorderTraversal();
+    KthSmallestElementInBST();
 };
 
 export default TreesMain;

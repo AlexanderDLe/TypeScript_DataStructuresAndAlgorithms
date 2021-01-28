@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
 const subsets = (nums) => {
     let result = [];
-    const recurse = (index, res) => {
-        if (index === nums.length) {
-            result.push(res.slice(0));
-            return;
+    const recurse = (i, subarr) => {
+        if (i === nums.length)
+            result.push(subarr);
+        else {
+            recurse(i + 1, [...subarr, nums[i]]);
+            recurse(i + 1, [...subarr]);
         }
-        recurse(index + 1, res);
-        recurse(index + 1, res.concat(nums[index]));
     };
     recurse(0, []);
     return result;

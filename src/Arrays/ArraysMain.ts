@@ -35,7 +35,7 @@ import LongestCommonPrefix from './LongestCommonPrefix';
 
 const ArraysMain = () => {
     // MergeSortedArray();
-    LongestCommonPrefix();
+    // LongestCommonPrefix();
     // FindNumbersWithEvenDigits();
     // TwoSum1();
     // IntersectionOfTwoArrays2();
@@ -48,7 +48,7 @@ const ArraysMain = () => {
     // BestTimeToBuyAndSellStock();
     // MaximumSubarray();
     // ShortestUnsortedContinuousSubarray();
-    // TopKFrequentElements();
+    TopKFrequentElements();
     // ProductOfArrayExceptSelf();
     // FindTheDuplicateNumber();
     // GroupAnagrams();

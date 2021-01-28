@@ -3,8 +3,31 @@
  */
 import { PrintArray } from '../utils/Utilities';
 
-type TempAndIndex = [number, number];
 const dailyTemperatures = (T: number[]): number[] => {
+    let stack: number[] = [];
+    let result: number[] = new Array(T.length).fill(0);
+
+    for (let i = T.length - 1; i >= 0; i--) {
+        let currTemp = T[i];
+        
+        while (stack.length) {
+            let prevTemp = T[stack[stack.length - 1]];
+            
+            if (currTemp < prevTemp) {
+                result[i] = stack[stack.length - 1] - i;
+                break;
+            } else {
+                stack.pop();
+            }
+        }
+        stack.push(i);
+    }
+
+    return result;
+}
+
+type TempAndIndex = [number, number];
+const dailyTemperaturesB = (T: number[]): number[] => {
     let result = new Array(T.length).fill(0);
     let stack: TempAndIndex[] = [];
 

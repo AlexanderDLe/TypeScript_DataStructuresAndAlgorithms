@@ -6,17 +6,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
 const generateParentheses = (n) => {
     let result = [];
-    const recurse = (str, opens, closes) => {
-        if (str.length === n * 2) {
+    const recurse = (opens, closes, str) => {
+        if (str.length === n * 2)
             result.push(str);
-            return;
+        else {
+            if (opens > 0)
+                recurse(opens - 1, closes, str + '(');
+            if (closes > opens)
+                recurse(opens, closes - 1, str + ')');
         }
-        if (opens > 0)
-            recurse(str + '(', opens - 1, closes);
-        if (closes > opens)
-            recurse(str + ')', opens, closes - 1);
     };
-    recurse('', n, n);
+    recurse(n, n, '');
     return result;
 };
 exports.default = () => {

@@ -9,6 +9,17 @@ const reconstructPeople = (people: number[][]): number[][] => {
     people.sort((a, b) => (a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]));
     people.forEach(person => {
         result.splice(person[1], 0, person);
+    })
+
+    return result;
+}
+
+const reconstructPeopleB = (people: number[][]): number[][] => {
+    let result: number[][] = [];
+
+    people.sort((a, b) => (a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]));
+    people.forEach(person => {
+        result.splice(person[1], 0, person);
     });
 
     return result;

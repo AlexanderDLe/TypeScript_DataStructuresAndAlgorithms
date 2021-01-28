@@ -4,6 +4,22 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
+const topKFrequent = (nums, k) => {
+    let result = [];
+    let map = {};
+    let pq = [];
+    for (let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+    }
+    for (let key in map) {
+        pq.push([parseInt(key), map[key]]);
+    }
+    pq = pq.sort((a, b) => b[1] - a[1]);
+    for (let i = 0; i < k; i++) {
+        result.push(pq[i][0]);
+    }
+    return result;
+};
 const topKFrequentWithObject = (nums, k) => {
     let table = {};
     let result = [];
@@ -26,7 +42,8 @@ const topKFrequentWithMap = (nums, k) => {
     return result;
 };
 exports.default = () => {
-    const nums = [2, 2, 3, 3, 3, 3, 2, 1, 1, 1, 2, 3];
-    Utilities_1.PrintArray(topKFrequentWithObject(nums, 2));
-    Utilities_1.PrintArray(topKFrequentWithMap(nums, 2));
+    const nums = [4, 1, -1, 2, -1, 2, 3];
+    // PrintArray(topKFrequentWithObject(nums, 2));
+    // PrintArray(topKFrequentWithMap(nums, 2));
+    Utilities_1.PrintArray(topKFrequent(nums, 2));
 };

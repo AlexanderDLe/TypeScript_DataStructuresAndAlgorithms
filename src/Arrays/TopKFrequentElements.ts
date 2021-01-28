@@ -7,6 +7,27 @@ import { PrintArray, PrintObject } from '../utils/Utilities';
 type Table = {
     [key: number]: number;
 };
+type Tuple = [number, number];
+const topKFrequent = (nums: number[], k: number): number[] => {
+    let result: number[] = [];
+    let map: Table = {};
+    let pq: Tuple[] = [];
+
+    for (let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+    }
+    for (let key in map) {
+        pq.push([parseInt(key), map[key]]);
+    }
+    
+    pq = pq.sort((a, b) => b[1] - a[1]);
+
+    for (let i = 0; i < k; i++) {
+        result.push(pq[i][0]);
+    }
+
+    return result;
+}
 
 const topKFrequentWithObject = (nums: number[], k: number): number[] => {
     let table: Table = {};
@@ -39,7 +60,8 @@ const topKFrequentWithMap = (nums: number[], k: number): number[] => {
 };
 
 export default () => {
-    const nums = [2, 2, 3, 3, 3, 3, 2, 1, 1, 1, 2, 3];
-    PrintArray(topKFrequentWithObject(nums, 2));
-    PrintArray(topKFrequentWithMap(nums, 2));
+    const nums = [4,1,-1,2,-1,2,3];
+    // PrintArray(topKFrequentWithObject(nums, 2));
+    // PrintArray(topKFrequentWithMap(nums, 2));
+    PrintArray(topKFrequent(nums, 2));
 };

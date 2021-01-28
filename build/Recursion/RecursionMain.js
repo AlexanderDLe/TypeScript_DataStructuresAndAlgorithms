@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Permutations_1 = __importDefault(require("./Permutations"));
+const Subsets_1 = __importDefault(require("./Subsets"));
 exports.default = () => {
-    Permutations_1.default();
+    // Permutations();
     // GenerateParentheses();
-    // Subsets();
+    Subsets_1.default();
     // CombinationSum();
     // TargetSum();
     // LetterCombinationsOfAPhoneNumber();
