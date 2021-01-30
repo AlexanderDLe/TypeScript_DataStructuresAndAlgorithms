@@ -7,6 +7,7 @@ import { PrintMatrix, PrintObject } from '../utils/Utilities';
 type Table = {
     [key: string]: string[];
 };
+
 const groupAnagrams = (strs: string[]): string[][] => {
     let table: Table = {};
     for (let str of strs) {

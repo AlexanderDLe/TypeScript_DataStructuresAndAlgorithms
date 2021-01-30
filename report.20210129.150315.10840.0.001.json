@@ -4,10 +4,10 @@
     "reportVersion": 1,
     "event": "Allocation failed - JavaScript heap out of memory",
     "trigger": "FatalError",
-    "filename": "report.20210127.140750.10776.0.001.json",
-    "dumpEventTime": "2021-01-27T14:07:50Z",
-    "dumpEventTimeStamp": "1611785270384",
-    "processId": 10776,
+    "filename": "report.20210129.150315.10840.0.001.json",
+    "dumpEventTime": "2021-01-29T15:03:15Z",
+    "dumpEventTimeStamp": "1611961395194",
+    "processId": 10840,
     "cwd": "E:\\Coding\\DataStructuresAndAlgorithms\\TS_DataStructuresAndAlgorithms",
     "commandLine": [
       "C:\\Program Files\\nodejs\\node.exe",
@@ -50,74 +50,74 @@
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 1497156,
+        "user": 2782250,
         "nice": 0,
-        "sys": 920640,
-        "idle": 66742843,
-        "irq": 105671
+        "sys": 2253375,
+        "idle": 133403234,
+        "irq": 229875
       },
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 598890,
+        "user": 1252218,
         "nice": 0,
-        "sys": 310140,
-        "idle": 68251484,
-        "irq": 3671
+        "sys": 1075046,
+        "idle": 136111468,
+        "irq": 9296
       },
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 1999765,
+        "user": 3852546,
         "nice": 0,
-        "sys": 801343,
-        "idle": 66359406,
-        "irq": 5312
+        "sys": 1688000,
+        "idle": 132898187,
+        "irq": 13484
       },
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 679734,
+        "user": 1422359,
         "nice": 0,
-        "sys": 356500,
-        "idle": 68124281,
-        "irq": 3343
+        "sys": 952078,
+        "idle": 136064296,
+        "irq": 7937
       },
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 1231562,
+        "user": 2513640,
         "nice": 0,
-        "sys": 529828,
-        "idle": 67399125,
-        "irq": 4890
+        "sys": 1713734,
+        "idle": 134211359,
+        "irq": 11156
       },
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 749078,
+        "user": 1498828,
         "nice": 0,
-        "sys": 333000,
-        "idle": 68078437,
-        "irq": 2250
+        "sys": 938203,
+        "idle": 136001703,
+        "irq": 6453
       },
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 1038937,
+        "user": 2171125,
         "nice": 0,
-        "sys": 465000,
-        "idle": 67656578,
-        "irq": 4265
+        "sys": 978953,
+        "idle": 135288656,
+        "irq": 11218
       },
       {
         "model": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         "speed": 3499,
-        "user": 1517984,
+        "user": 2657234,
         "nice": 0,
-        "sys": 525656,
-        "idle": 67116875,
-        "irq": 2531
+        "sys": 1066765,
+        "idle": 134714734,
+        "irq": 6515
       }
     ],
     "networkInterfaces": [
@@ -125,7 +125,7 @@
         "name": "Ethernet",
         "internal": false,
         "mac": "bc:5f:f4:ea:37:63",
-        "address": "2600:1700:c6f0:4f70::e",
+        "address": "2600:1700:c6f0:4f70::2a",
         "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
         "family": "IPv6",
         "scopeid": 0
@@ -143,12 +143,11 @@
         "name": "Ethernet",
         "internal": false,
         "mac": "bc:5f:f4:ea:37:63",
-        "address": "2600:1700:c6f0:4f70:81dc:a622:509f:1046",
+        "address": "2600:1700:c6f0:4f70:e54c:f844:aa2b:480e",
         "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
         "family": "IPv6",
         "scopeid": 0
       },
       {
         "name": "Ethernet",
-        "internal": false,
-   
+        "i

@@ -6,7 +6,7 @@ import { PrintMatrix } from '../utils/Utilities';
 const reconstructPeople = (people: number[][]): number[][] => {
     let result: number[][] = [];
 
-    people.sort((a, b) => (a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]));
+    people.sort((a, b) => a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]);
     people.forEach(person => {
         result.splice(person[1], 0, person);
     })

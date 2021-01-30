@@ -5,6 +5,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
 const rotate = (matrix) => {
+    let levels = Math.floor(matrix.length / 2);
+    for (let lvl = 0; lvl < levels; lvl++) {
+        let end = matrix.length - 1 - lvl;
+        let i = lvl;
+        let j = end;
+        while (i < end) {
+            let topLeft = matrix[lvl][i];
+            let topRight = matrix[i][end];
+            let bottomRight = matrix[end][j];
+            let bottomLeft = matrix[j][lvl];
+            matrix[i][end] = topLeft;
+            matrix[end][j] = topRight;
+            matrix[j][lvl] = bottomRight;
+            matrix[lvl][i] = bottomLeft;
+            i++, j--;
+        }
+    }
+};
+const rotateB = (matrix) => {
     let rotations = Math.floor(matrix.length / 2);
     for (let i = 0; i < rotations; i++) {
         let j = matrix.length - 1 - i;

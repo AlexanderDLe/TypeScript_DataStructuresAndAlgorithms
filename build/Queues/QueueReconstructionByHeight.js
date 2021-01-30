@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
 const reconstructPeople = (people) => {
     let result = [];
-    people.sort((a, b) => (a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]));
+    people.sort((a, b) => a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]);
     people.forEach(person => {
         result.splice(person[1], 0, person);
     });

@@ -7,11 +7,11 @@ import MaximalSquare from './MaximalSquare';
 import WordSearch from './WordSearch';
 
 export default () => {
-    // RotateImage();
+    RotateImage();
     // UniquePaths();
     // MinimumPathSum();
     // NumberOfIslands();
     // SearchA2DMatrix2();
     // MaximalSquare();
-    WordSearch();
+    // WordSearch();
 };

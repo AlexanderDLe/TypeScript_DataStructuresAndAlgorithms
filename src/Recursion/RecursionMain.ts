@@ -9,8 +9,8 @@ import SubarraySumEqualsK from './SubarraySumEqualsK';
 export default () => {
     // Permutations();
     // GenerateParentheses();
-    Subsets();
-    // CombinationSum();
+    // Subsets();
+    CombinationSum();
     // TargetSum();
     // LetterCombinationsOfAPhoneNumber();
     // SubarraySumEqualsK();
