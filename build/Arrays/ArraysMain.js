@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const KthLargestElementInArray_1 = __importDefault(require("./KthLargestElementInArray"));
+const FindTheDuplicateNumber_1 = __importDefault(require("./FindTheDuplicateNumber"));
 const ArraysMain = () => {
     // MergeSortedArray();
     // LongestCommonPrefix();
@@ -21,9 +21,9 @@ const ArraysMain = () => {
     // ShortestUnsortedContinuousSubarray();
     // TopKFrequentElements();
     // ProductOfArrayExceptSelf();
-    // FindTheDuplicateNumber();
+    FindTheDuplicateNumber_1.default();
     // GroupAnagrams();
-    KthLargestElementInArray_1.default();
+    // KthLargestElementInArray();
     // ContainerWithMostWater();
     // TaskScheduler();
     // SortColors();

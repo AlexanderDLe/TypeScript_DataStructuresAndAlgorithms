@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const RotateImage_1 = __importDefault(require("./RotateImage"));
+const MinimumPathSum_1 = __importDefault(require("./MinimumPathSum"));
 exports.default = () => {
-    RotateImage_1.default();
+    // RotateImage();
     // UniquePaths();
-    // MinimumPathSum();
+    MinimumPathSum_1.default();
     // NumberOfIslands();
     // SearchA2DMatrix2();
     // MaximalSquare();

@@ -14,7 +14,7 @@ import GraphsMain from './Graphs/GraphsMain';
 import IntervalsMain from './Intervals/IntervalsMain';
 
 function main() {
-    ArraysMain();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
@@ -22,7 +22,7 @@ function main() {
     // IntervalsMain();
     // LinkedListMain();
     // MathMain();
-    // MatrixMain();
+    MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();

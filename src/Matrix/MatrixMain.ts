@@ -7,9 +7,9 @@ import MaximalSquare from './MaximalSquare';
 import WordSearch from './WordSearch';
 
 export default () => {
-    RotateImage();
+    // RotateImage();
     // UniquePaths();
-    // MinimumPathSum();
+    MinimumPathSum();
     // NumberOfIslands();
     // SearchA2DMatrix2();
     // MaximalSquare();

@@ -27,7 +27,7 @@ const TreesMain = () => {
     // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
-    // BinaryTreeLevelOrderTraversal();
+    BinaryTreeLevelOrderTraversal();
     // UniqueBinaryTrees();
     // ConstructBSTFromPreorderAndInorderTraversal();
     // ImplementPrefixTrie();
@@ -35,7 +35,7 @@ const TreesMain = () => {
     // ValidateBinarySearchTree();
     // ConvertedSortedArrayIntoBST();
     // BinaryTreeInorderTraversal();
-    KthSmallestElementInBST();
+    // KthSmallestElementInBST();
 };
 
 export default TreesMain;

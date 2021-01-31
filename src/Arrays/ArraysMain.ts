@@ -51,9 +51,9 @@ const ArraysMain = () => {
     // ShortestUnsortedContinuousSubarray();
     // TopKFrequentElements();
     // ProductOfArrayExceptSelf();
-    // FindTheDuplicateNumber();
+    FindTheDuplicateNumber();
     // GroupAnagrams();
-    KthLargestElementInArray();
+    // KthLargestElementInArray();
     // ContainerWithMostWater();
     // TaskScheduler();
     // SortColors();

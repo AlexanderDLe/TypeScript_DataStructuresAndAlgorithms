@@ -3,7 +3,47 @@
  * 287. Find the Duplicate Number
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const findDuplicate = (nums) => {
+/*  Set Method Analysis.
+
+    Runtime: O(n) - iterate through array of nums
+    
+    Space: O(n) - add each element to set
+    
+    Strategy: Use set to store previusly added elements.
+    If elements already exist in the set, then it is a duplicate.
+*/
+const findDuplicateSetMethod = (nums) => {
+    const set = new Set([]);
+    for (let num of nums) {
+        if (set.has(num))
+            return num;
+        else
+            set.add(num);
+    }
+    return 0;
+};
+/*  Flip Method Analysis.
+
+    Runtime: O(n) - Iterate through array of nums
+    
+    Space: O(1) - Using constant space.
+    
+    Strategy: Iterate through array. Take the current absolute value
+    of the array and flip (make negative/positive) the corresponding
+    element of the array.
+
+    This strategy modifies the array by flipping elements negative.
+*/
+const findDuplicateFlipMethod = (nums) => {
+    for (let i = 0; i < nums.length; i++) {
+        let currAbsValue = Math.abs(nums[i]);
+        if (nums[currAbsValue - 1] < 0)
+            return currAbsValue;
+        nums[currAbsValue - 1] *= -1;
+    }
+    return 0;
+};
+const findDuplicateB = (nums) => {
     for (let i = 0; i < nums.length; i++) {
         let num = nums[Math.abs(nums[i]) - 1];
         if (num < 0)
@@ -14,6 +54,6 @@ const findDuplicate = (nums) => {
     return 0;
 };
 exports.default = () => {
-    const nums = [2, 1, 1];
-    console.log(findDuplicate(nums));
+    const nums = [1, 3, 4, 2, 2];
+    console.log(findDuplicateFlipMethod(nums));
 };

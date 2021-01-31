@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ArraysMain_1 = __importDefault(require("./Arrays/ArraysMain"));
+const MatrixMain_1 = __importDefault(require("./Matrix/MatrixMain"));
 function main() {
-    ArraysMain_1.default();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
@@ -13,7 +13,7 @@ function main() {
     // IntervalsMain();
     // LinkedListMain();
     // MathMain();
-    // MatrixMain();
+    MatrixMain_1.default();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
