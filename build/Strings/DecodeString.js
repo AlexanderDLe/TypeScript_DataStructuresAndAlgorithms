@@ -3,7 +3,59 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 394. Decode String
  */
+/*  Decode Analysis
+
+    Time Complexity: O(n) - O(n * # of products/length of substr * recursion tree length)
+
+    Space Complexty: Similar to Time Complexity
+
+    Strategy: When we encounter a digit, we use recursion to call the encoded
+    substr within the brackets. We use index pointers to determine the inner substr.
+*/
 const decodeString = (s) => {
+    const getRepeats = (i) => {
+        let repeats = '';
+        while (s[i].match(/[0-9]/)) {
+            repeats += s[i];
+            i++;
+        }
+        return parseInt(repeats);
+    };
+    const getStart = (i) => {
+        while (s[i] != '[')
+            i++;
+        return i + 1;
+    };
+    let stack = [];
+    const getEnd = (i) => {
+        stack.push('[');
+        while (stack.length) {
+            if (s[i] === '[')
+                stack.push('[');
+            else if (s[i] === ']')
+                stack.pop();
+            i++;
+        }
+        return i - 1;
+    };
+    const decode = (repeat, start, end) => {
+        let substr = '';
+        for (let i = start; i < end; i++) {
+            if (s[i].match(/[a-z]/))
+                substr += s[i];
+            if (s[i].match(/[1-9]/)) {
+                let repeats = getRepeats(i);
+                let s = getStart(i);
+                let e = getEnd(s);
+                i = e;
+                substr += decode(repeats, s, e);
+            }
+        }
+        return substr.repeat(repeat);
+    };
+    return decode(1, 0, s.length);
+};
+const decodeStringB = (s) => {
     let stack = [];
     const decode = (repeats, encoded) => {
         let substr = '';

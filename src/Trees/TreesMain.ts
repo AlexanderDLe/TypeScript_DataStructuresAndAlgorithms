@@ -27,8 +27,8 @@ const TreesMain = () => {
     // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
-    BinaryTreeLevelOrderTraversal();
-    // UniqueBinaryTrees();
+    // BinaryTreeLevelOrderTraversal();
+    UniqueBinaryTrees();
     // ConstructBSTFromPreorderAndInorderTraversal();
     // ImplementPrefixTrie();
     // LowestCommonAncestorOfBST();

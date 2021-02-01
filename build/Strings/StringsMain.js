@@ -3,12 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ReverseInteger_1 = __importDefault(require("./ReverseInteger"));
+const DecodeString_1 = __importDefault(require("./DecodeString"));
 exports.default = () => {
     // ValidParentheses();
     // PartitionLabels();
     // MinimumWindowSubstring();
-    // DecodeString();
+    DecodeString_1.default();
     // FindAllAnagramsInAString();
     // WordBreak();
     // ReverseString();
@@ -19,5 +19,5 @@ exports.default = () => {
     // CountAndSay();
     // ValidPalindrome();
     // ImplementStrStr();
-    ReverseInteger_1.default();
+    // ReverseInteger();
 };

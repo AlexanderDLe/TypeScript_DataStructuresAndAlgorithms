@@ -8,8 +8,8 @@ import WordSearch from './WordSearch';
 
 export default () => {
     // RotateImage();
-    // UniquePaths();
-    MinimumPathSum();
+    UniquePaths();
+    // MinimumPathSum();
     // NumberOfIslands();
     // SearchA2DMatrix2();
     // MaximalSquare();

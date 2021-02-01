@@ -1,6 +1,6 @@
 "use strict";
 /**
- * 198. House Robber
+ * 213. House Robber 2
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 /*  Iterative Analysis
@@ -26,11 +26,19 @@ const rob = (nums) => {
         return nums[0];
     if (nums.length === 2)
         return Math.max(nums[0], nums[1]);
-    nums[2] += nums[0];
-    for (let i = 3; i < nums.length; i++) {
-        nums[i] = Math.max(nums[i] + nums[i - 2], nums[i] + nums[i - 3]);
+    let numz = [...nums];
+    nums.pop();
+    numz.shift();
+    let len = nums.length;
+    for (let i = 2; i < len; i++) {
+        nums[i] = Math.max(nums[i] + nums[i - 2], nums[i] + (nums[i - 3] | 0));
     }
-    return Math.max(nums[nums.length - 1], nums[nums.length - 2]);
+    for (let i = 2; i < numz.length; i++) {
+        numz[i] = Math.max(numz[i] + numz[i - 2], numz[i] + (numz[i - 3] | 0));
+    }
+    let maxA = Math.max(nums[len - 1], nums[len - 2]);
+    let maxB = Math.max(numz[len - 1], numz[len - 2]);
+    return Math.max(maxA, maxB);
 };
 exports.default = () => {
     const nums = [2, 7, 9, 3, 1];

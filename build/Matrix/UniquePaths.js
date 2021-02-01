@@ -3,24 +3,37 @@
  * 62. Unique Paths
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const Utilities_1 = require("../utils/Utilities");
+/*  Matrix Analysis
+
+    Time Complexity: O(m * n). We iterate over m * n elements because
+    it is a matrix.
+
+    Space Complexity: O(m * n). We build the matrix of m * n elements.
+
+    Strategy: The strategy is based on the fact that you can only move down and
+    to the right. That means, to get to a certain cell, you must either be
+    coming from the left or the top.
+    
+    To calculate the number of unique paths that you can take to a certain cell,
+    you add the unique paths to the cell above to the unique paths to cell to the left.
+
+    [0 1]   [0 1 1]
+    [1 2]   [1 2 3] <- Every cell is a sum of its neighboring top + left cells.
+*/
 const uniquePaths = (m, n) => {
     let matrix = [];
-    for (let i = 0; i < n; i++) {
-        matrix.push(new Array(m).fill(0));
+    for (let row = 0; row < m; row++) {
+        matrix.push(new Array(n).fill(1));
     }
-    matrix.forEach((v, i) => (matrix[i][0] = 1));
-    matrix[0].forEach((v, i) => (matrix[0][i] = 1));
-    for (let i = 1; i < n; i++) {
-        for (let j = 1; j < m; j++) {
-            matrix[i][j] = matrix[i - 1][j] + matrix[i][j - 1];
+    for (let row = 1; row < m; row++) {
+        for (let col = 1; col < n; col++) {
+            matrix[row][col] = matrix[row - 1][col] + matrix[row][col - 1];
         }
     }
-    Utilities_1.PrintMatrix(matrix);
-    return matrix[n - 1][m - 1];
+    return matrix[m - 1][n - 1];
 };
 exports.default = () => {
-    const m = 7;
-    const n = 3;
+    const m = 3;
+    const n = 7;
     console.log(uniquePaths(m, n));
 };

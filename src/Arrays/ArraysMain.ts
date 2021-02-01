@@ -51,10 +51,10 @@ const ArraysMain = () => {
     // ShortestUnsortedContinuousSubarray();
     // TopKFrequentElements();
     // ProductOfArrayExceptSelf();
-    FindTheDuplicateNumber();
+    // FindTheDuplicateNumber();
     // GroupAnagrams();
     // KthLargestElementInArray();
-    // ContainerWithMostWater();
+    ContainerWithMostWater();
     // TaskScheduler();
     // SortColors();
     // FindFirstAndLostPositionOfElement();

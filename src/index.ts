@@ -16,13 +16,13 @@ import IntervalsMain from './Intervals/IntervalsMain';
 function main() {
     // ArraysMain();
     // BinaryMain();
-    // DPMain();
+    DPMain();
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
     // LinkedListMain();
     // MathMain();
-    MatrixMain();
+    // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();

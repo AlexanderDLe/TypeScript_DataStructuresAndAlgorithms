@@ -18,7 +18,7 @@ export default () => {
     // ValidParentheses();
     // PartitionLabels();
     // MinimumWindowSubstring();
-    // DecodeString();
+    DecodeString();
     // FindAllAnagramsInAString();
     // WordBreak();
     // ReverseString();
@@ -29,5 +29,5 @@ export default () => {
     // CountAndSay();
     // ValidPalindrome();
     // ImplementStrStr();
-    ReverseInteger();
+    // ReverseInteger();
 };

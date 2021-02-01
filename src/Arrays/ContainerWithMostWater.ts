@@ -2,6 +2,22 @@
  * 11. Container With Most Water
  */
 
+/*  Iterative Analysis
+
+    Time Complexity: O(n) - Iterate through all elements once.
+
+    Space Complexity: O(1) - No data structures used.
+
+    Strategy: Set left (L) and right (R) pointers on both sides.
+    Iterate inward by incrementing L or decrementing R depending on the
+    lower value.
+
+    Calculate area by multiplying the lower height to the length between L and R.
+
+    Set max to the highest value.
+*/
+
+
 const maxArea = (height: number[]): number => {
     let result = 0;
     let L = 0;
