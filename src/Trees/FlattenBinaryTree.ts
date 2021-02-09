@@ -8,7 +8,33 @@
  */
 
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
+
+/*  Recursion Analysis
+
+    Time Complexity: O(n^2) you traverse the tree, but also further recursion
+    is needed to find the end of the swapped nodes to reattach temp node.
+
+    Space Complexity: O(1) no data structures used.
+
+    Strategy: DFS through the tree. To swap, save the right node onto temp variable.
+    Swap left onto right and assign left to null. Iterate towards the end of the
+    swapped right node to finally reattach the temp node onto the end.
+*/
 type Node = TreeNode<number> | null;
+
+const flatten = (root: Node): void => {
+    if (!root) return;
+    flatten(root.left);
+
+    let temp: Node = root.right;
+    root.right = root.left;
+    root.left = null;
+
+    while (root.right) root = root.right;
+
+    root.right = temp;
+    flatten(root.right);
+}
 
 const flattenA = (root: Node): void => {
     if (!root) return;
@@ -48,6 +74,6 @@ export default () => {
     t.left.right = new TreeNode(4);
     t.right.right = new TreeNode(6);
 
-    flattenB(t);
+    flatten(t);
     BinaryPreorderTraversal(t);
 };

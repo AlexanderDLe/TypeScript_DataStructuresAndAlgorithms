@@ -12,32 +12,38 @@
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 
-const checkSubtree = (root: Node, p: Node, q: Node): number => {
-    if (!root) return 0;
-    let result = 0;
-    const que: Node[] = [];
-    que.push(root);
+const lowestCommonAncestor = (root: Node, p: Node, q: Node): Node => {
+    let LCAFound = false;
+    
+    const scanSubtree = (n: Node, p: Node, q: Node): number => {
+        let nodesFound = 0;
+    
+        const scan = (n: Node): void => {
+            if (!n) return;
+            if (n === p || n === q) nodesFound++;
+            scan(n.left);
+            scan(n.right);
+        }
+        scan(n);
+        return nodesFound
+    }
 
-    while (que.length) {
-        let len = que.length;
-        while (len) {
-            const front = que.shift();
-            if (front === p || front === q) result++;
-            if (front.left) que.push(front.left);
-            if (front.right) que.push(front.right);
-            len--;
+    while (!LCAFound) {
+        let rootIsNode = root === p || root === q;
+        let nodesInLeft = scanSubtree(root.left, p, q);
+
+        console.log(root === q);
+        
+        if (rootIsNode) LCAFound = true;
+        else {
+            if (nodesInLeft === 2) root = root.left;
+            if (nodesInLeft === 0) root = root.right;
+            if (nodesInLeft === 1) LCAFound = true;
         }
     }
-    return result;
-};
-const lowestCommonAncestorA = (root: Node, p: Node, q: Node): Node => {
-    if (!root || root === p || root === q) return root;
 
-    const res = checkSubtree(root.left, p, q);
-    if (res === 0) return lowestCommonAncestorA(root.right, p, q);
-    if (res === 2) return lowestCommonAncestorA(root.left, p, q);
-    if (res === 1) return root;
-};
+    return root;
+}
 
 const lowestCommonAncestorB = (root: Node, p: Node, q: Node): Node => {
     if (!root || root === p || root === q) return root;
@@ -63,5 +69,5 @@ export default () => {
     t.right.right = new TreeNode(8);
 
     BinaryPreorderTraversal(t);
-    console.log(lowestCommonAncestorB(t, p, q));
+    console.log(lowestCommonAncestor(t, p, q));
 };

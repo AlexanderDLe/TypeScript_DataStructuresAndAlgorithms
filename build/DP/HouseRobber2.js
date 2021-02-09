@@ -32,8 +32,6 @@ const rob = (nums) => {
     let len = nums.length;
     for (let i = 2; i < len; i++) {
         nums[i] = Math.max(nums[i] + nums[i - 2], nums[i] + (nums[i - 3] | 0));
-    }
-    for (let i = 2; i < numz.length; i++) {
         numz[i] = Math.max(numz[i] + numz[i - 2], numz[i] + (numz[i - 3] | 0));
     }
     let maxA = Math.max(nums[len - 1], nums[len - 2]);

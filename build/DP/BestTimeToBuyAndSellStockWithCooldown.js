@@ -1,35 +1,40 @@
 "use strict";
 /**
  * 309. Best Time to Buy and Sell Stock With Cooldown
+ * https://www.youtube.com/watch?v=4wNXkhAky3s
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const maxProfitA = (prices) => {
-    let buy = Number.MIN_SAFE_INTEGER;
-    let prev = 0;
-    let sell = 0;
-    for (let price of prices) {
-        buy = Math.max(buy, prev - price);
-        prev = Math.max(prev, sell);
-        sell = Math.max(sell, buy + price);
-    }
-    return sell;
-};
+/*  State Machine Analysis
+
+    You have three states:
+    
+    1. No stock. If you have no stock, your previous position was either:
+        a. No stock (still not buying)
+        b. Sold
+    
+    2. In Hand. Your previous position was:
+        a. Bought
+        b. Holding (still not selling)
+
+    3. Sold. Previous positions:
+        a. In Hand + Today's Price
+*/
 const maxProfit = (prices) => {
     if (prices.length < 2)
         return 0;
-    let has1_doNothing = -prices[0];
-    let has1_sell = 0;
-    let has0_doNothing = 0;
-    let has0_Buy = -prices[0];
-    for (let price of prices) {
-        has1_doNothing = Math.max(has1_doNothing, has0_Buy);
-        has0_Buy = has0_doNothing - price;
-        has0_doNothing = Math.max(has0_doNothing, has1_sell);
-        has1_sell = has1_doNothing + price;
+    let noStock = 0;
+    let inHand = -prices[0];
+    let sold = 0;
+    for (let i = 1; i < prices.length; i++) {
+        inHand = Math.max(inHand, noStock - prices[i]);
+        noStock = Math.max(noStock, sold);
+        sold = Math.max(sold, inHand + prices[i]);
     }
-    return Math.max(has0_doNothing, has1_sell);
+    return sold;
 };
 exports.default = () => {
-    const prices = [1, 2, 3, 0, 2];
+    const prices = [2, 1, 4, 5, 2, 9, 7];
+    const prices2 = [6, 1, 3, 2, 4, 7];
     console.log(maxProfit(prices));
+    console.log(maxProfit(prices2));
 };

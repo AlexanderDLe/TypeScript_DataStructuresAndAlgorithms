@@ -12,37 +12,37 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * If right returns null, left will return LCA.
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
-const checkSubtree = (root, p, q) => {
-    if (!root)
-        return 0;
-    let result = 0;
-    const que = [];
-    que.push(root);
-    while (que.length) {
-        let len = que.length;
-        while (len) {
-            const front = que.shift();
-            if (front === p || front === q)
-                result++;
-            if (front.left)
-                que.push(front.left);
-            if (front.right)
-                que.push(front.right);
-            len--;
+const lowestCommonAncestor = (root, p, q) => {
+    let LCAFound = false;
+    const scanSubtree = (n, p, q) => {
+        let nodesFound = 0;
+        const scan = (n) => {
+            if (!n)
+                return;
+            if (n === p || n === q)
+                nodesFound++;
+            scan(n.left);
+            scan(n.right);
+        };
+        scan(n);
+        return nodesFound;
+    };
+    while (!LCAFound) {
+        let rootIsNode = root === p || root === q;
+        let nodesInLeft = scanSubtree(root.left, p, q);
+        console.log(root === q);
+        if (rootIsNode)
+            LCAFound = true;
+        else {
+            if (nodesInLeft === 2)
+                root = root.left;
+            if (nodesInLeft === 0)
+                root = root.right;
+            if (nodesInLeft === 1)
+                LCAFound = true;
         }
     }
-    return result;
-};
-const lowestCommonAncestorA = (root, p, q) => {
-    if (!root || root === p || root === q)
-        return root;
-    const res = checkSubtree(root.left, p, q);
-    if (res === 0)
-        return lowestCommonAncestorA(root.right, p, q);
-    if (res === 2)
-        return lowestCommonAncestorA(root.left, p, q);
-    if (res === 1)
-        return root;
+    return root;
 };
 const lowestCommonAncestorB = (root, p, q) => {
     if (!root || root === p || root === q)
@@ -66,5 +66,5 @@ exports.default = () => {
     t.right.left = new TreeClass_1.TreeNode(0);
     t.right.right = new TreeClass_1.TreeNode(8);
     TreeClass_1.BinaryPreorderTraversal(t);
-    console.log(lowestCommonAncestorB(t, p, q));
+    console.log(lowestCommonAncestor(t, p, q));
 };

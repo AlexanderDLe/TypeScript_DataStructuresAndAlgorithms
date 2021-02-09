@@ -5,9 +5,43 @@
 import { PrintArray } from '../utils/Utilities';
 
 type PhoneMap = {
-    [key: number]: string[] | null;
+    [key: string]: string[] | null;
 };
-const letterCombinations = (digits: number[]): string[] => {
+
+const letterCombinations = (digits: string): string[] => {
+    const map: PhoneMap = {
+        2: ['a', 'b', 'c'],
+        3: ['d', 'e', 'f'],
+        4: ['g', 'h', 'i'],
+        5: ['j', 'k', 'l'],
+        6: ['m', 'n', 'o'],
+        7: ['p', 'q', 'r', 's'],
+        8: ['t', 'u', 'v'],
+        9: ['w', 'x', 'y', 'z']
+    };
+
+    let result: string[] = [];
+
+    const recurse = (str: string, index: number): void => {
+        if (index === digits.length) {
+            if (str.length) result.push(str);
+            return;
+        }
+        if (digits[index] === '1') {
+            recurse(str, index + 1);
+            return;
+        };
+
+        for (let i = 0; i < map[digits[index]].length; i++) {
+            recurse(str + map[digits[index]][i], index + 1);
+        }
+    }
+    recurse('', 0);
+    console.log(result);
+    return result;
+}
+
+const letterCombinationsB = (digits: number[]): string[] => {
     if (!digits.length) return [];
 
     let result: string[] = [];
@@ -48,6 +82,6 @@ const letterCombinations = (digits: number[]): string[] => {
 };
 
 export default () => {
-    const digits = [1, 2, 3, 4];
+    const digits = '';
     PrintArray(letterCombinations(digits));
 };

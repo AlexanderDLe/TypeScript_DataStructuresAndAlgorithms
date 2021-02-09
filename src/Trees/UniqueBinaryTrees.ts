@@ -43,16 +43,13 @@
 And  so on...
 */
 const numTrees = (n: number): number => {
-    let DP: number[] = new Array(n + 1).fill(0);
+    const DP: number[] = new Array(n + 1).fill(0);
     DP[0] = 1;
     DP[1] = 1;
 
-    for (let level = 2; level <= n; level++) {
-        for (let root = 1; root <= level; root++) {
-            DP[level] += DP[level - root] * DP[root - 1];
-            console.log(`Level: ${level} | Root: ${root}`);
-            console.log(DP);
-            console.log('');
+    for (let i = 2; i <= n; i++) {
+        for (let j = 1; j <= i; j++) { 
+            DP[i] += DP[j - 1] * DP[i - j];
         }
     }
 

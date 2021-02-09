@@ -5,13 +5,17 @@ import NumberOfIslands from './NumberOfIslands';
 import SearchA2DMatrix2 from './SearchA2DMatrix2';
 import MaximalSquare from './MaximalSquare';
 import WordSearch from './WordSearch';
+import GameOfLife from './GameOfLife';
+import KthSmallestElementInSortedMatrix from './KthSmallestElementInSortedMatrix';
 
 export default () => {
     // RotateImage();
-    UniquePaths();
+    // UniquePaths();
     // MinimumPathSum();
     // NumberOfIslands();
     // SearchA2DMatrix2();
     // MaximalSquare();
     // WordSearch();
+    // GameOfLife();
+    KthSmallestElementInSortedMatrix();
 };

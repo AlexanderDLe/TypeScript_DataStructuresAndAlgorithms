@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ContainerWithMostWater_1 = __importDefault(require("./ContainerWithMostWater"));
+const FourSum2_1 = __importDefault(require("./FourSum2"));
 const ArraysMain = () => {
     // MergeSortedArray();
     // LongestCommonPrefix();
@@ -24,9 +24,10 @@ const ArraysMain = () => {
     // FindTheDuplicateNumber();
     // GroupAnagrams();
     // KthLargestElementInArray();
-    ContainerWithMostWater_1.default();
+    // ContainerWithMostWater();
     // TaskScheduler();
     // SortColors();
+    FourSum2_1.default();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();

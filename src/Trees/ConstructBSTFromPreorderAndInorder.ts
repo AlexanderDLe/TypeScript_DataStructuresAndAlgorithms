@@ -3,6 +3,35 @@
  */
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
+type Map = { [key: number]: number };
+
+const buildTree = (preorder: number[], inorder: number[]): Node => {
+    let map: Map = {};
+    for (let i = 0; i < preorder.length; i++) map[preorder[i]] = i;
+    
+    const findRootIndex = (s: number, e: number): number => {
+        let index = Infinity;
+        for (let i = s; i <= e; i++) {
+            index = Math.min(index, map[inorder[i]]);
+        }
+
+        return inorder.indexOf(preorder[index]);
+    }
+
+    const build = (start: number, end: number): Node => {
+        if (start > end) return null;
+        let i = findRootIndex(start, end);
+        let n = new TreeNode(inorder[i]);
+
+        n.left = build(start, i - 1);
+        n.right = build(i + 1, end);
+
+        return n;
+    }
+
+    return build(0, preorder.length - 1);
+}
+
 
 const buildTreeSlicing = (preorder: number[], inorder: number[]): Node => {
     const build = (preorder: number[], inorder: number[]): Node => {
@@ -20,11 +49,10 @@ const buildTreeSlicing = (preorder: number[], inorder: number[]): Node => {
 
         return t;
     };
-
+    
     return build(preorder, inorder);
 };
 
-type Map = { [key: number]: number };
 const buildTreeIndexing = (preorder: number[], inorder: number[]): Node => {
     const map: Map = {};
     for (let i = 0; i < inorder.length; i++) map[inorder[i]] = i;
@@ -35,19 +63,23 @@ const buildTreeIndexing = (preorder: number[], inorder: number[]): Node => {
         const t = new TreeNode(preorder[preStart]);
         const rootIndex = map[preorder[preStart]];
         const numsLeft = rootIndex - inStart;
-
+        
+        console.log(t.val);
+        console.log(`t.left = build(${preStart} + 1, ${inStart}, ${rootIndex} - 1)`);
+        console.log(`t.right = build(${preStart} + ${numsLeft} + 1, ${rootIndex} + 1, ${inEnd})\n`);
         t.left = build(preStart + 1, inStart, rootIndex - 1);
         t.right = build(preStart + numsLeft + 1, rootIndex + 1, inEnd);
 
         return t;
     };
-    //
+    
     return build(0, 0, inorder.length - 1);
 };
 
 export default () => {
-    const preorder = [3, 9, 1, 2, 20, 15, 7];
-    const inorder = [1, 9, 2, 3, 15, 20, 7];
+    const preorder = [3, 9, 20, 15, 7];
+    const inorder = [9, 3, 15, 20, 7];
     // BinaryPreorderTraversal(buildTreeSlicing(preorder, inorder));
+    // BinaryPreorderTraversal(buildTreeIndexing(preorder, inorder));
     BinaryPreorderTraversal(buildTreeIndexing(preorder, inorder));
 };

@@ -3,14 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const HouseRobber2_1 = __importDefault(require("./HouseRobber2"));
+const BestTimeToBuyAndSellStockWithCooldown_1 = __importDefault(require("./BestTimeToBuyAndSellStockWithCooldown"));
 const DPMain = () => {
     // PalindromicSubstrings();
     // ClimbingStairs();
     // HouseRobber1();
-    HouseRobber2_1.default();
+    // HouseRobber2();
     // HouseRobber3();
-    // BestTimeToBuyAndSellStockWithCooldown();
+    BestTimeToBuyAndSellStockWithCooldown_1.default();
     // PerfectSquares();
     // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();

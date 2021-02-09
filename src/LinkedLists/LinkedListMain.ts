@@ -10,13 +10,15 @@ import RemoveNthNodeFromList from './RemoveNthNodeFromList';
 import AddTwoNumbers from './AddTwoNumbers';
 import CopyListWithRandomPointer from './CopyListWithRandomPointer';
 import DeleteNodeFromLinkedList from './DeleteNodeInLinkedList';
+import OddEvenLinkedList from './OddEvenLinkedList';
 
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
     // ReverseLinkedList();
     // MergedTwoSortedLists();
     // LinkedListCycle();
-    PalindromeLinkedList();
+    // PalindromeLinkedList();
+    OddEvenLinkedList();
     // IntersectionOfTwoLinkedLists();
     // SortList();
     // LinkedListCycle2();

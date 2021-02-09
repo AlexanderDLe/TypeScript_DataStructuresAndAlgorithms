@@ -4,6 +4,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * 105. Construct Binary Tree From Preorder and Inorder Traversal
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
+const buildTree = (preorder, inorder) => {
+    let map = {};
+    for (let i = 0; i < preorder.length; i++)
+        map[preorder[i]] = i;
+    const findRootIndex = (s, e) => {
+        let index = Infinity;
+        for (let i = s; i <= e; i++) {
+            index = Math.min(index, map[inorder[i]]);
+        }
+        return inorder.indexOf(preorder[index]);
+    };
+    const build = (start, end) => {
+        if (start > end)
+            return null;
+        let i = findRootIndex(start, end);
+        let n = new TreeClass_1.TreeNode(inorder[i]);
+        n.left = build(start, i - 1);
+        n.right = build(i + 1, end);
+        return n;
+    };
+    return build(0, preorder.length - 1);
+};
 const buildTreeSlicing = (preorder, inorder) => {
     const build = (preorder, inorder) => {
         if (!preorder.length && !inorder.length)
@@ -30,16 +52,19 @@ const buildTreeIndexing = (preorder, inorder) => {
         const t = new TreeClass_1.TreeNode(preorder[preStart]);
         const rootIndex = map[preorder[preStart]];
         const numsLeft = rootIndex - inStart;
+        console.log(t.val);
+        console.log(`t.left = build(${preStart} + 1, ${inStart}, ${rootIndex} - 1)`);
+        console.log(`t.right = build(${preStart} + ${numsLeft} + 1, ${rootIndex} + 1, ${inEnd})\n`);
         t.left = build(preStart + 1, inStart, rootIndex - 1);
         t.right = build(preStart + numsLeft + 1, rootIndex + 1, inEnd);
         return t;
     };
-    //
     return build(0, 0, inorder.length - 1);
 };
 exports.default = () => {
-    const preorder = [3, 9, 1, 2, 20, 15, 7];
-    const inorder = [1, 9, 2, 3, 15, 20, 7];
+    const preorder = [3, 9, 20, 15, 7];
+    const inorder = [9, 3, 15, 20, 7];
     // BinaryPreorderTraversal(buildTreeSlicing(preorder, inorder));
+    // BinaryPreorderTraversal(buildTreeIndexing(preorder, inorder));
     TreeClass_1.BinaryPreorderTraversal(buildTreeIndexing(preorder, inorder));
 };
