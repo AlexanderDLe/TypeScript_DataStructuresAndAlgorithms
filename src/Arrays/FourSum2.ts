@@ -19,7 +19,6 @@ const fourSumCount = (A: number[], B: number[],C: number[],D: number[]): number 
     return count;
 };
 
-
 export default () => {
     let A = [-1,-1]
     let B = [-1,1]

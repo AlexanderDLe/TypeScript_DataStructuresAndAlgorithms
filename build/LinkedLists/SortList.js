@@ -6,6 +6,45 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
+const sortList = (head) => {
+    const merge = (L, R) => {
+        let dummy = new LinkedListClass_1.ListNode(0);
+        let p = dummy;
+        while (L && R) {
+            if (L.val <= R.val) {
+                p.next = L;
+                L = L.next;
+            }
+            else {
+                p.next = R;
+                R = R.next;
+            }
+            p = p.next;
+        }
+        if (!R)
+            p.next = L;
+        else if (!L)
+            p.next = R;
+        return dummy.next;
+    };
+    const split = (n) => {
+        if (!n || !n.next)
+            return n;
+        let temp = n;
+        let slow = n;
+        let fast = n;
+        while (fast && fast.next) {
+            temp = slow;
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        temp.next = null;
+        let L = split(n);
+        let R = split(slow);
+        return merge(L, R);
+    };
+    return split(head);
+};
 const merge = (l1, l2) => {
     let l = new LinkedListClass_1.ListNode(0);
     let p = l;
@@ -26,7 +65,7 @@ const merge = (l1, l2) => {
         p.next = l2;
     return l.next;
 };
-const sortList = (head) => {
+const sortListB = (head) => {
     if (!head || !head.next)
         return head;
     // 1. Cut the list to two halves

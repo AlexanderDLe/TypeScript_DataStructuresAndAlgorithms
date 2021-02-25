@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const KthSmallestElementInSortedMatrix_1 = __importDefault(require("./KthSmallestElementInSortedMatrix"));
+const ValidSudoku_1 = __importDefault(require("./ValidSudoku"));
 exports.default = () => {
     // RotateImage();
     // UniquePaths();
@@ -13,5 +13,6 @@ exports.default = () => {
     // MaximalSquare();
     // WordSearch();
     // GameOfLife();
-    KthSmallestElementInSortedMatrix_1.default();
+    // KthSmallestElementInSortedMatrix();
+    ValidSudoku_1.default();
 };

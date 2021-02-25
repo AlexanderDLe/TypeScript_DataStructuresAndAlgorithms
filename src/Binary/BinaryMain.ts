@@ -5,7 +5,7 @@ import SumOfTwoIntegers from './SumOfTwoIntegers';
 
 export default () => {
     // CountingBits();
-    // SumOfTwoIntegers();
+    SumOfTwoIntegers();
     // NumberOf1Bits();
-    ReverseBits();
+    // ReverseBits();
 };

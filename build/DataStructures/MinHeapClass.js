@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MinHeap = void 0;
 class MinHeap {
     constructor(max) {
         this.max = max;

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PrintList = exports.LinkedList = exports.RandomListNode = exports.ListNode = void 0;
 class ListNode {
     constructor(val) {
         this.val = val;
@@ -41,7 +42,7 @@ class LinkedList {
     }
 }
 exports.LinkedList = LinkedList;
-exports.PrintList = (head) => {
+const PrintList = (head) => {
     let n = head;
     let str = '';
     while (n) {
@@ -53,3 +54,4 @@ exports.PrintList = (head) => {
     }
     console.log(str);
 };
+exports.PrintList = PrintList;

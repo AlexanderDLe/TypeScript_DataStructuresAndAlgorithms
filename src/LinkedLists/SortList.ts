@@ -7,10 +7,53 @@
 import {
     ListNode,
     LinkedList,
-    PrintList
+    PrintList,
 } from '../DataStructures/LinkedListClass';
 
 type Node = ListNode<number> | null;
+
+const sortList = (head: Node): Node => {
+    const merge = (L: Node, R: Node): Node => {
+        let dummy: Node = new ListNode(0);
+        let p: Node = dummy;
+
+        while (L && R) {
+            if (L.val <= R.val) {
+                p.next = L;
+                L = L.next;
+            } else {
+                p.next = R;
+                R = R.next;
+            }
+            p = p.next;
+        }
+        if (!R) p.next = L;
+        else if (!L) p.next = R;
+
+        return dummy.next;
+    };
+    const split = (n: Node): Node => {
+        if (!n || !n.next) return n;
+        let temp: Node = n;
+        let slow: Node = n;
+        let fast: Node = n;
+
+        while (fast && fast.next) {
+            temp = slow;
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        temp.next = null;
+
+        let L: Node = split(n);
+        let R: Node = split(slow);
+
+        return merge(L, R);
+    };
+
+    return split(head);
+};
 
 const merge = (l1: Node, l2: Node): Node => {
     let l: Node = new ListNode(0);
@@ -30,8 +73,7 @@ const merge = (l1: Node, l2: Node): Node => {
     if (l2) p.next = l2;
     return l.next;
 };
-
-const sortList = (head: Node): Node => {
+const sortListB = (head: Node): Node => {
     if (!head || !head.next) return head;
 
     // 1. Cut the list to two halves

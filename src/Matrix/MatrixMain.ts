@@ -7,6 +7,7 @@ import MaximalSquare from './MaximalSquare';
 import WordSearch from './WordSearch';
 import GameOfLife from './GameOfLife';
 import KthSmallestElementInSortedMatrix from './KthSmallestElementInSortedMatrix';
+import ValidSudoku from './ValidSudoku';
 
 export default () => {
     // RotateImage();
@@ -17,5 +18,6 @@ export default () => {
     // MaximalSquare();
     // WordSearch();
     // GameOfLife();
-    KthSmallestElementInSortedMatrix();
+    // KthSmallestElementInSortedMatrix();
+    ValidSudoku();
 };

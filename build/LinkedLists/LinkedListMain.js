@@ -3,16 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const OddEvenLinkedList_1 = __importDefault(require("./OddEvenLinkedList"));
+const SortList_1 = __importDefault(require("./SortList"));
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
     // ReverseLinkedList();
     // MergedTwoSortedLists();
     // LinkedListCycle();
     // PalindromeLinkedList();
-    OddEvenLinkedList_1.default();
+    // OddEvenLinkedList();
     // IntersectionOfTwoLinkedLists();
-    // SortList();
+    SortList_1.default();
     // LinkedListCycle2();
     // RemoveNthNodeFromList();
     // AddTwoNumbers();

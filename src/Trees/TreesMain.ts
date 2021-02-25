@@ -16,15 +16,18 @@ import LowestCommonAncestorOfBST from './LowestCommonAncestorOfABST';
 import ValidateBinarySearchTree from './ValidateBinarySearchTree';
 import ConvertedSortedArrayIntoBST from './ConvertSortedArrayIntoBST';
 import KthSmallestElementInBST from './KthSmallestElementInBST';
+import BSTZigZagOrderTraversal from './BSTZigZagOrderTraversal';
+import PopulatingNextRightPointersInEachNode from './PopulatingNextRightPointersInEachNode';
 
 const TreesMain = () => {
+    PopulatingNextRightPointersInEachNode();
     // RangeSum();
     // InvertBinaryTree();
     // MergeTwoBinaryTrees();
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
     // SymmetricTree();
-    PathSum3();
+    // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
     // BinaryTreeLevelOrderTraversal();
@@ -36,6 +39,7 @@ const TreesMain = () => {
     // ConvertedSortedArrayIntoBST();
     // BinaryTreeInorderTraversal();
     // KthSmallestElementInBST();
+    // BSTZigZagOrderTraversal();
 };
 
 export default TreesMain;

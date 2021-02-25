@@ -34,6 +34,7 @@ import MergeSortedArray from './MergeSortedArray';
 import LongestCommonPrefix from './LongestCommonPrefix';
 import KthLargestElementInArray from './KthLargestElementInArray';
 import FourSum2 from './FourSum2';
+import ArrayQuadruplet from './ArrayQuadruplet';
 
 const ArraysMain = () => {
     // MergeSortedArray();
@@ -58,7 +59,8 @@ const ArraysMain = () => {
     // ContainerWithMostWater();
     // TaskScheduler();
     // SortColors();
-    FourSum2();
+    // FourSum2();
+    ArrayQuadruplet();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();

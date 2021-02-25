@@ -9,6 +9,19 @@ export class TreeNode<T> {
     }
 }
 
+export class TreeNodeNext<T> {
+    val: T;
+    left: TreeNodeNext<T> | null;
+    right: TreeNodeNext<T> | null;
+    next: TreeNodeNext<T> | null;
+    constructor(val: T) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+        this.next = null;
+    }
+}
+
 export const BinaryPreorderTraversal = <T>(root: TreeNode<T> | null): void => {
     let str = '';
     const recurse = <T>(root: TreeNode<T> | null): void => {

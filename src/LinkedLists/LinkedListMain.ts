@@ -18,9 +18,9 @@ const LinkedListMain = () => {
     // MergedTwoSortedLists();
     // LinkedListCycle();
     // PalindromeLinkedList();
-    OddEvenLinkedList();
+    // OddEvenLinkedList();
     // IntersectionOfTwoLinkedLists();
-    // SortList();
+    SortList();
     // LinkedListCycle2();
     // RemoveNthNodeFromList();
     // AddTwoNumbers();

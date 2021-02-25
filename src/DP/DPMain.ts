@@ -10,6 +10,7 @@ import CoinChange from './CoinChange';
 import JumpGame from './JumpGame';
 import BurstBalloons from './BurstBalloons';
 import HouseRobber2 from './HouseRobber2';
+import PalindromePartitioning from './PalindromePartitioning';
 
 const DPMain = () => {
     // PalindromicSubstrings();
@@ -17,7 +18,8 @@ const DPMain = () => {
     // HouseRobber1();
     // HouseRobber2();
     // HouseRobber3();
-    BestTimeToBuyAndSellStockWithCooldown();
+    // BestTimeToBuyAndSellStockWithCooldown();
+    PalindromePartitioning();
     // PerfectSquares();
     // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();

@@ -7,7 +7,9 @@ const getSum = (a: number, b: number): number => {
 
     while (b) {
         carry = a & b;
+        console.log('carry:' +carry);
         a ^= b;
+        console.log('a:' + a);
         b = carry << 1;
     }
 
@@ -15,5 +17,5 @@ const getSum = (a: number, b: number): number => {
 };
 
 export default () => {
-    console.log(getSum(1, 2));
+    console.log(getSum(15, 20));
 };

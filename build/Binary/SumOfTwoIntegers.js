@@ -7,11 +7,13 @@ const getSum = (a, b) => {
     let carry;
     while (b) {
         carry = a & b;
+        console.log('carry:' + carry);
         a ^= b;
+        console.log('a:' + a);
         b = carry << 1;
     }
     return a;
 };
 exports.default = () => {
-    console.log(getSum(1, 2));
+    console.log(getSum(15, 20));
 };

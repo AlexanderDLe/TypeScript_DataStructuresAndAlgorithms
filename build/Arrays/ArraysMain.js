@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const FourSum2_1 = __importDefault(require("./FourSum2"));
+const ArrayQuadruplet_1 = __importDefault(require("./ArrayQuadruplet"));
 const ArraysMain = () => {
     // MergeSortedArray();
     // LongestCommonPrefix();
@@ -27,7 +27,8 @@ const ArraysMain = () => {
     // ContainerWithMostWater();
     // TaskScheduler();
     // SortColors();
-    FourSum2_1.default();
+    // FourSum2();
+    ArrayQuadruplet_1.default();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();

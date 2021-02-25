@@ -12,15 +12,17 @@ import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 import GraphsMain from './Graphs/GraphsMain';
 import IntervalsMain from './Intervals/IntervalsMain';
+import Sketch from './Sketch';
 
 function main() {
-    ArraysMain();
+    // Sketch();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
-    // LinkedListMain();
+    LinkedListMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PrintArray = (arr) => {
+exports.PrintObject = exports.PrintMatrix = exports.PrintArray = void 0;
+const PrintArray = (arr) => {
     if (!arr)
         return;
     let str = '[ ';
@@ -13,7 +14,8 @@ exports.PrintArray = (arr) => {
     str += ' ]';
     console.log(str);
 };
-exports.PrintMatrix = (matrix) => {
+exports.PrintArray = PrintArray;
+const PrintMatrix = (matrix) => {
     let str = '[\n';
     for (let i = 0; i < matrix.length; i++) {
         str += '\t[ ';
@@ -26,7 +28,8 @@ exports.PrintMatrix = (matrix) => {
     str += ']\n';
     console.log(str);
 };
-exports.PrintObject = (obj) => {
+exports.PrintMatrix = PrintMatrix;
+const PrintObject = (obj) => {
     let str = '{\n';
     for (let item in obj) {
         str += '\t';
@@ -37,3 +40,4 @@ exports.PrintObject = (obj) => {
     str += '}\n';
     console.log(str);
 };
+exports.PrintObject = PrintObject;
