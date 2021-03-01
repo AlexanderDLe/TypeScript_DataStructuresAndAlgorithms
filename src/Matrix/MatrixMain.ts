@@ -18,6 +18,6 @@ export default () => {
     // MaximalSquare();
     // WordSearch();
     // GameOfLife();
-    // KthSmallestElementInSortedMatrix();
-    ValidSudoku();
+    KthSmallestElementInSortedMatrix();
+    // ValidSudoku();
 };

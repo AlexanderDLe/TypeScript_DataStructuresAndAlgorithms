@@ -3,7 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const KthLargestElementInAnArray_1 = __importDefault(require("./KthLargestElementInAnArray"));
+const JavascriptHeapArray_1 = __importDefault(require("./JavascriptHeapArray"));
 exports.default = () => {
-    KthLargestElementInAnArray_1.default();
+    JavascriptHeapArray_1.default();
+    // KthLargestElementInAnArray();
 };

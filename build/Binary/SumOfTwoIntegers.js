@@ -3,14 +3,25 @@
  *  371. Sum of Two Integers
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const getSum = (a, b) => {
+const getSumB = (a, b) => {
     let carry;
     while (b) {
         carry = a & b;
-        console.log('carry:' + carry);
         a ^= b;
-        console.log('a:' + a);
         b = carry << 1;
+    }
+    return a;
+};
+const getSum = (a, b) => {
+    let carry;
+    while (b) {
+        console.log(`a: ${a.toString(2)} - b: ${b.toString(2)}`);
+        carry = a & b;
+        console.log('carry:' + carry.toString(2));
+        a ^= b;
+        console.log('a:' + a.toString(2));
+        b = carry << 1;
+        console.log('b:' + b.toString(2) + '\n');
     }
     return a;
 };
