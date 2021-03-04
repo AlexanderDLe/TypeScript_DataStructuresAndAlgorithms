@@ -8,6 +8,7 @@ import WordSearch from './WordSearch';
 import GameOfLife from './GameOfLife';
 import KthSmallestElementInSortedMatrix from './KthSmallestElementInSortedMatrix';
 import ValidSudoku from './ValidSudoku';
+import SetMatrixZeroes from './SetMatrixZeroes';
 
 export default () => {
     // RotateImage();
@@ -15,9 +16,10 @@ export default () => {
     // MinimumPathSum();
     // NumberOfIslands();
     // SearchA2DMatrix2();
+    SetMatrixZeroes();
     // MaximalSquare();
     // WordSearch();
     // GameOfLife();
-    KthSmallestElementInSortedMatrix();
+    // KthSmallestElementInSortedMatrix();
     // ValidSudoku();
 };

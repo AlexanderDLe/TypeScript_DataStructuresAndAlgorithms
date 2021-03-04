@@ -16,7 +16,7 @@ import Sketch from './Sketch';
 
 function main() {
     // Sketch();
-    ArraysMain();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
@@ -24,7 +24,7 @@ function main() {
     // IntervalsMain();
     // LinkedListMain();
     // MathMain();
-    // MatrixMain();
+    MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
