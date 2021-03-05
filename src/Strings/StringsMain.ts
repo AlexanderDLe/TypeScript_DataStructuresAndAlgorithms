@@ -13,12 +13,14 @@ import CountAndSay from './CountAndSay';
 import ValidPalindrome from './ValidPalindrome';
 import ImplementStrStr from './ImplementStrStr';
 import ReverseInteger from './ReverseInteger';
+import ToLowerCase from './ToLowerCase';
 
 export default () => {
+    ToLowerCase();
     // ValidParentheses();
     // PartitionLabels();
     // MinimumWindowSubstring();
-    DecodeString();
+    // DecodeString();
     // FindAllAnagramsInAString();
     // WordBreak();
     // ReverseString();

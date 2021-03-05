@@ -36,6 +36,7 @@ import KthLargestElementInArray from './KthLargestElementInArray';
 import FourSum2 from './FourSum2';
 import ArrayQuadruplet from './ArrayQuadruplet';
 import CountGoodTriplets from './CountGoodTriplets';
+import MinimumTimeVisitingAllPoints from './MinimumTimeVisitingAllPoints';
 
 const ArraysMain = () => {
     // MergeSortedArray();
@@ -62,7 +63,8 @@ const ArraysMain = () => {
     // SortColors();
     // FourSum2();
     // ArrayQuadruplet();
-    CountGoodTriplets();
+    // CountGoodTriplets();
+    MinimumTimeVisitingAllPoints();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();

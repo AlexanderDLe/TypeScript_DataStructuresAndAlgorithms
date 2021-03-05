@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CountGoodTriplets_1 = __importDefault(require("./CountGoodTriplets"));
+const MinimumTimeVisitingAllPoints_1 = __importDefault(require("./MinimumTimeVisitingAllPoints"));
 const ArraysMain = () => {
     // MergeSortedArray();
     // LongestCommonPrefix();
@@ -29,7 +29,8 @@ const ArraysMain = () => {
     // SortColors();
     // FourSum2();
     // ArrayQuadruplet();
-    CountGoodTriplets_1.default();
+    // CountGoodTriplets();
+    MinimumTimeVisitingAllPoints_1.default();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();
