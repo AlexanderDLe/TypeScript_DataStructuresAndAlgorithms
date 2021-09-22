@@ -3,14 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MinimumTimeVisitingAllPoints_1 = __importDefault(require("./MinimumTimeVisitingAllPoints"));
+const TwoSum1_1 = __importDefault(require("./TwoSum1"));
 const ArraysMain = () => {
     // MergeSortedArray();
     // LongestCommonPrefix();
     // FindNumbersWithEvenDigits();
-    // TwoSum1();
     // IntersectionOfTwoArrays2();
     // RemoveDuplicatesFromSortedArray();
+    TwoSum1_1.default();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
@@ -30,7 +30,7 @@ const ArraysMain = () => {
     // FourSum2();
     // ArrayQuadruplet();
     // CountGoodTriplets();
-    MinimumTimeVisitingAllPoints_1.default();
+    // MinimumTimeVisitingAllPoints();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();

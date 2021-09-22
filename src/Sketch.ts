@@ -1,19 +1,9 @@
-function compareStrings(email: string): void {
-    function outer() {
-        var b = 10;
-        var c = 100;
-        function inner() {
-            var a = 20;
-            console.log('a= ' + a + ' b= ' + b);
-            a++;
-            b++;
-        }
-        return inner;
-    }
+function parse(str: string): string {
+    let arr = str.split('.');
+    return `${arr[0]}_${Date.now()}.${arr[1]}`;
 }
 
 export default () => {
-    let str = 'minder@mindera.com';
-
-    // console.log(outer());
+    let str = 'SD Dark.png';
+    console.log(parse(str));
 };

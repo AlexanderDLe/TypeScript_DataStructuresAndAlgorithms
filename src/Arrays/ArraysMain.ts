@@ -42,9 +42,9 @@ const ArraysMain = () => {
     // MergeSortedArray();
     // LongestCommonPrefix();
     // FindNumbersWithEvenDigits();
-    // TwoSum1();
     // IntersectionOfTwoArrays2();
     // RemoveDuplicatesFromSortedArray();
+    TwoSum1();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
@@ -64,7 +64,7 @@ const ArraysMain = () => {
     // FourSum2();
     // ArrayQuadruplet();
     // CountGoodTriplets();
-    MinimumTimeVisitingAllPoints();
+    // MinimumTimeVisitingAllPoints();
     // FindFirstAndLostPositionOfElement();
     // SearchInRotatedSortedArray();
     // NextPermutation();

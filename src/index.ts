@@ -16,13 +16,13 @@ import Sketch from './Sketch';
 
 function main() {
     // Sketch();
-    ArraysMain();
+    // ArraysMain();
     // BinaryMain();
     // DPMain();
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
-    // LinkedListMain();
+    LinkedListMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();

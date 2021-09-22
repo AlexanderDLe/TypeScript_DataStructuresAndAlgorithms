@@ -5,7 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
 const LinkedListClass_2 = require("../DataStructures/LinkedListClass");
-const addTwoNumbers = (l1, l2) => {
+const addTwoNumbersOld = (l1, l2) => {
     let carry = 0;
     let dummy = new LinkedListClass_1.ListNode(0);
     let head = dummy;
@@ -27,6 +27,61 @@ const addTwoNumbers = (l1, l2) => {
         add = add % 10;
         dummy.next = new LinkedListClass_1.ListNode(add);
         dummy = dummy.next;
+    }
+    return head.next;
+};
+const addTwoNumbersB = (l1, l2) => {
+    let head = new LinkedListClass_1.ListNode(0);
+    let curr = head;
+    let carry = 0;
+    while (l1 || l2 || carry) {
+        let sum = 0;
+        if (l1)
+            sum += l1.val;
+        if (l2)
+            sum += l2.val;
+        if (carry) {
+            sum += 1;
+            carry = 0;
+        }
+        if (sum >= 10) {
+            sum -= 10;
+            carry = 1;
+        }
+        curr.val = sum;
+        if (l1)
+            l1 = l1.next;
+        if (l2)
+            l2 = l2.next;
+        if (l1 || l2 || carry) {
+            curr.next = new LinkedListClass_1.ListNode(0);
+            curr = curr.next;
+        }
+    }
+    return head;
+};
+const addTwoNumbers = (l1, l2) => {
+    let head = new LinkedListClass_1.ListNode(0);
+    let curr = head;
+    let carry = 0;
+    while (l1 || l2 || carry) {
+        let sum = 0;
+        if (l1) {
+            sum += l1.val;
+            l1 = l1.next;
+        }
+        if (l2) {
+            sum += l2.val;
+            l2 = l2.next;
+        }
+        if (carry) {
+            sum += carry;
+            carry = 0;
+        }
+        carry = Math.floor(sum / 10);
+        sum = sum % 10;
+        curr.next = new LinkedListClass_1.ListNode(sum);
+        curr = curr.next;
     }
     return head.next;
 };

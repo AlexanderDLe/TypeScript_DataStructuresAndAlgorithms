@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SortList_1 = __importDefault(require("./SortList"));
+const AddTwoNumbers_1 = __importDefault(require("./AddTwoNumbers"));
 const LinkedListMain = () => {
     // ConvertBinaryNumberInLinkedList();
     // ReverseLinkedList();
@@ -12,10 +12,10 @@ const LinkedListMain = () => {
     // PalindromeLinkedList();
     // OddEvenLinkedList();
     // IntersectionOfTwoLinkedLists();
-    SortList_1.default();
+    // SortList();
     // LinkedListCycle2();
     // RemoveNthNodeFromList();
-    // AddTwoNumbers();
+    AddTwoNumbers_1.default();
     // CopyListWithRandomPointer();
     // DeleteNodeFromLinkedList();
 };

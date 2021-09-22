@@ -20,10 +20,10 @@ const LinkedListMain = () => {
     // PalindromeLinkedList();
     // OddEvenLinkedList();
     // IntersectionOfTwoLinkedLists();
-    SortList();
+    // SortList();
     // LinkedListCycle2();
     // RemoveNthNodeFromList();
-    // AddTwoNumbers();
+    AddTwoNumbers();
     // CopyListWithRandomPointer();
     // DeleteNodeFromLinkedList();
 };

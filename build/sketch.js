@@ -1,19 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function compareStrings(email) {
-    function outer() {
-        var b = 10;
-        var c = 100;
-        function inner() {
-            var a = 20;
-            console.log('a= ' + a + ' b= ' + b);
-            a++;
-            b++;
-        }
-        return inner;
-    }
+function parse(str) {
+    let arr = str.split('.');
+    return `${arr[0]}_${Date.now()}.${arr[1]}`;
 }
 exports.default = () => {
-    let str = 'minder@mindera.com';
-    // console.log(outer());
+    let str = 'SD Dark.png';
+    console.log(parse(str));
 };
