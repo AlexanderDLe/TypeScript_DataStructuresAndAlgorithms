@@ -4,7 +4,7 @@
 
 import { PrintMatrix } from '../utils/Utilities';
 
-const rotate = (matrix: number[][]): void => {
+const rotateA = (matrix: number[][]): void => {
     let levels = Math.floor(matrix.length / 2);
 
     for (let lvl = 0; lvl < levels; lvl++) {
@@ -53,6 +53,26 @@ const rotateB = (matrix: number[][]): void => {
         }
     }
 };
+
+const rotate = (matrix: number[][]): void => {
+    let len = matrix.length;
+    let totalLayers = Math.floor(matrix.length / 2);
+    
+    for (let currLayer = 0; currLayer < totalLayers; currLayer++) {
+        for (let currPos = currLayer; currPos < len - currLayer - 1; currPos++) {
+
+            let topLeft = matrix[currLayer][currPos];
+            let topRight = matrix[currPos][len - currLayer - 1];
+            let botRight = matrix[len - currLayer - 1][len - 1 - currPos];
+            let botLeft = matrix[len - 1 - currPos][currLayer];
+
+            matrix[currLayer][currPos] = botLeft;
+            matrix[currPos][len - currLayer - 1] = topLeft;
+            matrix[len - currLayer - 1][len - 1 - currPos] = topRight;
+            matrix[len - 1 - currPos][currLayer] = botRight;
+        }
+    }
+}
 
 export default () => {
     const matrix = [

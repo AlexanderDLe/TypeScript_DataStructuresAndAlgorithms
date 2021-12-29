@@ -27,19 +27,41 @@ const Utilities_1 = require("../utils/Utilities");
     be either a bottom or right element. In which case, you can simply add the
     current element to the available value.
 */
-const minPathSum = (grid) => {
-    let rowEnd = grid.length - 1;
-    let colEnd = grid[0].length - 1;
-    for (let row = rowEnd; row >= 0; row--) {
-        for (let col = colEnd; col >= 0; col--) {
-            if (row === rowEnd && col === colEnd)
+const minPathSumB = (grid) => {
+    const getCellValue = (row, col) => {
+        if (row >= grid.length || col >= grid[0].length)
+            return undefined;
+        return grid[row][col];
+    };
+    for (let row = grid.length - 1; row >= 0; row--) {
+        for (let col = grid[0].length - 1; col >= 0; col--) {
+            let currentCell = getCellValue(row, col);
+            let bottomCell = getCellValue(row + 1, col);
+            let rightCell = getCellValue(row, col + 1);
+            if (bottomCell === undefined && rightCell === undefined)
                 continue;
-            let bottom = row === rowEnd ? Infinity : grid[row + 1][col];
-            let right = col === colEnd ? Infinity : grid[row][col + 1];
+            else if (bottomCell === undefined)
+                grid[row][col] = currentCell + rightCell;
+            else if (rightCell === undefined)
+                grid[row][col] = currentCell + bottomCell;
+            else
+                grid[row][col] = Math.min(currentCell + bottomCell, currentCell + rightCell);
+        }
+    }
+    return grid[0][0];
+};
+const minPathSum = (grid) => {
+    let rowsEnd = grid.length - 1;
+    let colsEnd = grid[0].length - 1;
+    for (let row = rowsEnd; row >= 0; row--) {
+        for (let col = colsEnd; col >= 0; col--) {
+            if (row === rowsEnd && col === colsEnd)
+                continue;
+            let bottom = row === rowsEnd ? Infinity : grid[row + 1][col];
+            let right = col === colsEnd ? Infinity : grid[row][col + 1];
             grid[row][col] += Math.min(bottom, right);
         }
     }
-    Utilities_1.PrintMatrix(grid);
     return grid[0][0];
 };
 exports.default = () => {
@@ -48,7 +70,6 @@ exports.default = () => {
         [1, 5, 1],
         [4, 2, 1]
     ];
-    const grid2 = [[1, 2, 3], [4, 5, 6]];
-    Utilities_1.PrintMatrix(grid2);
-    console.log(minPathSum(grid2));
+    console.log(minPathSum(grid));
+    (0, Utilities_1.PrintMatrix)(grid);
 };

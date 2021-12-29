@@ -10,8 +10,8 @@ export default () => {
     // Permutations();
     // GenerateParentheses();
     // Subsets();
-    // CombinationSum();
+    CombinationSum();
     // TargetSum();
-    LetterCombinationsOfAPhoneNumber();
+    // LetterCombinationsOfAPhoneNumber();
     // SubarraySumEqualsK();
 };

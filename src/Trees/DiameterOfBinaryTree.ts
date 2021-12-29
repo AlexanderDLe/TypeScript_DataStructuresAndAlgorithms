@@ -13,7 +13,7 @@
 import { TreeNode } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 
-const diameterOfBinaryTree = (root: Node): number => {
+const diameterOfBinaryTreeA = (root: Node): number => {
     let diameter = 0;
 
     const findHeight = (n: Node): number => {
@@ -34,6 +34,26 @@ const diameterOfBinaryTree = (root: Node): number => {
     return diameter;
 }
 
+const diameterOfBinaryTree = (root: Node): number => {
+    let maxDiameter = 0;
+
+    const DFS = (n: Node): number => {
+        if (!n) return 0;
+
+        let left = DFS(n.left);
+        let right = DFS(n.right);
+
+        maxDiameter = Math.max(maxDiameter, left + right);
+
+        console.log(`n: ${n.val}, left: ${left}, right: ${right}, maxDia: ${maxDiameter}, return: ${Math.max(left + 1, right + 1)}`)
+
+        return Math.max(left + 1, right + 1);
+    }
+
+    DFS(root);
+
+    return maxDiameter;
+}
 
 const findHeight = (n: Node): number => {
     if (!n) return 0;
@@ -53,8 +73,8 @@ export default () => {
     t.right = new TreeNode(3);
     t.left.left = new TreeNode(4);
     t.left.right = new TreeNode(5);
-    t.right.right = new TreeNode(6);
-    t.right.right.right = new TreeNode(7);
+    // t.right.right = new TreeNode(6);
+    // t.right.right.right = new TreeNode(7);
     // BinaryPreorderTraversal(t);
     console.log(diameterOfBinaryTree(t));
 };

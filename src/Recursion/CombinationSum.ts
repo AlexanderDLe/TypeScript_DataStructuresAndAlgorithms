@@ -27,7 +27,7 @@ import { PrintMatrix } from '../utils/Utilities';
     A sum value is maintained to determine whether the target can be reached
     with a variety of combinations.
 */
-const combinationSum = (candidates: number[], target: number): number[][] => {
+const combinationSumA = (candidates: number[], target: number): number[][] => {
     let result: number[][] = [];
 
     const recurse = (i: number, subarr: number[], sum: number) => {
@@ -39,6 +39,21 @@ const combinationSum = (candidates: number[], target: number): number[][] => {
             recurse(i, [...subarr, candidates[i]], sum - candidates[i]);
     }
     recurse(0, [], target);
+    return result;
+}
+
+const combinationSum = (candidates: number[], target: number): number[][] => {
+    let result: number[][] = []
+
+    const recurse = (index: number, sum: number, subarr: number[]): void => {
+        if (sum === target) result.push([...subarr]);
+        if (sum >= target || index >= candidates.length) return;
+        
+        recurse(index, sum + candidates[index], [...subarr, candidates[index]])
+        recurse(index + 1, sum, subarr)
+    }
+
+    recurse(0, 0, []);
     return result;
 }
 

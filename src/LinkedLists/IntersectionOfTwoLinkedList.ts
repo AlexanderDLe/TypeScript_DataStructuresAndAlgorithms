@@ -6,17 +6,17 @@ import { ListNode } from '../DataStructures/LinkedListClass';
 
 type Node = ListNode<number> | null;
 
-const getIntersectionNode = (headA: Node, headB: Node): Node => {
+const getIntersectionNodeA = (headA: Node, headB: Node): Node => {
     if (!headA || !headB) return null;
 
     const getLength = (head: Node): number => {
-    let count = 0;
-    let n = head;
-    while (n) {
-        count++;
-        n = n.next;
-    }
-    return count;
+        let count = 0;
+        let n = head;
+        while (n) {
+            count++;
+            n = n.next;
+        }
+        return count;
     };
     
     let aLen = getLength(headA);
@@ -36,6 +36,41 @@ const getIntersectionNode = (headA: Node, headB: Node): Node => {
     }
     return null;
 };
+
+const getIntersectionNode = (headA: Node, headB: Node): Node => {
+    let lenA = 0;
+    let lenB = 0;
+
+    let currA = headA;
+    let currB = headB;
+
+    while (currA || currB) {
+        if (currA) {
+            lenA ++;
+            currA = currA.next;
+        }
+        if (currB) {
+            lenB ++;
+            currB = currB.next;
+        }
+    }
+
+    while (lenA > lenB) {
+        headA = headA.next;
+        lenA--;
+    }
+    while (lenA < lenB) {
+        headB = headB.next;
+        lenB--;
+    }
+
+    while (headA !== headB) {
+        headA = headA.next;
+        headB = headB.next;
+    }
+
+    return headA;
+}
 
 export default () => {
     let n = new ListNode(4);

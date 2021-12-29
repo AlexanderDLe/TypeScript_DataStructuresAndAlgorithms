@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
     Strategy: When we encounter a digit, we use recursion to call the encoded
     substr within the brackets. We use index pointers to determine the inner substr.
 */
-const decodeString = (s) => {
+const decodeStringA = (s) => {
     const getRepeats = (i) => {
         let repeats = '';
         while (s[i].match(/[0-9]/)) {
@@ -92,7 +92,43 @@ const decodeStringB = (s) => {
     };
     return decode(1, s);
 };
+const decodeString = (s) => {
+    const isNum = (char) => {
+        return !isNaN(parseInt(char));
+    };
+    const decode = (repeat, str) => {
+        let substr = '';
+        for (let i = 0; i < str.length; i++) {
+            if (!isNum(str[i])) {
+                substr += str[i];
+            }
+            else {
+                let stack = [];
+                let fullInt = '';
+                let repeatCode = '';
+                let j = i;
+                while (isNum(str[j]))
+                    fullInt += str[j++];
+                stack.push(str[j++]);
+                while (stack.length) {
+                    if (str[j] === '[')
+                        stack.push('[');
+                    else if (str[j] === ']')
+                        stack.pop();
+                    if (stack.length)
+                        repeatCode += str[j];
+                    j++;
+                }
+                substr += decode(parseInt(fullInt), repeatCode);
+                i = j - 1;
+            }
+        }
+        return substr.repeat(repeat);
+    };
+    return decode(1, s);
+};
 exports.default = () => {
-    const s = '2[abc]3[cd]ef';
-    console.log(decodeString(s));
+    const s1 = '2[abc]3[cd]ef';
+    const s2 = "3[a2[c]]";
+    console.log(decodeString(s2));
 };

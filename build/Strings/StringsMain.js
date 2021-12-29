@@ -3,9 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ToLowerCase_1 = __importDefault(require("./ToLowerCase"));
+const DecodeString_1 = __importDefault(require("./DecodeString"));
 exports.default = () => {
-    ToLowerCase_1.default();
+    (0, DecodeString_1.default)();
+    // ToLowerCase();
     // ValidParentheses();
     // PartitionLabels();
     // MinimumWindowSubstring();

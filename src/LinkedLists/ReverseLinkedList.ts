@@ -9,7 +9,7 @@ import {
 
 type Node = ListNode<number> | null;
 
-const reverseList = (head: Node): Node => {
+const reverseListA = (head: Node): Node => {
     if (!head) return null;
     let p: Node = head;
     let q: Node = null;
@@ -32,6 +32,21 @@ const reverseListRecursively = (head: Node): Node => {
     head.next = null;
     return p;
 };
+
+const reverseList = (head: Node): Node => {
+    let p: Node = head;
+    let q: Node = null;
+    let r: Node = null;
+
+    while (p) {
+        r = q;
+        q = p;
+        p = p.next;
+        q.next = r;
+    }
+    
+    return q;
+}
 
 export default () => {
     let nums = [1, 2, 3, 4, 5];

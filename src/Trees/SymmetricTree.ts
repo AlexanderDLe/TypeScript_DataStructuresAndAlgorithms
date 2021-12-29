@@ -5,7 +5,7 @@ import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 
 type Node = TreeNode<number> | null;
 
-const isSymmetric = (root: Node): boolean => {
+const isSymmetricOld = (root: Node): boolean => {
     if (!root) return true;
     let result: boolean = true;
 
@@ -23,14 +23,26 @@ const isSymmetric = (root: Node): boolean => {
     return result;
 };
 
+const isSymmetric = (root: Node): boolean => {
+    const DFS = (L: Node, R: Node): boolean => {
+        if (!L && !R) return true;
+        if (!L || !R) return false;
+        if (L.val !== R.val) return false;
+
+        return DFS(L.left, R.right) && DFS(L.right, R.left);
+    }
+
+    return DFS(root.left, root.right);
+}
+
 export default () => {
     const t = new TreeNode(1);
-    t.left = new TreeNode(2);
-    t.right = new TreeNode(2);
-    t.left.left = new TreeNode(3);
-    t.left.right = new TreeNode(4);
-    t.right.left = new TreeNode(4);
-    t.right.right = new TreeNode(3);
+    t.left = new TreeNode(3);
+    t.right = new TreeNode(3);
+    t.left.left = new TreeNode(4);
+    t.left.right = new TreeNode(5);
+    t.right.left = new TreeNode(null);
+    t.right.right = new TreeNode(4);
 
     BinaryPreorderTraversal(t);
     console.log(isSymmetric(t));

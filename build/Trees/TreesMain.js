@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const PopulatingNextRightPointersInEachNode_1 = __importDefault(require("./PopulatingNextRightPointersInEachNode"));
+const SerialAndDeserializeBT_1 = __importDefault(require("./SerialAndDeserializeBT"));
 const TreesMain = () => {
-    PopulatingNextRightPointersInEachNode_1.default();
+    // PopulatingNextRightPointersInEachNode();
     // RangeSum();
     // InvertBinaryTree();
     // MergeTwoBinaryTrees();
@@ -16,6 +16,7 @@ const TreesMain = () => {
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
     // BinaryTreeLevelOrderTraversal();
+    // BinaryTreeRightSideView();
     // UniqueBinaryTrees();
     // ConstructBSTFromPreorderAndInorderTraversal();
     // ImplementPrefixTrie();
@@ -25,5 +26,6 @@ const TreesMain = () => {
     // BinaryTreeInorderTraversal();
     // KthSmallestElementInBST();
     // BSTZigZagOrderTraversal();
+    (0, SerialAndDeserializeBT_1.default)();
 };
 exports.default = TreesMain;

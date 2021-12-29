@@ -22,8 +22,8 @@ const LinkedListMain = () => {
     // IntersectionOfTwoLinkedLists();
     // SortList();
     // LinkedListCycle2();
-    // RemoveNthNodeFromList();
-    AddTwoNumbers();
+    RemoveNthNodeFromList();
+    // AddTwoNumbers();
     // CopyListWithRandomPointer();
     // DeleteNodeFromLinkedList();
 };

@@ -47,7 +47,7 @@ const gameOfLife = (board) => {
     for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
             board[row][col] = updateCell(row, col);
-            Utilities_1.PrintMatrix(board);
+            (0, Utilities_1.PrintMatrix)(board);
         }
     }
     for (let row = 0; row < rows; row++) {
@@ -67,5 +67,5 @@ exports.default = () => {
         [0, 0, 0]
     ];
     gameOfLife(board);
-    Utilities_1.PrintMatrix(board);
+    (0, Utilities_1.PrintMatrix)(board);
 };

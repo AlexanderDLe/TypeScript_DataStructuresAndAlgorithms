@@ -7,7 +7,7 @@
  * number of options to get there.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const climbStairs = (n) => {
+const climbStairsB = (n) => {
     let dp = [0, 1, 2];
     for (let i = 3; i <= n; i++) {
         dp[i] = dp[i - 2] + dp[i - 1];
@@ -33,6 +33,15 @@ const climbStairsMemo = (n) => {
         memo[n] = climbStairsMemo(n - 2) + climbStairsMemo(n - 1);
     }
     return memo[n];
+};
+const climbStairs = (n) => {
+    // 0:1, 1:1, 2:2, 3:3, 4:5, 5:8
+    let res = 0;
+    let arr = [1, 1, 2];
+    for (let i = 3; i <= n; i++) {
+        arr[i] = arr[i - 1] + arr[i - 2];
+    }
+    return arr[n];
 };
 exports.default = () => {
     // console.log(climbStairsMemo(4));

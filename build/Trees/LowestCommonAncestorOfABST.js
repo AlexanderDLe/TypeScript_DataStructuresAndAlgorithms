@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * If right returns null, left will return LCA.
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
-const lowestCommonAncestor = (root, p, q) => {
+const lowestCommonAncestorA = (root, p, q) => {
     let LCAFound = false;
     const scanSubtree = (n, p, q) => {
         let nodesFound = 0;
@@ -53,6 +53,15 @@ const lowestCommonAncestorB = (root, p, q) => {
         return root;
     return left ? left : right;
 };
+const lowestCommonAncestor = (root, p, q) => {
+    if (!root || root === p || root === q)
+        return root;
+    const left = lowestCommonAncestor(root.left, p, q);
+    const right = lowestCommonAncestor(root.right, p, q);
+    if (left && right)
+        return root;
+    return left ? left : right;
+};
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(3);
     const p = new TreeClass_1.TreeNode(5);
@@ -65,6 +74,6 @@ exports.default = () => {
     t.right = q;
     t.right.left = new TreeClass_1.TreeNode(0);
     t.right.right = new TreeClass_1.TreeNode(8);
-    TreeClass_1.BinaryPreorderTraversal(t);
+    (0, TreeClass_1.BinaryPreorderTraversal)(t);
     console.log(lowestCommonAncestor(t, p, q));
 };

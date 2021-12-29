@@ -5,7 +5,7 @@ import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 type Map = { [key: number]: number };
 
-const buildTree = (preorder: number[], inorder: number[]): Node => {
+const buildTreeA = (preorder: number[], inorder: number[]): Node => {
     let map: Map = {};
     for (let i = 0; i < preorder.length; i++) map[preorder[i]] = i;
     
@@ -31,7 +31,6 @@ const buildTree = (preorder: number[], inorder: number[]): Node => {
 
     return build(0, preorder.length - 1);
 }
-
 
 const buildTreeSlicing = (preorder: number[], inorder: number[]): Node => {
     const build = (preorder: number[], inorder: number[]): Node => {
@@ -76,10 +75,51 @@ const buildTreeIndexing = (preorder: number[], inorder: number[]): Node => {
     return build(0, 0, inorder.length - 1);
 };
 
+const buildTree = (preorder: number[], inorder: number[]): Node => {
+    let preorderIndexMap: {[key: number]: number} = {};
+    let inorderIndexMap: {[key: number]: number} = {};
+
+    for (let i = 0; i < preorder.length; i++) {
+        let currentPreorderNum = preorder[i];
+        let currentInorderNum = inorder[i];
+
+        preorderIndexMap[currentPreorderNum] = i;
+        inorderIndexMap[currentInorderNum] = i;
+    }
+
+    const build = (start: number, end: number): Node => {
+        if (start >= end) return null;
+        // console.log(`start: ${start}, end: ${end}`)
+
+        let rootIndex = Infinity;
+        let rootValue = Infinity;
+        for (let i = start; i < end; i++) {
+            let currValue = inorder[i];
+            let preorderIndexOfCurrValue = preorderIndexMap[currValue]; 
+
+            if (preorderIndexOfCurrValue < rootIndex) {
+                rootIndex = preorderIndexOfCurrValue;
+                rootValue = currValue;
+            }
+        }
+        
+        let inorderIndexOfRoot = inorderIndexMap[rootValue];
+        // console.log(`inorderIndexOfRoot: ${inorderIndexOfRoot}, rootIndex: ${rootIndex}, rootValue: ${rootValue}\n`)
+        
+        let node: Node = new TreeNode(rootValue);
+        node.left = build(start, inorderIndexOfRoot);
+        node.right = build(inorderIndexOfRoot + 1, end);
+        
+        return node;
+    }
+
+    return build(0, preorder.length);
+}
+
 export default () => {
-    const preorder = [3, 9, 20, 15, 7];
-    const inorder = [9, 3, 15, 20, 7];
+    const preorder = [3,9,20,15,7];
+    const inorder =  [9,3,15,20,7];
     // BinaryPreorderTraversal(buildTreeSlicing(preorder, inorder));
     // BinaryPreorderTraversal(buildTreeIndexing(preorder, inorder));
-    BinaryPreorderTraversal(buildTreeIndexing(preorder, inorder));
+    BinaryPreorderTraversal(buildTree(preorder, inorder));
 };

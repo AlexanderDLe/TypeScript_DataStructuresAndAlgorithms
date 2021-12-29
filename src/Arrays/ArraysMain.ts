@@ -37,14 +37,17 @@ import FourSum2 from './FourSum2';
 import ArrayQuadruplet from './ArrayQuadruplet';
 import CountGoodTriplets from './CountGoodTriplets';
 import MinimumTimeVisitingAllPoints from './MinimumTimeVisitingAllPoints';
+import SearchInsertPosition from './SearchInsertPosition';
+import TrappingRainWater from './TrappingRainWater';
 
 const ArraysMain = () => {
+    // SearchInsertPosition();
     // MergeSortedArray();
     // LongestCommonPrefix();
     // FindNumbersWithEvenDigits();
     // IntersectionOfTwoArrays2();
     // RemoveDuplicatesFromSortedArray();
-    TwoSum1();
+    // TwoSum1();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
@@ -78,6 +81,7 @@ const ArraysMain = () => {
     // BestTimeToBuyAndSellStock2();
     // PascalsTriangle();
     // MissingNumber();
+    TrappingRainWater();
 };
 
 export default ArraysMain;

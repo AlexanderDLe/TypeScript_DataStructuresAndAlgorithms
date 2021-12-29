@@ -3,7 +3,7 @@
  * 155. Min Stack
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-class MinStackOld {
+class MinStackA {
     constructor() {
         this.data = [];
         this.mins = [];
@@ -31,7 +31,7 @@ class MinStackOld {
         }
     }
 }
-class MinStack {
+class MinStackB {
     constructor() {
         this.data = [];
         this.mins = [];
@@ -51,6 +51,31 @@ class MinStack {
     }
     getMin() {
         return this.mins[this.mins.length - 1] || 0;
+    }
+}
+class MinStack {
+    constructor() {
+        this.data = [];
+        this.min = [];
+    }
+    push(val) {
+        this.data.push(val);
+        if (!this.min.length || this.getMin() >= val) {
+            this.min.push(val);
+        }
+    }
+    pop() {
+        let popped = this.data.pop();
+        let minTop = this.getMin();
+        if (popped === minTop) {
+            this.min.pop();
+        }
+    }
+    top() {
+        return this.data[this.data.length - 1];
+    }
+    getMin() {
+        return this.min[this.min.length - 1];
     }
 }
 exports.default = () => {

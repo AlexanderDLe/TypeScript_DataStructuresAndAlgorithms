@@ -1,9 +1,10 @@
 "use strict";
 /**
  *  31. Next Permutation
+ * https://www.youtube.com/watch?v=goUlyp4rwiU&t=192s
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const nextPermutation = (nums) => {
+const nextPermutationOld = (nums) => {
     // if pivot is -2 by end, then pivot does not exist
     // if pivot is -1 by end, then nums[] is in desc order
     let pivot = -2;
@@ -58,108 +59,72 @@ const nextPermutation = (nums) => {
     }
     return nums;
 };
+const nextPermutationA = (nums) => {
+    const result = [];
+    let largestI = -1;
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] < nums[i + 1]) {
+            largestI = i;
+        }
+    }
+    let largestJ = -1;
+    for (let j = 0; j < nums.length; j++) {
+        if (nums[largestI] < nums[j]) {
+            largestJ = j;
+        }
+    }
+    console.log(largestI);
+    console.log(largestJ);
+    [nums[largestI], nums[largestJ]] = [nums[largestJ], nums[largestI]];
+    let endArray = nums.splice(largestI + 1);
+    endArray.reverse();
+    nums = nums.concat(endArray);
+    console.log(nums);
+    return result;
+};
+const nextPermutationB = (nums) => {
+    let largestI = -1;
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] < nums[i + 1])
+            largestI = i;
+    }
+    let largestJ;
+    for (let j = 0; j < nums.length; j++) {
+        if (nums[largestI] < nums[j])
+            largestJ = j;
+    }
+    console.log(`largestI - index: ${largestI}, value: ${nums[largestI]} (where nums[i] < nums[i + 1])`);
+    console.log(`largestJ - index: ${largestJ}, value: ${nums[largestJ]} (where nums[largestI] < nums[j]) \n`);
+    console.log(`Original array: \n${nums.slice()}\n`);
+    [nums[largestI], nums[largestJ]] = [nums[largestJ], nums[largestI]];
+    console.log(`After swapping nums[largestI] and nums[largestJ]`);
+    console.log(nums.slice() + '\n');
+    let endArray = nums.splice(largestI + 1);
+    console.log(`Subarray after largestI: \n${endArray}\n `);
+    endArray.reverse();
+    console.log(`Reversed array after largestI: \n${endArray}\n`);
+    nums = nums.concat(endArray);
+    console.log(`Concat reversed subarray to original array: \n${nums}\n `);
+    return nums;
+};
+const nextPermutation = (nums) => {
+    let pivot = -1;
+    let swap = -1;
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] < nums[i + 1])
+            pivot = i;
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > nums[pivot])
+            swap = i;
+    }
+    [nums[pivot], nums[swap]] = [nums[swap], nums[pivot]];
+    let endArray = nums.splice(pivot + 1);
+    endArray.reverse();
+    nums.push.apply(nums, endArray);
+    return nums;
+};
 exports.default = () => {
-    const nums = [
-        100,
-        99,
-        98,
-        97,
-        96,
-        95,
-        94,
-        93,
-        92,
-        91,
-        90,
-        89,
-        88,
-        87,
-        86,
-        85,
-        84,
-        83,
-        82,
-        81,
-        80,
-        79,
-        78,
-        77,
-        76,
-        75,
-        74,
-        73,
-        72,
-        71,
-        70,
-        69,
-        68,
-        67,
-        66,
-        65,
-        64,
-        63,
-        62,
-        61,
-        60,
-        59,
-        58,
-        57,
-        56,
-        55,
-        54,
-        53,
-        52,
-        51,
-        50,
-        49,
-        48,
-        47,
-        46,
-        45,
-        44,
-        43,
-        42,
-        41,
-        40,
-        39,
-        38,
-        37,
-        36,
-        35,
-        34,
-        33,
-        32,
-        31,
-        30,
-        29,
-        28,
-        27,
-        26,
-        25,
-        24,
-        23,
-        22,
-        21,
-        20,
-        19,
-        18,
-        17,
-        16,
-        15,
-        14,
-        13,
-        12,
-        11,
-        10,
-        9,
-        8,
-        7,
-        6,
-        5,
-        4,
-        3,
-        2,
-        1
-    ];
+    const nums = [1, 2, 3];
     console.log(nextPermutation(nums));
 };

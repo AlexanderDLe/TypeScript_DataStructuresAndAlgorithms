@@ -22,7 +22,7 @@ import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 */
 type Node = TreeNode<number> | null;
 
-const flatten = (root: Node): void => {
+const flattenC = (root: Node): void => {
     if (!root) return;
     flatten(root.left);
 
@@ -65,6 +65,23 @@ const flattenB = (root: Node) => {
     root.left = null;
     pre = root;
 };
+
+const flatten = (root: Node): void => {
+    if (!root) return;
+    flatten(root.left);
+    
+    let temp = root.right;
+    root.right = root.left;
+    root.left = null;
+    
+    while (root.right) {
+        root = root.right;
+    }
+    root.right = temp;
+    
+    flatten(root.right);
+}
+
 
 export default () => {
     const t = new TreeNode(1);

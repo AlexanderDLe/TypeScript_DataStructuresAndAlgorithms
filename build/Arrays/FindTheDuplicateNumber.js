@@ -53,7 +53,17 @@ const findDuplicateB = (nums) => {
     }
     return 0;
 };
+const findDuplicate = (nums) => {
+    for (let i = 0; i < nums.length; i++) {
+        let index = Math.abs(nums[i]);
+        let val = nums[index - 1];
+        if (val < 0)
+            return index;
+        nums[index - 1] = -nums[index - 1];
+    }
+    return 0;
+};
 exports.default = () => {
-    const nums = [1, 3, 4, 2, 2];
-    console.log(findDuplicateFlipMethod(nums));
+    const nums = [2, 3, 4, 1, 3];
+    console.log(findDuplicate(nums));
 };

@@ -2,7 +2,7 @@
  * 155. Min Stack
  */
 
-class MinStackOld {
+class MinStackA {
     data: number[] = [];
     mins: number[] = [];
 
@@ -30,7 +30,7 @@ class MinStackOld {
     }
 }
 
-class MinStack {
+class MinStackB {
     data: number[] = [];
     mins: number[] = [];
 
@@ -50,6 +50,36 @@ class MinStack {
 
     getMin(): number {
         return this.mins[this.mins.length - 1] || 0;
+    }
+}
+
+class MinStack {
+    data: number[] = [];
+    min: number[] = [];
+
+    push(val: number): void {
+        this.data.push(val);
+
+        if (!this.min.length || this.getMin() >= val) {
+            this.min.push(val);
+        }
+    }
+
+    pop(): void {
+        let popped = this.data.pop();
+        let minTop = this.getMin();
+
+        if (popped === minTop) {
+            this.min.pop();
+        }
+    }
+
+    top(): number {
+        return this.data[this.data.length - 1];
+    }
+
+    getMin(): number {
+        return this.min[this.min.length - 1];
     }
 }
 

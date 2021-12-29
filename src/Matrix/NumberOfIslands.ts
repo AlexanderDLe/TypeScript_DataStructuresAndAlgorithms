@@ -4,7 +4,7 @@
 
 import { PrintMatrix } from '../utils/Utilities';
 
-const numIslands = (grid: string[][]): number => {
+const numIslandsA = (grid: string[][]): number => {
     if (!grid.length) return 0;
     let rows = grid.length;
     let cols = grid[0].length;
@@ -34,6 +34,25 @@ const numIslands = (grid: string[][]): number => {
 
     return count;
 };
+
+const numIslands = (grid: string[][]): number => {
+    let count = 0;
+
+    const destroy = (row: number, col: number): void => {
+
+    }
+
+    for (let row = 0; row < grid.length; row++) {
+        for (let col = 0; col < grid[0].length; col++) {
+            if (grid[row][col] === '1') {
+                destroy(row, col);
+                count++;
+            }
+        }
+    }
+
+    return count;
+}
 
 export default () => {
     const grid = [

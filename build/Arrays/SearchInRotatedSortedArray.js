@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  *  33. Search In Rotated Sorted Array
  */
-const search = (nums, target) => {
+const searchA = (nums, target) => {
     let L = 0;
     let R = nums.length - 1;
     while (L <= R) {
@@ -63,6 +63,9 @@ const searchB = (nums, target) => {
         }
     }
     return nums[L] === target ? L : -1;
+};
+const search = (nums, target) => {
+    return -1;
 };
 exports.default = () => {
     const nums = [4, 5, 6, 7, 8, 1, 2, 3];

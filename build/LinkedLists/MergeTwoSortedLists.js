@@ -62,12 +62,34 @@ const mergeTwoListsB = (l1, l2) => {
     }
     return dummy.next;
 };
+const mergeTwoListsC = (l1, l2) => {
+    let dummy = new LinkedListClass_1.ListNode(0);
+    let curr = dummy;
+    while (l1 && l2) {
+        if (l1 && l2) {
+            if (l1.val <= l2.val) {
+                curr.next = l1;
+                l1 = l1.next;
+            }
+            else {
+                curr.next = l2;
+                l2 = l2.next;
+            }
+        }
+        curr = curr.next;
+    }
+    if (l1)
+        curr.next = l1;
+    if (l2)
+        curr.next = l2;
+    return dummy.next;
+};
 exports.default = () => {
     const numsA = [1, 2, 4];
     const numsB = [1, 3, 4];
     const listA = new LinkedListClass_1.LinkedList(numsA);
     const listB = new LinkedListClass_1.LinkedList(numsB);
-    LinkedListClass_1.PrintList(listA.head);
-    LinkedListClass_1.PrintList(listB.head);
-    LinkedListClass_1.PrintList(mergeTwoLists(listA.head, listB.head));
+    (0, LinkedListClass_1.PrintList)(listA.head);
+    (0, LinkedListClass_1.PrintList)(listB.head);
+    (0, LinkedListClass_1.PrintList)(mergeTwoListsC(listA.head, listB.head));
 };

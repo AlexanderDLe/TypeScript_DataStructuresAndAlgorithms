@@ -23,7 +23,7 @@ type Node = TreeNode<number> | null;
     of the tree. The function pushes the value of the node to the
     appropriate index of the 2D array.
 */
-const levelOrder = (root: Node): number[][] => {
+const levelOrderA = (root: Node): number[][] => {
     let result: number[][] = [];
 
     const recurse = (n: Node, level: number): void => {
@@ -71,6 +71,32 @@ const levelOrderB = (root: Node): number[][] => {
 
     return result;
 };
+
+
+const levelOrder = (root: Node): number[][] => {
+    if (!root) return [];
+    let result: number[][] = [];
+
+    let queue: Node[] = [root];
+    let count = 1;
+
+    while (queue.length) {
+        let level: number[] = [];
+        
+        while (count) {
+            let item = queue.shift();
+            level.push(item.val);
+            if (item.left) queue.push(item.left);
+            if (item.right) queue.push(item.right);
+            count--;
+        }
+
+        result.push(level)
+        count = queue.length;
+    }
+
+    return result;
+}
 
 export default () => {
     const t = new TreeNode(3);

@@ -19,7 +19,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
     Return the maximum of the last or second last values
 */
-const rob = (nums) => {
+const robA = (nums) => {
     if (nums.length === 0)
         return 0;
     if (nums.length === 1)
@@ -32,7 +32,18 @@ const rob = (nums) => {
     }
     return Math.max(nums[nums.length - 1], nums[nums.length - 2]);
 };
+const rob = (nums) => {
+    if (nums.length === 1)
+        return nums[0];
+    if (nums.length === 2)
+        return Math.max(nums[0], nums[1]);
+    nums[2] += nums[0];
+    for (let i = 3; i < nums.length; i++) {
+        nums[i] = Math.max(nums[i] + nums[i - 2], nums[i] + nums[i - 3]);
+    }
+    return Math.max(nums[nums.length - 1], nums[nums.length - 2]);
+};
 exports.default = () => {
-    const nums = [2, 7, 9, 3, 1];
+    const nums = [1, 2, 3, 1];
     console.log(rob(nums));
 };

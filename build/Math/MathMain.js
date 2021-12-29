@@ -10,6 +10,6 @@ exports.default = () => {
     // PowerOfThree();
     // FactorialTrailingZeroes();
     // Sqrtx();
-    CountPrimes_1.default();
+    (0, CountPrimes_1.default)();
     // ExcelSheetColumnNumber();
 };

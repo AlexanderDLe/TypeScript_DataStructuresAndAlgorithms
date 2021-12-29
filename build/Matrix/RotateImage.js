@@ -4,7 +4,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
-const rotate = (matrix) => {
+const rotateA = (matrix) => {
     let levels = Math.floor(matrix.length / 2);
     for (let lvl = 0; lvl < levels; lvl++) {
         let end = matrix.length - 1 - lvl;
@@ -43,6 +43,22 @@ const rotateB = (matrix) => {
         }
     }
 };
+const rotate = (matrix) => {
+    let len = matrix.length;
+    let totalLayers = Math.floor(matrix.length / 2);
+    for (let currLayer = 0; currLayer < totalLayers; currLayer++) {
+        for (let currPos = currLayer; currPos < len - currLayer - 1; currPos++) {
+            let topLeft = matrix[currLayer][currPos];
+            let topRight = matrix[currPos][len - currLayer - 1];
+            let botRight = matrix[len - currLayer - 1][len - 1 - currPos];
+            let botLeft = matrix[len - 1 - currPos][currLayer];
+            matrix[currLayer][currPos] = botLeft;
+            matrix[currPos][len - currLayer - 1] = topLeft;
+            matrix[len - currLayer - 1][len - 1 - currPos] = topRight;
+            matrix[len - 1 - currPos][currLayer] = botRight;
+        }
+    }
+};
 exports.default = () => {
     const matrix = [
         [1, 2, 3, 4],
@@ -51,5 +67,5 @@ exports.default = () => {
         [13, 14, 15, 16]
     ];
     rotate(matrix);
-    Utilities_1.PrintMatrix(matrix);
+    (0, Utilities_1.PrintMatrix)(matrix);
 };

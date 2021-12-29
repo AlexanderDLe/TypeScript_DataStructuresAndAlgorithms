@@ -4,7 +4,7 @@
 
 import { PrintMatrix } from '../utils/Utilities';
 
-const subsets = (nums: number[]): number[][] => {
+const subsetsA = (nums: number[]): number[][] => {
     let result: number[][] = [];
 
     const recurse = (i: number, subarr: number[]): void => {
@@ -14,6 +14,21 @@ const subsets = (nums: number[]): number[][] => {
             recurse(i + 1, [...subarr]);
         }
     }
+    recurse(0, []);
+    return result;
+}
+
+const subsets = (nums: number[]): number[][] => {
+    const result: number[][] = [];
+
+    const recurse = (index: number, subarr: number[]): void => {
+        if (index === nums.length) result.push(subarr);
+        else {
+            recurse(index + 1, [...subarr]);
+            recurse(index + 1, [...subarr, nums[index]])
+        }
+    }
+
     recurse(0, []);
     return result;
 }

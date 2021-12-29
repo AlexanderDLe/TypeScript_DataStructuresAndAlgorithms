@@ -2,7 +2,7 @@
  * 763. Partition Labels
  */
 
-const partitionLabels = (S: string): number[] => {
+const partitionLabelsA = (S: string): number[] => {
     let result: number[] = [];
     let map: { [key: string]: number } = {};
 
@@ -25,7 +25,37 @@ const partitionLabels = (S: string): number[] => {
     return result;
 };
 
+const partitionLabels = (S: string): number[] => {
+    let result: number[] = [];
+    let map: any = {};
+
+    for(let i = 0; i < S.length; i++) {
+        map[S[i]] = i;
+    }
+    
+    let startPartition: number = 0;
+    let endPartition: number = map[S[0]];
+    console.log(map)
+    
+    console.log(`start: ${startPartition}, end: ${endPartition}`);
+
+    for (let i = 0; i < S.length; i++) {
+        endPartition = Math.max(endPartition, map[S[i]]);
+
+        // if map value of i is equal to the endPartition, then that is one partition
+        if (i === endPartition) {
+            result.push(endPartition - startPartition + 1);
+            startPartition = i + 1;
+            endPartition = map[S[i + 1]]
+
+            console.log(`start: ${startPartition}, end: ${endPartition}`);
+        }
+    }
+
+    return result;
+}
+
 export default () => {
-    let S = "caedbdedda"
+    let S = "eccbbbbdec"
     console.log(partitionLabels(S));
 };

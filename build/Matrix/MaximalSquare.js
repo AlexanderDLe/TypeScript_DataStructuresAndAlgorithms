@@ -55,6 +55,6 @@ exports.default = () => {
         ['1', '1'],
         ['1', '1']
     ];
-    Utilities_1.PrintMatrix(matrix);
+    (0, Utilities_1.PrintMatrix)(matrix);
     console.log(maximalSquare(matrix));
 };

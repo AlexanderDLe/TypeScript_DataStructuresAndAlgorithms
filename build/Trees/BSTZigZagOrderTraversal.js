@@ -49,5 +49,5 @@ exports.default = () => {
     t.left.left = new TreeClass_1.TreeNode(4);
     // t.right.left = new TreeNode(15);
     // t.right.right = new TreeNode(5);
-    Utilities_1.PrintMatrix(zigzagLevelOrder(t));
+    (0, Utilities_1.PrintMatrix)(zigzagLevelOrder(t));
 };

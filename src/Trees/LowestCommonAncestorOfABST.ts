@@ -12,7 +12,7 @@
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 
-const lowestCommonAncestor = (root: Node, p: Node, q: Node): Node => {
+const lowestCommonAncestorA = (root: Node, p: Node, q: Node): Node => {
     let LCAFound = false;
     
     const scanSubtree = (n: Node, p: Node, q: Node): number => {
@@ -52,6 +52,14 @@ const lowestCommonAncestorB = (root: Node, p: Node, q: Node): Node => {
     if (left && right) return root;
     return left ? left : right;
 };
+
+const lowestCommonAncestor = (root: Node, p: Node, q: Node): Node => {
+    if (!root || root === p || root === q) return root;
+    const left = lowestCommonAncestor(root.left, p, q);
+    const right = lowestCommonAncestor(root.right, p, q);
+    if (left && right) return root;
+    return left ? left : right;
+}
 
 export default () => {
     const t = new TreeNode(3);

@@ -2,6 +2,7 @@
  * 198. House Robber
  */
 
+import NumberOfIslands from '../Matrix/NumberOfIslands';
 import { PrintArray } from '../utils/Utilities';
 
 /*  Iterative Analysis
@@ -21,7 +22,7 @@ import { PrintArray } from '../utils/Utilities';
     Return the maximum of the last or second last values
 */
 
-const rob = (nums: number[]): number => {
+const robA = (nums: number[]): number => {
     if (nums.length === 0) return 0;
     if (nums.length === 1) return nums[0];
     if (nums.length === 2) return Math.max(nums[0], nums[1]);
@@ -35,7 +36,21 @@ const rob = (nums: number[]): number => {
     return Math.max(nums[nums.length - 1], nums[nums.length - 2]);
 }
 
+const rob = (nums: number[]): number => {
+    if (nums.length === 1) return nums[0];
+    if (nums.length === 2) return Math.max(nums[0], nums[1]);
+    
+    nums[2] += nums[0];
+
+    for (let i = 3; i < nums.length; i++) {
+        nums[i] = Math.max(nums[i] + nums[i - 2], nums[i] + nums[i - 3]);
+    }
+
+    return Math.max(nums[nums.length - 1], nums[nums.length - 2]);
+}
+
 export default () => {
-    const nums = [2, 7, 9, 3, 1];
+    const nums = [1, 2, 3, 1];
+                 
     console.log(rob(nums));
 };

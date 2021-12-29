@@ -27,5 +27,5 @@ const countBitsOld = (num) => {
     return result;
 };
 exports.default = () => {
-    Utilities_1.PrintArray(countBits(10));
+    (0, Utilities_1.PrintArray)(countBits(10));
 };

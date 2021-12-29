@@ -24,7 +24,7 @@ const coinChange = (coins, amount) => {
                 DP[i] = Math.min(DP[i], DP[i - coin] + 1);
         }
     }
-    Utilities_1.PrintArray(DP);
+    (0, Utilities_1.PrintArray)(DP);
     return DP[amount] > amount ? -1 : DP[amount];
 };
 exports.default = () => {

@@ -16,7 +16,8 @@ import ReverseInteger from './ReverseInteger';
 import ToLowerCase from './ToLowerCase';
 
 export default () => {
-    ToLowerCase();
+    DecodeString();
+    // ToLowerCase();
     // ValidParentheses();
     // PartitionLabels();
     // MinimumWindowSubstring();

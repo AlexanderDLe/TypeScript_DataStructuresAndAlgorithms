@@ -169,5 +169,5 @@ exports.default = () => {
     let heap = new MinHeapArray(nums);
     heap.push(50);
     heap.push(1);
-    Utilities_1.PrintArray(heap.arr);
+    (0, Utilities_1.PrintArray)(heap.arr);
 };

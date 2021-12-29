@@ -7,7 +7,7 @@ import { PrintObject } from '../utils/Utilities';
 type map = {
     [key: number]: number;
 };
-const majorityElement = (nums: number[]): number => {
+const majorityElementA = (nums: number[]): number => {
     let result;
     let map: map = {};
     let max = 0;
@@ -40,6 +40,28 @@ const majorityElementB = (nums: number[]): number => {
 
     return 0;
 };
+
+type NumMap2 = {
+    [key: number]: number
+}
+const majorityElement = (nums: number[]): number => {
+    let map: NumMap2 = {};
+    
+    for (let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+    }
+    
+    let majorityElement = 0;
+    let majorityValue = 0;
+    for (let key in map) {
+        if (map[key] > majorityValue) {
+            majorityValue = map[key];
+            majorityElement = Number(key);
+        }
+    }
+
+    return majorityElement;
+}
 
 export default () => {
     const nums = [2, 2, 1, 1, 1, 2, 2];

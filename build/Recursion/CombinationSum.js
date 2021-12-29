@@ -27,7 +27,7 @@ const Utilities_1 = require("../utils/Utilities");
     A sum value is maintained to determine whether the target can be reached
     with a variety of combinations.
 */
-const combinationSum = (candidates, target) => {
+const combinationSumA = (candidates, target) => {
     let result = [];
     const recurse = (i, subarr, sum) => {
         if (i >= candidates.length || sum < 0)
@@ -41,8 +41,21 @@ const combinationSum = (candidates, target) => {
     recurse(0, [], target);
     return result;
 };
+const combinationSum = (candidates, target) => {
+    let result = [];
+    const recurse = (index, sum, subarr) => {
+        if (sum === target)
+            result.push([...subarr]);
+        if (sum >= target || index >= candidates.length)
+            return;
+        recurse(index, sum + candidates[index], [...subarr, candidates[index]]);
+        recurse(index + 1, sum, subarr);
+    };
+    recurse(0, 0, []);
+    return result;
+};
 exports.default = () => {
     const candidates = [2, 3, 6, 7];
     const target = 7;
-    Utilities_1.PrintMatrix(combinationSum(candidates, target));
+    (0, Utilities_1.PrintMatrix)(combinationSum(candidates, target));
 };

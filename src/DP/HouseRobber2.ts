@@ -21,7 +21,7 @@ import { PrintArray } from '../utils/Utilities';
     Return the maximum of the last or second last values
 */
 
-const rob = (nums: number[]): number => {
+const robA = (nums: number[]): number => {
     if (nums.length === 0) return 0;
     if (nums.length === 1) return nums[0];
     if (nums.length === 2) return Math.max(nums[0], nums[1]);
@@ -41,6 +41,27 @@ const rob = (nums: number[]): number => {
     let maxB = Math.max(numz[len - 1], numz[len - 2]);
 
     return Math.max(maxA, maxB);
+}
+
+const rob = (nums: number[]): number => {
+    if (nums.length === 1) return nums[0];
+
+    const robHouses = (numz: number[]): number => {
+        if (numz.length === 1) return numz[0];
+        if (numz.length === 2) return Math.max(numz[0], numz[1]);
+
+        numz[2] += numz[0];
+        for (let i = 3; i < numz.length; i++) {
+            numz[i] += Math.max(numz[i - 3], numz[i - 2]);
+        }
+        return Math.max(numz[numz.length - 1], numz[numz.length - 2])
+    }
+
+    let nums2 = nums.slice(0);
+    nums.pop();
+    nums2.shift();
+
+    return Math.max(robHouses(nums), robHouses(nums2));
 }
 
 export default () => {

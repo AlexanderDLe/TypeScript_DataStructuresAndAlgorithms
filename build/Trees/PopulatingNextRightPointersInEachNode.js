@@ -38,5 +38,5 @@ exports.default = () => {
     t.left.right = new TreeClass_1.TreeNodeNext(5);
     t.right.left = new TreeClass_1.TreeNodeNext(6);
     t.right.right = new TreeClass_1.TreeNodeNext(7);
-    TreeClass_1.BinaryPreorderTraversal(connect(t));
+    (0, TreeClass_1.BinaryPreorderTraversal)(connect(t));
 };

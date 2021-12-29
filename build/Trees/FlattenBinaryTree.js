@@ -9,7 +9,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
-const flatten = (root) => {
+const flattenC = (root) => {
     if (!root)
         return;
     flatten(root.left);
@@ -47,6 +47,19 @@ const flattenB = (root) => {
     root.left = null;
     pre = root;
 };
+const flatten = (root) => {
+    if (!root)
+        return;
+    flatten(root.left);
+    let temp = root.right;
+    root.right = root.left;
+    root.left = null;
+    while (root.right) {
+        root = root.right;
+    }
+    root.right = temp;
+    flatten(root.right);
+};
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(1);
     t.left = new TreeClass_1.TreeNode(2);
@@ -55,5 +68,5 @@ exports.default = () => {
     t.left.right = new TreeClass_1.TreeNode(4);
     t.right.right = new TreeClass_1.TreeNode(6);
     flatten(t);
-    TreeClass_1.BinaryPreorderTraversal(t);
+    (0, TreeClass_1.BinaryPreorderTraversal)(t);
 };

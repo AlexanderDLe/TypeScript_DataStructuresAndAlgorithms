@@ -27,6 +27,6 @@ exports.default = () => {
         [3, 4],
         [-1, 0],
     ];
-    Utilities_1.PrintMatrix(points);
+    (0, Utilities_1.PrintMatrix)(points);
     console.log(minTimeToVisitAllPoints(points));
 };

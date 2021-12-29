@@ -29,5 +29,5 @@ exports.default = () => {
         [6, 1],
         [5, 2]
     ];
-    Utilities_1.PrintMatrix(reconstructPeople(people));
+    (0, Utilities_1.PrintMatrix)(reconstructPeople(people));
 };

@@ -14,9 +14,9 @@ export default () => {
     // RotateImage();
     // UniquePaths();
     // MinimumPathSum();
-    // NumberOfIslands();
+    NumberOfIslands();
     // SearchA2DMatrix2();
-    SetMatrixZeroes();
+    // SetMatrixZeroes();
     // MaximalSquare();
     // WordSearch();
     // GameOfLife();

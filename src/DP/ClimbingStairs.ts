@@ -6,7 +6,7 @@
  * number of options to get there.
  */
 
-const climbStairs = (n: number): number => {
+const climbStairsB = (n: number): number => {
     let dp: number[] = [0, 1, 2];
 
     for (let i = 3; i <= n; i++) {
@@ -36,6 +36,18 @@ const climbStairsMemo = (n: number): number => {
     }
     return memo[n];
 };
+
+const climbStairs = (n: number): number => {
+    // 0:1, 1:1, 2:2, 3:3, 4:5, 5:8
+    let res = 0;
+    let arr = [1, 1, 2];
+
+    for (let i = 3; i <= n; i++) {
+        arr[i] = arr[i - 1] + arr[i - 2];
+    }
+
+    return arr[n];
+}
 
 export default () => {
     // console.log(climbStairsMemo(4));

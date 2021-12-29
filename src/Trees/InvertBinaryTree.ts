@@ -7,7 +7,7 @@
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 
-const invertTree = (root: Node): Node => {
+const invertTreeA = (root: Node): Node => {
     if (!root) return root;
     let temp = root.left;
     root.left = root.right;
@@ -16,6 +16,34 @@ const invertTree = (root: Node): Node => {
     invertTree(root.right);
     return root;
 };
+
+const invertTree = (root: Node): Node => {
+    const invertChildren = (n: Node) => {
+        let temp = n.left;
+        n.left = n.right;
+        n.right = temp;
+    }
+
+    const DFS = (n: Node) => {
+        if (!n) return;
+        invertChildren(n);
+        DFS(n.left);
+        DFS(n.right);
+    }
+
+    DFS(root);
+    return root;
+}
+
+const invertTreeB = (root: Node): Node => {
+    if (!root) return null;
+    invertTreeB(root.right);
+    invertTreeB(root.left);
+    let temp = root.right;
+    root.right = root.left;
+    root.left = temp;
+    return root;
+}
 
 const InvertBinaryTree = () => {
     const t = new TreeNode(4);
@@ -26,7 +54,7 @@ const InvertBinaryTree = () => {
     t.right.left = new TreeNode(6);
     t.right.right = new TreeNode(9);
 
-    BinaryPreorderTraversal(invertTree(t));
+    BinaryPreorderTraversal(invertTreeB(t));
 };
 
 export default InvertBinaryTree;

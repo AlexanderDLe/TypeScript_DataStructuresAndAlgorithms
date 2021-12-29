@@ -3,7 +3,7 @@
  */
 import { PrintArray } from '../utils/Utilities';
 
-const generateParentheses = (n: number): string[] => {
+const generateParenthesesOld = (n: number): string[] => {
     let result: string[] = [];
 
     const recurse = (opens: number, closes: number, str: string): void => {
@@ -14,6 +14,24 @@ const generateParentheses = (n: number): string[] => {
         }
     }
     recurse(n, n, '');
+    return result;
+}
+
+const generateParentheses = (n: number): string[] => {
+    let result: string[] = [];
+
+    const recurse = (opens:number, closes:number, str:string) => {
+        if (str.length === n * 2) {
+            result.push(str);
+            return;
+        }
+
+        if (opens > 0) recurse(opens - 1, closes, str + '(');
+        if (closes > 0 && closes > opens) recurse(opens, closes - 1, str + ')');
+    }
+
+    recurse(n, n, '');
+
     return result;
 }
 

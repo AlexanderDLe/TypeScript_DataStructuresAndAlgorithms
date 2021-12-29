@@ -40,5 +40,5 @@ exports.default = () => {
     n.next.next.next.next = new LinkedListClass_1.ListNode(6);
     n.next.next.next.next.next = new LinkedListClass_1.ListNode(4);
     n.next.next.next.next.next.next = new LinkedListClass_1.ListNode(7);
-    LinkedListClass_2.PrintList(oddEvenList(n));
+    (0, LinkedListClass_2.PrintList)(oddEvenList(n));
 };

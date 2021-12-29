@@ -5,6 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const JavascriptHeapArray_1 = __importDefault(require("./JavascriptHeapArray"));
 exports.default = () => {
-    JavascriptHeapArray_1.default();
+    (0, JavascriptHeapArray_1.default)();
     // KthLargestElementInAnArray();
 };

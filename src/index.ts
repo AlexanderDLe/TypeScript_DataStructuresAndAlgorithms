@@ -8,6 +8,7 @@ import MatrixMain from './Matrix/MatrixMain';
 import QueuesMain from './Queues/QueuesMain';
 import RecursionMain from './Recursion/RecursionMain';
 import StacksMain from './Stacks/StacksMain';
+import SortingMain from './Sorting/SortingMain';
 import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 import GraphsMain from './Graphs/GraphsMain';
@@ -22,12 +23,13 @@ function main() {
     // GraphsMain();
     // HeapsMain();
     // IntervalsMain();
-    LinkedListMain();
+    // LinkedListMain();
     // MathMain();
-    // MatrixMain();
+    MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // StacksMain();
+    // SortingMain();
     // StringsMain();
     // TreesMain();
 }

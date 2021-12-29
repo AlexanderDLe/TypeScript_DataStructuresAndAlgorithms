@@ -9,7 +9,7 @@ class TrieNode {
         this.isWord = false;
     }
 }
-class Trie {
+class TrieA {
     constructor() {
         this.root = null;
         this.root = new TrieNode();
@@ -85,10 +85,44 @@ class TrieB {
         this.root = new TrieNode();
     }
 }
+class Trie {
+    constructor() {
+        this.map = { word: true };
+    }
+    insert(word) {
+        let currMap = this.map;
+        for (let char of word) {
+            if (!currMap.hasOwnProperty(char))
+                currMap[char] = {};
+            currMap = currMap[char];
+        }
+        currMap.word = true;
+    }
+    search(word) {
+        let currMap = this.map;
+        for (let char of word) {
+            if (currMap.hasOwnProperty(char))
+                currMap = currMap[char];
+            else
+                return false;
+        }
+        return currMap.word ? true : false;
+    }
+    startsWith(prefix) {
+        let currMap = this.map;
+        for (let char of prefix) {
+            if (currMap.hasOwnProperty(char))
+                currMap = currMap[char];
+            else
+                return false;
+        }
+        return true;
+    }
+}
 exports.default = () => {
     const trie = new Trie();
     trie.insert('apple');
-    console.log(trie.root);
+    // console.log(trie.root);
     console.log(trie.search('apple'));
     console.log(trie.search('app'));
     console.log(trie.startsWith('app'));

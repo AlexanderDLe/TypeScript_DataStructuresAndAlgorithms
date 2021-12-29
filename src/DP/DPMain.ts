@@ -17,9 +17,9 @@ const DPMain = () => {
     // ClimbingStairs();
     // HouseRobber1();
     // HouseRobber2();
-    // HouseRobber3();
+    HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
-    PalindromePartitioning();
+    // PalindromePartitioning();
     // PerfectSquares();
     // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();

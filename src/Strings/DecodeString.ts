@@ -14,7 +14,7 @@ import { decode } from 'querystring';
     substr within the brackets. We use index pointers to determine the inner substr.
 */
 
-const decodeString = (s: string): string => {
+const decodeStringA = (s: string): string => {
     const getRepeats = (i: number): number => {
         let repeats = '';
         while (s[i].match(/[0-9]/)) {
@@ -100,7 +100,48 @@ const decodeStringB = (s: string): string => {
     return decode(1, s);
 };
 
+const decodeString = (s: string): string => {
+    const isNum = (char: string): boolean => {
+        return !isNaN(parseInt(char))
+    }
+
+    const decode = (repeat: number, str: string): string => {
+        let substr = '';
+        
+        for (let i = 0; i < str.length; i++) {
+            if (!isNum(str[i])) {
+                substr += str[i];
+            } else {
+                let stack: string[] = [];
+                let fullInt = '';
+                let repeatCode = '';
+                let j = i;
+
+                while (isNum(str[j])) fullInt += str[j++];
+                stack.push(str[j++])
+
+                while (stack.length) {
+                    if (str[j] === '[') stack.push('[');
+                    else if (str[j] === ']') stack.pop();
+                    
+                    if (stack.length) repeatCode += str[j];
+                    j++;
+                }
+
+                substr += decode(parseInt(fullInt), repeatCode);
+                i = j - 1;
+            }
+        }
+
+
+        return substr.repeat(repeat);
+    }
+
+    return decode(1, s);
+}
+
 export default () => {
-    const s = '2[abc]3[cd]ef';
-    console.log(decodeString(s));
+    const s1 = '2[abc]3[cd]ef';
+    const s2 = "3[a2[c]]";
+    console.log(decodeString(s2));
 };

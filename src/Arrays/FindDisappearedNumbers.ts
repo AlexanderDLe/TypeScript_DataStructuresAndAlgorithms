@@ -3,13 +3,28 @@
  */
 import { PrintArray } from '../utils/Utilities';
 
-const findDisappearedNumbers = (nums: number[]): number[] => {
+const findDisappearedNumbersA = (nums: number[]): number[] => {
     let result: number[] = [];
 
     for (let i = 0; i < nums.length; i++) {
         let numToFlip = Math.abs(nums[i]);
         nums[numToFlip - 1] = - Math.abs(nums[numToFlip - 1]);
     }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) result.push(i + 1);
+    }
+
+    return result;
+}
+
+const findDisappearedNumbers = (nums: number[]): number[] => {
+    let result: number[] = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        let val = Math.abs(nums[i]);
+        nums[val - 1] = -Math.abs(nums[val - 1]);
+    }
+
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] > 0) result.push(i + 1);
     }

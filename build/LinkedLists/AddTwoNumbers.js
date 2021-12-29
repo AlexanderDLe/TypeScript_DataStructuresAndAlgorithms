@@ -90,5 +90,5 @@ exports.default = () => {
     const nums2 = [5, 6, 4];
     const l1 = new LinkedListClass_1.LinkedList(nums1);
     const l2 = new LinkedListClass_1.LinkedList(nums2);
-    LinkedListClass_2.PrintList(addTwoNumbers(l1.head, l2.head));
+    (0, LinkedListClass_2.PrintList)(addTwoNumbers(l1.head, l2.head));
 };

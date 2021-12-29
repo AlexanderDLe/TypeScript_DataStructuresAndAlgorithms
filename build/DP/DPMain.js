@@ -3,15 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const PalindromePartitioning_1 = __importDefault(require("./PalindromePartitioning"));
+const HouseRobber3_1 = __importDefault(require("./HouseRobber3"));
 const DPMain = () => {
     // PalindromicSubstrings();
     // ClimbingStairs();
     // HouseRobber1();
     // HouseRobber2();
-    // HouseRobber3();
+    (0, HouseRobber3_1.default)();
     // BestTimeToBuyAndSellStockWithCooldown();
-    PalindromePartitioning_1.default();
+    // PalindromePartitioning();
     // PerfectSquares();
     // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();

@@ -70,7 +70,36 @@ const letterCombinationsB = (digits) => {
     generate(0);
     return result;
 };
+const letterCombinationsC = (digits) => {
+    if (!digits)
+        return [];
+    const map = {
+        '2': ['a', 'b', 'c'],
+        '3': ['d', 'e', 'f'],
+        '4': ['g', 'h', 'i'],
+        '5': ['j', 'k', 'l'],
+        '6': ['m', 'n', 'o'],
+        '7': ['p', 'q', 'r', 's'],
+        '8': ['t', 'u', 'v'],
+        '9': ['w', 'x', 'y', 'z']
+    };
+    let result = [];
+    const recurse = (index, substr) => {
+        if (index >= digits.length) {
+            result.push(substr);
+            return;
+        }
+        let num = digits[index];
+        let chars = map[num];
+        for (let char of chars) {
+            let newStr = substr + char;
+            recurse(index + 1, newStr);
+        }
+    };
+    recurse(0, '');
+    return result;
+};
 exports.default = () => {
-    const digits = '';
-    Utilities_1.PrintArray(letterCombinations(digits));
+    const digits = '234';
+    (0, Utilities_1.PrintArray)(letterCombinationsC(digits));
 };

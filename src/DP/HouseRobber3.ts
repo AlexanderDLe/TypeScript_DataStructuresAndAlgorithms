@@ -8,7 +8,7 @@ import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 
 type Node = TreeNode<number> | null;
 
-const rob = (root: Node): number => {
+const robA = (root: Node): number => {
     if (!root) return 0;
 
     let Lchild = rob(root.left);
@@ -38,7 +38,7 @@ const robDP = (root: Node): number => {
         
         res[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
         res[1] = n.val + left[0] + right[0];
-        
+        console.log(res)
         return res;
     }
     
@@ -46,12 +46,54 @@ const robDP = (root: Node): number => {
     return Math.max(result[0], result[1]);
 };
 
+const rob2 = (root: Node): number => {    
+    const robSub = (n: Node): any => {
+        if (!n) return {withRoot: 0, withoutRoot: 0};
+        
+        let left = robSub(n.left);
+        let right = robSub(n.right);
+        let res: any = {withRoot: 0, withoutRoot: 0};
+        
+        res.withoutRoot = Math.max(left.withoutRoot, left.withRoot) 
+                        + Math.max(right.withoutRoot, right.withRoot);
+
+        res.withRoot = n.val + left.withoutRoot + right.withoutRoot;
+
+        console.log(n.val, left, right)
+        console.log(n.val, res, '\n')
+        return res;
+    }
+    
+    let result: any = robSub(root);
+    return Math.max(result.withoutRoot, result.withRoot);
+};
+
+
+const rob = (root: Node): number => {
+    const DFS = (n: Node): any => {
+        if (!n) return { withRoot: 0, withoutRoot: 0};
+        let left = DFS(n.left);
+        let right = DFS(n.right);
+
+        let obj: any = {withRoot: 0, withoutRoot: 0};
+
+        obj.withRoot = n.val + left.withoutRoot + right.withoutRoot;
+        obj.withoutRoot = Math.max(left.withRoot, left.withoutRoot) 
+                        + Math.max(right.withRoot, right.withoutRoot);
+
+        return obj;
+    }
+
+    let res = DFS(root);
+    return Math.max(res.withRoot, res.withoutRoot);
+}
+
 export default () => {
     const t = new TreeNode(3);
     t.left = new TreeNode(2);
     t.right = new TreeNode(3);
     t.left.right = new TreeNode(3);
     t.right.right = new TreeNode(1);
-    console.log(robDP(t));
+    console.log(rob(t));
     BinaryPreorderTraversal(t);
 };

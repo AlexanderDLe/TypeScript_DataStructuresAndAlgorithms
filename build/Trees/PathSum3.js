@@ -59,6 +59,6 @@ exports.default = () => {
     t.left.left.left = new TreeClass_1.TreeNode(3);
     t.left.left.right = new TreeClass_1.TreeNode(-2);
     t.left.right.right = new TreeClass_1.TreeNode(1);
-    TreeClass_1.BinaryPreorderTraversal(t);
+    (0, TreeClass_1.BinaryPreorderTraversal)(t);
     console.log(pathSum(t, sum));
 };

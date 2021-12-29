@@ -87,6 +87,6 @@ const sortListB = (head) => {
 exports.default = () => {
     const nums = [4, 2, 1, 3];
     const list = new LinkedListClass_1.LinkedList(nums);
-    LinkedListClass_1.PrintList(list.head);
-    LinkedListClass_1.PrintList(sortList(list.head));
+    (0, LinkedListClass_1.PrintList)(list.head);
+    (0, LinkedListClass_1.PrintList)(sortList(list.head));
 };

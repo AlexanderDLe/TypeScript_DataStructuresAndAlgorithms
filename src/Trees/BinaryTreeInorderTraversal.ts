@@ -7,7 +7,7 @@ import { PrintArray } from '../utils/Utilities';
 
 type Node = TreeNode<number> | null;
 
-const inorderTraversalRecursive = (root: Node): number[] => {
+const inorderTraversalRecursiveB = (root: Node): number[] => {
     let result: number[] = [];
 
     const DFS = (n: Node): void => {
@@ -42,6 +42,20 @@ const inorderTraversalIterative = (root: Node): number[] => {
 
     return result;
 };
+
+const inorderTraversalRecursive = (root: Node): number[] => {
+    let result: number[] = [];
+
+    const DFS = (n: Node): void => {
+        if (!n) return;
+        DFS(n.left);
+        result.push(n.val);
+        DFS(n.right);
+    }
+
+    DFS(root);
+    return result;
+}
 
 export default () => {
     const t = new TreeNode(1);

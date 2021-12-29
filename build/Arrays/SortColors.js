@@ -3,8 +3,9 @@
  * 75. Sort Colors
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const Utilities_1 = require("../utils/Utilities");
 /* Single Iteration Solution. O(n) time. O(1) space. */
-const sortColors = (nums) => {
+const sortColorsC = (nums) => {
     if (nums.length < 2)
         return;
     let L = 0;
@@ -73,8 +74,25 @@ const sortColorsB = (nums) => {
         }
     }
 };
+const sortColors = (nums) => {
+    let L = 0;
+    let R = nums.length - 1;
+    let M = L;
+    while (M <= R) {
+        if (nums[M] === 0) {
+            [nums[L], nums[M]] = [nums[M], nums[L]];
+            L++, M++;
+        }
+        else if (nums[M] === 2) {
+            [nums[R], nums[M]] = [nums[M], nums[R]];
+            R--;
+        }
+        else
+            M++;
+    }
+};
 exports.default = () => {
-    const nums = [2, 1, 0, 1, 2, 0, 2, 1, 1, 0, 0, 2];
+    const nums = [2, 0, 1];
     sortColors(nums);
-    console.log(nums);
+    (0, Utilities_1.PrintArray)(nums);
 };

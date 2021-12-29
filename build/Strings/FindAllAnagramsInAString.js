@@ -44,7 +44,7 @@ const findAnagrams = (s, p) => {
                 count--;
         }
         R++;
-        Utilities_1.PrintObject(map);
+        (0, Utilities_1.PrintObject)(map);
         console.log(count);
     }
     return result;
@@ -52,5 +52,5 @@ const findAnagrams = (s, p) => {
 exports.default = () => {
     const s = 'baa';
     const p = 'aa';
-    Utilities_1.PrintArray(findAnagrams(s, p));
+    (0, Utilities_1.PrintArray)(findAnagrams(s, p));
 };

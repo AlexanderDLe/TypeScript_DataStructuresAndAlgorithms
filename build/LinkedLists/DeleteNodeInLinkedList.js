@@ -12,8 +12,8 @@ const deleteNode = (node) => {
 exports.default = () => {
     const nums1 = [4, 5, 1, 9];
     const l1 = new LinkedListClass_1.LinkedList(nums1);
-    LinkedListClass_2.PrintList(l1.head);
+    (0, LinkedListClass_2.PrintList)(l1.head);
     const node = l1.head.next;
     deleteNode(node);
-    LinkedListClass_2.PrintList(l1.head);
+    (0, LinkedListClass_2.PrintList)(l1.head);
 };

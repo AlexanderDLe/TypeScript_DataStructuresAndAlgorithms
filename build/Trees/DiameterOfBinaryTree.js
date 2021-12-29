@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * greatest value (aka diameter) seen.
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
-const diameterOfBinaryTree = (root) => {
+const diameterOfBinaryTreeA = (root) => {
     let diameter = 0;
     const findHeight = (n) => {
         if (!n)
@@ -30,6 +30,20 @@ const diameterOfBinaryTree = (root) => {
     };
     DFS(root);
     return diameter;
+};
+const diameterOfBinaryTree = (root) => {
+    let maxDiameter = 0;
+    const DFS = (n) => {
+        if (!n)
+            return 0;
+        let left = DFS(n.left);
+        let right = DFS(n.right);
+        maxDiameter = Math.max(maxDiameter, left + right);
+        console.log(`n: ${n.val}, left: ${left}, right: ${right}, maxDia: ${maxDiameter}, return: ${Math.max(left + 1, right + 1)}`);
+        return Math.max(left + 1, right + 1);
+    };
+    DFS(root);
+    return maxDiameter;
 };
 const findHeight = (n) => {
     if (!n)
@@ -50,8 +64,8 @@ exports.default = () => {
     t.right = new TreeClass_1.TreeNode(3);
     t.left.left = new TreeClass_1.TreeNode(4);
     t.left.right = new TreeClass_1.TreeNode(5);
-    t.right.right = new TreeClass_1.TreeNode(6);
-    t.right.right.right = new TreeClass_1.TreeNode(7);
+    // t.right.right = new TreeNode(6);
+    // t.right.right.right = new TreeNode(7);
     // BinaryPreorderTraversal(t);
     console.log(diameterOfBinaryTree(t));
 };

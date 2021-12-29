@@ -30,5 +30,5 @@ const findArrayQuadruplet = (arr, s) => {
 exports.default = () => {
     const arr = [1, 2, 3, 4, 5, 9, 19, 12, 12, 19];
     const s = 40;
-    Utilities_1.PrintArray(findArrayQuadruplet(arr, s));
+    (0, Utilities_1.PrintArray)(findArrayQuadruplet(arr, s));
 };

@@ -3,14 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const TwoSum1_1 = __importDefault(require("./TwoSum1"));
+const TrappingRainWater_1 = __importDefault(require("./TrappingRainWater"));
 const ArraysMain = () => {
+    // SearchInsertPosition();
     // MergeSortedArray();
     // LongestCommonPrefix();
     // FindNumbersWithEvenDigits();
     // IntersectionOfTwoArrays2();
     // RemoveDuplicatesFromSortedArray();
-    TwoSum1_1.default();
+    // TwoSum1();
     // TwoSum2();
     // SingleNumber();
     // MoveZeroes();
@@ -44,5 +45,6 @@ const ArraysMain = () => {
     // BestTimeToBuyAndSellStock2();
     // PascalsTriangle();
     // MissingNumber();
+    (0, TrappingRainWater_1.default)();
 };
 exports.default = ArraysMain;

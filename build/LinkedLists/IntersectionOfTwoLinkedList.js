@@ -4,7 +4,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
-const getIntersectionNode = (headA, headB) => {
+const getIntersectionNodeA = (headA, headB) => {
     if (!headA || !headB)
         return null;
     const getLength = (head) => {
@@ -33,6 +33,35 @@ const getIntersectionNode = (headA, headB) => {
         headB = headB.next;
     }
     return null;
+};
+const getIntersectionNode = (headA, headB) => {
+    let lenA = 0;
+    let lenB = 0;
+    let currA = headA;
+    let currB = headB;
+    while (currA || currB) {
+        if (currA) {
+            lenA++;
+            currA = currA.next;
+        }
+        if (currB) {
+            lenB++;
+            currB = currB.next;
+        }
+    }
+    while (lenA > lenB) {
+        headA = headA.next;
+        lenA--;
+    }
+    while (lenA < lenB) {
+        headB = headB.next;
+        lenB--;
+    }
+    while (headA !== headB) {
+        headA = headA.next;
+        headB = headB.next;
+    }
+    return headA;
 };
 exports.default = () => {
     let n = new LinkedListClass_1.ListNode(4);

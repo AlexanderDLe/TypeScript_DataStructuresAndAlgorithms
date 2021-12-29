@@ -3,7 +3,7 @@
  */
 import { PrintMatrix } from '../utils/Utilities';
 
-const permute = (nums: number[]): number[][] => {
+const permuteA = (nums: number[]): number[][] => {
     let res: number[][] = [];
     res.push(nums);
     
@@ -40,7 +40,27 @@ const permuteB = (nums: number[]): number[][] => {
     return result;
 };
 
+const permute = (nums: number[]): number[][] => {
+    let result: number[][] = [];
+
+    const recurse = (index: number): void => {
+        if (index === nums.length) {
+            result.push(nums.slice(0));
+            return;
+        }
+
+        for (let i = index; i < nums.length; i++) {
+            [nums[index], nums[i]] = [nums[i], nums[index]];
+            recurse(index + 1);
+            [nums[index], nums[i]] = [nums[i], nums[index]];
+        }
+    }
+    
+    recurse(0);
+    return result;
+}
+
 export default () => {
-    let nums = [1, 2, 3];
+    let nums = [1, 2, 3, 4];
     PrintMatrix(permute(nums));
 };

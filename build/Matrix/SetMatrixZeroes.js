@@ -81,7 +81,7 @@ exports.default = () => {
         [3, 4, 5, 2],
         [1, 3, 1, 5],
     ];
-    Utilities_1.PrintMatrix(m);
+    (0, Utilities_1.PrintMatrix)(m);
     setZeroes(m);
-    Utilities_1.PrintMatrix(m);
+    (0, Utilities_1.PrintMatrix)(m);
 };

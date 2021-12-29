@@ -48,7 +48,7 @@ const canPartitionKnapsack = (nums) => {
                 DP[i] = true;
         }
     }
-    Utilities_1.PrintArray(DP);
+    (0, Utilities_1.PrintArray)(DP);
     return DP[target];
 };
 exports.default = () => {

@@ -27,7 +27,7 @@ const wordBreakRecursive = (s, wordDict) => {
             }
         }
     };
-    Utilities_1.PrintObject(map);
+    (0, Utilities_1.PrintObject)(map);
     recurse(0);
     return canBreak;
 };

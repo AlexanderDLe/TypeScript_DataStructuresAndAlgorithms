@@ -29,5 +29,5 @@ const sortedArrayToBSTOld = (nums) => {
 };
 exports.default = () => {
     const nums = [-10, -3, 0, 5, 9];
-    TreeClass_1.BinaryPreorderTraversal(sortedArrayToBST(nums));
+    (0, TreeClass_1.BinaryPreorderTraversal)(sortedArrayToBST(nums));
 };

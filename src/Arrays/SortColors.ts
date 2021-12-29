@@ -2,14 +2,14 @@
  * 75. Sort Colors
  */
 
-import { PrintObject } from '../utils/Utilities';
+import { PrintObject, PrintArray } from '../utils/Utilities';
 
 type Map = {
     [key: number]: number;
 };
 
 /* Single Iteration Solution. O(n) time. O(1) space. */
-const sortColors = (nums: number[]): void => {
+const sortColorsC = (nums: number[]): void => {
     if (nums.length < 2) return;
 
     let L = 0;
@@ -26,7 +26,6 @@ const sortColors = (nums: number[]): void => {
         } else i++;
     }
 }
-
 
 /* Double Iterative Solution. O(2n) time. O(1) space. */
 const sortColorsA = (nums: number[]): void => {
@@ -79,8 +78,26 @@ const sortColorsB = (nums: number[]): void => {
     }
 };
 
+const sortColors = (nums: number[]): void => {
+    let L = 0;
+    let R = nums.length - 1;
+    let M = L;
+
+    while (M <= R) {
+        if (nums[M] === 0) {
+            [nums[L], nums[M]] = [nums[M], nums[L]];
+            L++, M++;
+        }
+        else if (nums[M] === 2) {
+            [nums[R], nums[M]] = [nums[M], nums[R]];
+            R--;
+        }
+        else M++;
+    }
+}
+
 export default () => {
-    const nums = [2,1,0,1,2, 0, 2, 1, 1, 0, 0, 2];
+    const nums = [2,0,1];
     sortColors(nums);
-    console.log(nums);
+    PrintArray(nums);
 };

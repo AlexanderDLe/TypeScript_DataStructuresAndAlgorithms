@@ -26,5 +26,5 @@ let twoSum = (numbers, target) => {
 };
 exports.default = () => {
     let numbers = [2, 7, 11, 15];
-    Utilities_1.PrintArray(twoSum(numbers, 9));
+    (0, Utilities_1.PrintArray)(twoSum(numbers, 9));
 };

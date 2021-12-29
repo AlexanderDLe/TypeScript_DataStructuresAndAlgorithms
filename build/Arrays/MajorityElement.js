@@ -3,7 +3,7 @@
  * 169. Majority Element
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const majorityElement = (nums) => {
+const majorityElementA = (nums) => {
     let result;
     let map = {};
     let max = 0;
@@ -28,6 +28,21 @@ const majorityElementB = (nums) => {
             return i;
     }
     return 0;
+};
+const majorityElement = (nums) => {
+    let map = {};
+    for (let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+    }
+    let majorityElement = 0;
+    let majorityValue = 0;
+    for (let key in map) {
+        if (map[key] > majorityValue) {
+            majorityValue = map[key];
+            majorityElement = Number(key);
+        }
+    }
+    return majorityElement;
 };
 exports.default = () => {
     const nums = [2, 2, 1, 1, 1, 2, 2];

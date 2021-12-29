@@ -4,7 +4,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
-const numIslands = (grid) => {
+const numIslandsA = (grid) => {
     if (!grid.length)
         return 0;
     let rows = grid.length;
@@ -29,7 +29,21 @@ const numIslands = (grid) => {
                 count++;
                 sinkIsland(row, col);
             }
-            Utilities_1.PrintMatrix(grid);
+            (0, Utilities_1.PrintMatrix)(grid);
+        }
+    }
+    return count;
+};
+const numIslands = (grid) => {
+    let count = 0;
+    const destroy = (row, col) => {
+    };
+    for (let row = 0; row < grid.length; row++) {
+        for (let col = 0; col < grid[0].length; col++) {
+            if (grid[row][col] === '1') {
+                destroy(row, col);
+                count++;
+            }
         }
     }
     return count;

@@ -31,5 +31,5 @@ exports.default = () => {
         [8, 15],
         [15, 18]
     ];
-    Utilities_1.PrintMatrix(merge(intervals));
+    (0, Utilities_1.PrintMatrix)(merge(intervals));
 };

@@ -5,7 +5,7 @@
  * and update max if price - min is greater.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const maxProfit = (prices) => {
+const maxProfitA = (prices) => {
     let result = 0;
     let min = prices[0];
     for (let i = 1; i < prices.length; i++) {
@@ -15,11 +15,23 @@ const maxProfit = (prices) => {
     }
     return result;
 };
-const maxProfitOld = (prices) => {
+const maxProfitOldB = (prices) => {
     let min = Number.MAX_VALUE;
     let max = 0;
     for (let i = 0; i < prices.length; i++) {
         min = Math.min(min, prices[i]);
+        max = Math.max(max, prices[i] - min);
+    }
+    return max;
+};
+const maxProfit = (prices) => {
+    let min = prices[0];
+    let max = 0;
+    for (let i = 1; i < prices.length; i++) {
+        if (prices[i] < min) {
+            min = prices[i];
+            continue;
+        }
         max = Math.max(max, prices[i] - min);
     }
     return max;

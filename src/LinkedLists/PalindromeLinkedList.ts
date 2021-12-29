@@ -9,7 +9,7 @@ import {
 
 type Node = ListNode<number> | null;
 
-const isPalindrome = (head: Node): boolean => {
+const isPalindromeB = (head: Node): boolean => {
     if (!head || !head.next) return true;
     
     let s = head;
@@ -40,7 +40,7 @@ const isPalindrome = (head: Node): boolean => {
     return true;
 }
 
-const isPalindromeOld = (head: Node): boolean => {
+const isPalindromeA = (head: Node): boolean => {
     if (!head || !head.next) return true;
 
     let s: Node = head; // Slow
@@ -76,6 +76,45 @@ const isPalindromeOld = (head: Node): boolean => {
 
     return true;
 };
+
+const isPalindrome = (head: Node): boolean => {
+    if (!head) return true;
+
+    let s: Node = head;
+    let f: Node = head;
+    let q: Node = null;
+    let r: Node = null;
+
+    while (f && f.next) {
+        r = q;
+        q = s;
+        s = s.next;
+        f = f.next;
+        if (f) f = f.next;
+        
+    }
+    if (q && q.next) {
+        q.next = null;
+        q = null;
+    }
+
+    while (s) {
+        r = q;
+        q = s;
+        s = s.next;
+        q.next = r;
+    }
+    
+    let n = head;
+
+    while (n && q) {
+        if (n.val !== q.val) return false;
+        n = n.next;
+        q = q.next;
+    }
+
+    return true;
+}
 
 export default () => {
     const nums = [1,4,-1,4,1]

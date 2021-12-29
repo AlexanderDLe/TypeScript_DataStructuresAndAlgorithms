@@ -44,7 +44,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 And  so on...
 */
-const numTrees = (n) => {
+const numTreesA = (n) => {
     const DP = new Array(n + 1).fill(0);
     DP[0] = 1;
     DP[1] = 1;
@@ -65,6 +65,19 @@ const numTreesB = (n) => {
         }
     }
     return dp[n];
+};
+const numTrees = (n) => {
+    let map = { 0: 1, 1: 1 };
+    for (let i = 2; i <= n; i++) {
+        let sum = 0;
+        for (let j = 1; j <= i; j++) {
+            let left = j - 1;
+            let right = i - j;
+            sum += map[left] * map[right];
+        }
+        map[i] = sum;
+    }
+    return map[n];
 };
 exports.default = () => {
     console.log(numTrees(5));

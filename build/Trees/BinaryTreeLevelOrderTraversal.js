@@ -21,7 +21,7 @@ const Utilities_1 = require("../utils/Utilities");
     of the tree. The function pushes the value of the node to the
     appropriate index of the 2D array.
 */
-const levelOrder = (root) => {
+const levelOrderA = (root) => {
     let result = [];
     const recurse = (n, level) => {
         if (!n)
@@ -69,11 +69,33 @@ const levelOrderB = (root) => {
     }
     return result;
 };
+const levelOrder = (root) => {
+    if (!root)
+        return [];
+    let result = [];
+    let queue = [root];
+    let count = 1;
+    while (queue.length) {
+        let level = [];
+        while (count) {
+            let item = queue.shift();
+            level.push(item.val);
+            if (item.left)
+                queue.push(item.left);
+            if (item.right)
+                queue.push(item.right);
+            count--;
+        }
+        result.push(level);
+        count = queue.length;
+    }
+    return result;
+};
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(3);
     t.left = new TreeClass_1.TreeNode(9);
     t.right = new TreeClass_1.TreeNode(20);
     t.right.left = new TreeClass_1.TreeNode(15);
     t.right.right = new TreeClass_1.TreeNode(7);
-    Utilities_1.PrintMatrix(levelOrder(t));
+    (0, Utilities_1.PrintMatrix)(levelOrder(t));
 };

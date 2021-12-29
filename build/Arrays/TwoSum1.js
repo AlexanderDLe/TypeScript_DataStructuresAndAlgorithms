@@ -27,7 +27,7 @@ let twoSumOld1 = (nums, target) => {
             map[nums[i]] = i + 1;
         }
     }
-    Utilities_1.PrintObject(map);
+    (0, Utilities_1.PrintObject)(map);
     return answer;
 };
 const twoSum = (nums, target) => {
@@ -49,5 +49,5 @@ exports.default = () => {
     let nums = [2, 7, 11, 15];
     let nums2 = [-1, -2, -3, -4, -5];
     let nums3 = [1, 3, 4, 2];
-    Utilities_1.PrintArray(twoSumOld1(nums, 9));
+    (0, Utilities_1.PrintArray)(twoSumOld1(nums, 9));
 };
