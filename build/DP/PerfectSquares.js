@@ -3,7 +3,7 @@
  * 279. Perfect Squares
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const numSquares = (n) => {
+const numSquaresA = (n) => {
     if (!n)
         return 0;
     let squares = [];
@@ -52,6 +52,47 @@ const numSquaresB = (n) => {
     }
     return DP[n];
 };
+/*
+1 = 1
+2 = 1 + DP[1]:1 = 2
+3 = 1 + DP[2]:2 = 3
+4 = 4
+5 = 4 + DP[1]:1 = 2
+6 = 4 + DP[2]:2 = 3
+7 = 4 + DP[3]:3 = 3
+8 = 4 + DP[4]:1 = 2
+9 = 9
+10 = 9 + DP[1]:1 = 2
+11 = 9 + DP[2]:2 = 3
+12 = 4 + DP[8]:2 = 3
+13 = 9 + DP[4]:1 = 2
+14 = 9 + DP[5]:2 = 3
+15 = 9 + DP[6]:3 = 4
+16 = 16
+*/
+const numSquares = (n) => {
+    let squares = [];
+    let DP = new Array(n + 1).fill(0);
+    for (let i = 1; i * i <= n; i++) {
+        squares.push(i * i);
+    }
+    for (let i = 1; i <= n; i++) {
+        let lowestSquares = n;
+        for (let square of squares) {
+            if (square > i)
+                break;
+            if (square === i) {
+                lowestSquares = 1;
+                break;
+            }
+            else if (square < i) {
+                lowestSquares = Math.min(lowestSquares, 1 + DP[i - square]);
+            }
+        }
+        DP[i] = lowestSquares;
+    }
+    return DP[n];
+};
 exports.default = () => {
-    console.log(numSquares(1));
+    console.log(numSquares(16));
 };

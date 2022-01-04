@@ -3,12 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const NumberOfIslands_1 = __importDefault(require("./NumberOfIslands"));
+const RottingOranges_1 = __importDefault(require("./RottingOranges"));
 exports.default = () => {
     // RotateImage();
     // UniquePaths();
     // MinimumPathSum();
-    (0, NumberOfIslands_1.default)();
+    // NumberOfIslands();
     // SearchA2DMatrix2();
     // SetMatrixZeroes();
     // MaximalSquare();
@@ -16,4 +16,5 @@ exports.default = () => {
     // GameOfLife();
     // KthSmallestElementInSortedMatrix();
     // ValidSudoku();
+    (0, RottingOranges_1.default)();
 };

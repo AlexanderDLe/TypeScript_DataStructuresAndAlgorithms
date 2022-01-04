@@ -1,6 +1,7 @@
 import CountPrimes from './CountPrimes';
 import ExcelSheetColumnNumber from './ExcelSheetColumnNumber';
 import FactorialTrailingZeroes from './FactorialTrailingZeroes';
+import FindMedianFromDataStream from './FindMedianFromDataStream';
 import HappyNumber from './HappyNumber';
 import PlusOne from './PlusOne';
 import PowerOfThree from './PowerOfThree';
@@ -12,6 +13,7 @@ export default () => {
     // PowerOfThree();
     // FactorialTrailingZeroes();
     // Sqrtx();
-    CountPrimes();
+    // CountPrimes();
     // ExcelSheetColumnNumber();
+    FindMedianFromDataStream();
 };

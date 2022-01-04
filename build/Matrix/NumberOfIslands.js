@@ -35,11 +35,24 @@ const numIslandsA = (grid) => {
     return count;
 };
 const numIslands = (grid) => {
+    let rows = grid.length;
+    let cols = grid[0].length;
     let count = 0;
     const destroy = (row, col) => {
+        if (row < 0 || row === rows)
+            return;
+        if (col < 0 || col === cols)
+            return;
+        if (grid[row][col] === '0')
+            return;
+        grid[row][col] = '0';
+        destroy(row - 1, col);
+        destroy(row + 1, col);
+        destroy(row, col - 1);
+        destroy(row, col + 1);
     };
-    for (let row = 0; row < grid.length; row++) {
-        for (let col = 0; col < grid[0].length; col++) {
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
             if (grid[row][col] === '1') {
                 destroy(row, col);
                 count++;

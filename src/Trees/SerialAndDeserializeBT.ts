@@ -26,8 +26,6 @@ const serialize = (root: Node): string => {
 }
 
 const deserialize = (data: string): Node => {
-    let root = null;
-    
     data = data.replace(/[\[\]]/g, '')
     let arr = data.split(',')
     arr.pop();
@@ -42,10 +40,8 @@ const deserialize = (data: string): Node => {
         let node: Node = null;
 
         let curr = arr[index];
-        console.log(curr);
-
-        if (arr[index] !== 'null') {
-            let val = Number(arr[index]);
+        if (curr !== 'null') {
+            let val = Number(curr);
             node = new TreeNode(val)
         }
         index++;

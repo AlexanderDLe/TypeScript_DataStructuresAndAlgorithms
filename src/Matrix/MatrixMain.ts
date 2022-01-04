@@ -9,12 +9,13 @@ import GameOfLife from './GameOfLife';
 import KthSmallestElementInSortedMatrix from './KthSmallestElementInSortedMatrix';
 import ValidSudoku from './ValidSudoku';
 import SetMatrixZeroes from './SetMatrixZeroes';
+import RottingOranges from './RottingOranges';
 
 export default () => {
     // RotateImage();
     // UniquePaths();
     // MinimumPathSum();
-    NumberOfIslands();
+    // NumberOfIslands();
     // SearchA2DMatrix2();
     // SetMatrixZeroes();
     // MaximalSquare();
@@ -22,4 +23,5 @@ export default () => {
     // GameOfLife();
     // KthSmallestElementInSortedMatrix();
     // ValidSudoku();
+    RottingOranges();
 };

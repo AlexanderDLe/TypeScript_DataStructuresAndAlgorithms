@@ -17,10 +17,10 @@ const DPMain = () => {
     // ClimbingStairs();
     // HouseRobber1();
     // HouseRobber2();
-    HouseRobber3();
+    // HouseRobber3();
     // BestTimeToBuyAndSellStockWithCooldown();
     // PalindromePartitioning();
-    // PerfectSquares();
+    PerfectSquares();
     // PartitionEqualSubsetSum();
     // LongestIncreasingSubsequence();
     // CoinChange();

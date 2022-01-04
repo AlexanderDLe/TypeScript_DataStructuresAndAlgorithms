@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SerialAndDeserializeBT_1 = __importDefault(require("./SerialAndDeserializeBT"));
+const PathSum3_1 = __importDefault(require("./PathSum3"));
 const TreesMain = () => {
     // PopulatingNextRightPointersInEachNode();
     // RangeSum();
@@ -12,7 +12,7 @@ const TreesMain = () => {
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
     // SymmetricTree();
-    // PathSum3();
+    (0, PathSum3_1.default)();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
     // BinaryTreeLevelOrderTraversal();
@@ -26,6 +26,6 @@ const TreesMain = () => {
     // BinaryTreeInorderTraversal();
     // KthSmallestElementInBST();
     // BSTZigZagOrderTraversal();
-    (0, SerialAndDeserializeBT_1.default)();
+    // SerialAndDeserializeBT();
 };
 exports.default = TreesMain;

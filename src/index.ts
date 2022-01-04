@@ -14,6 +14,7 @@ import DPMain from './DP/DPMain';
 import GraphsMain from './Graphs/GraphsMain';
 import IntervalsMain from './Intervals/IntervalsMain';
 import Sketch from './Sketch';
+import SlidingWindowMain from './SlidingWindow/SlidingWindowMain';
 
 function main() {
     // Sketch();
@@ -25,11 +26,12 @@ function main() {
     // IntervalsMain();
     // LinkedListMain();
     // MathMain();
-    MatrixMain();
+    // MatrixMain();
     // QueuesMain();
     // RecursionMain();
-    // StacksMain();
     // SortingMain();
+    SlidingWindowMain();
+    // StacksMain();
     // StringsMain();
     // TreesMain();
 }

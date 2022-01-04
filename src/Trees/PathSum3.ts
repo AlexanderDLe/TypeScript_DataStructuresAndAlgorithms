@@ -2,7 +2,6 @@
  * 437. Path Sum III
  */
 
-import { DefaultSerializer } from 'v8';
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 
@@ -19,7 +18,7 @@ type Node = TreeNode<number> | null;
 type Map = {
     [key: number]: number
 }
-const pathSum = (root: Node, sum: number): number => {
+const pathSumA = (root: Node, targetSum: number): number => {
     let count = 0;
     let map: Map = {0: 1};
 
@@ -27,7 +26,7 @@ const pathSum = (root: Node, sum: number): number => {
         if (!n) return;
 
         let currSum = prevSum += n.val;
-        let x = currSum - sum;
+        let x = currSum - targetSum;
 
         if (map[x]) count += map[x];
         map[currSum] = (map[currSum] | 0) + 1;
@@ -46,7 +45,7 @@ const pathSum = (root: Node, sum: number): number => {
     DFS through entire tree. For each node, we use that node as a 
     starting position to scan the rest of the lower length of the tree.
  */
-const pathSumB = (root: Node, sum: number): number => {
+const pathSumB = (root: Node, targetSum: number): number => {
     let count = 0;
 
     const scan = (n: Node, acc: number): void => {
@@ -62,12 +61,36 @@ const pathSumB = (root: Node, sum: number): number => {
         if (!n) return;
         DFS(n.left);
         DFS(n.right);
-        scan(n, sum);
+        scan(n, targetSum);
     }
     
     DFS(root);
     return count;
 }
+
+const pathSum = (root: Node, targetSum: number): number => {
+    let count = 0;
+    let map: any = {0: 1};
+
+    const DFS = (n: Node, prevSum: number):void => {
+        if (!n) return;
+
+        let currSum = prevSum + n.val;
+        let outsideSum = currSum - targetSum;
+
+        if (map[outsideSum]) count += map[outsideSum];
+        map[currSum] = (map[currSum] || 0) + 1;
+
+        DFS(n.left, currSum);
+        DFS(n.right, currSum);
+
+        map[currSum]--;
+    }
+
+    DFS(root, 0);
+    return count;
+}
+
 export default () => {
     const sum = 8;
     const t = new TreeNode(10);

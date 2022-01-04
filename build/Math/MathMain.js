@@ -3,13 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CountPrimes_1 = __importDefault(require("./CountPrimes"));
+const FindMedianFromDataStream_1 = __importDefault(require("./FindMedianFromDataStream"));
 exports.default = () => {
     // HappyNumber();
     // PlusOne();
     // PowerOfThree();
     // FactorialTrailingZeroes();
     // Sqrtx();
-    (0, CountPrimes_1.default)();
+    // CountPrimes();
     // ExcelSheetColumnNumber();
+    (0, FindMedianFromDataStream_1.default)();
 };

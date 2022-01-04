@@ -4,14 +4,14 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
-const pathSum = (root, sum) => {
+const pathSumA = (root, targetSum) => {
     let count = 0;
     let map = { 0: 1 };
     const DFS = (n, prevSum) => {
         if (!n)
             return;
         let currSum = prevSum += n.val;
-        let x = currSum - sum;
+        let x = currSum - targetSum;
         if (map[x])
             count += map[x];
         map[currSum] = (map[currSum] | 0) + 1;
@@ -27,7 +27,7 @@ const pathSum = (root, sum) => {
     DFS through entire tree. For each node, we use that node as a
     starting position to scan the rest of the lower length of the tree.
  */
-const pathSumB = (root, sum) => {
+const pathSumB = (root, targetSum) => {
     let count = 0;
     const scan = (n, acc) => {
         if (!n)
@@ -43,9 +43,27 @@ const pathSumB = (root, sum) => {
             return;
         DFS(n.left);
         DFS(n.right);
-        scan(n, sum);
+        scan(n, targetSum);
     };
     DFS(root);
+    return count;
+};
+const pathSum = (root, targetSum) => {
+    let count = 0;
+    let map = { 0: 1 };
+    const DFS = (n, prevSum) => {
+        if (!n)
+            return;
+        let currSum = prevSum + n.val;
+        let outsideSum = currSum - targetSum;
+        if (map[outsideSum])
+            count += map[outsideSum];
+        map[currSum] = (map[currSum] || 0) + 1;
+        DFS(n.left, currSum);
+        DFS(n.right, currSum);
+        map[currSum]--;
+    };
+    DFS(root, 0);
     return count;
 };
 exports.default = () => {

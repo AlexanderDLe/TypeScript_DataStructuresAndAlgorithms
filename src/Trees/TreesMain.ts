@@ -29,7 +29,7 @@ const TreesMain = () => {
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
     // SymmetricTree();
-    // PathSum3();
+    PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
     // BinaryTreeLevelOrderTraversal();
@@ -43,7 +43,7 @@ const TreesMain = () => {
     // BinaryTreeInorderTraversal();
     // KthSmallestElementInBST();
     // BSTZigZagOrderTraversal();
-    SerialAndDeserializeBT();
+    // SerialAndDeserializeBT();
 };
 
 export default TreesMain;
