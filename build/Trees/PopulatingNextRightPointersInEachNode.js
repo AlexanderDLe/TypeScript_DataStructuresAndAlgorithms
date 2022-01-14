@@ -31,12 +31,12 @@ function connect(root) {
 }
 ;
 exports.default = () => {
-    const t = new TreeClass_1.TreeNodeNext(1);
-    t.left = new TreeClass_1.TreeNodeNext(2);
-    t.right = new TreeClass_1.TreeNodeNext(3);
-    t.left.left = new TreeClass_1.TreeNodeNext(4);
-    t.left.right = new TreeClass_1.TreeNodeNext(5);
-    t.right.left = new TreeClass_1.TreeNodeNext(6);
-    t.right.right = new TreeClass_1.TreeNodeNext(7);
+    const t = new TreeClass_1.TreeNode(1);
+    t.left = new TreeClass_1.TreeNode(2);
+    t.right = new TreeClass_1.TreeNode(3);
+    t.left.left = new TreeClass_1.TreeNode(4);
+    t.left.right = new TreeClass_1.TreeNode(5);
+    t.right.left = new TreeClass_1.TreeNode(6);
+    t.right.right = new TreeClass_1.TreeNode(7);
     (0, TreeClass_1.BinaryPreorderTraversal)(connect(t));
 };

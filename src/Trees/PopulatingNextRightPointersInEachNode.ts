@@ -1,9 +1,9 @@
 /**
  * 105. Construct Binary Tree From Preorder and Inorder Traversal
  */
-import { TreeNodeNext, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
+import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 
-type Node = TreeNodeNext<number> | null;
+type Node = TreeNode<number> | null;
 function connect(root: Node): Node {
     if (!root) return null;
     root.next = null;
@@ -33,13 +33,13 @@ function connect(root: Node): Node {
 };
 
 export default () => {
-    const t = new TreeNodeNext(1);
-    t.left = new TreeNodeNext(2);
-    t.right = new TreeNodeNext(3);
-    t.left.left = new TreeNodeNext(4);
-    t.left.right = new TreeNodeNext(5);
-    t.right.left = new TreeNodeNext(6);
-    t.right.right = new TreeNodeNext(7);
+    const t = new TreeNode(1);
+    t.left = new TreeNode(2);
+    t.right = new TreeNode(3);
+    t.left.left = new TreeNode(4);
+    t.left.right = new TreeNode(5);
+    t.right.left = new TreeNode(6);
+    t.right.right = new TreeNode(7);
     
     BinaryPreorderTraversal(connect(t));
 };

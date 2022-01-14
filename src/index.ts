@@ -12,28 +12,42 @@ import SortingMain from './Sorting/SortingMain';
 import StringsMain from './Strings/StringsMain';
 import DPMain from './DP/DPMain';
 import GraphsMain from './Graphs/GraphsMain';
-import IntervalsMain from './Intervals/IntervalsMain';
 import Sketch from './Sketch';
 import SlidingWindowMain from './SlidingWindow/SlidingWindowMain';
+import TwoPointersMain from './TwoPointers/TwoPointersMain';
+import FastAndSlowPointersMain from './FastAndSlowPointers/FastAndSlowPointersMain';
+import IntervalsMain from './Intervals/IntervalsMain';
+import CyclicSortMain from './CyclicSort/CyclicSortMain';
+import LinkedListReversalMain from './LinkedListReversal/LinkedListReversalMain';
+import TreeBFSMain from './TreeBFS/TreeBFSMain';
+import TreeDFSMain from './TreeDFS/TreeDFSMain';
+import TwoHeapsMain from './TwoHeaps/TwoHeapsMain';
 
 function main() {
     // Sketch();
     // ArraysMain();
     // BinaryMain();
+    // CyclicSortMain();
     // DPMain();
+    // FastAndSlowPointersMain();
     // GraphsMain();
     // HeapsMain();
-    // IntervalsMain();
+    // IntervalsMain()
+    // LinkedListReversalMain();
     // LinkedListMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // SortingMain();
-    SlidingWindowMain();
+    // SlidingWindowMain();
     // StacksMain();
     // StringsMain();
+    // TreeBFSMain();
+    // TreeDFSMain();
     // TreesMain();
+    TwoHeapsMain();
+    // TwoPointersMain();
 }
 
 main();

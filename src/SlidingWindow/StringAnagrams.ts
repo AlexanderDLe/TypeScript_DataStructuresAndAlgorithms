@@ -6,13 +6,14 @@ const FindStringAnagrams = (str: string, pattern: string): number[] => {
     let result: number[] = [];
     let patternMap: any = {};
     let currentMap: any = {};
-    let count = pattern.length;
-
+    
     for (let char of pattern) {
         patternMap[char] = (patternMap[char] || 0) + 1;
     }
-
+    
+    let count = Object.keys(patternMap).length;
     let L = 0;
+
     for (let R = 0; R < str.length; R++) {
         let Rchar = str[R];
         currentMap[Rchar] = (currentMap[Rchar] || 0) + 1;
@@ -39,7 +40,7 @@ const FindStringAnagrams = (str: string, pattern: string): number[] => {
 
 export default () => {
     let str1 = 'ppqp', pattern1 = 'pq';
-    let str2 = 'abbcabc', pattern2 = 'abc';
+    let str2 = 'abbcabc', pattern2 = 'abbc';
     console.log(FindStringAnagrams(str1, pattern1));
     console.log(FindStringAnagrams(str2, pattern2));
 };

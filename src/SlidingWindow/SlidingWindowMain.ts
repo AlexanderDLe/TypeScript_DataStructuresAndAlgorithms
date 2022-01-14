@@ -7,7 +7,9 @@ import LongestSubstringWithSameLettersAfterReplacement from "./LongestSubstringW
 import MaximumSumSubarrayOfSizeK from "./MaximumSumSubarrayOfSizeK";
 import PermutationInAString from "./PermutationInAString";
 import SmallestSubarrayWithGreaterSum from "./SmallestSubarrayWithGreaterSum";
+import SmallestWindowContainingSubstr from "./SmallestWindowContainingSubstr";
 import StringAnagrams from "./StringAnagrams";
+import WordsConcatenation from "./WordsConcatenation";
 
 
 const SlidingWindowMain = () => {
@@ -20,7 +22,9 @@ const SlidingWindowMain = () => {
     // LongestSubstringWithSameLettersAfterReplacement();
     // LongestSubstringWithOnesAfterReplacement();
     // PermutationInAString();
-    StringAnagrams();
+    // StringAnagrams();
+    // SmallestWindowContainingSubstr();
+    WordsConcatenation();
 };
 
 export default SlidingWindowMain;

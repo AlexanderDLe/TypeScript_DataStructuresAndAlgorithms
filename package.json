@@ -20,7 +20,8 @@
     "homepage": "https://github.com/AlexanderDLe/TypeScript_DataStructuresAndAlgorithms#readme",
     "dependencies": {
         "@types/node": "^13.1.0",
+        "collections": "^5.1.13",
         "concurrently": "^5.0.2",
-        "nodemon": "^2.0.2"
+        "nodemon": "^2.0.15"
     }
 }

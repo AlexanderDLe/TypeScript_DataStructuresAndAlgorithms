@@ -4,6 +4,7 @@ exports.BinaryPreorderTraversal = exports.TreeNodeNext = exports.TreeNode = void
 class TreeNode {
     constructor(val) {
         this.val = val;
+        this.value = val;
         this.left = null;
         this.right = null;
     }
@@ -12,6 +13,7 @@ exports.TreeNode = TreeNode;
 class TreeNodeNext {
     constructor(val) {
         this.val = val;
+        this.value = val;
         this.left = null;
         this.right = null;
         this.next = null;
@@ -23,7 +25,8 @@ const BinaryPreorderTraversal = (root) => {
     const recurse = (root) => {
         if (!root)
             return;
-        str += root.val + ' | ';
+        let valueVar = root.val || root.value;
+        str += valueVar + ' | ';
         recurse(root.left);
         recurse(root.right);
     };

@@ -3,24 +3,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SlidingWindowMain_1 = __importDefault(require("./SlidingWindow/SlidingWindowMain"));
+const TwoHeapsMain_1 = __importDefault(require("./TwoHeaps/TwoHeapsMain"));
 function main() {
     // Sketch();
     // ArraysMain();
     // BinaryMain();
+    // CyclicSortMain();
     // DPMain();
+    // FastAndSlowPointersMain();
     // GraphsMain();
     // HeapsMain();
-    // IntervalsMain();
+    // IntervalsMain()
+    // LinkedListReversalMain();
     // LinkedListMain();
     // MathMain();
     // MatrixMain();
     // QueuesMain();
     // RecursionMain();
     // SortingMain();
-    (0, SlidingWindowMain_1.default)();
+    // SlidingWindowMain();
     // StacksMain();
     // StringsMain();
+    // TreeBFSMain();
+    // TreeDFSMain();
     // TreesMain();
+    (0, TwoHeapsMain_1.default)();
+    // TwoPointersMain();
 }
 main();

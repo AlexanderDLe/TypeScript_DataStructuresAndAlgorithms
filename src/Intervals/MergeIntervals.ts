@@ -1,36 +1,31 @@
 /**
- * 56. Merge Intervals
- */
+ * Grokking the Coding Interview
+*/
 
-import { PrintMatrix } from '../utils/Utilities';
+import { PrintArray } from "../utils/Utilities";
 
-const merge = (intervals: number[][]): number[][] => {
-    if (intervals.length < 2) return intervals;
-    let result: number[][] = [];
-    intervals.sort((a, b) => a[0] - b[0]);
+const mergeIntervals = (intervals: number[][]): number[][] => {
+    intervals = intervals.sort((a, b) => a[0] - b[0])
+    let result: number[][] = []
+    let carry: number[] = intervals[0];
 
-    let start = intervals[0][0];
-    let end = intervals[0][1];
     for (let i = 1; i < intervals.length; i++) {
-        if (intervals[i][0] >= start && intervals[i][0] <= end) {
-            end = Math.max(end, intervals[i][1]);
+        let curr = intervals[i];
+        console.log(carry);
+        
+        if (carry[1] >= curr[0]) {
+            carry[1] = Math.max(carry[1], curr[1]);
         } else {
-            result.push([start, end]);
-            start = intervals[i][0];
-            end = intervals[i][1];
+            result.push(carry);
+            carry = curr;
         }
     }
-    result.push([start, end]);
-
+    
+    result.push(carry);
     return result;
-};
+}
 
 export default () => {
-    const intervals = [
-        [1, 3],
-        [2, 6],
-        [8, 15],
-        [15, 18]
-    ];
-    PrintMatrix(merge(intervals));
+    let Intervals = [[1,4], [2,5], [7,9]]
+    console.log(mergeIntervals(Intervals));
 };

@@ -1,5 +1,19 @@
-import MergeIntervals from './MergeIntervals';
+import ConflictingAppointments from "./ConflictingAppointments";
+import EmployeeFreeTime from "./EmployeeFreeTime";
+import InsertInterval from "./InsertInterval";
+import IntervalsIntersection from "./IntervalsIntersection";
+import MaximumCPULoad from "./MaximumCPULoad";
+import MergeIntervals from "./MergeIntervals";
+import MinimumMeetingRooms from "./MinimumMeetingRooms";
 
-export default () => {
-    MergeIntervals();
+const IntervalsMain = () => {
+    // MergeIntervals();
+    // InsertInterval();
+    // IntervalsIntersection();
+    // ConflictingAppointments();
+    // MinimumMeetingRooms();
+    // MaximumCPULoad();
+    EmployeeFreeTime();
 };
+
+export default IntervalsMain;

@@ -7,10 +7,10 @@ const FindStringAnagrams = (str, pattern) => {
     let result = [];
     let patternMap = {};
     let currentMap = {};
-    let count = pattern.length;
     for (let char of pattern) {
         patternMap[char] = (patternMap[char] || 0) + 1;
     }
+    let count = Object.keys(patternMap).length;
     let L = 0;
     for (let R = 0; R < str.length; R++) {
         let Rchar = str[R];
@@ -34,7 +34,7 @@ const FindStringAnagrams = (str, pattern) => {
 };
 exports.default = () => {
     let str1 = 'ppqp', pattern1 = 'pq';
-    let str2 = 'abbcabc', pattern2 = 'abc';
+    let str2 = 'abbcabc', pattern2 = 'abbc';
     console.log(FindStringAnagrams(str1, pattern1));
     console.log(FindStringAnagrams(str2, pattern2));
 };
