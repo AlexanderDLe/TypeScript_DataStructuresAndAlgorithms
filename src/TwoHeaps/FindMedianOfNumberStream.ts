@@ -82,6 +82,51 @@ class MedianOfAStream {
         console.log('maxHeap', this.maxHeap)
     }
 };
+class MedianOfAStream2 {
+    minHeap: any;
+    maxHeap: any;
+
+    constructor() {
+        this.minHeap = new Heap([], null, ((a:number, b:number) => b - a))
+        this.maxHeap = new Heap([], null, ((a:number, b:number) => a - b))
+    }
+
+    insert_num(num:number) {
+        let maxLen = this.maxHeap.length;
+        
+        if (maxLen === 0 || this.maxHeap.peek() >= num) {
+            this.maxHeap.push(num);
+        } else {
+            this.minHeap.push(num);
+        }
+        
+        let minLen = this.minHeap.length;
+        maxLen = this.maxHeap.length;
+
+        // either both the heaps will have equal num of elements or 
+        // maxHeap will have 1 more element than the min-heap
+        if (maxLen === minLen + 2) {
+            this.minHeap.push(this.maxHeap.pop())
+        } else if (maxLen < minLen) {
+            this.maxHeap.push(this.minHeap.pop())
+        }
+    }
+  
+    find_median() {
+        let maxLen = this.maxHeap.length;
+        let minLen = this.minHeap.length;
+
+        if (maxLen === minLen) {
+            return this.maxHeap.peek() / 2.0 + this.minHeap.peek() / 2.0;
+        }
+        return this.maxHeap.peek();
+    }
+
+    print() {
+        console.log('minHeap', this.minHeap)
+        console.log('maxHeap', this.maxHeap)
+    }
+};
 
 const heapTest = () => {
     let maxHeap = new Heap([], null, ((a:number, b:number) => a - b));
@@ -102,12 +147,12 @@ const heapTest = () => {
 export default () => {
     // heapTest();
 
-    var medianOfAStream = new MedianOfAStream()
+    var medianOfAStream = new MedianOfAStream2()
     medianOfAStream.insert_num(3)
     medianOfAStream.insert_num(1)
     console.log(`The median is: ${medianOfAStream.find_median()}`)
     medianOfAStream.insert_num(5)
-    medianOfAStream.print();
+    // medianOfAStream.print();
     console.log(`The median is: ${medianOfAStream.find_median()}`)
     medianOfAStream.insert_num(4)
     console.log(`The median is: ${medianOfAStream.find_median()}`)

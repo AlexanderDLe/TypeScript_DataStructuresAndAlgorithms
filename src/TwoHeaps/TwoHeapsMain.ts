@@ -1,7 +1,13 @@
-import findMedianOfNumberStream from "./FindMedianOfNumberStream";
+import FindMedianOfNumberStream from "./FindMedianOfNumberStream";
+import MaximizeCapital from "./MaximizeCapital";
+import NextInterval from "./NextInterval";
+import SlidingWindowMedian from "./SlidingWindowMedian";
 
 const TwoHeapsMain = () => {
-    findMedianOfNumberStream();
+    // FindMedianOfNumberStream();
+    // SlidingWindowMedian();
+    // MaximizeCapital();
+    NextInterval();
 };
 
 export default TwoHeapsMain;

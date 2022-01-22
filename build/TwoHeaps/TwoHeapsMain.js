@@ -3,8 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const FindMedianOfNumberStream_1 = __importDefault(require("./FindMedianOfNumberStream"));
+const NextInterval_1 = __importDefault(require("./NextInterval"));
 const TwoHeapsMain = () => {
-    (0, FindMedianOfNumberStream_1.default)();
+    // FindMedianOfNumberStream();
+    // SlidingWindowMedian();
+    // MaximizeCapital();
+    (0, NextInterval_1.default)();
 };
 exports.default = TwoHeapsMain;

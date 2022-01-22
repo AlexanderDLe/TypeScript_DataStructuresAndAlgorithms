@@ -4,6 +4,7 @@ exports.PrintList = exports.LinkedList = exports.RandomListNode = exports.ListNo
 class ListNode {
     constructor(val) {
         this.val = val;
+        this.value = val;
         this.next = null;
         this.prev = null;
     }
@@ -12,6 +13,7 @@ exports.ListNode = ListNode;
 class RandomListNode {
     constructor(val) {
         this.val = val;
+        this.value = val;
         this.next = null;
         this.prev = null;
         this.random = null;

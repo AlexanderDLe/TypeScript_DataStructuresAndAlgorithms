@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const TwoHeapsMain_1 = __importDefault(require("./TwoHeaps/TwoHeapsMain"));
+const KWayMergeMain_1 = __importDefault(require("./KWayMerge/KWayMergeMain"));
 function main() {
     // Sketch();
     // ArraysMain();
@@ -16,18 +16,22 @@ function main() {
     // IntervalsMain()
     // LinkedListReversalMain();
     // LinkedListMain();
+    (0, KWayMergeMain_1.default)();
     // MathMain();
     // MatrixMain();
+    // ModifiedBinarySearchMain();
     // QueuesMain();
     // RecursionMain();
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
     // StringsMain();
+    // SubsetsMain();
+    // TopKElementsMain();
     // TreeBFSMain();
     // TreeDFSMain();
     // TreesMain();
-    (0, TwoHeapsMain_1.default)();
+    // TwoHeapsMain();
     // TwoPointersMain();
 }
 main();

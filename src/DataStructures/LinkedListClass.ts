@@ -1,9 +1,11 @@
 export class ListNode<T> {
     val: T;
+    value: T;
     next: ListNode<T> | null;
     prev: ListNode<T> | null;
     constructor(val: T) {
         this.val = val;
+        this.value = val;
         this.next = null;
         this.prev = null;
     }
@@ -11,12 +13,14 @@ export class ListNode<T> {
 
 export class RandomListNode<T> {
     val: T;
+    value: T;
     next: RandomListNode<T> | null;
     prev: RandomListNode<T> | null;
     random: RandomListNode<T> | null;
 
     constructor(val: T) {
         this.val = val;
+        this.value = val;
         this.next = null;
         this.prev = null;
         this.random = null;

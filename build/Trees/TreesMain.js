@@ -1,9 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const PathSum3_1 = __importDefault(require("./PathSum3"));
 const TreesMain = () => {
     // PopulatingNextRightPointersInEachNode();
     // RangeSum();
@@ -12,7 +8,7 @@ const TreesMain = () => {
     // MaximumDepthOfBinaryTree();
     // DiameterOfBinaryTree();
     // SymmetricTree();
-    (0, PathSum3_1.default)();
+    // PathSum3();
     // FlattenBinaryTree();
     // BinaryPreorderTraversal();
     // BinaryTreeLevelOrderTraversal();

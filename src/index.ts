@@ -22,6 +22,10 @@ import LinkedListReversalMain from './LinkedListReversal/LinkedListReversalMain'
 import TreeBFSMain from './TreeBFS/TreeBFSMain';
 import TreeDFSMain from './TreeDFS/TreeDFSMain';
 import TwoHeapsMain from './TwoHeaps/TwoHeapsMain';
+import SubsetsMain from './Subsets/SubsetsMain';
+import ModifiedBinarySearchMain from './ModifiedBinarySearch/ModifiedBinarySearchMain';
+import TopKElementsMain from './TopKElements/TopKElementsMain';
+import KWayMergeMain from './KWayMerge/KWayMergeMain';
 
 function main() {
     // Sketch();
@@ -35,18 +39,22 @@ function main() {
     // IntervalsMain()
     // LinkedListReversalMain();
     // LinkedListMain();
+    KWayMergeMain();
     // MathMain();
     // MatrixMain();
+    // ModifiedBinarySearchMain();
     // QueuesMain();
     // RecursionMain();
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
     // StringsMain();
+    // SubsetsMain();
+    // TopKElementsMain();
     // TreeBFSMain();
     // TreeDFSMain();
     // TreesMain();
-    TwoHeapsMain();
+    // TwoHeapsMain();
     // TwoPointersMain();
 }
 
