@@ -1,3 +1,4 @@
+import KPairsWithLargestSum from "./KPairsWithLargestSum";
 import KthSmallestInASortedMatrix from "./KthSmallestInASortedMatrix";
 import KthSmallestNumberInMSortedLists from "./KthSmallestNumberInMSortedLists";
 import MergeKSortedLists from "./MergeKSortedLists";
@@ -7,7 +8,8 @@ const KWayMergeMain = () => {
     // MergeKSortedLists();
     // KthSmallestNumberInMSortedLists();
     // KthSmallestInASortedMatrix();
-    SmallestNumberRange();
+    // SmallestNumberRange();
+    KPairsWithLargestSum();
 };
 
 export default KWayMergeMain;

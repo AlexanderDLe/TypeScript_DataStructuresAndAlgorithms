@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const KWayMergeMain_1 = __importDefault(require("./KWayMerge/KWayMergeMain"));
+const TopologicalGraphSortMain_1 = __importDefault(require("./TopologicalGraphSort/TopologicalGraphSortMain"));
 function main() {
     // Sketch();
     // ArraysMain();
@@ -16,7 +16,8 @@ function main() {
     // IntervalsMain()
     // LinkedListReversalMain();
     // LinkedListMain();
-    (0, KWayMergeMain_1.default)();
+    // KnapsackDPMain();
+    // KWayMergeMain();
     // MathMain();
     // MatrixMain();
     // ModifiedBinarySearchMain();
@@ -28,6 +29,7 @@ function main() {
     // StringsMain();
     // SubsetsMain();
     // TopKElementsMain();
+    (0, TopologicalGraphSortMain_1.default)();
     // TreeBFSMain();
     // TreeDFSMain();
     // TreesMain();

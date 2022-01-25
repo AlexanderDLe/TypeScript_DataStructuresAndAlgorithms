@@ -26,6 +26,8 @@ import SubsetsMain from './Subsets/SubsetsMain';
 import ModifiedBinarySearchMain from './ModifiedBinarySearch/ModifiedBinarySearchMain';
 import TopKElementsMain from './TopKElements/TopKElementsMain';
 import KWayMergeMain from './KWayMerge/KWayMergeMain';
+import KnapsackDPMain from './KnapsackDP/KnapsackDPMain';
+import TopologicalGraphSortMain from './TopologicalGraphSort/TopologicalGraphSortMain';
 
 function main() {
     // Sketch();
@@ -39,7 +41,8 @@ function main() {
     // IntervalsMain()
     // LinkedListReversalMain();
     // LinkedListMain();
-    KWayMergeMain();
+    // KnapsackDPMain();
+    // KWayMergeMain();
     // MathMain();
     // MatrixMain();
     // ModifiedBinarySearchMain();
@@ -51,6 +54,7 @@ function main() {
     // StringsMain();
     // SubsetsMain();
     // TopKElementsMain();
+    TopologicalGraphSortMain();
     // TreeBFSMain();
     // TreeDFSMain();
     // TreesMain();
