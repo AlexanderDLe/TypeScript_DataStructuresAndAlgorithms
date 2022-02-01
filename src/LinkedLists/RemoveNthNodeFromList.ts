@@ -29,7 +29,7 @@ const removeNthFromEndA = (head: Node, n: number): Node => {
     return dummy.next;
 };
 
-const removeNthFromEnd = (head: Node, n: number): Node => {
+const removeNthFromEndB = (head: Node, n: number): Node => {
     let dummy: Node = new ListNode(0);
     dummy.next = head;
 
@@ -53,10 +53,33 @@ const removeNthFromEnd = (head: Node, n: number): Node => {
     return dummy.next;
 }
 
+const removeNthFromEnd = (head: Node, n: number): Node => {
+    let counter = 1;
+    let s: Node = head;
+    let f: Node = head;
+	
+    while (counter <= n) {
+        f = f!.next;
+        counter++;
+    }
+    if (f === null) {
+        head.value = head.next!.value;
+        head.next = head.next!.next;
+        return;
+    }
+    while (f.next) {
+        s = s.next!;
+        f = f.next!;
+    }
+    s.next = s.next!.next;
+}
+
 export default () => {
-    const nums = [1];
+    const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const list = new LinkedList(nums);
-    const target = 1;
+    const N = 10;
     PrintList(list.head);
-    PrintList(removeNthFromEnd(list.head, target));
+    PrintList(removeNthFromEnd(list.head, N));
+    PrintList(list.head);
+
 };

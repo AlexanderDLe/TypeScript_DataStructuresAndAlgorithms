@@ -33,7 +33,7 @@ const reverseListRecursively = (head: Node): Node => {
     return p;
 };
 
-const reverseList = (head: Node): Node => {
+const reverseListB = (head: Node): Node => {
     let p: Node = head;
     let q: Node = null;
     let r: Node = null;
@@ -45,6 +45,21 @@ const reverseList = (head: Node): Node => {
         q.next = r;
     }
     
+    return q;
+}
+
+const reverseList = (head: Node): Node => {
+    let p: Node = head;
+    let q: Node = null;
+    let r: Node = null;
+
+    while (p) {
+        r = q;
+        q = p;
+        p = p.next;
+        q.next = r;
+    }
+
     return q;
 }
 

@@ -8,7 +8,7 @@ type PhoneMap = {
     [key: string]: string[] | null;
 };
 
-const letterCombinations = (digits: string): string[] => {
+const letterCombinationsA = (digits: string): string[] => {
     const map: PhoneMap = {
         2: ['a', 'b', 'c'],
         3: ['d', 'e', 'f'],
@@ -115,7 +115,74 @@ const letterCombinationsC = (digits: string): string[] => {
     return result;
 }
 
+const letterCombinationsRecurse = (digits: string): string[] => {
+    const map: PhoneMap = {
+        0: ['0'],
+        1: ['1'],
+        2: ['a', 'b', 'c'],
+        3: ['d', 'e', 'f'],
+        4: ['g', 'h', 'i'],
+        5: ['j', 'k', 'l'],
+        6: ['m', 'n', 'o'],
+        7: ['p', 'q', 'r', 's'],
+        8: ['t', 'u', 'v'],
+        9: ['w', 'x', 'y', 'z']
+    };
+
+    const result: string[] = [];
+
+    const recurse = (index: number, substr: string) => {
+        if (index === digits.length) {
+            result.push(substr);
+            return;
+        }
+        
+        let digit = digits[index];
+        let chars = map[digit];
+        
+        for (let char of chars) {
+            let copyStr = substr + char;
+            recurse(index + 1, copyStr);
+        }
+    }
+    recurse(0, '');
+    return result;
+}
+
+const letterCombinationsIterative = (digits: string): string[] => {
+    const map: PhoneMap = {
+        0: ['0'],
+        1: ['1'],
+        2: ['a', 'b', 'c'],
+        3: ['d', 'e', 'f'],
+        4: ['g', 'h', 'i'],
+        5: ['j', 'k', 'l'],
+        6: ['m', 'n', 'o'],
+        7: ['p', 'q', 'r', 's'],
+        8: ['t', 'u', 'v'],
+        9: ['w', 'x', 'y', 'z']
+    };
+
+    let result: string[] = [''];
+
+    for (let digit of digits) {
+        let chars = map[digit];
+        let newResult: string[] = [];
+
+        for (let res of result) {
+            for (let char of chars) {
+                let str = res + char;
+                newResult.push(str);
+            }
+        }
+
+        result = newResult;
+    }
+
+    return result;
+}
+
 export default () => {
-    const digits = '234';
-    PrintArray(letterCombinationsC(digits));
+    const digits = '1905';
+    PrintArray(letterCombinationsIterative(digits));
 };

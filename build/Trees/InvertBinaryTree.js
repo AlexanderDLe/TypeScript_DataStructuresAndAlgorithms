@@ -12,11 +12,11 @@ const invertTreeA = (root) => {
     let temp = root.left;
     root.left = root.right;
     root.right = temp;
-    invertTree(root.left);
-    invertTree(root.right);
+    invertBinaryTree(root.left);
+    invertBinaryTree(root.right);
     return root;
 };
-const invertTree = (root) => {
+const invertTreeB = (root) => {
     const invertChildren = (n) => {
         let temp = n.left;
         n.left = n.right;
@@ -32,7 +32,7 @@ const invertTree = (root) => {
     DFS(root);
     return root;
 };
-const invertTreeB = (root) => {
+const invertTreeC = (root) => {
     if (!root)
         return null;
     invertTreeB(root.right);
@@ -42,6 +42,16 @@ const invertTreeB = (root) => {
     root.left = temp;
     return root;
 };
+const invertBinaryTree = (tree) => {
+    if (!tree)
+        return;
+    let temp = tree.right;
+    tree.right = tree.left;
+    tree.left = temp;
+    invertBinaryTree(tree.left);
+    invertBinaryTree(tree.right);
+    return tree;
+};
 const InvertBinaryTree = () => {
     const t = new TreeClass_1.TreeNode(4);
     t.left = new TreeClass_1.TreeNode(2);
@@ -50,6 +60,6 @@ const InvertBinaryTree = () => {
     t.left.right = new TreeClass_1.TreeNode(3);
     t.right.left = new TreeClass_1.TreeNode(6);
     t.right.right = new TreeClass_1.TreeNode(9);
-    (0, TreeClass_1.BinaryPreorderTraversal)(invertTreeB(t));
+    (0, TreeClass_1.BinaryPreorderTraversal)(invertBinaryTree(t));
 };
 exports.default = InvertBinaryTree;

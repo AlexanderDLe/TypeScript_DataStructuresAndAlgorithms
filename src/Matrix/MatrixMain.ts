@@ -10,18 +10,24 @@ import KthSmallestElementInSortedMatrix from './KthSmallestElementInSortedMatrix
 import ValidSudoku from './ValidSudoku';
 import SetMatrixZeroes from './SetMatrixZeroes';
 import RottingOranges from './RottingOranges';
+import SpiralTraversal from './SpiralTraversal';
+import RiverSizes from './RiverSizes';
+import RemoveIslands from './RemoveIslands';
 
 export default () => {
-    // RotateImage();
-    // UniquePaths();
-    // MinimumPathSum();
-    // NumberOfIslands();
-    // SearchA2DMatrix2();
-    // SetMatrixZeroes();
-    // MaximalSquare();
-    // WordSearch();
     // GameOfLife();
     // KthSmallestElementInSortedMatrix();
+    // MaximalSquare();
+    // MinimumPathSum();
+    // NumberOfIslands();
+    RemoveIslands();
+    // RiverSizes();
+    // RotateImage();
+    // RottingOranges();
+    // SearchA2DMatrix2();
+    // SetMatrixZeroes();
+    // SpiralTraversal();
+    // WordSearch();
+    // UniquePaths();
     // ValidSudoku();
-    RottingOranges();
 };

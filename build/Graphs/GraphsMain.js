@@ -3,7 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CourseSchedule_1 = __importDefault(require("./CourseSchedule"));
+const YoungestCommonAncestor_1 = __importDefault(require("./YoungestCommonAncestor"));
 exports.default = () => {
-    (0, CourseSchedule_1.default)();
+    // BreadthFirstSearch();
+    // CourseSchedule();
+    // DepthFirstSearch();
+    // SingleCycleCheck();
+    (0, YoungestCommonAncestor_1.default)();
 };

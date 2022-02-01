@@ -51,10 +51,10 @@ function main() {
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
-    // StringsMain();
+    StringsMain();
     // SubsetsMain();
     // TopKElementsMain();
-    TopologicalGraphSortMain();
+    // TopologicalGraphSortMain();
     // TreeBFSMain();
     // TreeDFSMain();
     // TreesMain();

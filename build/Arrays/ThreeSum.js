@@ -1,8 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- *  15. 3Sum
- */
 const threeSumA = (nums) => {
     let result = [];
     nums.sort((a, b) => a - b);
@@ -92,7 +89,39 @@ const threeSumC = (nums) => {
     }
     return result;
 };
+const threeSumWithTarget = (array, targetSum) => {
+    array = array.sort((a, b) => a - b);
+    let result = [];
+    for (let L = 0; L < array.length - 2; L++) {
+        let LNum = array[L];
+        let M = L + 1;
+        let R = array.length - 1;
+        while (M < R) {
+            let MNum = array[M];
+            let RNum = array[R];
+            let sum = LNum + MNum + RNum;
+            if (sum === targetSum) {
+                result.push([LNum, MNum, RNum]);
+                while (MNum === array[M + 1])
+                    M++;
+                while (RNum === array[R + 1])
+                    R--;
+                M++;
+                R--;
+            }
+            else if (sum > targetSum) {
+                R--;
+            }
+            else {
+                M++;
+            }
+        }
+    }
+    return result;
+};
 exports.default = () => {
-    const nums = [-1, 0, 1, 2, -1, -4];
-    console.log(threeSumC(nums));
+    const nums1 = [-1, 0, 1, 2, -1, -4];
+    const nums2 = [12, 3, 1, 2, -6, 5, -8, 6];
+    // console.log(threeSumC(nums1));
+    console.log(threeSumWithTarget(nums2, 0));
 };

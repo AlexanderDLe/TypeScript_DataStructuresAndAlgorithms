@@ -3,27 +3,15 @@ export class TreeNode<T> {
     value: T;
     left: TreeNode<T> | null;
     right: TreeNode<T> | null;
-    next: TreeNodeNext<T> | null;
-    constructor(val: T) {
-        this.val = val;
-        this.value = val;
-        this.left = null;
-        this.right = null;
-    }
-}
-
-export class TreeNodeNext<T> {
-    val: T;
-    value: T;
-    left: TreeNodeNext<T> | null;
-    right: TreeNodeNext<T> | null;
-    next: TreeNodeNext<T> | null;
+    next: TreeNode<T> | null;
+    parent: TreeNode<T> | null;
     constructor(val: T) {
         this.val = val;
         this.value = val;
         this.left = null;
         this.right = null;
         this.next = null;
+        this.parent = null;
     }
 }
 

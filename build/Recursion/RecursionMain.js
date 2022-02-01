@@ -3,13 +3,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CombinationSum_1 = __importDefault(require("./CombinationSum"));
+const Sudoku_1 = __importDefault(require("./Sudoku"));
 exports.default = () => {
-    // Permutations();
+    // CombinationSum();
+    // Fibonacci();
     // GenerateParentheses();
-    // Subsets();
-    (0, CombinationSum_1.default)();
-    // TargetSum();
+    // InterweavingStrings();
     // LetterCombinationsOfAPhoneNumber();
+    // LowestCommonManager();
+    // Permutations();
+    // Powerset();
+    // ProductSum();
+    (0, Sudoku_1.default)();
+    // StaircaseTraversal();
     // SubarraySumEqualsK();
+    // Subsets();
+    // TargetSum();
 };

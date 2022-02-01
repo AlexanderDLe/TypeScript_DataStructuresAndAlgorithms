@@ -3,8 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const DailyTemperatures_1 = __importDefault(require("./DailyTemperatures"));
+const NextGreaterElement_1 = __importDefault(require("./NextGreaterElement"));
 exports.default = () => {
-    (0, DailyTemperatures_1.default)();
+    // BalancedBrackets();
+    // DailyTemperatures();
+    // MinMaxStackConstruction();
     // MinStack();
+    (0, NextGreaterElement_1.default)();
+    // SortStack();
+    // SunsetViews();
 };

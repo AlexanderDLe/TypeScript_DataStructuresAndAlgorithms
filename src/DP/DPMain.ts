@@ -11,21 +11,27 @@ import JumpGame from './JumpGame';
 import BurstBalloons from './BurstBalloons';
 import HouseRobber2 from './HouseRobber2';
 import PalindromePartitioning from './PalindromePartitioning';
+import MaxSubsetSumNoAdjacent from './MaxSubsetSumNoAdjacent';
+import NumberOfWaysToMakeChange from './NumberOfWaysToMakeChange';
+import MinNumberOfCoinsForChange from './MinNumberOfCoinsForChange';
 
 const DPMain = () => {
-    // PalindromicSubstrings();
+    // BestTimeToBuyAndSellStockWithCooldown();
+    // BurstBalloons();
     // ClimbingStairs();
+    // CoinChange();
     // HouseRobber1();
     // HouseRobber2();
     // HouseRobber3();
-    // BestTimeToBuyAndSellStockWithCooldown();
-    // PalindromePartitioning();
-    PerfectSquares();
-    // PartitionEqualSubsetSum();
-    // LongestIncreasingSubsequence();
-    // CoinChange();
     // JumpGame();
-    // BurstBalloons();
+    // LongestIncreasingSubsequence();
+    // MaxSubsetSumNoAdjacent();
+    MinNumberOfCoinsForChange();
+    // NumberOfWaysToMakeChange();
+    // PalindromePartitioning();
+    // PartitionEqualSubsetSum();
+    // PalindromicSubstrings();
+    // PerfectSquares();
 };
 
 export default DPMain;

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const TopologicalGraphSortMain_1 = __importDefault(require("./TopologicalGraphSort/TopologicalGraphSortMain"));
+const StringsMain_1 = __importDefault(require("./Strings/StringsMain"));
 function main() {
     // Sketch();
     // ArraysMain();
@@ -26,10 +26,10 @@ function main() {
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
-    // StringsMain();
+    (0, StringsMain_1.default)();
     // SubsetsMain();
     // TopKElementsMain();
-    (0, TopologicalGraphSortMain_1.default)();
+    // TopologicalGraphSortMain();
     // TreeBFSMain();
     // TreeDFSMain();
     // TreesMain();

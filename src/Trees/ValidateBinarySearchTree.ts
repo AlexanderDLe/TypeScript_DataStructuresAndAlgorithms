@@ -5,7 +5,7 @@ import { TreeNode } from '../DataStructures/TreeClass';
 type Node = TreeNode<number> | null;
 
 type bound = number | null;
-const isValidBST = (root: Node): boolean => {
+const isValidBSTA = (root: Node): boolean => {
     if (!root) return true;
     const DFS = (root: Node, min: bound, max: bound): boolean => {
         if (!root) return true;
@@ -16,7 +16,24 @@ const isValidBST = (root: Node): boolean => {
 
     return DFS(root, null, null);
 };
-//
+
+type BST = Node | null;
+const isValidBST = (root: Node): boolean => {
+    if (!root) return true;
+    
+    const DFS = (n: BST, min: number, max: number): boolean => {
+        if (!n) return true;
+        if (n.value < min || n.value >= max) return false;
+
+        let left = DFS(n.left, min, n.value);
+        let right = DFS(n.right, n.value, max);
+
+        return left && right;
+    }
+
+    return DFS(root, -Infinity, Infinity);
+}
+
 export default () => {
     const t1 = new TreeNode(2);
     t1.left = new TreeNode(1);

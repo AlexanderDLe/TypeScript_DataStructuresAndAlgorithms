@@ -6,7 +6,7 @@ import { PrintArray, PrintObject } from '../utils/Utilities';
 interface ObjectLiteral {
     [key: number]: number;
 }
-const twoSumOld2 = (nums: number[], target: number): number[] => {
+const twoSumMap = (nums: number[], target: number): number[] => {
     let obj: ObjectLiteral = {};
 
     for (let i = 0; i < nums.length; i++) {
@@ -18,46 +18,37 @@ const twoSumOld2 = (nums: number[], target: number): number[] => {
     }
 }
 
+const twoSumSet = (array:number[], targetSum:number): number[] => {
+    let set = new Set();
 
-let twoSumOld1 = (nums: number[], target: number): number[] => {
-    let answer = [-1, -1];
-    let map: ObjectLiteral = {};
-
-    for (let i = 0; i < nums.length; i++) {
-        let difference = target - nums[i];
-        if (map[difference]) {
-            answer[0] = map[difference] - 1;
-            answer[1] = i;
-            break;
-        } else {
-            map[nums[i]] = i + 1;
-        }
+    for (let num of array) {
+        if (set.has(targetSum - num)) return [num, targetSum - num];
+        else set.add(num);
     }
 
-    PrintObject(map);
-    return answer;
-};
+    return [];
+}
 
-const twoSum = (nums: number[], target: number): number[] => {
-    const map: ObjectLiteral = {};
+const twoSum2Pointers = (array:number[], targetSum:number): number[] => {
+    array = array.sort((a, b) => a - b);
 
-    for (let i = 0; i < nums.length; i++) {
-        map[nums[i]] = i;
+    let L = 0;
+    let R = array.length - 1;
+
+    while (L < R) {
+        let sum = array[L] + array[R];
+        if (sum === targetSum) return [array[L], array[R]];
+        if (sum < targetSum) L++;
+        else R--;
     }
 
-    for (let i = 0; i < nums.length; i++) {
-        let diff = target - nums[i];
-        if (map[diff]) {
-            if (i === map[diff]) continue;
-            return [i, map[diff]];
-        }
-    }
-    return [0]
+    return [];
 }
 
 export default () => {
+    
     let nums = [2, 7, 11, 15];
-    let nums2 = [-1, -2, -3, -4, -5];
-    let nums3 = [1,3,4,2];
-    PrintArray(twoSumOld1(nums, 9));
+    let nums2 = [-3, 5, -4, 8, 11, 1, -1, 6];
+    // PrintArray(twoSumOld1(nums, 9));
+    PrintArray(twoSum2Pointers(nums2, 10));
 };

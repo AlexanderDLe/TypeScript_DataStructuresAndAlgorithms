@@ -26,6 +26,18 @@ const reverseListRecursively = (head) => {
     head.next = null;
     return p;
 };
+const reverseListB = (head) => {
+    let p = head;
+    let q = null;
+    let r = null;
+    while (p) {
+        r = q;
+        q = p;
+        p = p.next;
+        q.next = r;
+    }
+    return q;
+};
 const reverseList = (head) => {
     let p = head;
     let q = null;

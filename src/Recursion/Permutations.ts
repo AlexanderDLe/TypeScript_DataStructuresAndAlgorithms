@@ -40,7 +40,7 @@ const permuteB = (nums: number[]): number[][] => {
     return result;
 };
 
-const permute = (nums: number[]): number[][] => {
+const permuteC = (nums: number[]): number[][] => {
     let result: number[][] = [];
 
     const recurse = (index: number): void => {
@@ -57,6 +57,26 @@ const permute = (nums: number[]): number[][] => {
     }
     
     recurse(0);
+    return result;
+}
+
+const permute = (nums: number[]): number[][] => {
+    if (!nums.length) return [];
+    const result: number[][] = [];
+
+    const DFS = (index: number): void => {
+        if (index === nums.length) {
+            result.push([...nums]);
+            return;
+        }
+
+        for (let i = index; i < nums.length; i++) {
+            [nums[index], nums[i]] = [nums[i], nums[index]];
+            DFS(index + 1);
+            [nums[index], nums[i]] = [nums[i], nums[index]];
+        }
+    }
+    DFS(0);
     return result;
 }
 
