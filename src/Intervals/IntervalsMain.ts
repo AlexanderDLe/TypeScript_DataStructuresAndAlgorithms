@@ -7,13 +7,13 @@ import MergeIntervals from "./MergeIntervals";
 import MinimumMeetingRooms from "./MinimumMeetingRooms";
 
 const IntervalsMain = () => {
-    // MergeIntervals();
+    MergeIntervals();
     // InsertInterval();
     // IntervalsIntersection();
     // ConflictingAppointments();
     // MinimumMeetingRooms();
     // MaximumCPULoad();
-    EmployeeFreeTime();
+    // EmployeeFreeTime();
 };
 
 export default IntervalsMain;

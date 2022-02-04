@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const LongestPeak_1 = __importDefault(require("./LongestPeak"));
+const MinRewards_1 = __importDefault(require("./MinRewards"));
 const ArraysMain = () => {
     // ArrayQuadruplet();
     // BestTimeToBuyAndSellStock();
@@ -15,19 +15,23 @@ const ArraysMain = () => {
     // FindFirstAndLostPositionOfElement();
     // FindNumbersWithEvenDigits();
     // FindTheDuplicateNumber();
+    // FirstDuplicateValue();
+    // FourSum();
     // FourSum2();
     // GroupAnagrams();
     // IntersectionOfTwoArrays2();
     // KthLargestElementInArray();
+    // LargestRange();
     // LongestCommonPrefix();
     // LongestPalindromicSubstring();
-    (0, LongestPeak_1.default)();
+    // LongestPeak();
     // LongestSubstringWithoutRepeatingCharacters();
     // LRUCache();
     // MajorityElement();
     // MaximumSubarray();
     // MaxProductSubarray();
     // MergeSortedArray();
+    (0, MinRewards_1.default)();
     // MonotonicArray();
     // MoveElementToEnd();
     // MinimumTimeVisitingAllPoints();

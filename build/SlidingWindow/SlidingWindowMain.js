@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const WordsConcatenation_1 = __importDefault(require("./WordsConcatenation"));
+const AverageContiguousSubarraysOfSizeK_1 = __importDefault(require("./AverageContiguousSubarraysOfSizeK"));
 const SlidingWindowMain = () => {
-    // AverageContiguousSubarraysOfSizeK();
+    (0, AverageContiguousSubarraysOfSizeK_1.default)();
     // MaximumSumSubarrayOfSizeK();
     // SmallestSubarrayWithGreaterSum();
     // LongestSubstringWithMaxKDistinctChars();
@@ -16,6 +16,6 @@ const SlidingWindowMain = () => {
     // PermutationInAString();
     // StringAnagrams();
     // SmallestWindowContainingSubstr();
-    (0, WordsConcatenation_1.default)();
+    // WordsConcatenation();
 };
 exports.default = SlidingWindowMain;

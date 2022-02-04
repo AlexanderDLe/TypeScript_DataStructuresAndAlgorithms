@@ -13,7 +13,7 @@ import WordsConcatenation from "./WordsConcatenation";
 
 
 const SlidingWindowMain = () => {
-    // AverageContiguousSubarraysOfSizeK();
+    AverageContiguousSubarraysOfSizeK();
     // MaximumSumSubarrayOfSizeK();
     // SmallestSubarrayWithGreaterSum();
     // LongestSubstringWithMaxKDistinctChars();
@@ -24,7 +24,7 @@ const SlidingWindowMain = () => {
     // PermutationInAString();
     // StringAnagrams();
     // SmallestWindowContainingSubstr();
-    WordsConcatenation();
+    // WordsConcatenation();
 };
 
 export default SlidingWindowMain;

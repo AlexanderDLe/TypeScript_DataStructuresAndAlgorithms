@@ -1,7 +1,8 @@
 "use strict";
 /**
  * Grokking the Coding Interview
- * 2. Maximum Sum Subarray of Size K (easy)
+ * Given an array of positive numbers and a positive number ‘k,’
+ * find the maximum sum of any contiguous subarray of size ‘k’.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const MaxSumArrayOfSizeK = (k, arr) => {

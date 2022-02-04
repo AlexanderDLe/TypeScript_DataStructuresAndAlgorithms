@@ -28,15 +28,18 @@ import TopKElementsMain from './TopKElements/TopKElementsMain';
 import KWayMergeMain from './KWayMerge/KWayMergeMain';
 import KnapsackDPMain from './KnapsackDP/KnapsackDPMain';
 import TopologicalGraphSortMain from './TopologicalGraphSort/TopologicalGraphSortMain';
+import GreedyMain from './Greedy/GreedyMain';
 
 function main() {
     // Sketch();
-    // ArraysMain();
+    
+    ArraysMain();
     // BinaryMain();
     // CyclicSortMain();
     // DPMain();
     // FastAndSlowPointersMain();
     // GraphsMain();
+    // GreedyMain();
     // HeapsMain();
     // IntervalsMain()
     // LinkedListReversalMain();
@@ -51,7 +54,7 @@ function main() {
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
-    StringsMain();
+    // StringsMain();
     // SubsetsMain();
     // TopKElementsMain();
     // TopologicalGraphSortMain();

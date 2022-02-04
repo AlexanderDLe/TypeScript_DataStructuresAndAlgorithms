@@ -2,6 +2,9 @@
 /**
  * Grokking the Coding Interview
  *
+ * Given a string, find the length of the longest substring
+ * in it with no more than K distinct characters.
+ *
 Time Complexity#
 The above algorithm’s time complexity will be O(N),
 where NN is the number of characters in the input string.

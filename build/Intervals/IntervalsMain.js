@@ -3,14 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const EmployeeFreeTime_1 = __importDefault(require("./EmployeeFreeTime"));
+const MergeIntervals_1 = __importDefault(require("./MergeIntervals"));
 const IntervalsMain = () => {
-    // MergeIntervals();
+    (0, MergeIntervals_1.default)();
     // InsertInterval();
     // IntervalsIntersection();
     // ConflictingAppointments();
     // MinimumMeetingRooms();
     // MaximumCPULoad();
-    (0, EmployeeFreeTime_1.default)();
+    // EmployeeFreeTime();
 };
 exports.default = IntervalsMain;

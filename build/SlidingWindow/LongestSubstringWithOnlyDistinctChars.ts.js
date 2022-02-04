@@ -1,7 +1,9 @@
 "use strict";
 /**
  * Grokking the Coding Interview
- *
+ * Given a string with lowercase letters only, if you are allowed to
+ * replace no more than k letters with any letter, find the length of
+ * the longest substring having the same letters after replacement.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const LongestSubstringWithDistinctChars = (str) => {

@@ -4,7 +4,7 @@
 
 import { PrintArray } from "../utils/Utilities";
 
-const mergeIntervals = (intervals: number[][]): number[][] => {
+const mergeIntervalsA = (intervals: number[][]): number[][] => {
     intervals = intervals.sort((a, b) => a[0] - b[0])
     let result: number[][] = []
     let carry: number[] = intervals[0];
@@ -22,6 +22,25 @@ const mergeIntervals = (intervals: number[][]): number[][] => {
     }
     
     result.push(carry);
+    return result;
+}
+
+const mergeIntervals = (intervals: number[][]): number[][] => {
+    intervals = intervals.sort((a, b) => a[0] - b[0]);
+    let prev = intervals[0]
+
+    let result: number[][] = []
+    for (let i = 1; i < intervals.length; i++) {
+        let curr = intervals[i];
+
+        if (curr[0] <= prev[1]) {
+            prev[1] = Math.max(prev[1], curr[1]);
+        } else {
+            result.push(prev);
+            prev = curr;
+        }
+    }
+    result.push(prev);
     return result;
 }
 

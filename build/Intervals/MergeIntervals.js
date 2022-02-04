@@ -3,7 +3,7 @@
  * Grokking the Coding Interview
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-const mergeIntervals = (intervals) => {
+const mergeIntervalsA = (intervals) => {
     intervals = intervals.sort((a, b) => a[0] - b[0]);
     let result = [];
     let carry = intervals[0];
@@ -19,6 +19,23 @@ const mergeIntervals = (intervals) => {
         }
     }
     result.push(carry);
+    return result;
+};
+const mergeIntervals = (intervals) => {
+    intervals = intervals.sort((a, b) => a[0] - b[0]);
+    let prev = intervals[0];
+    let result = [];
+    for (let i = 1; i < intervals.length; i++) {
+        let curr = intervals[i];
+        if (curr[0] <= prev[1]) {
+            prev[1] = Math.max(prev[1], curr[1]);
+        }
+        else {
+            result.push(prev);
+            prev = curr;
+        }
+    }
+    result.push(prev);
     return result;
 };
 exports.default = () => {

@@ -3,15 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const StringsMain_1 = __importDefault(require("./Strings/StringsMain"));
+const ArraysMain_1 = __importDefault(require("./Arrays/ArraysMain"));
 function main() {
     // Sketch();
-    // ArraysMain();
+    (0, ArraysMain_1.default)();
     // BinaryMain();
     // CyclicSortMain();
     // DPMain();
     // FastAndSlowPointersMain();
     // GraphsMain();
+    // GreedyMain();
     // HeapsMain();
     // IntervalsMain()
     // LinkedListReversalMain();
@@ -26,7 +27,7 @@ function main() {
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
-    (0, StringsMain_1.default)();
+    // StringsMain();
     // SubsetsMain();
     // TopKElementsMain();
     // TopologicalGraphSortMain();

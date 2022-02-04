@@ -20,6 +20,11 @@ import GenerateDocument from './GenerateDocument';
 import FirstNonRepeatingCharacter from './FirstNonRepeatingCharacter';
 import LongestPalindromicSubstring from './LongestPalindromicSubstring';
 import GroupAnagrams from './GroupAnagrams';
+import ValidIPAddresses from './ValidIPAddresses';
+import ReverseWordsInString from './ReverseWordsInString';
+import MinimumCharacterForWords from './MinimumCharacterForWords';
+import LongestSubstringWithoutDuplication from './LongestSubstringWithoutDuplication';
+import UnderscorifySubstring from './UnderscorifySubstring';
 
 export default () => {
     // CaesarCipherEncryptor();
@@ -30,17 +35,22 @@ export default () => {
     // FirstUniqueCharInAString();
     // FizzBuzz();
     // GenerateDocument();
-    GroupAnagrams();
+    // GroupAnagrams();
     // ImplementStrStr();
     // LongestPalindromicSubstring();
+    // LongestSubstringWithoutDuplication();
+    // MinimumCharacterForWords();
     // MinimumWindowSubstring();
     // PartitionLabels();
     // ReverseInteger();
     // ReverseString();
+    // ReverseWordsInString();
     // RomanToInteger();
     // RunLengthEncoding();
     // ToLowerCase();
+    UnderscorifySubstring();
     // ValidAnagram();
+    // ValidIPAddresses();
     // ValidParentheses();
     // ValidPalindrome();
     // WordBreak();

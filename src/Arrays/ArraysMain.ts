@@ -47,6 +47,10 @@ import SmallestDifference from './SmallestDifference';
 import MoveElementToEnd from './MoveElementToEnd';
 import MonotonicArray from './MonotonicArray';
 import LongestPeak from './LongestPeak';
+import FirstDuplicateValue from './FirstDuplicateValue';
+import FourSum from './FourSum';
+import LargestRange from './LargestRange';
+import MinRewards from './MinRewards';
 
 const ArraysMain = () => {
     // ArrayQuadruplet();
@@ -59,19 +63,23 @@ const ArraysMain = () => {
     // FindFirstAndLostPositionOfElement();
     // FindNumbersWithEvenDigits();
     // FindTheDuplicateNumber();
+    // FirstDuplicateValue();
+    // FourSum();
     // FourSum2();
     // GroupAnagrams();
     // IntersectionOfTwoArrays2();
     // KthLargestElementInArray();
+    // LargestRange();
     // LongestCommonPrefix();
     // LongestPalindromicSubstring();
-    LongestPeak();
+    // LongestPeak();
     // LongestSubstringWithoutRepeatingCharacters();
     // LRUCache();
     // MajorityElement();
     // MaximumSubarray();
     // MaxProductSubarray();
     // MergeSortedArray();
+    MinRewards();
     // MonotonicArray();
     // MoveElementToEnd();
     // MinimumTimeVisitingAllPoints();

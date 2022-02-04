@@ -1,5 +1,9 @@
 /**
  * 238. Product Of Array Except Self
+ * 
+ *         [5, 1, 4, 2]
+ *          1  5  5  20
+ *          8  8  2  1
  */
 import { PrintArray } from '../utils/Utilities';
 
@@ -40,7 +44,7 @@ const productExceptSelfB = (nums: number[]): number[] => {
     return result;
 };
 
-const productExceptSelf = (nums: number[]): number[] => {
+const productExceptSelfC = (nums: number[]): number[] => {
     let result: number[] = new Array(nums.length).fill(1);
 
     let leftProduct = 1;
@@ -56,6 +60,23 @@ const productExceptSelf = (nums: number[]): number[] => {
     }
 
     return result;
+}
+
+const productExceptSelf = (nums: number[]): number[] => {
+    let fromLeft = new Array(nums.length).fill(1);
+    let fromRight = new Array(nums.length).fill(1);
+
+    for (let i = 1; i < nums.length; i++) {
+        fromLeft[i] = fromLeft[i - 1] * nums[i - 1];
+    }
+    for (let i = nums.length - 2; i >= 0; i--) {
+        fromRight[i] = fromRight[i + 1] * nums[i + 1];
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+        nums[i] = fromLeft[i] * fromRight[i];
+    }
+    return nums;
 }
 
 export default () => {

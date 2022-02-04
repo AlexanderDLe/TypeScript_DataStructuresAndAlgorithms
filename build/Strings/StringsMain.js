@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const GroupAnagrams_1 = __importDefault(require("./GroupAnagrams"));
+const UnderscorifySubstring_1 = __importDefault(require("./UnderscorifySubstring"));
 exports.default = () => {
     // CaesarCipherEncryptor();
     // CountAndSay();
@@ -13,17 +13,22 @@ exports.default = () => {
     // FirstUniqueCharInAString();
     // FizzBuzz();
     // GenerateDocument();
-    (0, GroupAnagrams_1.default)();
+    // GroupAnagrams();
     // ImplementStrStr();
     // LongestPalindromicSubstring();
+    // LongestSubstringWithoutDuplication();
+    // MinimumCharacterForWords();
     // MinimumWindowSubstring();
     // PartitionLabels();
     // ReverseInteger();
     // ReverseString();
+    // ReverseWordsInString();
     // RomanToInteger();
     // RunLengthEncoding();
     // ToLowerCase();
+    (0, UnderscorifySubstring_1.default)();
     // ValidAnagram();
+    // ValidIPAddresses();
     // ValidParentheses();
     // ValidPalindrome();
     // WordBreak();
