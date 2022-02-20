@@ -68,7 +68,7 @@ const diameterOfBinaryTreeOld = (root: Node): number => {
 };
 
 type BinaryTree = Node;
-const diameterOfBinaryTree = (root: Node): number => {
+const diameterOfBinaryTreeC = (root: Node): number => {
     let maxDiameter = 0;
     
     const recurse = (n: BinaryTree): number => {
@@ -83,6 +83,24 @@ const diameterOfBinaryTree = (root: Node): number => {
 
     recurse(root);
     return maxDiameter;
+}
+
+const diameterOfBinaryTree = (root: Node): number => {
+  let longestDiameter = 0;
+
+  const DFS = (n: Node): number => {
+    if (!n) return 0;
+
+    let left = DFS(n.left);
+    let right = DFS(n.right);
+    let diameter = left + right;
+
+    longestDiameter = Math.max(longestDiameter, diameter);
+    return 1 + Math.max(left, right);
+  }
+
+  DFS(root);
+  return longestDiameter;
 }
 
 export default () => {

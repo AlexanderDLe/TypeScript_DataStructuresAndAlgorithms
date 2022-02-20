@@ -44,7 +44,7 @@ const majorityElementB = (nums: number[]): number => {
 type NumMap2 = {
     [key: number]: number
 }
-const majorityElement = (nums: number[]): number => {
+const majorityElementC = (nums: number[]): number => {
     let map: NumMap2 = {};
     
     for (let num of nums) {
@@ -61,6 +61,24 @@ const majorityElement = (nums: number[]): number => {
     }
 
     return majorityElement;
+}
+
+const majorityElement = (nums: number[]): number => {
+  let majority = nums[0];
+  let count = 1;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (count === 0) {
+      count++;
+      majority = nums[i];
+    } else if (majority === nums[i]) {
+      count++;
+    } else {
+      count--;
+    }
+  }
+
+  return majority;
 }
 
 export default () => {

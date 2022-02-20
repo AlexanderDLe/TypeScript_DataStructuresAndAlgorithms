@@ -6,7 +6,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
 ;
-const minDepthOfBinaryTree = (root) => {
+const minDepthOfBinaryTreeA = (root) => {
     let queue = [];
     queue.push(root);
     let count = queue.length;
@@ -25,6 +25,27 @@ const minDepthOfBinaryTree = (root) => {
     }
     return level;
 };
+const minDepthOfBinaryTree = (root) => {
+    const queue = root ? [root] : [];
+    let count = queue.length;
+    let depth = count;
+    while (queue.length) {
+        while (count) {
+            let n = queue.shift();
+            if (!n.left && !n.right)
+                return depth;
+            if (n.left)
+                queue.push(n.left);
+            if (n.right)
+                queue.push(n.right);
+            count--;
+        }
+        count = queue.length;
+        if (count)
+            depth++;
+    }
+    return depth;
+};
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(1);
     t.left = new TreeClass_1.TreeNode(2);
@@ -32,6 +53,6 @@ exports.default = () => {
     t.left.left = new TreeClass_1.TreeNode(4);
     t.left.right = new TreeClass_1.TreeNode(5);
     t.right.left = new TreeClass_1.TreeNode(6);
-    t.right.right = new TreeClass_1.TreeNode(7);
+    // t.right.right = new TreeNode(7);
     console.log(minDepthOfBinaryTree(t));
 };

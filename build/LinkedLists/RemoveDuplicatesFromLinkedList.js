@@ -1,17 +1,27 @@
 "use strict";
 /**
- * 328. Odd Even Linked List
+ * 83. Remove Duplicates From Sorted List
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
 const LinkedListClass_2 = require("../DataStructures/LinkedListClass");
-const removeDuplicates = (head) => {
+const removeDuplicatesA = (head) => {
     let n = head;
     while (n) {
         while (n && n.next && n.value === n.next.value) {
             n.next = n.next.next;
         }
         n = n.next;
+    }
+    return head;
+};
+const removeDuplicates = (head) => {
+    let p = head;
+    while (p && p.next) {
+        while (p.next && p.val === p.next.val) {
+            p.next = p.next.next;
+        }
+        p = p.next;
     }
     return head;
 };

@@ -1,5 +1,8 @@
 /**
  * 198. House Robber
+ * 
+ * [20,  7,  9, 10,  2]
+ * [20, 20, 29, 30, 31]
  */
 
 import NumberOfIslands from '../Matrix/NumberOfIslands';
@@ -50,7 +53,7 @@ const rob = (nums: number[]): number => {
 }
 
 export default () => {
-    const nums = [1, 2, 3, 1];
+    const nums = [2, 1, 1, 2];
                  
     console.log(rob(nums));
 };

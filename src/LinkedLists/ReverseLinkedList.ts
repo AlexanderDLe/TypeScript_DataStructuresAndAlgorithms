@@ -48,7 +48,7 @@ const reverseListB = (head: Node): Node => {
     return q;
 }
 
-const reverseList = (head: Node): Node => {
+const reverseListC = (head: Node): Node => {
     let p: Node = head;
     let q: Node = null;
     let r: Node = null;
@@ -61,6 +61,21 @@ const reverseList = (head: Node): Node => {
     }
 
     return q;
+}
+
+const reverseList = (head: Node): Node => {
+  let p = head;
+  let q = null;
+  let r = null;
+
+  while (p) {
+    r = q;
+    q = p;
+    p = p.next;
+    q.next = r;
+  }
+
+  return q;
 }
 
 export default () => {

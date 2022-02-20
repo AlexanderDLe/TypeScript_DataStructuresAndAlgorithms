@@ -2,7 +2,6 @@
  * 617. Merge Two Binary Trees
  */
 
-import { SSL_OP_NO_TLSv1_2 } from 'constants';
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 
 type Node = TreeNode<number> | null;
@@ -19,7 +18,7 @@ const mergeTreesA = (t1: Node, t2: Node): Node => {
     return t1;
 }
 
-const mergeTrees = (t1: Node, t2: Node): Node => {
+const mergeTreesB = (t1: Node, t2: Node): Node => {
     if (!t1) return t2;
     if (!t2) return t1;
 
@@ -29,6 +28,17 @@ const mergeTrees = (t1: Node, t2: Node): Node => {
     t1.right = mergeTrees(t1.right, t2.right);
 
     return t1;
+}
+
+const mergeTrees = (t1: Node, t2: Node): Node => {
+  if (!t1) return t2;
+  if (!t2) return t1;
+
+  t1.val += t2.val;  
+  t1.left = mergeTrees(t1.left, t2.left);
+  t1.right = mergeTrees(t1.right, t2.right);
+  
+  return t1;
 }
 
 export default () => {

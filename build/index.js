@@ -3,11 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ArraysMain_1 = __importDefault(require("./Arrays/ArraysMain"));
+const StringsMain_1 = __importDefault(require("./Strings/StringsMain"));
 function main() {
     // Sketch();
-    (0, ArraysMain_1.default)();
+    // ArraysMain();
     // BinaryMain();
+    // BinarySearchMain();
     // CyclicSortMain();
     // DPMain();
     // FastAndSlowPointersMain();
@@ -22,12 +23,13 @@ function main() {
     // MathMain();
     // MatrixMain();
     // ModifiedBinarySearchMain();
+    // ObjectOrientationMain();
     // QueuesMain();
     // RecursionMain();
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
-    // StringsMain();
+    (0, StringsMain_1.default)();
     // SubsetsMain();
     // TopKElementsMain();
     // TopologicalGraphSortMain();

@@ -1,9 +1,19 @@
 "use strict";
 /**
  * 268. Missing Number
+ *
+ * Cyclic Sort Method: Sort items in place - missing item will not be placed.
+ *
+ * [3, 0, 1]
+ *
+ * [UNI, 0, 1, 3]
+ *
+ * [0, UNI, 1, 3]
+ *
+ * [0, 1, UNI, 3]
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const missingNumberA = (nums) => {
+const missingNumberBitMap = (nums) => {
     let result = 0;
     let n = nums.length;
     let bitmap = new Array(n).fill(0);
@@ -16,7 +26,7 @@ const missingNumberA = (nums) => {
     }
     return result;
 };
-const missingNumber = (nums) => {
+const missingNumberAddition = (nums) => {
     let predictedSum = nums.length;
     let sum = 0;
     for (let i = 0; i < nums.length; i++) {
@@ -25,8 +35,30 @@ const missingNumber = (nums) => {
     }
     return predictedSum - sum;
 };
+const missingNumberCyclicSort = (nums) => {
+    for (let i = 0; i < nums.length; i++) {
+        while (nums[i] !== undefined && nums[i] !== i) {
+            let val = nums[i];
+            [nums[i], nums[val]] = [nums[val], nums[i]];
+        }
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === undefined)
+            return i;
+    }
+    return nums.length;
+};
+const missingNumber = (nums) => {
+    const bitmap = new Array(nums.length + 1).fill(0);
+    for (let num of nums) {
+        bitmap[num] = 1;
+    }
+    for (let i = 0; i <= nums.length; i++) {
+        if (!bitmap[i])
+            return i;
+    }
+};
 exports.default = () => {
     const nums = [9, 6, 4, 2, 3, 5, 7, 0, 1];
-    [0];
     console.log(missingNumber(nums));
 };

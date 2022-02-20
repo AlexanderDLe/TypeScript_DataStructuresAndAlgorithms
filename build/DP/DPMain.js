@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MinNumberOfCoinsForChange_1 = __importDefault(require("./MinNumberOfCoinsForChange"));
+const RangeSumQueryImmutable_1 = __importDefault(require("./RangeSumQueryImmutable"));
 const DPMain = () => {
     // BestTimeToBuyAndSellStockWithCooldown();
     // BurstBalloons();
@@ -13,13 +13,21 @@ const DPMain = () => {
     // HouseRobber2();
     // HouseRobber3();
     // JumpGame();
+    // KnapsackProblem();
+    // LevenshteinDistance();
+    // LongestCommonSubsequence();
     // LongestIncreasingSubsequence();
     // MaxSubsetSumNoAdjacent();
-    (0, MinNumberOfCoinsForChange_1.default)();
+    // MaxSumIncreasingSubsequence();
+    // MinNumberOfCoinsForChange();
+    // MinNumberOfJumps();
     // NumberOfWaysToMakeChange();
+    // NumberOfWaysToTraverseGraph();
     // PalindromePartitioning();
     // PartitionEqualSubsetSum();
     // PalindromicSubstrings();
     // PerfectSquares();
+    (0, RangeSumQueryImmutable_1.default)();
+    // WaterArea();
 };
 exports.default = DPMain;

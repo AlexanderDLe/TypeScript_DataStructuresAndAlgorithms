@@ -58,7 +58,7 @@ const diameterOfBinaryTreeOld = (root) => {
     const rightDiameter = diameterOfBinaryTree(root.right);
     return Math.max(currentDiameter, Math.max(leftDiameter, rightDiameter));
 };
-const diameterOfBinaryTree = (root) => {
+const diameterOfBinaryTreeC = (root) => {
     let maxDiameter = 0;
     const recurse = (n) => {
         if (!n)
@@ -70,6 +70,20 @@ const diameterOfBinaryTree = (root) => {
     };
     recurse(root);
     return maxDiameter;
+};
+const diameterOfBinaryTree = (root) => {
+    let longestDiameter = 0;
+    const DFS = (n) => {
+        if (!n)
+            return 0;
+        let left = DFS(n.left);
+        let right = DFS(n.right);
+        let diameter = left + right;
+        longestDiameter = Math.max(longestDiameter, diameter);
+        return 1 + Math.max(left, right);
+    };
+    DFS(root);
+    return longestDiameter;
 };
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(1);

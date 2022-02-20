@@ -1,3 +1,4 @@
+import CalendarMatching from "./CalendarMatching";
 import ConflictingAppointments from "./ConflictingAppointments";
 import EmployeeFreeTime from "./EmployeeFreeTime";
 import InsertInterval from "./InsertInterval";
@@ -7,7 +8,8 @@ import MergeIntervals from "./MergeIntervals";
 import MinimumMeetingRooms from "./MinimumMeetingRooms";
 
 const IntervalsMain = () => {
-    MergeIntervals();
+    CalendarMatching();
+    // MergeIntervals();
     // InsertInterval();
     // IntervalsIntersection();
     // ConflictingAppointments();

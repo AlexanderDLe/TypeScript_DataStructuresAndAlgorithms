@@ -31,8 +31,8 @@ const singleNumber = (nums: number[]): number => {
     }
 }
 
+
 export default () => {
     const nums = [4, 1, 2, 1, 2];
-    PrintArray(nums);
     console.log(singleNumber(nums));
 };

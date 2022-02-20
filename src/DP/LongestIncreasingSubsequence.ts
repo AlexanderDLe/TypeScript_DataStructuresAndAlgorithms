@@ -21,6 +21,7 @@ const lengthOfLIS = (nums: number[]): number => {
     return max;
 };
 
+
 export default () => {
     const nums = [10, 9, 2, 5, 3, 7, 101, 18];
     console.log(lengthOfLIS(nums));

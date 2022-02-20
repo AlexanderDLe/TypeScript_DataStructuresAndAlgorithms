@@ -34,7 +34,7 @@ const solveKnapsackTopDown = (profits:number[], weights:number[], capacity:numbe
     const length = profits.length;
     const DP: any = [];
 
-    const recurse = (index:number, currProfit:number, currWeight:number): number => {
+    const recurse = (index:number, currWeight:number): number => {
         if (currWeight >= capacity || index >= length) return 0;
 
         DP[index] = DP[index] || [];
@@ -43,16 +43,16 @@ const solveKnapsackTopDown = (profits:number[], weights:number[], capacity:numbe
         let profitWithAdd = 0;
         if (weights[index] + currWeight <= capacity) {
             profitWithAdd = profits[index] + 
-                      recurse(index + 1, currProfit, currWeight + weights[index]);
+                      recurse(index + 1, currWeight + weights[index]);
         }
 
-        let profitWithoutAdd = recurse(index + 1, currProfit, currWeight);
+        let profitWithoutAdd = recurse(index + 1, currWeight);
 
         DP[index][currWeight] = Math.max(profitWithAdd, profitWithoutAdd);
         return DP[index][currWeight];
     }
 
-    let res = recurse(0, 0, 0);
+    let res = recurse(0, 0);
     PrintMatrix(DP)
     return res;
 }
@@ -123,6 +123,6 @@ const solveKnapsack = (profits:number[], weights:number[], capacity:number): any
 export default () => {
     let profits = [1, 6, 10, 16];
     let weights = [1, 2, 3, 5];
-    console.log(solveKnapsack(profits, weights, 7));
+    console.log(solveKnapsackTopDown(profits, weights, 7));
     // console.log(solveKnapsack(profits, weights, 6));
 };

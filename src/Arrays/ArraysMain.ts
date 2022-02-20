@@ -51,9 +51,14 @@ import FirstDuplicateValue from './FirstDuplicateValue';
 import FourSum from './FourSum';
 import LargestRange from './LargestRange';
 import MinRewards from './MinRewards';
+import ApartmentHunting from './ApartmentHunting';
+import Quickselect from './Quickselect';
+import IndexEqualsValue from './IndexEqualsValue';
+import KadanesAlgorithm from './KadanesAlgorithm';
 
 const ArraysMain = () => {
     // ArrayQuadruplet();
+    // ApartmentHunting();
     // BestTimeToBuyAndSellStock();
     // BestTimeToBuyAndSellStock2();
     // ContainerWithMostWater();
@@ -67,7 +72,9 @@ const ArraysMain = () => {
     // FourSum();
     // FourSum2();
     // GroupAnagrams();
+    // IndexEqualsValue();
     // IntersectionOfTwoArrays2();
+    KadanesAlgorithm();
     // KthLargestElementInArray();
     // LargestRange();
     // LongestCommonPrefix();
@@ -79,7 +86,7 @@ const ArraysMain = () => {
     // MaximumSubarray();
     // MaxProductSubarray();
     // MergeSortedArray();
-    MinRewards();
+    // MinRewards();
     // MonotonicArray();
     // MoveElementToEnd();
     // MinimumTimeVisitingAllPoints();
@@ -89,6 +96,7 @@ const ArraysMain = () => {
     // NonConstructableChange();
     // PascalsTriangle();
     // ProductOfArrayExceptSelf();
+    // Quickselect();
     // RemoveDuplicatesFromSortedArray();
     // SearchInRotatedSortedArray();
     // SearchInsertPosition();

@@ -52,7 +52,7 @@ const invertBinaryTree = (tree) => {
     invertBinaryTree(tree.right);
     return tree;
 };
-const InvertBinaryTree = () => {
+const InvertBinaryTreeD = () => {
     const t = new TreeClass_1.TreeNode(4);
     t.left = new TreeClass_1.TreeNode(2);
     t.right = new TreeClass_1.TreeNode(7);
@@ -61,5 +61,15 @@ const InvertBinaryTree = () => {
     t.right.left = new TreeClass_1.TreeNode(6);
     t.right.right = new TreeClass_1.TreeNode(9);
     (0, TreeClass_1.BinaryPreorderTraversal)(invertBinaryTree(t));
+};
+const InvertBinaryTree = (root) => {
+    if (!root)
+        return null;
+    let temp = root.right;
+    root.right = root.left;
+    root.left = temp;
+    InvertBinaryTree(root.left);
+    InvertBinaryTree(root.right);
+    return root;
 };
 exports.default = InvertBinaryTree;

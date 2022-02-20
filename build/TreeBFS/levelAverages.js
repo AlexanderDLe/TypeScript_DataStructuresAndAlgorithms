@@ -6,7 +6,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
 ;
-const levelAverages = (root) => {
+const levelAveragesA = (root) => {
     let result = [];
     let queue = [];
     queue.push(root);
@@ -28,6 +28,28 @@ const levelAverages = (root) => {
         div = count;
     }
     return result;
+};
+const levelAverages = (root) => {
+    let levelAverages = [];
+    let queue = [];
+    queue.push(root);
+    let count = queue.length;
+    while (queue.length) {
+        let sum = 0;
+        let div = count;
+        while (count) {
+            let node = queue.shift();
+            sum += node.val;
+            if (node.left)
+                queue.push(node.left);
+            if (node.right)
+                queue.push(node.right);
+            count--;
+        }
+        count = queue.length;
+        levelAverages.push(sum / div);
+    }
+    return levelAverages;
 };
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(1);

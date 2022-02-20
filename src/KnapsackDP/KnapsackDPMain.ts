@@ -7,12 +7,12 @@ import TargetSum from "./TargetSum";
 
 
 const KnapsackDPMain = () => {
-    // Knapsack01();
+    Knapsack01();
     // EqualSubsetSumPartition();
     // SubsetSum();
     // MinimumSubsetSumDifference();
     // CountOfSubsetSum();
-    TargetSum();
+    // TargetSum();
 };
 
 export default KnapsackDPMain;

@@ -19,14 +19,14 @@ const twoSumMap = (nums: number[], target: number): number[] => {
 }
 
 const twoSumSet = (array:number[], targetSum:number): number[] => {
-    let set = new Set();
+  let set = new Set();
 
-    for (let num of array) {
-        if (set.has(targetSum - num)) return [num, targetSum - num];
-        else set.add(num);
-    }
+  for (let num of array) {
+    if (set.has(targetSum - num)) return [num, targetSum - num];
+    else set.add(num);
+  }
 
-    return [];
+  return [];
 }
 
 const twoSum2Pointers = (array:number[], targetSum:number): number[] => {
@@ -44,6 +44,7 @@ const twoSum2Pointers = (array:number[], targetSum:number): number[] => {
 
     return [];
 }
+
 
 export default () => {
     

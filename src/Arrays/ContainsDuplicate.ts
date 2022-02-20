@@ -2,7 +2,7 @@
  *  217. Contains Duplicate
  */
 
-const containsDuplicate = (nums: number[]): boolean => {
+const containsDuplicateA = (nums: number[]): boolean => {
     let set = new Set([]);
 
     for (let i of nums) {
@@ -12,7 +12,7 @@ const containsDuplicate = (nums: number[]): boolean => {
     return false;
 };
 
-const containsDuplicateOld = (nums: number[]): boolean => {
+const containsDuplicateB = (nums: number[]): boolean => {
     const table: { [key: number]: number } = {};
 
     for (let num of nums) {
@@ -22,6 +22,15 @@ const containsDuplicateOld = (nums: number[]): boolean => {
 
     return false;
 };
+
+const containsDuplicate = (nums: number[]): boolean => {
+  let set = new Set();
+  for (let num of nums) {
+    if (set.has(num)) return true;
+    set.add(num);
+  }
+  return false;
+}
 
 export default () => {
     const nums = [1, 2, 3, 1];

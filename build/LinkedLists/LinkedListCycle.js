@@ -19,7 +19,7 @@ const hasCycleA = (head) => {
     }
     return false;
 };
-const hasCycle = (head) => {
+const hasCycleB = (head) => {
     let s = head;
     let f = head;
     while (f) {
@@ -32,11 +32,24 @@ const hasCycle = (head) => {
     }
     return false;
 };
+const hasCycle = (head) => {
+    let s = head;
+    let f = head;
+    while (s && f) {
+        s = s.next;
+        f = f.next;
+        if (f)
+            f = f.next;
+        if (s && s === f)
+            return true;
+    }
+    return false;
+};
 exports.default = () => {
     let n = new LinkedListClass_1.ListNode(3);
     n.next = new LinkedListClass_1.ListNode(2);
     n.next.next = new LinkedListClass_1.ListNode(0);
     n.next.next.next = new LinkedListClass_1.ListNode(-4);
-    // n.next.next.next.next = n.next;
+    n.next.next.next.next = n.next;
     console.log(hasCycle(n));
 };

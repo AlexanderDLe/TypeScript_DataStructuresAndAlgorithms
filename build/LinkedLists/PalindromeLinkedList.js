@@ -2,6 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 234. Palindrome Linked List
+ *
+ *        s     f
+ * [1, 4, 2, 4, 1]
+ *
+ * rq  sf
+ *      1 > 4 > 4 > 1]
+ *
+ *   r  q   s   f
+ *    < 1   4 > 4 > 1]
+ *
+ *      r   q   s      f
+ *    < 1 < 4   4 > 1]
+ *
  */
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
 const isPalindromeB = (head) => {
@@ -69,7 +82,7 @@ const isPalindromeA = (head) => {
     }
     return true;
 };
-const isPalindrome = (head) => {
+const isPalindromeC = (head) => {
     if (!head)
         return true;
     let s = head;
@@ -103,8 +116,42 @@ const isPalindrome = (head) => {
     }
     return true;
 };
+const isPalindrome = (head) => {
+    // Use slow and fast pointers until you find midpoint
+    // reverse list until you find midpoint
+    // When you get to the middle, there will be two distinct scenarios:
+    // 1. (!f) = list is even
+    // 2. (f) = list is odd
+    // if (!f), then begin iterating/comparing
+    // if (f), then iterate s forward first, then iterate/compare
+    // Edge Case: Only one node? Then return true.
+    if (!head.next)
+        return true;
+    let s = head;
+    let f = head;
+    let q = null;
+    let r = null;
+    while (f && f.next) {
+        r = q;
+        q = s;
+        s = s.next;
+        f = f.next;
+        q.next = r;
+        if (f)
+            f = f.next;
+    }
+    if (f)
+        s = s.next;
+    while (s) {
+        if (s.val !== q.val)
+            return false;
+        q = q.next;
+        s = s.next;
+    }
+    return true;
+};
 exports.default = () => {
-    const nums = [1, 4, -1, 4, 1];
+    const nums = [1, 4, 4, 1];
     const list = new LinkedListClass_1.LinkedList(nums);
     console.log(isPalindrome(list.head));
 };

@@ -6,7 +6,7 @@
 
 import { PrintArray } from '../utils/Utilities';
 
-const maxSubArrayB = (nums: number[]): number => {
+const maxSubarrayB = (nums: number[]): number => {
     let sum = nums[0];
     let max = nums[0];
 
@@ -19,7 +19,7 @@ const maxSubArrayB = (nums: number[]): number => {
     return max;
 }
 
-const maxSubArrayOld = (nums: number[]): number => {
+const maxSubarrayOld = (nums: number[]): number => {
     let sum = nums[0];
     let prev: number;
 
@@ -33,7 +33,7 @@ const maxSubArrayOld = (nums: number[]): number => {
     return sum;
 };
 
-const maxSubArray = (nums: number[]): number => {
+const maxSubarrayC = (nums: number[]): number => {
     let max = nums[0];
     let sum = nums[0];
 
@@ -46,8 +46,27 @@ const maxSubArray = (nums: number[]): number => {
     return max;
 }
 
+const maxSubarray = (nums: number[]): number => {
+  let maxSum = -Infinity;
+  let sum = 0;
+  let L = 0;
+  let R = 0;
+
+  while (R < nums.length) {
+    sum += nums[R];
+    maxSum = Math.max(maxSum, sum); 
+    R++;
+
+    while (L < R && sum < 0) {
+      sum -= nums[L];
+      L++;
+    }
+  }
+  
+  return maxSum;
+}
 
 export default () => {
     const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-    console.log(maxSubArray(nums));
+    console.log(maxSubarray(nums));
 };

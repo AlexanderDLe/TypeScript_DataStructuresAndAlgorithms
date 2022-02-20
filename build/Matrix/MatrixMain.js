@@ -3,14 +3,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const RemoveIslands_1 = __importDefault(require("./RemoveIslands"));
+const BoggleBoard_1 = __importDefault(require("./BoggleBoard"));
 exports.default = () => {
+    (0, BoggleBoard_1.default)();
     // GameOfLife();
     // KthSmallestElementInSortedMatrix();
     // MaximalSquare();
     // MinimumPathSum();
+    // MinimumPassesOfMatrix();
     // NumberOfIslands();
-    (0, RemoveIslands_1.default)();
+    // RemoveIslands();
     // RiverSizes();
     // RotateImage();
     // RottingOranges();
@@ -20,4 +22,6 @@ exports.default = () => {
     // WordSearch();
     // UniquePaths();
     // ValidSudoku();
+    // WaterfallStreams();
+    // ZigZagTraversal();
 };

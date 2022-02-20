@@ -3,7 +3,7 @@
  *  217. Contains Duplicate
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const containsDuplicate = (nums) => {
+const containsDuplicateA = (nums) => {
     let set = new Set([]);
     for (let i of nums) {
         if (set.has(i))
@@ -12,12 +12,21 @@ const containsDuplicate = (nums) => {
     }
     return false;
 };
-const containsDuplicateOld = (nums) => {
+const containsDuplicateB = (nums) => {
     const table = {};
     for (let num of nums) {
         table[num] = (table[num] || 0) + 1;
         if (table[num] > 1)
             return true;
+    }
+    return false;
+};
+const containsDuplicate = (nums) => {
+    let set = new Set();
+    for (let num of nums) {
+        if (set.has(num))
+            return true;
+        set.add(num);
     }
     return false;
 };

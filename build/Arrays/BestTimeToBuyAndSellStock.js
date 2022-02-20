@@ -15,7 +15,7 @@ const maxProfitA = (prices) => {
     }
     return result;
 };
-const maxProfitOldB = (prices) => {
+const maxProfitB = (prices) => {
     let min = Number.MAX_VALUE;
     let max = 0;
     for (let i = 0; i < prices.length; i++) {
@@ -24,7 +24,7 @@ const maxProfitOldB = (prices) => {
     }
     return max;
 };
-const maxProfit = (prices) => {
+const maxProfitC = (prices) => {
     let min = prices[0];
     let max = 0;
     for (let i = 1; i < prices.length; i++) {
@@ -35,6 +35,15 @@ const maxProfit = (prices) => {
         max = Math.max(max, prices[i] - min);
     }
     return max;
+};
+const maxProfit = (prices) => {
+    let result = 0;
+    let min = prices[0];
+    for (let i = 1; i < prices.length; i++) {
+        result = Math.max(result, prices[i] - min);
+        min = Math.min(min, prices[i]);
+    }
+    return result;
 };
 exports.default = () => {
     const prices = [7, 1, 5, 3, 6, 4];

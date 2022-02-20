@@ -1,6 +1,9 @@
 "use strict";
 /**
  * 198. House Robber
+ *
+ * [20,  7,  9, 10,  2]
+ * [20, 20, 29, 30, 31]
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 /*  Iterative Analysis
@@ -44,6 +47,6 @@ const rob = (nums) => {
     return Math.max(nums[nums.length - 1], nums[nums.length - 2]);
 };
 exports.default = () => {
-    const nums = [1, 2, 3, 1];
+    const nums = [2, 1, 1, 2];
     console.log(rob(nums));
 };

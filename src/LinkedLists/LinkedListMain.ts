@@ -15,6 +15,8 @@ import RemoveDuplicatesFromLinkedList from './RemoveDuplicatesFromLinkedList';
 import LinkedListConstruction from './LinkedListConstruction';
 import SumOfLinkedLists from './SumOfLinkedLists';
 import FindLoop from './FindLoop';
+import MiddleOfLinkedList from './MiddleOfLinkedList';
+import RemoveLinkedListElements from './RemoveLinkedListElements';
 
 const LinkedListMain = () => {
     // AddTwoNumbers();
@@ -27,9 +29,11 @@ const LinkedListMain = () => {
     // LinkedListCycle();
     // LinkedListCycle2();
     MergedTwoSortedLists();
+    // MiddleOfLinkedList();
     // PalindromeLinkedList();
     // OddEvenLinkedList();
     // RemoveDuplicatesFromLinkedList();
+    // RemoveLinkedListElements();
     // RemoveNthNodeFromList();
     // ReverseLinkedList();
     // SortList();

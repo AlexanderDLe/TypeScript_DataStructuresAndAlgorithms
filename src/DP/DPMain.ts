@@ -14,6 +14,14 @@ import PalindromePartitioning from './PalindromePartitioning';
 import MaxSubsetSumNoAdjacent from './MaxSubsetSumNoAdjacent';
 import NumberOfWaysToMakeChange from './NumberOfWaysToMakeChange';
 import MinNumberOfCoinsForChange from './MinNumberOfCoinsForChange';
+import LevenshteinDistance from './LevenshteinDistance';
+import NumberOfWaysToTraverseGraph from './NumberOfWaysToTraverseGraph';
+import MaxSumIncreasingSubsequence from './MaxSumIncreasingSubsequence';
+import LongestCommonSubsequence from './LongestCommonSubsequence';
+import MinNumberOfJumps from './MinNumberOfJumps';
+import WaterArea from './WaterArea';
+import KnapsackProblem from './KnapsackProblem';
+import RangeSumQueryImmutable from './RangeSumQueryImmutable';
 
 const DPMain = () => {
     // BestTimeToBuyAndSellStockWithCooldown();
@@ -24,14 +32,22 @@ const DPMain = () => {
     // HouseRobber2();
     // HouseRobber3();
     // JumpGame();
+    // KnapsackProblem();
+    // LevenshteinDistance();
+    // LongestCommonSubsequence();
     // LongestIncreasingSubsequence();
     // MaxSubsetSumNoAdjacent();
-    MinNumberOfCoinsForChange();
+    // MaxSumIncreasingSubsequence();
+    // MinNumberOfCoinsForChange();
+    // MinNumberOfJumps();
     // NumberOfWaysToMakeChange();
+    // NumberOfWaysToTraverseGraph();
     // PalindromePartitioning();
     // PartitionEqualSubsetSum();
     // PalindromicSubstrings();
     // PerfectSquares();
+    RangeSumQueryImmutable();
+    // WaterArea();
 };
 
 export default DPMain;

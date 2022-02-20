@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SumOfTwoIntegers_1 = __importDefault(require("./SumOfTwoIntegers"));
+const CountingBits_1 = __importDefault(require("./CountingBits"));
 exports.default = () => {
-    // CountingBits();
-    (0, SumOfTwoIntegers_1.default)();
+    (0, CountingBits_1.default)();
+    // SumOfTwoIntegers();
     // NumberOf1Bits();
     // ReverseBits();
 };

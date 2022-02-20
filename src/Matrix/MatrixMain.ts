@@ -13,14 +13,20 @@ import RottingOranges from './RottingOranges';
 import SpiralTraversal from './SpiralTraversal';
 import RiverSizes from './RiverSizes';
 import RemoveIslands from './RemoveIslands';
+import ZigZagTraversal from './ZigZagTraversal';
+import WaterfallStreams from './WaterfallStreams';
+import MinimumPassesOfMatrix from './MinimumPassesOfMatrix';
+import BoggleBoard from './BoggleBoard';
 
 export default () => {
+  BoggleBoard();
     // GameOfLife();
     // KthSmallestElementInSortedMatrix();
     // MaximalSquare();
     // MinimumPathSum();
+    // MinimumPassesOfMatrix();
     // NumberOfIslands();
-    RemoveIslands();
+    // RemoveIslands();
     // RiverSizes();
     // RotateImage();
     // RottingOranges();
@@ -30,4 +36,6 @@ export default () => {
     // WordSearch();
     // UniquePaths();
     // ValidSudoku();
+    // WaterfallStreams();
+    // ZigZagTraversal();
 };

@@ -23,18 +23,20 @@ import TreeBFSMain from './TreeBFS/TreeBFSMain';
 import TreeDFSMain from './TreeDFS/TreeDFSMain';
 import TwoHeapsMain from './TwoHeaps/TwoHeapsMain';
 import SubsetsMain from './Subsets/SubsetsMain';
-import ModifiedBinarySearchMain from './ModifiedBinarySearch/ModifiedBinarySearchMain';
 import TopKElementsMain from './TopKElements/TopKElementsMain';
 import KWayMergeMain from './KWayMerge/KWayMergeMain';
 import KnapsackDPMain from './KnapsackDP/KnapsackDPMain';
 import TopologicalGraphSortMain from './TopologicalGraphSort/TopologicalGraphSortMain';
 import GreedyMain from './Greedy/GreedyMain';
+import BinarySearch from './BinarySearch/BinarySearch';
+import BinarySearchMain from './BinarySearch/BinarySearchMain';
+import ObjectOrientationMain from './ObjectOrientation/ObjectOrientationMain';
 
 function main() {
     // Sketch();
-    
-    ArraysMain();
+    // ArraysMain();
     // BinaryMain();
+    // BinarySearchMain();
     // CyclicSortMain();
     // DPMain();
     // FastAndSlowPointersMain();
@@ -49,12 +51,13 @@ function main() {
     // MathMain();
     // MatrixMain();
     // ModifiedBinarySearchMain();
+    // ObjectOrientationMain();
     // QueuesMain();
     // RecursionMain();
     // SortingMain();
     // SlidingWindowMain();
     // StacksMain();
-    // StringsMain();
+    StringsMain();
     // SubsetsMain();
     // TopKElementsMain();
     // TopologicalGraphSortMain();

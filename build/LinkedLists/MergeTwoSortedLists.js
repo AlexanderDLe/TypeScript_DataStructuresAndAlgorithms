@@ -84,7 +84,7 @@ const mergeTwoListsC = (l1, l2) => {
         curr.next = l2;
     return dummy.next;
 };
-const mergeTwoLists = (l1, l2) => {
+const mergeTwoListsD = (l1, l2) => {
     if (!l1)
         return l2;
     if (!l2)
@@ -110,6 +110,26 @@ const mergeTwoLists = (l1, l2) => {
             n.next = l1;
         break;
     }
+    return dummy.next;
+};
+const mergeTwoLists = (l1, l2) => {
+    let dummy = new LinkedListClass_1.ListNode(0);
+    let n = dummy;
+    while (l1 && l2) {
+        if (l1.val <= l2.val) {
+            n.next = l1;
+            l1 = l1.next;
+        }
+        else {
+            n.next = l2;
+            l2 = l2.next;
+        }
+        n = n.next;
+    }
+    if (!l1)
+        n.next = l2;
+    if (!l2)
+        n.next = l1;
     return dummy.next;
 };
 exports.default = () => {

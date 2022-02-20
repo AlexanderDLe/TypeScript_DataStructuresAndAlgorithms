@@ -3,13 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const TargetSum_1 = __importDefault(require("./TargetSum"));
+const Knapsack01_1 = __importDefault(require("./Knapsack01"));
 const KnapsackDPMain = () => {
-    // Knapsack01();
+    (0, Knapsack01_1.default)();
     // EqualSubsetSumPartition();
     // SubsetSum();
     // MinimumSubsetSumDifference();
     // CountOfSubsetSum();
-    (0, TargetSum_1.default)();
+    // TargetSum();
 };
 exports.default = KnapsackDPMain;

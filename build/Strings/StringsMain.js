@@ -3,8 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const UnderscorifySubstring_1 = __importDefault(require("./UnderscorifySubstring"));
+const BoyerMooreAlgorithm_1 = __importDefault(require("./BoyerMooreAlgorithm"));
 exports.default = () => {
+    // BackspaceStringCompare();
+    (0, BoyerMooreAlgorithm_1.default)();
     // CaesarCipherEncryptor();
     // CountAndSay();
     // DecodeString();
@@ -15,6 +17,7 @@ exports.default = () => {
     // GenerateDocument();
     // GroupAnagrams();
     // ImplementStrStr();
+    // KnuthMorrisPratt();
     // LongestPalindromicSubstring();
     // LongestSubstringWithoutDuplication();
     // MinimumCharacterForWords();
@@ -26,7 +29,7 @@ exports.default = () => {
     // RomanToInteger();
     // RunLengthEncoding();
     // ToLowerCase();
-    (0, UnderscorifySubstring_1.default)();
+    // UnderscorifySubstring();
     // ValidAnagram();
     // ValidIPAddresses();
     // ValidParentheses();

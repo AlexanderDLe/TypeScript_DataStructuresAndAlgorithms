@@ -38,6 +38,18 @@ const reverseListB = (head) => {
     }
     return q;
 };
+const reverseListC = (head) => {
+    let p = head;
+    let q = null;
+    let r = null;
+    while (p) {
+        r = q;
+        q = p;
+        p = p.next;
+        q.next = r;
+    }
+    return q;
+};
 const reverseList = (head) => {
     let p = head;
     let q = null;

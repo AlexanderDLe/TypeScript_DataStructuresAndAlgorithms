@@ -29,7 +29,7 @@ const majorityElementB = (nums) => {
     }
     return 0;
 };
-const majorityElement = (nums) => {
+const majorityElementC = (nums) => {
     let map = {};
     for (let num of nums) {
         map[num] = (map[num] || 0) + 1;
@@ -43,6 +43,23 @@ const majorityElement = (nums) => {
         }
     }
     return majorityElement;
+};
+const majorityElement = (nums) => {
+    let majority = nums[0];
+    let count = 1;
+    for (let i = 1; i < nums.length; i++) {
+        if (count === 0) {
+            count++;
+            majority = nums[i];
+        }
+        else if (majority === nums[i]) {
+            count++;
+        }
+        else {
+            count--;
+        }
+    }
+    return majority;
 };
 exports.default = () => {
     const nums = [2, 2, 1, 1, 1, 2, 2];

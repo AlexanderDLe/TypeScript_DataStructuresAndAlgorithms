@@ -3,9 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MinRewards_1 = __importDefault(require("./MinRewards"));
+const KadanesAlgorithm_1 = __importDefault(require("./KadanesAlgorithm"));
 const ArraysMain = () => {
     // ArrayQuadruplet();
+    // ApartmentHunting();
     // BestTimeToBuyAndSellStock();
     // BestTimeToBuyAndSellStock2();
     // ContainerWithMostWater();
@@ -19,7 +20,9 @@ const ArraysMain = () => {
     // FourSum();
     // FourSum2();
     // GroupAnagrams();
+    // IndexEqualsValue();
     // IntersectionOfTwoArrays2();
+    (0, KadanesAlgorithm_1.default)();
     // KthLargestElementInArray();
     // LargestRange();
     // LongestCommonPrefix();
@@ -31,7 +34,7 @@ const ArraysMain = () => {
     // MaximumSubarray();
     // MaxProductSubarray();
     // MergeSortedArray();
-    (0, MinRewards_1.default)();
+    // MinRewards();
     // MonotonicArray();
     // MoveElementToEnd();
     // MinimumTimeVisitingAllPoints();
@@ -41,6 +44,7 @@ const ArraysMain = () => {
     // NonConstructableChange();
     // PascalsTriangle();
     // ProductOfArrayExceptSelf();
+    // Quickselect();
     // RemoveDuplicatesFromSortedArray();
     // SearchInRotatedSortedArray();
     // SearchInsertPosition();

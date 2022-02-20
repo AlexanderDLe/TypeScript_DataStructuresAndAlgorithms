@@ -27,8 +27,8 @@ const climbStairsDP = (n: number): number => {
     return DP[n];
 };
 
-let memo: { [key: number]: number } = {};
 const climbStairsMemo = (n: number): number => {
+  let memo: { [key: number]: number } = {};
     if (n < 2) return 1;
     if (memo[n]) return memo[n];
     else {
@@ -37,7 +37,7 @@ const climbStairsMemo = (n: number): number => {
     return memo[n];
 };
 
-const climbStairs = (n: number): number => {
+const climbStairsC = (n: number): number => {
     // 0:1, 1:1, 2:2, 3:3, 4:5, 5:8
     let res = 0;
     let arr = [1, 1, 2];
@@ -47,6 +47,16 @@ const climbStairs = (n: number): number => {
     }
 
     return arr[n];
+}
+
+const climbStairs = (n: number): number => {
+  const DP = [1, 1, 2];
+
+  for (let i = 3; i <= n; i++) {
+    DP[i] = DP[i - 1] + DP[i - 2];
+  }
+
+  return DP[n];
 }
 
 export default () => {
