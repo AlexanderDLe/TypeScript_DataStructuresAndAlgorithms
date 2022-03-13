@@ -44,19 +44,22 @@ const countSubstringsMatrix = (s) => {
     return count;
 };
 const countSubstrings = (s) => {
+    const DP = [];
     let count = 0;
-    const checkPalindrome = (s, i, j) => {
-        while (i >= 0 && j < s.length && s.charAt(i) == s.charAt(j)) { //Check for the palindrome string 
-            count++; //Increment the count if palindromin substring found
-            i--; //To trace string in left direction
-            j++; //To trace string in right direction
+    for (let i = 0; i < s.length; i++) {
+        DP.push(new Array(s.length).fill(0));
+        DP[i][i] = 1;
+        count++;
+    }
+    for (let col = 1; col < s.length; col++) {
+        for (let row = 0; row < col; row++) {
+            if (col - row === 1 || DP[row + 1][col - 1]) {
+                if (s[row] === s[col]) {
+                    DP[row][col] = 1;
+                    count++;
+                }
+            }
         }
-    };
-    if (s.length === 0)
-        return 0;
-    for (let i = 0; i < s.length - 1; i++) {
-        checkPalindrome(s, i, i); //To check the palindrome of odd length palindromic sub-string
-        checkPalindrome(s, i, i + 1); //To check the palindrome of even length palindromic sub-string
     }
     return count;
 };

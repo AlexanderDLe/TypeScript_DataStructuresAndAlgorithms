@@ -1,5 +1,5 @@
 /**
- * 207. Course Schedule
+ * 
  */
 
 export class Node {

@@ -2,11 +2,12 @@
 /**
  * Grokking the Coding Interview
  *
+ * 199. Binary Tree Right Side View
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
 ;
-const rightViewOfBinaryTree = (root) => {
+const rightViewOfBinaryTreeRef = (root) => {
     let result = [];
     let queue = [];
     queue.push(root);
@@ -19,6 +20,25 @@ const rightViewOfBinaryTree = (root) => {
                 queue.push(n.left);
             if (n.right)
                 queue.push(n.right);
+            if (!count)
+                result.push(n.val);
+        }
+        count = queue.length;
+    }
+    return result;
+};
+const rightViewOfBinaryTree = (root) => {
+    if (!root)
+        return [];
+    const queue = [root];
+    const result = [];
+    let count = 1;
+    while (queue.length) {
+        while (count) {
+            let n = queue.shift();
+            count--;
+            n.left && queue.push(n.left);
+            n.right && queue.push(n.right);
             if (!count)
                 result.push(n.val);
         }

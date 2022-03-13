@@ -2,6 +2,7 @@
  * 105. Construct Binary Tree From Preorder and Inorder Traversal
  */
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
+import { PrintObject } from '../utils/Utilities';
 type Node = TreeNode<number> | null;
 type Map = { [key: number]: number };
 
@@ -75,7 +76,7 @@ const buildTreeIndexing = (preorder: number[], inorder: number[]): Node => {
     return build(0, 0, inorder.length - 1);
 };
 
-const buildTree = (preorder: number[], inorder: number[]): Node => {
+const buildTreeB = (preorder: number[], inorder: number[]): Node => {
     let preorderIndexMap: {[key: number]: number} = {};
     let inorderIndexMap: {[key: number]: number} = {};
 
@@ -114,6 +115,27 @@ const buildTree = (preorder: number[], inorder: number[]): Node => {
     }
 
     return build(0, preorder.length);
+}
+
+const buildTree = (preorder: number[], inorder: number[]): Node => {
+  const inorderMap: any = {}
+  for (let i = 0; i < inorder.length; i++) inorderMap[inorder[i]] = i;
+  let preorderIndex = 0;
+
+  const build = (start:number, end:number): Node => {
+    if (start > end) return null;
+    let nodeVal = preorder[preorderIndex];
+    let index = inorderMap[nodeVal];
+    let node = new TreeNode(nodeVal);
+    preorderIndex++;
+
+    node.left = build(start, index - 1);
+    node.right = build(index + 1, end);
+
+    return node;
+  }
+  
+  return build(0, inorder.length - 1);
 }
 
 export default () => {

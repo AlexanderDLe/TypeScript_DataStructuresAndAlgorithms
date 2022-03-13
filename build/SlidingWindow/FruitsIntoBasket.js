@@ -2,6 +2,8 @@
 /**
  * Grokking the Coding Interview
  *
+ * 904. Fruit Into Baskets
+ *
  * Given an array of characters where each character represents a fruit tree,
  * you are given two baskets, and your goal is to put maximum number of fruits
  * in each basket. The only restriction is that each basket can have only one
@@ -34,7 +36,7 @@ in it with at most two distinct characters.
 Solution: This problem is exactly similar to our parent problem.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-const FruitsIntoBasket = (arr) => {
+const FruitsIntoBasketGrokking = (arr) => {
     let fruits = 0;
     let uniqueFruits = 0;
     let map = {};
@@ -58,9 +60,14 @@ const FruitsIntoBasket = (arr) => {
     }
     return fruits;
 };
+const FruitsIntoBasket = (arr) => {
+};
 exports.default = () => {
     let fruits1 = ['A', 'B', 'C', 'A', 'C'];
     let fruits2 = ['A', 'B', 'C', 'B', 'B', 'C'];
-    console.log(FruitsIntoBasket(fruits1));
-    console.log(FruitsIntoBasket(fruits2));
+    console.log(FruitsIntoBasketGrokking(fruits1));
+    console.log(FruitsIntoBasketGrokking(fruits2));
+    console.log(FruitsIntoBasket([1, 2, 1]));
+    console.log(FruitsIntoBasket([0, 1, 2, 2]));
+    console.log(FruitsIntoBasket([1, 2, 3, 2, 2]));
 };

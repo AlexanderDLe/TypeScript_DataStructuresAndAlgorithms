@@ -3,10 +3,20 @@
  * 148. Sort List
  *
  * Split list in half, sort each half using custom merge algorithm, then merge together.
+ *
+ * 4 > 2 > 1 > 3
+ *
+ * 4 > 2    1 > 3
+ *
+ * 4   2    1   3
+ *
+ * 2 > 4    1 > 3
+ *
+ * 1 > 2 > 3 > 4
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
-const sortList = (head) => {
+const sortListA = (head) => {
     const merge = (L, R) => {
         let dummy = new LinkedListClass_1.ListNode(0);
         let p = dummy;
@@ -45,29 +55,29 @@ const sortList = (head) => {
     };
     return split(head);
 };
-const merge = (l1, l2) => {
-    let l = new LinkedListClass_1.ListNode(0);
-    let p = l;
-    while (l1 && l2) {
-        if (l1.val < l2.val) {
-            p.next = l1;
-            l1 = l1.next;
-        }
-        else {
-            p.next = l2;
-            l2 = l2.next;
-        }
-        p = p.next;
-    }
-    if (l1)
-        p.next = l1;
-    if (l2)
-        p.next = l2;
-    return l.next;
-};
 const sortListB = (head) => {
     if (!head || !head.next)
         return head;
+    const merge = (l1, l2) => {
+        let l = new LinkedListClass_1.ListNode(0);
+        let p = l;
+        while (l1 && l2) {
+            if (l1.val < l2.val) {
+                p.next = l1;
+                l1 = l1.next;
+            }
+            else {
+                p.next = l2;
+                l2 = l2.next;
+            }
+            p = p.next;
+        }
+        if (l1)
+            p.next = l1;
+        if (l2)
+            p.next = l2;
+        return l.next;
+    };
     // 1. Cut the list to two halves
     let prev = null;
     let slow = head;
@@ -82,6 +92,51 @@ const sortListB = (head) => {
     let l1 = sortList(head);
     let l2 = sortList(slow);
     // 3. merge l1 and l2
+    return merge(l1, l2);
+};
+const sortList = (head) => {
+    if (!head || !head.next)
+        return head;
+    const merge = (l1, l2) => {
+        if (!l1)
+            return l2;
+        if (!l2)
+            return l1;
+        let temp = new LinkedListClass_1.ListNode(0);
+        let p = temp;
+        while (l1 && l2) {
+            if (l1.val < l2.val) {
+                p.next = l1;
+                l1 = l1.next;
+            }
+            else {
+                p.next = l2;
+                l2 = l2.next;
+            }
+            p = p.next;
+        }
+        if (l1)
+            p.next = l1;
+        if (l2)
+            p.next = l2;
+        return temp.next;
+    };
+    // First, cut in half.
+    let p = null;
+    let s = head;
+    let f = head;
+    while (f) {
+        p = s;
+        s = s.next;
+        f = f.next;
+        if (f)
+            f = f.next;
+    }
+    p.next = null;
+    // Recursively cut in half
+    let l1 = sortList(head);
+    let l2 = sortList(s);
+    // Recursively merge and return sublists.
     return merge(l1, l2);
 };
 exports.default = () => {

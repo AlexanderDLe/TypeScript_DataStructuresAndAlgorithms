@@ -3,7 +3,7 @@
  * 207. Course Schedule
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const canFinish = (numCourses, prerequisites) => {
+const canFinishA = (numCourses, prerequisites) => {
     let map = {};
     let prereqs = prerequisites;
     let unlocked = [];
@@ -69,6 +69,37 @@ const canFinishB = (numCourses, prerequisites) => {
     }
     return count == numCourses;
 };
+const canFinish = (numCourses, prerequisites) => {
+    const courses = [];
+    for (let i = 0; i < numCourses; i++)
+        courses.push(i);
+    const sources = new Set(courses);
+    const inDegrees = {};
+    const parents = {};
+    for (let [parent, child] of prerequisites) {
+        inDegrees[child] = (inDegrees[child] || 0) + 1;
+        if (sources.has(child))
+            sources.delete(child);
+        if (!parents[parent])
+            parents[parent] = [];
+        parents[parent].push(child);
+    }
+    const queue = Array.from(sources);
+    let courseCount = 0;
+    while (queue.length) {
+        courseCount++;
+        let vertex = queue.shift();
+        let childrenVertices = parents[vertex];
+        if (!childrenVertices)
+            continue;
+        for (let child of childrenVertices) {
+            inDegrees[child]--;
+            if (!inDegrees[child])
+                queue.push(child);
+        }
+    }
+    return courseCount === numCourses;
+};
 exports.default = () => {
     const numCourses = 3;
     const prerequisites = [
@@ -76,5 +107,7 @@ exports.default = () => {
         [1, 2],
         [0, 2]
     ];
-    console.log(canFinishB(numCourses, prerequisites));
+    console.log(canFinish(numCourses, prerequisites));
+    console.log(canFinish(2, [[1, 0]]));
+    console.log(canFinish(2, [[1, 0], [0, 1]]));
 };

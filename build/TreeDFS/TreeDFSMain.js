@@ -3,14 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const PathOfMaximumSum_1 = __importDefault(require("./PathOfMaximumSum"));
+const BinaryTreeMaximumPathSum_1 = __importDefault(require("./BinaryTreeMaximumPathSum"));
 const TreeDFSMain = () => {
-    // binaryTreePathSum();
-    // allPathsForASum();
-    // sumOfPathNumbers();
-    // pathWithGivenSequence();
-    // countPathsForASum();
-    // diameterOfBinaryTree();
-    (0, PathOfMaximumSum_1.default)();
+    (0, BinaryTreeMaximumPathSum_1.default)();
+    // BinaryTreePathSum();
+    // AllPathsForASum();
+    // SumOfPathNumbers();
+    // PathWithGivenSequence();
+    // CountPathsForASum();
+    // DiameterOfBinaryTree();
+    // PathOfMaximumSum();
+    // PathSum2();
+    // PathSum3();
 };
 exports.default = TreeDFSMain;

@@ -32,7 +32,7 @@ const wordBreakRecursive = (s, wordDict) => {
     return canBreak;
 };
 // DP Algorithm
-const wordBreak = (s, wordDict) => {
+const wordBreakA = (s, wordDict) => {
     // Initialize DP array
     const f = new Array(s.length + 1).fill(false);
     f[0] = true;
@@ -56,8 +56,44 @@ const wordBreak = (s, wordDict) => {
     }
     return f[s.length];
 };
+const wordBreak = (s, wordDict) => {
+    const buildTrie = () => {
+        let trie = {};
+        for (let word of wordDict) {
+            let curr = trie;
+            for (let char of word) {
+                if (!curr[char])
+                    curr[char] = {};
+                curr = curr[char];
+            }
+            curr.word = true;
+        }
+        return trie;
+    };
+    const trie = buildTrie();
+    const DP = new Array(s.length).fill(0);
+    let canBreak = false;
+    const recurse = (index) => {
+        if (index === s.length)
+            canBreak = true;
+        if (index >= s.length || canBreak || DP[index])
+            return;
+        DP[index] = 1;
+        let curr = trie;
+        for (let i = index; i < s.length; i++) {
+            let char = s[i];
+            if (!curr[char])
+                break;
+            curr = curr[char];
+            if (curr.word)
+                recurse(i + 1);
+        }
+    };
+    recurse(0);
+    return canBreak;
+};
 exports.default = () => {
     const s = 'leetcode';
-    const wordDict = ['leet', 'code'];
+    const wordDict = ['t', 'l', 'e', 'code'];
     console.log(wordBreak(s, wordDict));
 };

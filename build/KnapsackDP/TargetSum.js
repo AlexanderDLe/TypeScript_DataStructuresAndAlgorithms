@@ -1,10 +1,18 @@
 "use strict";
 /**
- * Grokking the Coding Interview
+ * 494. Target Sum
+ *
+ * [1,1,1,1,1]
+ *
+ *                 []                         V
+ *                1  -1                      [1,1,1,1,1]
+ *                                              V
+ *            2   0   0   -2                 [1,1,1,1,1]
+ *                                                V
+ *     3   1   1 -1   1 -1  1  -1            [1,1,1,1,1]
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-let Heap = require('collections/heap');
-const targetSum = (nums, target) => {
+const targetSumA = (nums, target) => {
     const DP = {};
     const recurse = (index, currSum) => {
         DP[index] = DP[index] || {};
@@ -23,6 +31,8 @@ const targetSum = (nums, target) => {
     };
     let result = recurse(0, 0);
     return result;
+};
+const targetSum = (nums, target) => {
 };
 exports.default = () => {
     console.log(targetSum([1, 1, 2, 3], 1));

@@ -19,7 +19,7 @@ import { ListNode } from '../DataStructures/LinkedListClass';
 
 type Node = ListNode<number> | null;
 
-const detectCycle = (head: Node): Node => {
+const detectCycleA = (head: Node): Node => {
     if (!head) return null;
     let slow = head;
     let fast = head;
@@ -46,6 +46,45 @@ const detectCycle = (head: Node): Node => {
     return slow;
 };
 
+
+/*
+
+          sf              
+  1 > 2 > 3 > 4 > 5
+          ^       v
+            <   <
+
+*/
+const detectCycle = (head: Node): Node => {
+  let s = head;
+  let f = head;
+
+  while (f) {
+    s = s.next;
+    f = f.next;
+
+    if (f) f = f.next;
+    if (s === f) break;
+  }
+  if (!f) return null;
+
+  let len = 0;
+  while (f) {
+    s = s.next;
+    f = f.next.next;
+    len++;
+    if (s === f) break;
+  }
+
+  s = head;
+  while (s !== f) {
+    s = s.next;
+    f = f.next;
+  }
+  
+  return s;
+}
+
 export default () => {
     const n = new ListNode(3);
     n.next = new ListNode(2);
@@ -57,5 +96,5 @@ export default () => {
     m.next = new ListNode(2);
     m.next.next = m;
 
-    console.log(detectCycle(n));
+    console.log(detectCycle(n).value);
 };

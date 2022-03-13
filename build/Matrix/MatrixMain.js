@@ -3,15 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const BoggleBoard_1 = __importDefault(require("./BoggleBoard"));
+const KthSmallestElementInSortedMatrix_1 = __importDefault(require("./KthSmallestElementInSortedMatrix"));
 exports.default = () => {
-    (0, BoggleBoard_1.default)();
+    // BoggleBoard();
+    // Convert1DArrayInto2DArray()
     // GameOfLife();
-    // KthSmallestElementInSortedMatrix();
+    (0, KthSmallestElementInSortedMatrix_1.default)();
     // MaximalSquare();
     // MinimumPathSum();
     // MinimumPassesOfMatrix();
     // NumberOfIslands();
+    // PacificAtlanticWaterFlow();
     // RemoveIslands();
     // RiverSizes();
     // RotateImage();

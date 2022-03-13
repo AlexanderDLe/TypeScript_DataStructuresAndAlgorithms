@@ -3,7 +3,7 @@ import EqualSubsetSumPartition from "./EqualSubsetSumPartition";
 import Knapsack01 from "./Knapsack01";
 import MinimumSubsetSumDifference from "./MinimumSubsetSumDifference";
 import SubsetSum from "./SubsetSum";
-import TargetSum from "./TargetSum";
+import TargetSum from "../DP/TargetSum";
 
 
 const KnapsackDPMain = () => {

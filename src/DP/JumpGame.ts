@@ -25,18 +25,49 @@ const canJumpA = (nums: number[]): boolean => {
 };
 
 const canJumpB = (nums: number[]): boolean => {
-    let last = nums.length - 1;
+  let last = nums.length - 1;
 
-    for (let i = nums.length - 2; i >= 0; i--) {
-        if (i + nums[i] >= last) last = i;
+  for (let i = nums.length - 2; i >= 0; i--) {
+      if (i + nums[i] >= last) last = i;
+  }
+
+  return last <= 0;
+};
+
+
+/*
+  [2, 3, 1, 1, 4]
+  [0, 1, 2, 1, 0]
+
+  Jumps = 2
+  JumpsLeft = 0
+  NextJumpsLeft = 2
+*/
+const canJump = (nums: number[]): boolean => {
+  if (nums.length === 1) return true;
+
+  let jumpsLeft = nums[0];
+  let nextJumpsLeft = 0;
+  let i = 1;
+
+  while (i < nums.length && jumpsLeft) {
+    jumpsLeft--;
+    nextJumpsLeft--;
+    nextJumpsLeft = Math.max(nextJumpsLeft, nums[i]);
+
+    if (!jumpsLeft) {
+      jumpsLeft = nextJumpsLeft;
     }
 
-    return last <= 0;
-};
+    i++;
+  }
+  
+  return i === nums.length;
+}
 
 export default () => {
     const numsA = [2, 3, 1, 1, 4];
     const numsB = [3, 2, 1, 0, 4];
     const numsC = [0, 2, 3];
-    console.log(canJumpB(numsA));
+    console.log(canJump(numsB));
 };

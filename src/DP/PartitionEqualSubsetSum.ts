@@ -7,8 +7,8 @@
  * We want determine if DP[target] is reachable - to do so, we solve subproblems that
  * determines if DP[i] is reachable starting from DP[0] (base case).
  */
-import { PrintArray } from '../utils/Utilities';
-const canPartition = (nums: number[]): boolean => {
+import { PrintArray, PrintObject } from '../utils/Utilities';
+const canPartitionA = (nums: number[]): boolean => {
     if (nums.length < 2) return false;
     let sum = nums.reduce((acc, val) => acc + val);
     if (sum % 2 === 1) return false;
@@ -30,7 +30,7 @@ const canPartition = (nums: number[]): boolean => {
     return false;
 };
 
-const canPartitionKnapsack = (nums: number[]): boolean => {
+const canPartitionB = (nums: number[]): boolean => {
     let sum = nums.reduce((acc, val) => acc + val);
     if (nums.length < 2 || sum % 2 === 1) return false;
     const target = sum / 2;
@@ -48,7 +48,27 @@ const canPartitionKnapsack = (nums: number[]): boolean => {
     return DP[target];
 };
 
+const canPartition = (nums: number[]): boolean => {
+  const sum = nums.reduce((acc, curr) => acc + curr);
+  if (sum % 2 === 1) return false;
+
+  const DP = new Map();
+  const target = sum / 2;
+
+  const DFS = (index:number, sum:number): boolean => {
+    if (sum === target) return true;
+    if (sum > target || index >= nums.length) return false;
+    if (DP.has(`${index}-${sum}`)) return DP.get(`${index}-${sum}`)
+
+    let res = DFS(index + 1, sum + nums[index]) || DFS(index + 1, sum);
+    DP.set(`${index}-${sum}`, res);
+    return res;
+  }
+  
+  return DFS(0, 0);
+}
+
 export default () => {
     const nums = [1, 5, 11, 5];
-    console.log(canPartitionKnapsack(nums));
+    console.log(canPartition(nums));
 };

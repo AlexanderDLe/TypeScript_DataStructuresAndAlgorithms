@@ -92,7 +92,7 @@ const lowestCommonAncestorD = (root, p, q) => {
     };
     return recurse(root);
 };
-const lowestCommonAncestor = (root, p, q) => {
+const lowestCommonAncestorE = (root, p, q) => {
     if (root === p || root === q)
         return root;
     if (root.val > p.val && root.val > q.val)
@@ -100,6 +100,18 @@ const lowestCommonAncestor = (root, p, q) => {
     if (root.val <= p.val && root.val <= q.val)
         return lowestCommonAncestor(root.right, p, q);
     return root;
+};
+const lowestCommonAncestor = (root, p, q) => {
+    if (!root || root === p || root === q)
+        return root;
+    let left = lowestCommonAncestor(root.left, p, q);
+    let right = lowestCommonAncestor(root.right, p, q);
+    if (left && right)
+        return root;
+    if (!left)
+        return right;
+    else
+        return left;
 };
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(6);
@@ -114,5 +126,5 @@ exports.default = () => {
     t.right.left = new TreeClass_1.TreeNode(7);
     t.right.right = new TreeClass_1.TreeNode(9);
     (0, TreeClass_1.BinaryPreorderTraversal)(t);
-    console.log(lowestCommonAncestor(t, p, q));
+    console.log(lowestCommonAncestor(t, p, q).val);
 };

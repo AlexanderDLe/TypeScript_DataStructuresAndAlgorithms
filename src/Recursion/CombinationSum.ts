@@ -42,7 +42,7 @@ const combinationSumA = (candidates: number[], target: number): number[][] => {
     return result;
 }
 
-const combinationSum = (candidates: number[], target: number): number[][] => {
+const combinationSumB = (candidates: number[], target: number): number[][] => {
     let result: number[][] = []
 
     const recurse = (index: number, sum: number, subarr: number[]): void => {
@@ -55,6 +55,27 @@ const combinationSum = (candidates: number[], target: number): number[][] => {
 
     recurse(0, 0, []);
     return result;
+}
+
+const combinationSum = (candidates: number[], target: number): number[][] => {
+  let result: number[][] = []
+
+  const recurse = (index:number, sum:number, subarr:number[]) => {
+    if (sum === target) result.push([...subarr]);
+    if (sum >= target || index >= candidates.length) return;
+
+    // Skip current
+    recurse(index + 1, sum, subarr);
+
+    // Take current
+    let val = candidates[index];
+    subarr.push(val);
+    recurse(index, sum + val, subarr);
+    subarr.pop();
+  }
+
+  recurse(0, 0, []);
+  return result;
 }
 
 export default () => {

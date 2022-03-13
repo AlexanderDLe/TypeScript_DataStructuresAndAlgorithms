@@ -3,17 +3,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MaxDepthOfBinaryTree_1 = __importDefault(require("./MaxDepthOfBinaryTree"));
+const AllNodesKDistanceInBinaryTree_1 = __importDefault(require("./AllNodesKDistanceInBinaryTree"));
 const TreeBFSMain = () => {
+    (0, AllNodesKDistanceInBinaryTree_1.default)();
     // binaryTreeLevelOrderTraversal();
-    // binaryTreeLevelOrderTraversalReversed();
+    // binaryTreeLevelOrderTraversal2();
     // connectAllLevelOrderSiblings();
     // connectLevelOrderSiblings();
     // levelAverages();
     // levelOrderSuccessor();
-    (0, MaxDepthOfBinaryTree_1.default)();
-    // minDepthOfBinaryTree();
-    // rightViewOfBinaryTree();
+    // MaxDepthOfBinaryTree();
+    // MinDepthOfBinaryTree();
+    // PopulateNextRightPointers();
+    // PopulateNextRightPointers2();
+    // RightViewOfBinaryTree();
     // zigzagTraversal();
 };
 exports.default = TreeBFSMain;

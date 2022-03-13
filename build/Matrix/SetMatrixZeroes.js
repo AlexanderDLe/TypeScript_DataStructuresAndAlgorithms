@@ -1,10 +1,10 @@
 "use strict";
 /**
  * 73. Set Matrix Zeroes
- */
+*/
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
-const setZeroes = (m) => {
+const setZeroesA = (m) => {
     if (!m.length || !m[0].length)
         return;
     const rows = m.length;
@@ -74,6 +74,29 @@ const setZeroesUsing777 = (m) => {
                 m[row][col] = 0;
         }
     }
+};
+const setZeroesB = (matrix) => {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+    const rowSet = new Set();
+    const colSet = new Set();
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (matrix[row][col] === 0) {
+                rowSet.add(row);
+                colSet.add(col);
+            }
+        }
+    }
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (rowSet.has(row) || colSet.has(col)) {
+                matrix[row][col] = 0;
+            }
+        }
+    }
+};
+const setZeroes = (matrix) => {
 };
 exports.default = () => {
     const m = [

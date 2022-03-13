@@ -32,9 +32,34 @@ const canJumpB = (nums) => {
     }
     return last <= 0;
 };
+/*
+  [2, 3, 1, 1, 4]
+  [0, 1, 2, 1, 0]
+
+  Jumps = 2
+  JumpsLeft = 0
+  NextJumpsLeft = 2
+*/
+const canJump = (nums) => {
+    if (nums.length === 1)
+        return true;
+    let jumpsLeft = nums[0];
+    let nextJumpsLeft = 0;
+    let i = 1;
+    while (i < nums.length && jumpsLeft) {
+        jumpsLeft--;
+        nextJumpsLeft--;
+        nextJumpsLeft = Math.max(nextJumpsLeft, nums[i]);
+        if (!jumpsLeft) {
+            jumpsLeft = nextJumpsLeft;
+        }
+        i++;
+    }
+    return i === nums.length;
+};
 exports.default = () => {
     const numsA = [2, 3, 1, 1, 4];
     const numsB = [3, 2, 1, 0, 4];
     const numsC = [0, 2, 3];
-    console.log(canJumpB(numsA));
+    console.log(canJump(numsB));
 };

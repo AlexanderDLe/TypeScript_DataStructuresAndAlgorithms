@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const MergeTwoSortedLists_1 = __importDefault(require("./MergeTwoSortedLists"));
+const MergeKSortedLists_1 = __importDefault(require("./MergeKSortedLists"));
 const LinkedListMain = () => {
     // AddTwoNumbers();
     // ConvertBinaryNumberInLinkedList();
@@ -14,15 +14,21 @@ const LinkedListMain = () => {
     // LinkedListConstruction();
     // LinkedListCycle();
     // LinkedListCycle2();
-    (0, MergeTwoSortedLists_1.default)();
+    // MergedTwoSortedLists();
+    (0, MergeKSortedLists_1.default)();
     // MiddleOfLinkedList();
     // PalindromeLinkedList();
     // OddEvenLinkedList();
     // RemoveDuplicatesFromLinkedList();
     // RemoveLinkedListElements();
     // RemoveNthNodeFromList();
+    // ReorderList();
     // ReverseLinkedList();
+    // ReverseLinkedList2();
+    // ReverseNodesInKGroup();
+    // RotateList();
     // SortList();
     // SumOfLinkedLists();
+    // SwapNodesInPairs();
 };
 exports.default = LinkedListMain;

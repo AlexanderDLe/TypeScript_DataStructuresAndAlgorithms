@@ -17,6 +17,12 @@ import SumOfLinkedLists from './SumOfLinkedLists';
 import FindLoop from './FindLoop';
 import MiddleOfLinkedList from './MiddleOfLinkedList';
 import RemoveLinkedListElements from './RemoveLinkedListElements';
+import ReorderList from './ReorderList';
+import ReverseLinkedList2 from './ReverseLinkedList2';
+import RotateList from './RotateList';
+import SwapNodesInPairs from './SwapNodesInPairs';
+import ReverseNodesInKGroup from './ReverseNodesInKGroup';
+import MergeKSortedLists from './MergeKSortedLists';
 
 const LinkedListMain = () => {
     // AddTwoNumbers();
@@ -28,16 +34,22 @@ const LinkedListMain = () => {
     // LinkedListConstruction();
     // LinkedListCycle();
     // LinkedListCycle2();
-    MergedTwoSortedLists();
+    // MergedTwoSortedLists();
+    MergeKSortedLists();
     // MiddleOfLinkedList();
     // PalindromeLinkedList();
     // OddEvenLinkedList();
     // RemoveDuplicatesFromLinkedList();
     // RemoveLinkedListElements();
     // RemoveNthNodeFromList();
+    // ReorderList();
     // ReverseLinkedList();
+    // ReverseLinkedList2();
+    // ReverseNodesInKGroup();
+    // RotateList();
     // SortList();
     // SumOfLinkedLists();
+    // SwapNodesInPairs();
 };
 
 export default LinkedListMain;

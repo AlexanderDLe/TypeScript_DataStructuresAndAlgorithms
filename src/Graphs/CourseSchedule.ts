@@ -16,34 +16,34 @@ import { DefaultSerializer } from 'v8';
  * You can then remove that item from the map and push the key onto the unlocked array.
  */
 type Map = { [key: number]: number[] };
-const canFinish = (numCourses: number, prerequisites: number[][]): boolean => {
-    let map: Map = {};
-    let prereqs = prerequisites;
-    let unlocked: number[] = [];
+const canFinishA = (numCourses: number, prerequisites: number[][]): boolean => {
+  let map: Map = {};
+  let prereqs = prerequisites;
+  let unlocked: number[] = [];
 
-    for (let prereq of prereqs) {
-        if (map[prereq[0]]) map[prereq[0]].push(prereq[1]);
-        else map[prereq[0]] = [prereq[1]];
-    }
-    for (let prereq of prereqs) {
-        if (!map.hasOwnProperty(prereq[1])) unlocked.push(prereq[1]);
-    }
+  for (let prereq of prereqs) {
+    if (map[prereq[0]]) map[prereq[0]].push(prereq[1]);
+    else map[prereq[0]] = [prereq[1]];
+  }
+  for (let prereq of prereqs) {
+    if (!map.hasOwnProperty(prereq[1])) unlocked.push(prereq[1]);
+  }
 
-    while (unlocked.length) {
-        let num = unlocked.pop();
-        for (let item in map) {
-            if (map[item].includes(num)) {
-                let index = map[item].indexOf(num);
-                map[item].splice(index, 1);
-                if (!map[item].length) {
-                    unlocked.push(Number(item));
-                    delete map[item];
-                }
-            }
+  while (unlocked.length) {
+    let num = unlocked.pop();
+    for (let item in map) {
+      if (map[item].includes(num)) {
+        let index = map[item].indexOf(num);
+        map[item].splice(index, 1);
+        if (!map[item].length) {
+          unlocked.push(Number(item));
+          delete map[item];
         }
+      }
     }
+  }
 
-    return Object.keys(map).length ? false : true;
+  return Object.keys(map).length ? false : true;
 };
 
 /**
@@ -58,38 +58,74 @@ const canFinish = (numCourses: number, prerequisites: number[][]): boolean => {
  * If count matches numCourses, then return true.
  */
 const canFinishB = (numCourses: number, prerequisites: number[][]): boolean => {
-    let inDegree: number[] = new Array(numCourses).fill(0);
-    let stack: number[] = [];
-    let count = 0;
+  let inDegree: number[] = new Array(numCourses).fill(0);
+  let stack: number[] = [];
+  let count = 0;
 
+  for (let i = 0; i < prerequisites.length; i++) {
+    inDegree[prerequisites[i][0]]++;
+  }
+  for (let i = 0; i < inDegree.length; i++) {
+    if (inDegree[i] === 0) stack.push(i);
+  }
+  while (stack.length) {
+    let curr = stack.pop();
+    count++;
     for (let i = 0; i < prerequisites.length; i++) {
-        inDegree[prerequisites[i][0]]++;
-    }
-    for (let i = 0; i < inDegree.length; i++) {
-        if (inDegree[i] === 0) stack.push(i);
-    }
-    while (stack.length) {
-        let curr = stack.pop();
-        count++;
-        for (let i = 0; i < prerequisites.length; i++) {
-            let preq = prerequisites[i];
-            if (preq[1] === curr) {
-                inDegree[preq[0]]--;
-                if (!inDegree[preq[0]]) {
-                    stack.push(preq[0]);
-                }
-            }
+      let preq = prerequisites[i];
+      if (preq[1] === curr) {
+        inDegree[preq[0]]--;
+        if (!inDegree[preq[0]]) {
+          stack.push(preq[0]);
         }
+      }
     }
-    return count == numCourses;
+  }
+  return count == numCourses;
 };
 
+const canFinish = (numCourses: number, prerequisites: number[][]): boolean => {
+  const courses: number[] = [];
+  for (let i = 0; i < numCourses; i++) courses.push(i);
+
+  const sources = new Set(courses);
+  const inDegrees: any = {};
+  const parents: any = {};
+
+  for (let [parent, child] of prerequisites) {
+    inDegrees[child] = (inDegrees[child] || 0) + 1;
+    if (sources.has(child)) sources.delete(child);
+
+    if (!parents[parent]) parents[parent] = [];
+    parents[parent].push(child);
+  }
+
+  const queue = Array.from(sources);
+  let courseCount = 0;
+
+  while (queue.length) {
+    courseCount++;
+    let vertex = queue.shift();
+    let childrenVertices = parents[vertex];
+    if (!childrenVertices) continue;
+
+    for (let child of childrenVertices) {
+      inDegrees[child]--;
+      if (!inDegrees[child]) queue.push(child);
+    }
+  }
+
+  return courseCount === numCourses;
+}
+
 export default () => {
-    const numCourses = 3;
-    const prerequisites = [
-        [1, 0],
-        [1, 2],
-        [0, 2]
-    ];
-    console.log(canFinishB(numCourses, prerequisites));
+  const numCourses = 3;
+  const prerequisites = [
+    [1, 0],
+    [1, 2],
+    [0, 2]
+  ];
+  console.log(canFinish(numCourses, prerequisites));
+  console.log(canFinish(2, [[1,0]]));
+  console.log(canFinish(2, [[1,0],[0,1]]));
 };

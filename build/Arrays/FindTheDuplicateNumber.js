@@ -53,7 +53,7 @@ const findDuplicateB = (nums) => {
     }
     return 0;
 };
-const findDuplicate = (nums) => {
+const findDuplicateC = (nums) => {
     for (let i = 0; i < nums.length; i++) {
         let index = Math.abs(nums[i]);
         let val = nums[index - 1];
@@ -62,6 +62,17 @@ const findDuplicate = (nums) => {
         nums[index - 1] = -nums[index - 1];
     }
     return 0;
+};
+const findDuplicate = (nums) => {
+    for (let i = 0; i < nums.length; i++) {
+        while (nums[i] !== i + 1) {
+            let val = nums[i];
+            if (val === nums[val - 1])
+                return val;
+            [nums[i], nums[val - 1]] = [nums[val - 1], nums[i]];
+        }
+    }
+    return -1;
 };
 exports.default = () => {
     const nums = [2, 3, 4, 1, 3];

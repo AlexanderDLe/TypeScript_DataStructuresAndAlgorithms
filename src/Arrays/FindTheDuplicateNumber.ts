@@ -35,14 +35,14 @@ const findDuplicateSetMethod = (nums: number[]): number => {
     This strategy modifies the array by flipping elements negative.
 */
 const findDuplicateFlipMethod = (nums: number[]): number => {
-    for (let i = 0; i < nums.length; i++) {
-        let currAbsValue = Math.abs(nums[i]);
+  for (let i = 0; i < nums.length; i++) {
+    let currAbsValue = Math.abs(nums[i]);
 
-        if (nums[currAbsValue - 1] < 0) return currAbsValue;
-        nums[currAbsValue - 1] *= -1;
-    }
+    if (nums[currAbsValue - 1] < 0) return currAbsValue;
+    nums[currAbsValue - 1] *= -1;
+  }
 
-    return 0;
+  return 0;
 }
 
 const findDuplicateB = (nums: number[]): number => {
@@ -55,7 +55,7 @@ const findDuplicateB = (nums: number[]): number => {
     return 0;
 };
 
-const findDuplicate = (nums: number[]): number => {
+const findDuplicateC = (nums: number[]): number => {
     for (let i = 0; i < nums.length; i++) {
         let index = Math.abs(nums[i]);
 
@@ -65,6 +65,18 @@ const findDuplicate = (nums: number[]): number => {
         nums[index - 1] = -nums[index - 1];
     }
     return 0;
+}
+
+const findDuplicate = (nums: number[]): number => {
+  for (let i = 0; i < nums.length; i++) {
+    while (nums[i] !== i + 1) {
+      let val = nums[i];
+      if (val === nums[val - 1]) return val;
+      [nums[i], nums[val - 1]] = [nums[val - 1], nums[i]];
+    }
+  }
+
+  return -1;
 }
 
 export default () => {

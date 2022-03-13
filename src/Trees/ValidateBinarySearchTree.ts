@@ -18,7 +18,7 @@ const isValidBSTA = (root: Node): boolean => {
 };
 
 type BST = Node | null;
-const isValidBST = (root: Node): boolean => {
+const isValidBSTB = (root: Node): boolean => {
     if (!root) return true;
     
     const DFS = (n: BST, min: number, max: number): boolean => {
@@ -34,16 +34,35 @@ const isValidBST = (root: Node): boolean => {
     return DFS(root, -Infinity, Infinity);
 }
 
+const isValidBST = (root: Node): boolean => {
+  const DFS = (n:Node, min:number, max:number): boolean => {
+    if (!n) return true;
+    if (n.val <= min || n.val >= max) return false;
+    let left = DFS(n.left, min, n.val);
+    let right = DFS(n.right, n.val, max);
+
+    return left && right;
+  }
+
+  return DFS(root, -Infinity, Infinity);
+}
+
 export default () => {
     const t1 = new TreeNode(2);
     t1.left = new TreeNode(1);
     t1.right = new TreeNode(3);
-
+    
     const t2 = new TreeNode(5);
     t2.left = new TreeNode(1);
     t2.right = new TreeNode(4);
     t2.right.left = new TreeNode(3);
     t2.right.right = new TreeNode(6);
+    
+    const t3 = new TreeNode(2);
+    t3.left = new TreeNode(2);
+    t3.right = new TreeNode(2);
 
     console.log(isValidBST(t1));
+    console.log(isValidBST(t2));
+    console.log(isValidBST(t3));
 };

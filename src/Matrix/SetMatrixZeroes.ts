@@ -1,10 +1,10 @@
 /**
  * 73. Set Matrix Zeroes
- */
+*/
 
 import { PrintMatrix } from '../utils/Utilities';
 
-const setZeroes = (m: number[][]): void => {
+const setZeroesA = (m: number[][]): void => {
     if (!m.length || !m[0].length) return;
     const rows = m.length;
     const cols = m[0].length;
@@ -78,6 +78,34 @@ const setZeroesUsing777 = (m: number[][]): void => {
         }
     }
 };
+
+const setZeroesB = (matrix: number[][]): void => {
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+  const rowSet = new Set();
+  const colSet = new Set();
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      if (matrix[row][col] === 0) {
+        rowSet.add(row);
+        colSet.add(col);
+      }
+    }
+  }
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      if (rowSet.has(row) || colSet.has(col)) {
+        matrix[row][col] = 0;
+      }
+    }
+  }
+}
+
+const setZeroes = (matrix: number[][]): void => {
+  
+}
 
 export default () => {
     const m = [

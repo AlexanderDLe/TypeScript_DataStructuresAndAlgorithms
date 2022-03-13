@@ -60,7 +60,7 @@ const addTwoNumbersB = (l1, l2) => {
     }
     return head;
 };
-const addTwoNumbers = (l1, l2) => {
+const addTwoNumbersC = (l1, l2) => {
     let head = new LinkedListClass_1.ListNode(0);
     let curr = head;
     let carry = 0;
@@ -84,6 +84,25 @@ const addTwoNumbers = (l1, l2) => {
         curr = curr.next;
     }
     return head.next;
+};
+const addTwoNumbers = (l1, l2) => {
+    let dummy = new LinkedListClass_1.ListNode(0);
+    let p = dummy;
+    let carry = 0;
+    while (l1 || l2 || carry) {
+        let val1 = l1 ? l1.val : 0;
+        let val2 = l2 ? l2.val : 0;
+        let sum = val1 + val2 + carry;
+        carry = Math.floor(sum / 10);
+        sum = sum % 10;
+        if (l1)
+            l1 = l1.next;
+        if (l2)
+            l2 = l2.next;
+        p.next = new LinkedListClass_1.ListNode(sum);
+        p = p.next;
+    }
+    return dummy.next;
 };
 exports.default = () => {
     const nums1 = [2, 4, 3];

@@ -1,5 +1,11 @@
 /**
  * 46. Permutations
+ * 
+ * []
+ * 
+ * [1] [2] [3] [4]
+ * 
+ * 
  */
 import { PrintMatrix } from '../utils/Utilities';
 
@@ -60,7 +66,7 @@ const permuteC = (nums: number[]): number[][] => {
     return result;
 }
 
-const permute = (nums: number[]): number[][] => {
+const permuteD = (nums: number[]): number[][] => {
     if (!nums.length) return [];
     const result: number[][] = [];
 
@@ -78,6 +84,25 @@ const permute = (nums: number[]): number[][] => {
     }
     DFS(0);
     return result;
+}
+
+const permute = (nums: number[]): number[][] => {
+  let result: number[][] = []
+
+  const recurse = (index:number) => {
+    if (index >= nums.length) {
+      result.push([...nums]);
+      return;
+    }
+
+    for (let i = index; i < nums.length; i++) {
+      [nums[index], nums[i]] = [nums[i], nums[index]];
+      recurse(index + 1);
+      [nums[index], nums[i]] = [nums[i], nums[index]];
+    }
+  }
+  recurse(0);
+  return result;
 }
 
 export default () => {

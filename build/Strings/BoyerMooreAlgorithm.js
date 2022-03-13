@@ -51,7 +51,7 @@ const boyerMooreRef = (text, pattern) => {
     };
     return search();
 };
-const boyerMoore = (text, pattern) => {
+const boyerMooreA = (text, pattern) => {
     const buildLastOccurenceMap = () => {
         let map = {};
         for (let i = 0; i < pattern.length; i++) {
@@ -79,6 +79,28 @@ const boyerMoore = (text, pattern) => {
         return false;
     };
     return search();
+};
+const boyerMoore = (text, pattern) => {
+    const lastOccurMap = {};
+    for (let i = 0; i < pattern.length; i++) {
+        let char = pattern[i];
+        lastOccurMap[char] = i;
+    }
+    let textLen = text.length;
+    let pattLen = pattern.length;
+    let shifts = 0;
+    while (shifts <= textLen - pattLen) {
+        let j = pattLen - 1;
+        while (j >= 0 && pattern[j] === text[shifts + j]) {
+            j--;
+        }
+        if (j < 0)
+            return true;
+        let mismatch = text[shifts + j];
+        let lastMismatchOccurence = lastOccurMap[mismatch] || -1;
+        shifts += Math.max(1, j - lastMismatchOccurence);
+    }
+    return false;
 };
 exports.default = () => {
     let s = "GCAXTGCCTATGTGACC", t = "TATGTG";

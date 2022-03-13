@@ -3,15 +3,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CalendarMatching_1 = __importDefault(require("./CalendarMatching"));
+const EmployeeFreeTimeLeetcode_1 = __importDefault(require("./EmployeeFreeTimeLeetcode"));
 const IntervalsMain = () => {
-    (0, CalendarMatching_1.default)();
-    // MergeIntervals();
-    // InsertInterval();
-    // IntervalsIntersection();
+    // CalendarMatching();
     // ConflictingAppointments();
+    // EmployeeFreeTimeGrokking();
+    (0, EmployeeFreeTimeLeetcode_1.default)();
+    // InsertInterval();
+    // IntervalListIntersections();
+    // IntervalsIntersection();
+    // MeetingRooms();
+    // MeetingRooms2();
+    // MergeIntervals();
     // MinimumMeetingRooms();
+    // MinimumNumberOfArrowsToBurstBalloons();
     // MaximumCPULoad();
-    // EmployeeFreeTime();
+    // NonOverlappingIntervals();
 };
 exports.default = IntervalsMain;

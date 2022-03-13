@@ -11,7 +11,6 @@ import BinaryPreorderTraversal from './BinaryTreeInorderTraversal';
 import BinaryTreeLevelOrderTraversal from './BinaryTreeLevelOrderTraversal';
 import UniqueBinaryTrees from './UniqueBinaryTrees';
 import ConstructBSTFromPreorderAndInorderTraversal from './ConstructBSTFromPreorderAndInorder';
-import ImplementPrefixTrie from './ImplementPrefixTrie';
 import LowestCommonAncestorOfBST from './LowestCommonAncestorOfABST';
 import ValidateBinarySearchTree from './ValidateBinarySearchTree';
 import ConvertedSortedArrayIntoBST from './ConvertSortedArrayIntoBST';
@@ -36,6 +35,8 @@ import FindNodesDistanceK from './FindNodesDistanceK';
 import SameTrees from './SameTrees';
 import PathSum from './PathSum';
 import SubtreeOfAnotherTree from './SubtreeOfAnotherTree';
+import MaximumBinaryTree from './MaximumBinaryTree';
+import MaximumWidthOfBinaryTree from './MaximumWidthOfBinaryTree';
 
 const TreesMain = () => {
     // BSTConstruction();
@@ -53,12 +54,13 @@ const TreesMain = () => {
     // FindSuccessor();
     // FlattenBinaryTree();
     // HeightBalancedTree();
-    // ImplementPrefixTrie();
-    InvertBinaryTree();
+    // InvertBinaryTree();
     // KthLargestNodeInBST();
     // KthSmallestElementInBST();
     // LowestCommonAncestorOfBST();
+    // MaximumBinaryTree();
     // MaximumDepthOfBinaryTree();
+    // MaximumWidthOfBinaryTree();
     // MaxPathSumInBinaryTree();
     // MergeTwoBinaryTrees();
     // MinHeightBST();
@@ -70,7 +72,7 @@ const TreesMain = () => {
     // ReconstructBST();
     // SameBSTs();
     // SameTrees();
-    // SerialAndDeserializeBT();
+    SerialAndDeserializeBT();
     // SubtreeOfAnotherTree();
     // SymmetricTree();
     // UniqueBinaryTrees();

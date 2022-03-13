@@ -38,7 +38,7 @@ const robA = (nums) => {
     let maxB = Math.max(numz[len - 1], numz[len - 2]);
     return Math.max(maxA, maxB);
 };
-const rob = (nums) => {
+const robB = (nums) => {
     if (nums.length === 1)
         return nums[0];
     const robHouses = (numz) => {
@@ -56,6 +56,23 @@ const rob = (nums) => {
     nums.pop();
     nums2.shift();
     return Math.max(robHouses(nums), robHouses(nums2));
+};
+const rob = (nums) => {
+    if (nums.length < 3)
+        return Math.max(nums[0], nums[1] || -Infinity);
+    const robHouses = (start, end) => {
+        let curr = nums[start];
+        let prev = 0;
+        for (let i = start + 1; i < end; i++) {
+            let temp = curr;
+            curr = Math.max(curr, prev + nums[i]);
+            prev = temp;
+        }
+        return curr;
+    };
+    let robStart = robHouses(0, nums.length - 1);
+    let robWithoutStart = robHouses(1, nums.length);
+    return Math.max(robStart, robWithoutStart);
 };
 exports.default = () => {
     const nums = [2, 7, 9, 3, 1];

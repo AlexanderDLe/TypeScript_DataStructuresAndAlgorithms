@@ -1,29 +1,45 @@
 import AverageContiguousSubarraysOfSizeK from "./AverageContiguousSubarraysOfSizeK";
-import FruitsIntoBasket from "./FruitsIntoBasket";
+import FruitsIntoBasketGrokking from "./FruitsIntoBasketGrokking";
+import FruitsIntoBasketLeetcode from "./FruitsIntoBasketLeetcode";
+import LongestRepeatingCharacterReplacement from "./LongestRepeatingCharacterReplacement";
 import LongestSubstringWithMaxKDistinctChars from "./LongestSubstringWithMaxKDistinctChars";
 import LongestSubstringWithOnesAfterReplacement from "./LongestSubstringWithOnesAfterReplacement";
 import LongestSubstringWithOnlyDistinctChars from "./LongestSubstringWithOnlyDistinctChars.ts";
+import LongestSubstringWithoutRepeatingCharacters from "./LongestSubstringWithoutRepeatingCharacters";
 import LongestSubstringWithSameLettersAfterReplacement from "./LongestSubstringWithSameLettersAfterReplacement.ts";
 import MaximumSumSubarrayOfSizeK from "./MaximumSumSubarrayOfSizeK";
-import PermutationInAString from "./PermutationInAString";
+import MinimumSizeSubarraySum from "./MinimumSizeSubarraySum";
+import MinimumWindowSubstring from "./MinimumWindowSubstring";
+import PermutationInAStringGrokking from "./PermutationInAStringGrokking";
+import PermutationInAStringLeetcode from "./PermutationInAStringLeetcode";
+import SlidingWindowMaximum from "./SlidingWindowMaximum";
 import SmallestSubarrayWithGreaterSum from "./SmallestSubarrayWithGreaterSum";
 import SmallestWindowContainingSubstr from "./SmallestWindowContainingSubstr";
 import StringAnagrams from "./StringAnagrams";
+import SubstringWithConcatenationOfAllWords from "./SubstringWithConcatenationOfAllWords";
 import WordsConcatenation from "./WordsConcatenation";
 
 
 const SlidingWindowMain = () => {
-    AverageContiguousSubarraysOfSizeK();
-    // MaximumSumSubarrayOfSizeK();
-    // SmallestSubarrayWithGreaterSum();
-    // LongestSubstringWithMaxKDistinctChars();
-    // FruitsIntoBasket();
+    // AverageContiguousSubarraysOfSizeK();
+    // FruitsIntoBasketGrokking();
+    // FruitsIntoBasketLeetcode();
+    // LongestRepeatingCharacterReplacement();
     // LongestSubstringWithOnlyDistinctChars();
-    // LongestSubstringWithSameLettersAfterReplacement();
+    // LongestSubstringWithMaxKDistinctChars();
+    // LongestSubstringWithoutRepeatingCharacters();
     // LongestSubstringWithOnesAfterReplacement();
-    // PermutationInAString();
-    // StringAnagrams();
+    // LongestSubstringWithSameLettersAfterReplacement();
+    // MaximumSumSubarrayOfSizeK();
+    // MinimumSizeSubarraySum();
+    // MinimumWindowSubstring();
+    // PermutationInAStringLeetcode();
+    // PermutationInAStringGrokking();
+    // SlidingWindowMaximum();
     // SmallestWindowContainingSubstr();
+    // SmallestSubarrayWithGreaterSum();
+    SubstringWithConcatenationOfAllWords();
+    // StringAnagrams();
     // WordsConcatenation();
 };
 

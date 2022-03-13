@@ -25,7 +25,7 @@ const mergeIntervalsA = (intervals: number[][]): number[][] => {
     return result;
 }
 
-const mergeIntervals = (intervals: number[][]): number[][] => {
+const mergeIntervalsB = (intervals: number[][]): number[][] => {
     intervals = intervals.sort((a, b) => a[0] - b[0]);
     let prev = intervals[0]
 
@@ -44,7 +44,30 @@ const mergeIntervals = (intervals: number[][]): number[][] => {
     return result;
 }
 
+const mergeIntervals = (intervals: number[][]): number[][] => {
+  intervals = intervals.sort((a, b) => a[0] - b[0]);
+
+  let result: number[][] = [];
+  let prev = intervals[0];
+  
+  for (let i = 1; i < intervals.length; i++) {
+    let curr = intervals[i];
+
+    if (curr[0] <= prev[1]) {
+      prev[1] = Math.max(prev[1], curr[1]);
+    } else {
+      result.push(prev);
+      prev = curr;
+    }
+  }
+  result.push(prev);
+
+  return result;
+}
+
 export default () => {
-    let Intervals = [[1,4], [2,5], [7,9]]
-    console.log(mergeIntervals(Intervals));
+    let Intervals1 = [[1,4], [2,5], [7,9]];
+    let Intervals2 = [[1,3],[2,6],[8,10],[15,18]];
+    console.log(mergeIntervals(Intervals1));
+    console.log(mergeIntervals(Intervals2));
 };

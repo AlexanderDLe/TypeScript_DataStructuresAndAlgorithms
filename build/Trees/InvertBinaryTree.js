@@ -72,4 +72,6 @@ const InvertBinaryTree = (root) => {
     InvertBinaryTree(root.right);
     return root;
 };
-exports.default = InvertBinaryTree;
+exports.default = () => {
+    console.log(InvertBinaryTree(null));
+};

@@ -1,13 +1,15 @@
 "use strict";
 /**
+ * 103. Binary Tree Zigzag Level Order Traversal
+ *
  * Grokking the Coding Interview
  *
- *            1
- *           /  \
- *          2    3
- *       /  |    |  \
- *      4   5    6   7
- *   /  |   |    |   |  \
+ *      1
+ *       /  \
+ *      2  3
+ *     /  |  |  \
+ *    4   5  6   7
+ *   /  |   |  |   |  \
  *  8   9   10  11   12  13
  *
  *
@@ -20,29 +22,29 @@
  *
  * HARD WAY BELOW
  *
- *          <--                     leftToRight = true
- *  queue = [1]                     Pop then unshift left child then right
+ *      <--           leftToRight = true
+ *  queue = [1]           Pop then unshift left child then right
  *
  *********************************************************************
  *
- *          --->
- * queue = [3, 2]                   Shift then push right child then left
+ *      --->
+ * queue = [3, 2]           Shift then push right child then left
  *
  *********************************************************************
  *
- *          <--------
- * queue = [7, 6, 5, 4]             Pop then unshift left to right.
+ *      <--------
+ * queue = [7, 6, 5, 4]       Pop then unshift left to right.
  *
  *********************************************************************
  *
- *          -------------------->
+ *      -------------------->
  * queue = [8, 9, 10, 11, 12, 13]
  *
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
 ;
-const binaryTreeLevelOrderTraversalReversed = (root) => {
+const binaryTreeLevelOrderTraversal = (root) => {
     let result = [];
     let queue = [];
     queue.push(root);
@@ -99,6 +101,31 @@ const binaryTreeLevelOrderTraversalReversedHardAndDUMB = (root) => {
     }
     return result;
 };
+const binaryTreeZigZag = (root) => {
+    if (!root)
+        return [];
+    const result = [];
+    const queue = [root];
+    let count = 1;
+    let rightward = true;
+    while (queue.length) {
+        let level = [];
+        while (count) {
+            let n = queue.shift();
+            if (rightward)
+                level.push(n.val);
+            else
+                level.unshift(n.val);
+            n.left && queue.push(n.left);
+            n.right && queue.push(n.right);
+            count--;
+        }
+        count = queue.length;
+        rightward = !rightward;
+        result.push(level);
+    }
+    return result;
+};
 exports.default = () => {
     const t = new TreeClass_1.TreeNode(1);
     t.left = new TreeClass_1.TreeNode(2);
@@ -107,5 +134,5 @@ exports.default = () => {
     t.left.right = new TreeClass_1.TreeNode(5);
     t.right.left = new TreeClass_1.TreeNode(6);
     t.right.right = new TreeClass_1.TreeNode(7);
-    console.log(binaryTreeLevelOrderTraversalReversed(t));
+    console.log(binaryTreeZigZag(t));
 };

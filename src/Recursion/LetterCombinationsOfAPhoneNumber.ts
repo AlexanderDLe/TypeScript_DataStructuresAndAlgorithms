@@ -182,7 +182,40 @@ const letterCombinationsIterative = (digits: string): string[] => {
     return result;
 }
 
+const letterCombinations = (digits: string): string[] => {
+  if (!digits.length) return [];
+
+  let phoneMap:any = {
+    1: ['1'],
+    2: ['a','b','c'],
+    3: ['d','e','f'],
+    4: ['g','h','i'],
+    5: ['j','k','l'],
+    6: ['m','n','o'],
+    7: ['p','q','r','s'],
+    8: ['t','u','v'],
+    9: ['w','x','y','z'],
+    0: ['0'],
+  }
+  let result: string[] = [''];
+
+  for (let digit of digits) {
+    let chars = phoneMap[digit];
+    let newRes: string[] = [];
+
+    for (let res of result) {
+      for (let char of chars) {
+        newRes.push(res + char);
+      }
+    }
+
+    result = newRes;
+  }
+
+  return result;
+}
+
 export default () => {
     const digits = '1905';
-    PrintArray(letterCombinationsIterative(digits));
+    PrintArray(letterCombinations(digits));
 };

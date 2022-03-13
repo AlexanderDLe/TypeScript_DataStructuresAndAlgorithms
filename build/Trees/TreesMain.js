@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const InvertBinaryTree_1 = __importDefault(require("./InvertBinaryTree"));
+const SerialAndDeserializeBT_1 = __importDefault(require("./SerialAndDeserializeBT"));
 const TreesMain = () => {
     // BSTConstruction();
     // BinaryPreorderTraversal();
@@ -20,12 +20,13 @@ const TreesMain = () => {
     // FindSuccessor();
     // FlattenBinaryTree();
     // HeightBalancedTree();
-    // ImplementPrefixTrie();
-    (0, InvertBinaryTree_1.default)();
+    // InvertBinaryTree();
     // KthLargestNodeInBST();
     // KthSmallestElementInBST();
     // LowestCommonAncestorOfBST();
+    // MaximumBinaryTree();
     // MaximumDepthOfBinaryTree();
+    // MaximumWidthOfBinaryTree();
     // MaxPathSumInBinaryTree();
     // MergeTwoBinaryTrees();
     // MinHeightBST();
@@ -37,7 +38,7 @@ const TreesMain = () => {
     // ReconstructBST();
     // SameBSTs();
     // SameTrees();
-    // SerialAndDeserializeBT();
+    (0, SerialAndDeserializeBT_1.default)();
     // SubtreeOfAnotherTree();
     // SymmetricTree();
     // UniqueBinaryTrees();

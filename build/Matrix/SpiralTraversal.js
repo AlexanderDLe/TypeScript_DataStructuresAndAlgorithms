@@ -38,7 +38,7 @@ const spiralTraversalMySolution = (array) => {
     }
     return result;
 };
-const spiralTraversal = (array) => {
+const spiralTraversalB = (array) => {
     const result = [];
     let startRow = 0;
     let endRow = array.length - 1;
@@ -68,7 +68,45 @@ const spiralTraversal = (array) => {
     }
     return result;
 };
+const spiralTraversal = (matrix) => {
+    let result = [];
+    let startRow = 0;
+    let startCol = 0;
+    let endRow = matrix.length - 1;
+    let endCol = matrix[0].length - 1;
+    while (startRow <= endRow && startCol <= endCol) {
+        for (let col = startCol; col <= endCol; col++) {
+            result.push(matrix[startRow][col]);
+        }
+        for (let row = startRow + 1; row <= endRow; row++) {
+            result.push(matrix[row][endCol]);
+        }
+        for (let col = endCol - 1; col >= startCol; col--) {
+            if (startRow === endRow)
+                break;
+            result.push(matrix[endRow][col]);
+        }
+        for (let row = endRow - 1; row > startRow; row--) {
+            if (startCol === endCol)
+                break;
+            result.push(matrix[row][startCol]);
+        }
+        startRow++;
+        startCol++;
+        endRow--;
+        endCol--;
+    }
+    return result;
+};
 exports.default = () => {
+    const matrix0 = [
+        [1, 2, 3],
+    ];
+    const matrix4 = [
+        [1, 2, 3],
+        [8, 9, 4],
+        [7, 6, 5],
+    ];
     const matrix1 = [
         [1, 2, 3, 4],
         [12, 13, 14, 5],
@@ -83,11 +121,9 @@ exports.default = () => {
         [9, 8, 7],
     ];
     const matrix3 = [
-        [1, 2, 3],
-        [12, 13, 4],
-        [11, 14, 5],
-        [10, 15, 6],
-        [9, 8, 7]
+        [1, 2, 3, 4, 5, 6],
+        [19, 20, 21, 22, 23, 12],
+        [18, 17, 16, 15, 14, 13],
     ];
-    (0, Utilities_1.PrintArray)(spiralTraversal(matrix3));
+    (0, Utilities_1.PrintArray)(spiralTraversal(matrix0));
 };

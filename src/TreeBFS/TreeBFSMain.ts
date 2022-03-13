@@ -1,24 +1,30 @@
+import AllNodesKDistanceInBinaryTree from "./AllNodesKDistanceInBinaryTree";
 import binaryTreeLevelOrderTraversal from "./BinaryTreeLevelOrderTraversal";
-import binaryTreeLevelOrderTraversalReversed from "./BinaryTreeLevelOrderTraversalReversed";
+import binaryTreeLevelOrderTraversal2 from "./BinaryTreeLevelOrderTraversal2";
 import connectAllLevelOrderSiblings from "./ConnectAllLevelOrderSiblings";
 import connectLevelOrderSiblings from "./ConnectLevelOrderSiblings";
 import levelAverages from "./LevelAverages";
 import levelOrderSuccessor from "./LevelOrderSuccessor";
 import MaxDepthOfBinaryTree from "./MaxDepthOfBinaryTree";
-import minDepthOfBinaryTree from "./MinDepthOfBinaryTree";
-import rightViewOfBinaryTree from "./RightViewOfBinaryTree";
+import MinDepthOfBinaryTree from "./MinDepthOfBinaryTree";
+import PopulateNextRightPointers from "./PopulateNextRightPointers";
+import PopulateNextRightPointers2 from "./PopulateNextRightPointers2";
+import RightViewOfBinaryTree from "./RightViewOfBinaryTree";
 import zigzagTraversal from "./ZigzagTraversal";
 
 const TreeBFSMain = () => {
+  AllNodesKDistanceInBinaryTree();
   // binaryTreeLevelOrderTraversal();
-  // binaryTreeLevelOrderTraversalReversed();
+  // binaryTreeLevelOrderTraversal2();
   // connectAllLevelOrderSiblings();
   // connectLevelOrderSiblings();
   // levelAverages();
   // levelOrderSuccessor();
-  MaxDepthOfBinaryTree();
-  // minDepthOfBinaryTree();
-  // rightViewOfBinaryTree();
+  // MaxDepthOfBinaryTree();
+  // MinDepthOfBinaryTree();
+  // PopulateNextRightPointers();
+  // PopulateNextRightPointers2();
+  // RightViewOfBinaryTree();
   // zigzagTraversal();
 };
 

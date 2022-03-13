@@ -55,6 +55,11 @@ import ApartmentHunting from './ApartmentHunting';
 import Quickselect from './Quickselect';
 import IndexEqualsValue from './IndexEqualsValue';
 import KadanesAlgorithm from './KadanesAlgorithm';
+import FindAllDuplicatesInAnArray from './FindAllDuplicatesInAnArray';
+import LongestConsecutiveSubsequence from './LongestConsecutiveSubsequence';
+import MinimumAreaRectangle from './MinimumAreaRectangle';
+import LineThroughPoints from './LineThroughPoints';
+import FirstMissingPositive from './FirstMissingPositive';
 
 const ArraysMain = () => {
     // ArrayQuadruplet();
@@ -64,20 +69,24 @@ const ArraysMain = () => {
     // ContainerWithMostWater();
     // ContainsDuplicate();
     // CountGoodTriplets();
+    // FindAllDuplicatesInAnArray();
     // FindDisappearedNumbersInArray();
     // FindFirstAndLostPositionOfElement();
     // FindNumbersWithEvenDigits();
     // FindTheDuplicateNumber();
     // FirstDuplicateValue();
+    FirstMissingPositive();
     // FourSum();
     // FourSum2();
     // GroupAnagrams();
     // IndexEqualsValue();
     // IntersectionOfTwoArrays2();
-    KadanesAlgorithm();
+    // KadanesAlgorithm();
     // KthLargestElementInArray();
     // LargestRange();
+    // LineThroughPoints();
     // LongestCommonPrefix();
+    // LongestConsecutiveSubsequence();
     // LongestPalindromicSubstring();
     // LongestPeak();
     // LongestSubstringWithoutRepeatingCharacters();
@@ -86,6 +95,7 @@ const ArraysMain = () => {
     // MaximumSubarray();
     // MaxProductSubarray();
     // MergeSortedArray();
+    // MinimumAreaRectangle();
     // MinRewards();
     // MonotonicArray();
     // MoveElementToEnd();

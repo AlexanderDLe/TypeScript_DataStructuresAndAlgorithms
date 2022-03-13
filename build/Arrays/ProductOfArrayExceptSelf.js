@@ -50,9 +50,23 @@ const productExceptSelfC = (nums) => {
     }
     return result;
 };
-const productExceptSelf = (nums) => {
+const productExceptSelfD = (nums) => {
     let fromLeft = new Array(nums.length).fill(1);
     let fromRight = new Array(nums.length).fill(1);
+    for (let i = 1; i < nums.length; i++) {
+        fromLeft[i] = fromLeft[i - 1] * nums[i - 1];
+    }
+    for (let i = nums.length - 2; i >= 0; i--) {
+        fromRight[i] = fromRight[i + 1] * nums[i + 1];
+    }
+    for (let i = 0; i < nums.length; i++) {
+        nums[i] = fromLeft[i] * fromRight[i];
+    }
+    return nums;
+};
+const productExceptSelf = (nums) => {
+    const fromLeft = new Array(nums.length).fill(1);
+    const fromRight = new Array(nums.length).fill(1);
     for (let i = 1; i < nums.length; i++) {
         fromLeft[i] = fromLeft[i - 1] * nums[i - 1];
     }

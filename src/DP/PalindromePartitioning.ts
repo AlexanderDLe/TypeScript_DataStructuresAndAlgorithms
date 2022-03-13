@@ -1,86 +1,76 @@
 /**
- * 647. Palindromic Substrings
+ * 131. Palindrome Partitioning
+ * 
+ *                              'aab'
+ *                      [a]ab   [aa]b   [aab]
+ *                  [a,a]b                      X
  */
-import { PrintMatrix } from '../utils/Utilities';
 
+import DepthFirstSearch from "../Graphs/DepthFirstSearch";
+
+const partitionRef = (s: string): string[][] => {
+  const result: string[][] = [];
+  const partition:any = [];
+
+  const isPalindrome = (str:string) => ( str === str.split('').reverse().join('') );
+
+  const DFS = (str: string) => {
+    console.log(`Incoming String: ${str}`)
+    // Base Case: Empty string must be palindrome
+    if (str.length === 0) {
+      result.push([...partition]);
+      return;
+    }
+
+    // General case
+    for (let i = 1; i <= str.length; i++) {
+      let prefix = str.substring(0, i);
+      let postfix = str.substring(i);
+      console.log(`prefix: ${prefix} | postfix: ${postfix}`)
+      console.log('-----')
+      // Current prefix is a palindrome, keep trying to make more partition in postfix by DFS
+      if (isPalindrome(prefix)) {
+        partition.push(prefix);
+        DFS(postfix)
+        partition.pop();
+      }
+    }
+  }
+
+  DFS(s);
+  return result;
+}
 
 const partition = (s: string): string[][] => {
-    let result: string[][] = [];
-    
-    const isPalindrome = (start: number, end: number): boolean => {
-        while (start <= end) {
-            if (s[start] != s[end]) return false;
-            start++, end--;
-        }
-        return true;
+  const isPalindrome = (str:string):boolean => {
+    return str === (str.split('').reverse().join(''));
+  }
+
+  let result: string[][] = [];
+  let parts: string[] = [];
+
+  const backtrack = (str:string) => {
+    if (str.length === 0) {
+      result.push([...parts]);
+      return;
     }
 
-    const recurse = (start: number, subarr: string[]): void => {
-        if (start === s.length) {
-            result.push([...subarr]);
-            return;
-        }
-        for (let end = start; end < s.length; end++) {
-            if (isPalindrome(start, end)) {
-                let substr = s.substring(start, end + 1);
-                recurse(end + 1, [...subarr, substr]);
-            }
-        }
-    }
-    recurse(0, []);
-    return result;
-}
+    for (let i = 1; i <= str.length; i++) {
+      let prefix = str.substring(0, i);
+      let postfix = str.substring(i);
 
-// Solution Too Slow
-type Map = {
-    [key: string]: string
-}
-const Slow = (s: string): string[][] => {
-    let result: string[][] = [];
-    let matrix: number[][] = [];
-    let map: Map = {};
-
-    for (let i = 0; i < s.length; i++) {
-        matrix.push(new Array(s.length).fill(0));
-        matrix[i][i] = 1;
-        map[`${i}-${i}`] = s[i];
+      if (isPalindrome(prefix)) {
+        parts.push(prefix);
+        backtrack(postfix);
+        parts.pop();
+      }
     }
-    
-    for (let col = 1; col < s.length; col++) {
-        for (let row = 0; row < col; row++) {
-            if (row === col - 1 || matrix[row + 1][col - 1] === 1) {
-                if (s[row] === s[col]) {
-                    map[`${row}-${col}`] = s.substring(row, col + 1);
-                    matrix[row][col] = 1;
-                }
-            }
-        }
-    }
-    
-    let tuples: string[][] = [];
-    Object.keys(map).forEach(key => {
-        tuples.push([key, map[key]])
-    })
-    tuples.sort();
-
-    const recurse = (startIndex: number, subarr: string[]): void => {
-        if (startIndex === s.length) {
-            result.push([...subarr]);
-            return;
-        }
-        for (let tup of tuples) {
-            if (tup[0][0] === startIndex.toString()) {
-                let nextStartIndex = parseInt(tup[0][2]) + 1;
-                recurse(nextStartIndex, [...subarr, tup[1]]);
-            }
-        }
-    }
-
-    recurse(0, []);
-    return result;
+  }
+  backtrack(s);
+  return result;
 }
 
 export default (): void => {
-    let str = 'aab';
-    console.log(partition(str));
+  let str = 'aab';
+  console.log(partition(str));
 };

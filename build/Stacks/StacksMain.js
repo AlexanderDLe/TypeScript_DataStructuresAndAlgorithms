@@ -3,13 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const NextGreaterElement_1 = __importDefault(require("./NextGreaterElement"));
+const MaximumFrequencyStack_1 = __importDefault(require("./MaximumFrequencyStack"));
 exports.default = () => {
     // BalancedBrackets();
     // DailyTemperatures();
+    (0, MaximumFrequencyStack_1.default)();
     // MinMaxStackConstruction();
     // MinStack();
-    (0, NextGreaterElement_1.default)();
+    // NextGreaterElement();
     // SortStack();
     // SunsetViews();
+    // ValidParentheses();
 };

@@ -20,7 +20,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
     [0 1]   [0 1 1]
     [1 2]   [1 2 3] <- Every cell is a sum of its neighboring top + left cells.
 */
-const uniquePaths = (m, n) => {
+const uniquePathsA = (m, n) => {
     let matrix = [];
     for (let row = 0; row < m; row++) {
         matrix.push(new Array(n).fill(1));
@@ -31,6 +31,20 @@ const uniquePaths = (m, n) => {
         }
     }
     return matrix[m - 1][n - 1];
+};
+const uniquePaths = (m, n) => {
+    let DP = [];
+    DP.push(new Array(n).fill(1));
+    for (let i = 1; i < m; i++) {
+        DP.push(new Array(n).fill(0));
+        DP[i][0] = 1;
+    }
+    for (let row = 1; row < m; row++) {
+        for (let col = 1; col < n; col++) {
+            DP[row][col] = DP[row - 1][col] + DP[row][col - 1];
+        }
+    }
+    return DP[m - 1][n - 1];
 };
 exports.default = () => {
     const m = 3;

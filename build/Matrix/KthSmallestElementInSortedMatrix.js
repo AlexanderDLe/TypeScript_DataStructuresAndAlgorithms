@@ -3,9 +3,7 @@
  * 378. Kth Smallest Element in a Matrix
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const findKthLargestHeap = (matrix, k) => {
-    return 0;
-};
+const priority_queue_1 = require("@datastructures-js/priority-queue");
 const findKthLargestBS = (matrix, k) => {
     if (!matrix || !matrix.length || !matrix[0].length)
         return 0;
@@ -44,6 +42,42 @@ const findKthLargestBS = (matrix, k) => {
             hi = lowestHigh;
     } while (lo < hi);
 };
+const findKthSmallestHeap = (matrix, k) => {
+    const n = matrix.length;
+    let maxHeap = new priority_queue_1.MaxPriorityQueue({ priority: (x) => x.value });
+    for (let row = 0; row < n; row++) {
+        for (let col = 0; col < n; col++) {
+            let cell = { value: matrix[row][col] };
+            maxHeap.enqueue(cell);
+            if (maxHeap.size() > k)
+                maxHeap.dequeue();
+        }
+    }
+    return maxHeap.dequeue().element.value;
+};
+const findKthSmallest = (matrix, k) => {
+    let n = matrix.length;
+    let L = matrix[0][0];
+    let R = matrix[n - 1][n - 1] + 1;
+    while (L < R) {
+        let M = Math.floor(L + (R - L) / 2);
+        let count = 0;
+        for (let row = 0; row < n; row++) {
+            for (let col = 0; col < n; col++) {
+                let cell = matrix[row][col];
+                if (cell <= M)
+                    count++;
+                else
+                    break;
+            }
+        }
+        if (count < k)
+            L = M + 1;
+        else
+            R = M;
+    }
+    return L;
+};
 exports.default = () => {
     const matrix = [
         [1, 5, 9],
@@ -51,5 +85,5 @@ exports.default = () => {
         [12, 13, 15],
     ];
     const k = 8;
-    console.log(findKthLargestHeap(matrix, k));
+    console.log(findKthSmallest(matrix, k));
 };

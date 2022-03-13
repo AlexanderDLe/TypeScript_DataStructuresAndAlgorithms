@@ -56,7 +56,7 @@ const boyerMooreRef = (text:string, pattern:string): boolean => {
   return search();
 }
 
-const boyerMoore = (text:string, pattern:string): boolean => { 
+const boyerMooreA = (text:string, pattern:string): boolean => { 
   const buildLastOccurenceMap = () => {
     let map: any = {};
     for (let i = 0; i < pattern.length; i++) {
@@ -89,6 +89,35 @@ const boyerMoore = (text:string, pattern:string): boolean => {
   }
 
   return search();
+}
+
+const boyerMoore = (text:string, pattern:string): boolean => {
+  const lastOccurMap: any = {};
+
+  for (let i = 0; i < pattern.length; i++) {
+    let char = pattern[i];
+    lastOccurMap[char] = i;
+  }
+
+  let textLen = text.length;
+  let pattLen = pattern.length;
+  let shifts = 0;
+  
+  while (shifts <= textLen - pattLen) {
+    let j = pattLen - 1;
+
+    while (j >= 0 && pattern[j] === text[shifts + j]) {
+      j--;
+    }
+
+    if (j < 0) return true;
+
+    let mismatch = text[shifts + j];
+    let lastMismatchOccurence = lastOccurMap[mismatch] || -1;
+    shifts += Math.max(1, j - lastMismatchOccurence);
+  }
+
+  return false;
 }
 
 export default () => {

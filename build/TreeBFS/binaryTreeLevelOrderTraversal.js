@@ -1,10 +1,12 @@
 "use strict";
 /**
  * Grokking the Coding Interview
+ *
+ * 102. Binary Tree Level Order Traversal
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
-const binaryTreeLevelOrderTraversal = (root) => {
+const binaryTreeLevelOrderTraversalA = (root) => {
     let result = [];
     let queue = [];
     queue.push(root);
@@ -18,6 +20,26 @@ const binaryTreeLevelOrderTraversal = (root) => {
                 queue.push(n.left);
             if (n.right)
                 queue.push(n.right);
+            count--;
+        }
+        count = queue.length;
+        result.push(level);
+    }
+    return result;
+};
+const binaryTreeLevelOrderTraversal = (root) => {
+    if (!root)
+        return [];
+    const result = [];
+    const queue = [root];
+    let count = 1;
+    while (queue.length) {
+        let level = [];
+        while (count) {
+            const n = queue.shift();
+            level.push(n.val);
+            n.left && queue.push(n.left);
+            n.right && queue.push(n.right);
             count--;
         }
         count = queue.length;

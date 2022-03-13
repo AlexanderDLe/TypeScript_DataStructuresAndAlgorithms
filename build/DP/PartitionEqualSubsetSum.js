@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * determines if DP[i] is reachable starting from DP[0] (base case).
  */
 const Utilities_1 = require("../utils/Utilities");
-const canPartition = (nums) => {
+const canPartitionA = (nums) => {
     if (nums.length < 2)
         return false;
     let sum = nums.reduce((acc, val) => acc + val);
@@ -35,7 +35,7 @@ const canPartition = (nums) => {
     }
     return false;
 };
-const canPartitionKnapsack = (nums) => {
+const canPartitionB = (nums) => {
     let sum = nums.reduce((acc, val) => acc + val);
     if (nums.length < 2 || sum % 2 === 1)
         return false;
@@ -51,7 +51,26 @@ const canPartitionKnapsack = (nums) => {
     (0, Utilities_1.PrintArray)(DP);
     return DP[target];
 };
+const canPartition = (nums) => {
+    const sum = nums.reduce((acc, curr) => acc + curr);
+    if (sum % 2 === 1)
+        return false;
+    const DP = new Map();
+    const target = sum / 2;
+    const DFS = (index, sum) => {
+        if (sum === target)
+            return true;
+        if (sum > target || index >= nums.length)
+            return false;
+        if (DP.has(`${index}-${sum}`))
+            return DP.get(`${index}-${sum}`);
+        let res = DFS(index + 1, sum + nums[index]) || DFS(index + 1, sum);
+        DP.set(`${index}-${sum}`, res);
+        return res;
+    };
+    return DFS(0, 0);
+};
 exports.default = () => {
     const nums = [1, 5, 11, 5];
-    console.log(canPartitionKnapsack(nums));
+    console.log(canPartition(nums));
 };

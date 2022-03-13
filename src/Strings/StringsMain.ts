@@ -28,11 +28,14 @@ import UnderscorifySubstring from './UnderscorifySubstring';
 import BackspaceStringCompare from './BackspaceStringCompare';
 import KnuthMorrisPratt from './KnuthMorrisPratt';
 import BoyerMooreAlgorithm from './BoyerMooreAlgorithm';
+import IndexPairsOfAString from './IndexPairsOfAString';
+import CountUniqueCharactersOfAllSubstringsOfAGivenString from './CountUniqueCharactersOfAllSubstringsOfAGivenString';
 
 export default () => {
   // BackspaceStringCompare();
-  BoyerMooreAlgorithm();
+  // BoyerMooreAlgorithm();
   // CaesarCipherEncryptor();
+  // CountUniqueCharactersOfAllSubstringsOfAGivenString();
   // CountAndSay();
   // DecodeString();
   // FindAllAnagramsInAString();
@@ -42,6 +45,7 @@ export default () => {
   // GenerateDocument();
   // GroupAnagrams();
   // ImplementStrStr();
+  // IndexPairsOfAString();
   // KnuthMorrisPratt();
   // LongestPalindromicSubstring();
   // LongestSubstringWithoutDuplication();

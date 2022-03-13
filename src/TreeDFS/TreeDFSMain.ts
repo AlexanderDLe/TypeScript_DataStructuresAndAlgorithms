@@ -1,19 +1,25 @@
-import allPathsForASum from "./AllPathsForASum";
-import binaryTreePathSum from "./BinaryTreePathSum";
-import countPathsForASum from "./CountPathsForASum";
-import diameterOfBinaryTree from "./DiameterOfBinaryTree";
-import pathOfMaximumSum from "./PathOfMaximumSum";
-import pathWithGivenSequence from "./PathWithGivenSequence";
-import sumOfPathNumbers from "./SumOfPathNumbers";
+import AllPathsForASum from "./AllPathsForASum";
+import BinaryTreeMaximumPathSum from "./BinaryTreeMaximumPathSum";
+import BinaryTreePathSum from "./BinaryTreePathSum";
+import CountPathsForASum from "./CountPathsForASum";
+import DiameterOfBinaryTree from "./DiameterOfBinaryTree";
+import PathOfMaximumSum from "./PathOfMaximumSum";
+import PathSum2 from "./PathSum2";
+import PathSum3 from "./PathSum3";
+import PathWithGivenSequence from "./PathWithGivenSequence";
+import SumOfPathNumbers from "./SumOfPathNumbers";
 
 const TreeDFSMain = () => {
-    // binaryTreePathSum();
-    // allPathsForASum();
-    // sumOfPathNumbers();
-    // pathWithGivenSequence();
-    // countPathsForASum();
-    // diameterOfBinaryTree();
-    pathOfMaximumSum();
+  BinaryTreeMaximumPathSum();
+  // BinaryTreePathSum();
+  // AllPathsForASum();
+  // SumOfPathNumbers();
+  // PathWithGivenSequence();
+  // CountPathsForASum();
+  // DiameterOfBinaryTree();
+  // PathOfMaximumSum();
+  // PathSum2();
+  // PathSum3();
 };
 
 export default TreeDFSMain;

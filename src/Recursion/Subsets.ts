@@ -18,7 +18,7 @@ const subsetsA = (nums: number[]): number[][] => {
     return result;
 }
 
-const subsets = (nums: number[]): number[][] => {
+const subsetsB = (nums: number[]): number[][] => {
     const result: number[][] = [];
 
     const recurse = (index: number, subarr: number[]): void => {
@@ -31,6 +31,22 @@ const subsets = (nums: number[]): number[][] => {
 
     recurse(0, []);
     return result;
+}
+
+const subsets = (nums: number[]): number[][] => {
+  const result: number[][] = [];
+
+  const recurse = (index:number, subarr:number[]) => {
+    if (index >= nums.length) {
+      result.push([...subarr]);
+      return;
+    }
+
+    recurse(index + 1, subarr);
+    recurse(index + 1, [...subarr, nums[index]]);
+  }
+  recurse(0, []);
+  return result;
 }
 
 export default () => {

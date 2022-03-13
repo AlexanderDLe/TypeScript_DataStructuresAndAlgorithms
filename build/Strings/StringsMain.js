@@ -1,13 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const BoyerMooreAlgorithm_1 = __importDefault(require("./BoyerMooreAlgorithm"));
 exports.default = () => {
     // BackspaceStringCompare();
-    (0, BoyerMooreAlgorithm_1.default)();
+    // BoyerMooreAlgorithm();
     // CaesarCipherEncryptor();
+    // CountUniqueCharactersOfAllSubstringsOfAGivenString();
     // CountAndSay();
     // DecodeString();
     // FindAllAnagramsInAString();
@@ -17,6 +14,7 @@ exports.default = () => {
     // GenerateDocument();
     // GroupAnagrams();
     // ImplementStrStr();
+    // IndexPairsOfAString();
     // KnuthMorrisPratt();
     // LongestPalindromicSubstring();
     // LongestSubstringWithoutDuplication();

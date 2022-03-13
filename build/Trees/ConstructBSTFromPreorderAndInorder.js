@@ -61,7 +61,7 @@ const buildTreeIndexing = (preorder, inorder) => {
     };
     return build(0, 0, inorder.length - 1);
 };
-const buildTree = (preorder, inorder) => {
+const buildTreeB = (preorder, inorder) => {
     let preorderIndexMap = {};
     let inorderIndexMap = {};
     for (let i = 0; i < preorder.length; i++) {
@@ -92,6 +92,24 @@ const buildTree = (preorder, inorder) => {
         return node;
     };
     return build(0, preorder.length);
+};
+const buildTree = (preorder, inorder) => {
+    const inorderMap = {};
+    for (let i = 0; i < inorder.length; i++)
+        inorderMap[inorder[i]] = i;
+    let preorderIndex = 0;
+    const build = (start, end) => {
+        if (start > end)
+            return null;
+        let nodeVal = preorder[preorderIndex];
+        let index = inorderMap[nodeVal];
+        let node = new TreeClass_1.TreeNode(nodeVal);
+        preorderIndex++;
+        node.left = build(start, index - 1);
+        node.right = build(index + 1, end);
+        return node;
+    };
+    return build(0, inorder.length - 1);
 };
 exports.default = () => {
     const preorder = [3, 9, 20, 15, 7];

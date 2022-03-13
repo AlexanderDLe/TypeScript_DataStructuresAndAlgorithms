@@ -53,25 +53,32 @@ const removeNthFromEndB = (head: Node, n: number): Node => {
     return dummy.next;
 }
 
+/*
+    n = 2
+
+                q       p                   
+    D > 1 > 2 > 3 > 4 > 5
+*/
 const removeNthFromEnd = (head: Node, n: number): Node => {
-    let counter = 1;
-    let s: Node = head;
-    let f: Node = head;
-	
-    while (counter <= n) {
-        f = f!.next;
-        counter++;
-    }
-    if (f === null) {
-        head.value = head.next!.value;
-        head.next = head.next!.next;
-        return;
-    }
-    while (f.next) {
-        s = s.next!;
-        f = f.next!;
-    }
-    s.next = s.next!.next;
+  let dummy = new ListNode(0);
+  dummy.next = head;
+
+  let p = dummy;
+  let q = dummy;
+  
+  while (n) {
+    p = p.next;
+    n--;
+  }
+
+  while (p && p.next) {
+    p = p.next;
+    q = q.next;
+  }
+
+  q.next = q.next.next;
+
+  return dummy.next;
 }
 
 export default () => {
@@ -80,6 +87,4 @@ export default () => {
     const N = 10;
     PrintList(list.head);
     PrintList(removeNthFromEnd(list.head, N));
-    PrintList(list.head);
-
 };
