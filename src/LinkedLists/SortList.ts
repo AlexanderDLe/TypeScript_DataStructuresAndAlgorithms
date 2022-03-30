@@ -15,7 +15,7 @@
  */
 
 import { ListNode, LinkedList, PrintList } from '../DataStructures/LinkedListClass';
-import HouseRobber1 from '../DP/HouseRobber1';
+import MergeIntervals from '../Intervals/MergeIntervals';
 
 type Node = ListNode<number> | null;
 
@@ -104,7 +104,7 @@ const sortListB = (head: Node): Node => {
   return merge(l1, l2);
 };
 
-const sortList = (head: Node): Node => {
+const sortListC = (head: Node): Node => {
   if (!head || !head.next) return head;
   
   const merge = (l1:Node, l2:Node): Node => {
@@ -150,6 +150,51 @@ const sortList = (head: Node): Node => {
 
   // Recursively merge and return sublists.
   return merge(l1, l2);
+}
+
+const sortList = (head: Node): Node => {
+  const merge = (l1:Node, l2:Node): Node => {
+    let dummy = new ListNode(0);
+    let n = dummy;
+    
+    while (l1 && l2) {
+      if (l1.val < l2.val) {
+        n.next = l1;
+        l1 = l1.next;
+      } else {
+        n.next = l2;
+        l2 = l2.next;
+      }
+      n = n.next;
+    }
+    PrintList(dummy);
+    if (!l1) n.next = l2;
+    if (!l2) n.next = l1;
+
+    return dummy.next;
+  }
+
+  const sort = (n:Node):Node => {
+    if (!n || !n.next) return n;
+
+    let s = n;
+    let f = n;
+    let p = null;
+
+    while (f && f.next) {
+      p = s;
+      s = s.next;
+      f = f.next;
+      if (f) f = f.next;
+    }
+    if (p) p.next = null;
+    
+    let l1 = sort(n);
+    let l2 = sort(s);
+    return merge(l1, l2);
+  }
+  
+  return sort(head);
 }
 
 export default () => {

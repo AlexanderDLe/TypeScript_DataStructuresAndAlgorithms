@@ -32,7 +32,7 @@ const backspaceStringCompareA = (s:string, t:string): boolean => {
   return sLeftover.join('') === tLeftover.join('');
 }
 
-const backspaceStringCompare = (s:string, t:string): boolean => {
+const backspaceStringCompareB = (s:string, t:string): boolean => {
   let p = s.length - 1;
   let q = t.length - 1;
   let countP = 0;
@@ -55,6 +55,34 @@ const backspaceStringCompare = (s:string, t:string): boolean => {
     let tChar = q < 0 ? '-' : t[q];
     if (sChar !== tChar) return false;
     p--, q--;
+  }
+  return p <= 0 && q <= 0;
+}
+
+const backspaceStringCompare = (s:string, t:string): boolean => {
+  let p = s.length - 1;
+  let q = t.length - 1;
+  let sBKSP = 0;
+  let tBKSP = 0;
+
+  while (p >= 0 || q >=0) {
+    while (p >= 0 && (sBKSP || s[p] === '#')) {
+      if (s[p] === '#') sBKSP++;
+      else sBKSP--;
+      p--;
+    }
+    while (q >= 0 && (tBKSP || t[q] === '#')) {
+      if (t[q] === '#') tBKSP++;
+      else tBKSP--;
+      q--;
+    }
+
+    let sChar = p >= 0 ? s[p] : '-';
+    let tChar = q >= 0 ? t[q] : '-';
+    p--;
+    q--;
+
+    if (sChar !== tChar) return false;
   }
   return p <= 0 && q <= 0;
 }

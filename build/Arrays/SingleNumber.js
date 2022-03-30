@@ -1,6 +1,8 @@
 "use strict";
 /**
  * 136. Single Number
+ *
+ * Use map/set to keep track of already seen elements.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const singleNumberA = (nums) => {

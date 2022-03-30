@@ -31,7 +31,7 @@ const findAverageOfSubarraysA = (K, arr) => {
     }
     return result;
 };
-const findAverageOfSubarrays = (K, arr) => {
+const findAverageOfSubarraysB = (K, arr) => {
     if (K > arr.length)
         return [];
     let result = [];
@@ -47,6 +47,8 @@ const findAverageOfSubarrays = (K, arr) => {
         }
     }
     return result;
+};
+const findAverageOfSubarrays = (K, arr) => {
 };
 exports.default = () => {
     let K = 5;

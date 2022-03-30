@@ -20,7 +20,7 @@
 import { MaxPriorityQueue,PriorityQueue } from "@datastructures-js/priority-queue";
 
 // Works but current PQ above does not account for index
-class WordFilter {
+class WordFilterRef {
   words:string[];
   trie:any;
 
@@ -102,6 +102,105 @@ class WordFilter {
   }
 }
 
+class WordFilterA {
+  root:any;
+  res:number;
+  constructor(words:string[]) {
+    this.root = {};
+    this.res = -1;
+
+    for (let i = 0; i < words.length; i++) {
+      let node = this.root;
+      for (let char of words[i]) {
+        node = (node[char] = node[char] || {});
+      }
+      node.word = words[i];
+      node.index = i;
+    }
+  }
+  f(prefix:string, suffix:string) {
+    let node = this.root;
+    for (let char of prefix) {
+      node = node[char];
+      if (!node) return -1;
+    }
+    this.res = -1;
+    this.DFS(node, suffix);
+    return this.res;
+  }
+
+  DFS(node:any, suffix:string) {
+    if (node.word) {
+      let start = node.word.length - suffix.length;
+      if (start >= 0 && node.word.substring(start) === suffix) {
+        this.res = Math.max(this.res, node.index);
+      }
+    }
+
+    for (let key in node) {
+      if (key === 'word' || key === 'index') continue;
+      if (node[key]) {
+        this.DFS(node[key], suffix);
+      }
+    }
+  }
+}
+
+class WordFilter {
+  trie:any;
+  result:number;
+
+  constructor(words: string[]) {
+    this.trie = this.buildTrie(words);
+    this.result = -1;
+  }
+
+  f(prefix: string, suffix: string): number {
+    let node = this.trie;
+    
+    for (let char of prefix) {
+      node = node[char];
+      if (!node) return -1;
+    }
+    
+    this.result = -1;
+    this.DFS(node, suffix);
+    return this.result;
+  }
+
+  DFS = (node:any, suffix:string) => {
+    if (!node) return;
+    if (node.word) {
+      let sLen = suffix.length;
+      let wordEndSubstr = node.word.substring(node.word.length - sLen, node.word.length);
+
+      if (suffix.length > node.word.length) return;
+      if (wordEndSubstr === suffix) {
+        if (node.index > this.result) this.result = node.index;
+      }
+    }
+
+    for (let key in node) {
+      if (key === 'word' || key === 'index') continue;
+      this.DFS(node[key], suffix);
+    }
+  }
+
+  buildTrie = (words:string[]) => {
+    const trie: any = {};
+    for (let i = 0; i < words.length; i++) {
+      let word = words[i];
+      let node = trie;
+
+      for (let char of word) {
+        node = (node[char] = node[char] || {});
+      }
+      node.word = word;
+      node.index = i;
+    }
+    return trie;
+  }
+}
 
 export default () => {
   // const wordFilter1 = new WordFilter(['apple', 'ale']);
@@ -109,8 +208,8 @@ export default () => {
   const wordFilter2 = new WordFilter(
     ["cabaabaaaa","ccbcababac","bacaabccba","bcbbcbacaa","abcaccbcaa","accabaccaa","cabcbbbcca","ababccabcb","caccbbcbab","bccbacbcba"]
   );
-  // console.log(wordFilter2.f("bccbacbcba","a"));
-  // console.log(wordFilter2.f("ab","abcaccbcaa"));
+  console.log(wordFilter2.f("bccbacbcba","a"));
+  console.log(wordFilter2.f("ab","abcaccbcaa"));
   console.log(wordFilter2.f("a","aa"))
   // console.log(wordFilter2.f("cabaaba","abaaaa"))
   // console.log(wordFilter2.f("cacc","accbbcbab"))

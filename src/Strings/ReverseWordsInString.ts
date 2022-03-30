@@ -1,4 +1,5 @@
 /**
+ * 151. Reverse Words in a String
  */
 
 const reverseWordsInStringA = (string: string): string => {
@@ -28,7 +29,7 @@ const reverseWordsInStringA = (string: string): string => {
     return result.join('');
 };
 
-const reverseWordsInString = (string: string): string => {
+const reverseWordsInStringB = (string: string): string => {
     let result: string[] = [];
     let i = string.length - 1;
 
@@ -51,7 +52,17 @@ const reverseWordsInString = (string: string): string => {
     return result.join('');
 }
 
+const reverseWordsInString = (str: string): string => {
+  let trimmed:string = str.trim();
+  trimmed = trimmed.replace(/\s+/g, ' ');
+  return trimmed.split(' ').reverse().join(' ');
+}
+
+
 export default () => {
     const s = "AlgoExpert is the  best!";
     console.log(reverseWordsInString(s));
+    console.log(reverseWordsInString("the sky is blue"));
+    console.log(reverseWordsInString("  hello world  "));
+    console.log(reverseWordsInString("a good   example"));
 };

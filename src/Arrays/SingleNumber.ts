@@ -1,5 +1,7 @@
 /**
  * 136. Single Number
+ * 
+ * Use map/set to keep track of already seen elements.
  */
 
 import { PrintArray } from '../utils/Utilities';

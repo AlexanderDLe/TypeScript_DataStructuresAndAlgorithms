@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  *
  */
 const Utilities_1 = require("../utils/Utilities");
-const permute = (nums) => {
+const permuteRef = (nums) => {
     let map = {};
     for (let num of nums) {
         map[num] = (map[num] || 0) + 1;
@@ -40,7 +40,31 @@ const permute = (nums) => {
     recurse(0, []);
     return result;
 };
+const permute = (nums) => {
+    const result = [];
+    const map = {};
+    for (let num of nums)
+        map[num] = (map[num] || 0) + 1;
+    const backtrack = (obj, subarr) => {
+        if (subarr.length === nums.length) {
+            result.push([...subarr]);
+            return;
+        }
+        for (let key in obj) {
+            let val = obj[key];
+            if (!val)
+                continue;
+            obj[key]--;
+            subarr.push(Number(key));
+            backtrack(obj, subarr);
+            obj[key]++;
+            subarr.pop();
+        }
+    };
+    backtrack(map, []);
+    return result;
+};
 exports.default = () => {
-    let nums = [1, 2, 1, 2];
+    let nums = [1, 1, 2];
     (0, Utilities_1.PrintMatrix)(permute(nums));
 };

@@ -26,7 +26,7 @@
  */
 import { PrintMatrix } from '../utils/Utilities';
 
-const combineA = (n:number, k:number): number[][] => {
+const combinationsA = (n:number, k:number): number[][] => {
   let result: number[][] = []
   
   const recurse = (num:number, subarr:number[]) => {
@@ -47,7 +47,7 @@ const combineA = (n:number, k:number): number[][] => {
   return result;
 }
 
-const combineB = (n:number, k:number): number[][] => {
+const combinationsB = (n:number, k:number): number[][] => {
   const result: number[][] = [];
 
   const recurse = (num:number, subarr:number[]) => {
@@ -67,7 +67,7 @@ const combineB = (n:number, k:number): number[][] => {
   return result;
 }
 
-const combine = (n:number, k:number): number[][] => {
+const combinationsC = (n:number, k:number): number[][] => {
   let result: number[][] = [];
   
   const recurse = (index:number, subarr:number[]) => {
@@ -83,7 +83,40 @@ const combine = (n:number, k:number): number[][] => {
   recurse(0, []);
   return result;
 } 
+/*
+
+  n = 4, k = 2
+
+                      1
+                  .   .   .
+               12     13     14 
+            .  .      .
+        123   124    134
+
+        
+            v
+        1,2,3,4  k = 2
+*/
+const combinations = (n:number, k:number): number[][] => {
+  const result:number[][] = []
+
+  const backtrack = (num:number, subarr:number[]) => {
+    if (subarr.length === k) {
+      result.push([...subarr]);
+      return;
+    }
+
+    for (let i = num; i <= n; i++) {
+      subarr.push(i);
+      backtrack(i + 1, subarr);
+      subarr.pop();
+    }
+  }
+
+  backtrack(1, []);
+  return result;
+}
 
 export default () => {
-  PrintMatrix(combine(4, 2));
+  PrintMatrix(combinations(4, 2));
 };

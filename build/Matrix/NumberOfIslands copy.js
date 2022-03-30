@@ -34,7 +34,7 @@ const numIslandsA = (grid) => {
     }
     return count;
 };
-const numIslands = (grid) => {
+const numIslandsB = (grid) => {
     let rows = grid.length;
     let cols = grid[0].length;
     let count = 0;
@@ -55,6 +55,38 @@ const numIslands = (grid) => {
         for (let col = 0; col < cols; col++) {
             if (grid[row][col] === '1') {
                 destroy(row, col);
+                count++;
+            }
+        }
+    }
+    return count;
+};
+const numIslands = (grid) => {
+    const rows = grid.length;
+    const cols = grid[0].length;
+    let count = 0;
+    const outOfBounds = (row, col) => {
+        if (row < 0 || row >= rows)
+            return true;
+        if (col < 0 || col >= cols)
+            return true;
+        return false;
+    };
+    const destroyIsland = (row, col) => {
+        if (outOfBounds(row, col))
+            return;
+        if (grid[row][col] === '0')
+            return;
+        grid[row][col] = '0';
+        destroyIsland(row - 1, col);
+        destroyIsland(row + 1, col);
+        destroyIsland(row, col - 1);
+        destroyIsland(row, col + 1);
+    };
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            if (grid[row][col] === '1') {
+                destroyIsland(row, col);
                 count++;
             }
         }

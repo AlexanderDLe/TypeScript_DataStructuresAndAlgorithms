@@ -13,7 +13,7 @@ const CyclicSortMain = () => {
     // FindDuplicateNumber();
     // FindAllDuplicateNumbers();
     // FindSmallestMissingPositiveNumber();
-    FindFirstKMissingPositiveNumbers();
+    // FindFirstKMissingPositiveNumbers();
 };
 
 export default CyclicSortMain;

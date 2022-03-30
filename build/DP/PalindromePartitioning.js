@@ -2,9 +2,8 @@
 /**
  * 131. Palindrome Partitioning
  *
- *                              'aab'
- *                      [a]ab   [aa]b   [aab]
- *                  [a,a]b                      X
+ *                  aab
+ *
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const partitionRef = (s) => {
@@ -43,13 +42,17 @@ const partition = (s) => {
     let parts = [];
     const backtrack = (str) => {
         if (str.length === 0) {
+            console.log('success: ', [...parts]);
             result.push([...parts]);
             return;
         }
+        console.log('str: ', str);
         for (let i = 1; i <= str.length; i++) {
             let prefix = str.substring(0, i);
             let postfix = str.substring(i);
+            console.log(`prefix: ${prefix} | postfix: ${postfix}`);
             if (isPalindrome(prefix)) {
+                console.log('prefix is palindrome:', prefix);
                 parts.push(prefix);
                 backtrack(postfix);
                 parts.pop();

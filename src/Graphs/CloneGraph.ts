@@ -1,20 +1,27 @@
 /**
  * 133. Clone Graph
  * 
- * 1 --------- 2
- * |           |
- * |           |
- * |           |
- * 4---------- 3
- * 
- * Given node 1.
- * 
- * Node = {
- *  val = 1,
- *  neighbors = [Node2 and Node4).
- * }
- * 
- * 
+  
+    1___2
+    |   |
+    4___3
+ 
+ 1. Start with the first node and clone via DFS from that position.
+ 2. At each recursive call, create new clone and add cloned neighbors.
+ 3. 
+ 
+ 
+ 1__2    <---- Start with 1 
+ |
+ 4
+ 
+ We want to create the clone for current node, and we want to recursively
+ create clones for the neighboring nodes. To do so, we can use DFS to return
+ the neighboring clones.
+ 
+ 1__2       <--- At this position, clone 1 has already been created.
+    |            We can create a map to store those previously created clones.
+    3
  */
 class Node {
   val: number
@@ -66,7 +73,7 @@ const cloneQueue = (node: NodeNull): NodeNull => {
   return map[node.val];
 };
 
-const clone = (node: NodeNull): NodeNull => {
+const cloneA = (node: NodeNull): NodeNull => {
   const map: any = {};
 
   const DFS = (n: NodeNull): NodeNull => {
@@ -79,6 +86,30 @@ const clone = (node: NodeNull): NodeNull => {
       copy.neighbors.push(DFS(nb));
     }
 
+    return copy;
+  }
+
+  return DFS(node);
+}
+
+/*
+  1______2
+  |      |
+  |      |
+  4______3      
+*/
+const clone = (node: NodeNull): NodeNull => {
+  const nodesMade: any = {};
+
+  const DFS = (n:NodeNull): NodeNull => {
+    if (nodesMade[n.val]) return nodesMade[n.val];
+
+    let copy = new Node(n.val);
+    nodesMade[n.val] = copy;
+
+    for (let nb of n.neighbors) {
+      copy.neighbors.push(DFS(nb));
+    }
     return copy;
   }
 

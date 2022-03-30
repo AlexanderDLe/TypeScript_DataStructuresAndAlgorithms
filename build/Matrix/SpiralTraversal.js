@@ -68,12 +68,50 @@ const spiralTraversalB = (array) => {
     }
     return result;
 };
-const spiralTraversal = (matrix) => {
+const spiralTraversalC = (matrix) => {
     let result = [];
     let startRow = 0;
     let startCol = 0;
     let endRow = matrix.length - 1;
     let endCol = matrix[0].length - 1;
+    while (startRow <= endRow && startCol <= endCol) {
+        for (let col = startCol; col <= endCol; col++) {
+            result.push(matrix[startRow][col]);
+        }
+        for (let row = startRow + 1; row <= endRow; row++) {
+            result.push(matrix[row][endCol]);
+        }
+        for (let col = endCol - 1; col >= startCol; col--) {
+            if (startRow === endRow)
+                break;
+            result.push(matrix[endRow][col]);
+        }
+        for (let row = endRow - 1; row > startRow; row--) {
+            if (startCol === endCol)
+                break;
+            result.push(matrix[row][startCol]);
+        }
+        startRow++;
+        startCol++;
+        endRow--;
+        endCol--;
+    }
+    return result;
+};
+const spiralTraversal = (matrix) => {
+    const result = [];
+    let startRow = 0;
+    let startCol = 0;
+    let endRow = matrix.length - 1;
+    let endCol = matrix[0].length - 1;
+    /*
+      1 2 9
+      3 4 10
+      5 6 11
+      7 8 12
+      It has to be && because once one condition ends, are you
+      going to keep processing? Of course not.
+    */
     while (startRow <= endRow && startCol <= endCol) {
         for (let col = startCol; col <= endCol; col++) {
             result.push(matrix[startRow][col]);
@@ -125,5 +163,5 @@ exports.default = () => {
         [19, 20, 21, 22, 23, 12],
         [18, 17, 16, 15, 14, 13],
     ];
-    (0, Utilities_1.PrintArray)(spiralTraversal(matrix0));
+    (0, Utilities_1.PrintArray)(spiralTraversal(matrix1));
 };

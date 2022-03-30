@@ -5,11 +5,11 @@ import TaskAssignment from "./TaskAssignment";
 import ValidStartingCity from "./ValidStartingCity";
 
 const GreedyMain = () => {
-    // ClassPhoto();
-    // MinimumWaitingTime();
-    // TandemBicycle();
-    // TaskAssignment();
-    ValidStartingCity();
+  // ClassPhoto();
+  // MinimumWaitingTime();
+  // TandemBicycle();
+  // TaskAssignment();
+  // ValidStartingCity();
 };
 
 export default GreedyMain;

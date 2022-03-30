@@ -140,7 +140,7 @@ const findAllA = (words:string[]): string[] => {
   return result;
 }
 
-const findAll = (words:string[]): string[] => {
+const findAllB = (words:string[]): string[] => {
   if (!words.length) return [];
 
   const buildTrie = () => {
@@ -173,6 +173,57 @@ const findAll = (words:string[]): string[] => {
 
   for (let word of words) {
     search(word);
+  }
+
+  return result;
+}
+
+const findAll = (words:string[]): string[] => {
+  if (!words.length) return [];
+
+  const buildTrie = () => {
+    const root: any = {};
+    for (let word of words) {
+      let node = root;
+      for (let char of word) {
+        node = (node[char] = node[char] || {});
+      }
+      node.word = word;
+    }
+    return root;
+  }
+  
+  const trie = buildTrie();
+  const result: string[] = [];
+
+  const search = (remaining:string, word:string, count:number, node:any, memo:any) => {
+    if (memo.has(remaining)) return;
+    if (!remaining.length && count > 1) {
+      result.push(word);
+      return;
+    }
+
+    for (let char of remaining) {
+      node = node[char];
+      // Mistake: Check if !node - NOT !node[char].
+      // You've already assigned to next node - so check current.
+      if (!node) return;
+      if (!node.word) continue;
+
+      // Mistake: You want to slice "remaining" - because that is
+      // the working substring - "word" is just a reference to the entire
+      // word for the result.
+      let nextRemaining = remaining.slice(node.word.length);
+
+      // Mistake: Recurse with TRIE not the ending node.
+      // We want to start over with all possible word again.
+      search(nextRemaining, word, count + 1, trie, memo);
+      memo.add(nextRemaining);
+    }
+  }
+  
+  for (let word of words) {
+    search(word, word, 0, trie, new Set());
   }
 
   return result;

@@ -1,5 +1,5 @@
 /**
- * 744. Find Smallest Letter Greater Than Target
+ * Peak Index In A Mountain Array
 */
 
 import { PrintArray } from "../utils/Utilities";

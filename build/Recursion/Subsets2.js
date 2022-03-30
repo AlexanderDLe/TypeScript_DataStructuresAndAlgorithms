@@ -2,14 +2,22 @@
 /**
  * 90. Subsets 2
  *
- * [1, 2, 2, 3, 3]
+ * [1, 2, 2, 2]
  *
  * [] [1]
+ *                                                        1
  *
  * [] [1] [2] [1, 2]
+ * |Prev|                                                 1,2
  *
- * [] [1] [2] [1, 2] []
+ * [] [1] [2] [1, 2] [2, 2] [1, 2, 2]
+ *        |  Prev  |                                      1,2,2
  *
+ * [] [1] [2] [1, 2] [2, 2] [1, 2, 2] [2,2,2] [1,2,2,2]
+ *                   |  Prev added  |                     1,2,2,2
+ *
+ * Pattern: When we add a duplicate value, we only append
+ * another duplicate to those subsets that were most recently added.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Utilities_1 = require("../utils/Utilities");
@@ -58,7 +66,7 @@ const subsetsWierd = (nums) => {
     }
     return result;
 };
-const subsets = (nums) => {
+const subsetsA = (nums) => {
     nums = nums.sort((a, b) => a - b);
     let result = [[]];
     let prevResults = [];
@@ -84,7 +92,43 @@ const subsets = (nums) => {
     }
     return result;
 };
+/*
+  []
+
+  [] [1] prevAdded = 1
+
+  [] [1] [2] [1, 2] prevAdded = 2
+  
+  isDupe = true
+  len = 4 - 2  = 2
+  
+  [] [1] [2] [1, 2]
+          ^
+        start
+*/
+const subsets = (nums) => {
+    nums.sort((a, b) => a - b);
+    let result = [[]];
+    let prevAdded = 0;
+    const isDuplicate = (i) => {
+        if (i > 0 && nums[i] === nums[i - 1])
+            return true;
+        return false;
+    };
+    for (let i = 0; i < nums.length; i++) {
+        let nextSubsets = [];
+        let num = nums[i];
+        let start = isDuplicate(i) ? result.length - prevAdded : 0;
+        prevAdded = 0;
+        for (let j = start; j < result.length; j++) {
+            nextSubsets.push([...result[j], num]);
+            prevAdded++;
+        }
+        result.push(...nextSubsets);
+    }
+    return result;
+};
 exports.default = () => {
-    const nums = [1, 2, 2, 3, 3];
+    const nums = [1, 2, 2];
     (0, Utilities_1.PrintMatrix)(subsets(nums));
 };

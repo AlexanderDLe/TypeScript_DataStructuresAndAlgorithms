@@ -1,9 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const MergeKSortedLists_1 = __importDefault(require("./MergeKSortedLists"));
 const LinkedListMain = () => {
     // AddTwoNumbers();
     // ConvertBinaryNumberInLinkedList();
@@ -15,7 +11,7 @@ const LinkedListMain = () => {
     // LinkedListCycle();
     // LinkedListCycle2();
     // MergedTwoSortedLists();
-    (0, MergeKSortedLists_1.default)();
+    // MergeKSortedLists();
     // MiddleOfLinkedList();
     // PalindromeLinkedList();
     // OddEvenLinkedList();

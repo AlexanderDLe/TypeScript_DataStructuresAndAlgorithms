@@ -1,17 +1,9 @@
 "use strict";
 /**
- * AlgoExpert
- *
- * ''
- *
- * 'a' 'A'
- *
- * 'a1' 'A1'
- *
- *
+ * 784. Letter Case Permutation
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const longestCommonSubsequence = (str) => {
+const letterCasePermutation = (str) => {
     let result = [''];
     for (let char of str) {
         let newResult = [];
@@ -32,6 +24,6 @@ const longestCommonSubsequence = (str) => {
     return result;
 };
 exports.default = () => {
-    const str1 = "e";
-    console.log(longestCommonSubsequence(str1));
+    const str1 = "a1b2";
+    console.log(letterCasePermutation(str1));
 };

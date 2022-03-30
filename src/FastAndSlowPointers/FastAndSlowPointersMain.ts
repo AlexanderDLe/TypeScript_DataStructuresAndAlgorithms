@@ -7,13 +7,13 @@ import RearrangeALinkedList from "./RearrangeALinkedList";
 import StartOfLinkedListCycle from "./StartOfLinkedListCycle";
 
 const FastAndSlowPointersMain = () => {
-    // LinkedListCycle();
-    // StartOfLinkedListCycle();
-    // HappyNumber();
-    // MiddleOfLinkedList();
-    // PalindromeLinkedList();
-    // RearrangeALinkedList();
-    CycleInACircularArray();
+  // LinkedListCycle();
+  // StartOfLinkedListCycle();
+  // HappyNumber();
+  // MiddleOfLinkedList();
+  // PalindromeLinkedList();
+  // RearrangeALinkedList();
+  // CycleInACircularArray();
 };
 
 export default FastAndSlowPointersMain;

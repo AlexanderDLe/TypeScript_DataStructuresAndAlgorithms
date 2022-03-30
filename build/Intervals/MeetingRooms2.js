@@ -11,10 +11,65 @@
  * ===============
  *    ====  =====
  * =         ===
+ *
+ * [0,30]  [5,10]  [15,20]  [16, 31] <--- Sort.
+ *
+ *
+ * ========================== [0,30]    Count = 1
+ *
+ ***************************************************
+ *
+ * ========================== [0,30]
+ *    ====                    [5,10]    Count = 2
+ *          =======           [15,20]   Count = 2
+ *
+ ***************************************************
+ *
+ * ========================== [0,30]
+ *    ====                    [5,10]
+ *          =======           [15,20]   Count = 2
+ *
+ *  minHeap can keep track of earliest end times.
+ *  v v v
+ *
+ * Previously:
+ * [5, 10]
+ * [0, 30]
+ *
+ * Next element = [15,20]
+ * [15,20] does NOT overlap with top element of minHeap, so we can pop
+ * ie. prevTopEnd = 10 and currStart = 15
+ *
+ * Current:
+ * [15, 20]
+ * [0, 30]
+ *
+ *
+ ***************************************************
+ *
+ * ========================== [0,30]
+ *    ====                    [5,10]
+ *          =======           [15,20]
+ *               =======      [16,31]   Count = 3
+ *
+ * Previously:
+ * [15, 20]
+ * [0, 30]
+ *
+ * Next element = [16,31]
+ * [16,31] DOES overlap with top element of minHeap, so we can keep
+ *
+ * 16 < 20 === true
+ *
+ * Current:
+ * [15, 20]
+ * [0, 30]
+ *
+ *
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const priority_queue_1 = require("@datastructures-js/priority-queue");
-const meetingRooms2 = (intervals) => {
+const meetingRooms2Ref = (intervals) => {
     intervals = intervals.sort((a, b) => a[0] - b[0]);
     const currentMeetings = new priority_queue_1.MinPriorityQueue({ priority: (x) => x });
     let result = 0;
@@ -28,6 +83,20 @@ const meetingRooms2 = (intervals) => {
         result = Math.max(result, currentMeetings.size());
     }
     return result;
+};
+const meetingRooms2 = (intervals) => {
+    intervals.sort((a, b) => a[0] - b[0]);
+    const minHeap = new priority_queue_1.MinPriorityQueue({ priority: (x) => x });
+    let count = 0;
+    for (let [currStart, currEnd] of intervals) {
+        while (minHeap.size() && currStart >= minHeap.front().element) {
+            minHeap.dequeue();
+        }
+        minHeap.enqueue(currEnd);
+        // Mistake, use Math.max to track overall meeting rooms required
+        count = Math.max(count, minHeap.size());
+    }
+    return count;
 };
 exports.default = () => {
     let arr1A = [[0, 30], [5, 10], [15, 20], [16, 31]];

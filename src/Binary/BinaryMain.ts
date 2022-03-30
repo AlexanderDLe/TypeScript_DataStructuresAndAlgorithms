@@ -4,8 +4,8 @@ import ReverseBits from './ReverseBits';
 import SumOfTwoIntegers from './SumOfTwoIntegers';
 
 export default () => {
-    CountingBits();
-    // SumOfTwoIntegers();
-    // NumberOf1Bits();
-    // ReverseBits();
+  // CountingBits();
+  // SumOfTwoIntegers();
+  // NumberOf1Bits();
+  // ReverseBits();
 };

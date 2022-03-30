@@ -63,7 +63,7 @@ const majorityElementC = (nums: number[]): number => {
     return majorityElement;
 }
 
-const majorityElement = (nums: number[]): number => {
+const majorityElementD = (nums: number[]): number => {
   let majority = nums[0];
   let count = 1;
 
@@ -78,6 +78,23 @@ const majorityElement = (nums: number[]): number => {
     }
   }
 
+  return majority;
+}
+
+const majorityElement = (nums: number[]): number => {
+  let majority = 0;
+  let count = 0;
+
+  for (let num of nums) {
+    if (count === 0) {
+      majority = num;
+      count++;
+    } else if (num !== majority) {
+      count--;
+    } else if (num === majority) {
+      count++;
+    }
+  }
   return majority;
 }
 

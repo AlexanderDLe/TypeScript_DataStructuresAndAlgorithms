@@ -20,6 +20,7 @@ import CombinationSum3 from './CombinationSum3';
 import CombinationSum4 from './CombinationSum4';
 import SudokuLeetcode from './SudokuLeetcode';
 import NQueens from './NQueens';
+import NestedListWeightSum from './NestedListWeightSum';
 
 export default () => {
   // Combinations()
@@ -32,7 +33,8 @@ export default () => {
   // InterweavingStrings();
   // LetterCombinationsOfAPhoneNumber();
   // LowestCommonManager();
-  NQueens();
+  // NestedListWeightSum();
+  // NQueens();
   // Permutations();
   // Permutations2();
   // Powerset();

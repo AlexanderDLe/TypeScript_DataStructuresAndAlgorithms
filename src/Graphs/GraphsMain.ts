@@ -12,11 +12,12 @@ import MinimumHeightTrees from './MinimumHeightTrees';
 import NumberOfConnectedComponentsInGraph from './NumberOfConnectedComponentsInGraph';
 import SequenceReconstruction from './SequenceReconstruction';
 import SingleCycleCheck from './SingleCycleCheck';
+import SortItemsByGroupsRespectingDependencies from './SortItemsByGroupsRespectingDependencies';
 import TopologicalSort from './TopologicalSort';
 import YoungestCommonAncestor from './YoungestCommonAncestor';
 
 export default () => {
-  AlienDictionary();
+  // AlienDictionary();
   // BreadthFirstSearch();
   // CloneGraph();
   // CourseSchedule();
@@ -30,6 +31,7 @@ export default () => {
   // NumberOfConnectedComponentsInGraph();
   // SequenceReconstruction();
   // SingleCycleCheck();
+  // SortItemsByGroupsRespectingDependencies();
   // TopologicalSort();
   // YoungestCommonAncestor();
 };

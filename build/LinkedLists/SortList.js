@@ -94,7 +94,7 @@ const sortListB = (head) => {
     // 3. merge l1 and l2
     return merge(l1, l2);
 };
-const sortList = (head) => {
+const sortListC = (head) => {
     if (!head || !head.next)
         return head;
     const merge = (l1, l2) => {
@@ -138,6 +138,49 @@ const sortList = (head) => {
     let l2 = sortList(s);
     // Recursively merge and return sublists.
     return merge(l1, l2);
+};
+const sortList = (head) => {
+    const merge = (l1, l2) => {
+        let dummy = new LinkedListClass_1.ListNode(0);
+        let n = dummy;
+        while (l1 && l2) {
+            if (l1.val < l2.val) {
+                n.next = l1;
+                l1 = l1.next;
+            }
+            else {
+                n.next = l2;
+                l2 = l2.next;
+            }
+            n = n.next;
+        }
+        (0, LinkedListClass_1.PrintList)(dummy);
+        if (!l1)
+            n.next = l2;
+        if (!l2)
+            n.next = l1;
+        return dummy.next;
+    };
+    const sort = (n) => {
+        if (!n || !n.next)
+            return n;
+        let s = n;
+        let f = n;
+        let p = null;
+        while (f && f.next) {
+            p = s;
+            s = s.next;
+            f = f.next;
+            if (f)
+                f = f.next;
+        }
+        if (p)
+            p.next = null;
+        let l1 = sort(n);
+        let l2 = sort(s);
+        return merge(l1, l2);
+    };
+    return sort(head);
 };
 exports.default = () => {
     const nums = [4, 2, 1, 3];

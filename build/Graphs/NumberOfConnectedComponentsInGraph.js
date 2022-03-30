@@ -13,29 +13,33 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const countComponents = (n, edges) => {
-    const map = {};
-    for (let i = 0; i < n; i++)
-        map[i] = [];
-    for (let edge of edges) {
-        let [nA, nB] = edge;
-        map[nA].push(nB);
-        map[nB].push(nA);
-    }
-    const visited = new Set();
-    let count = 0;
-    const DFS = (node) => {
+    const buildMap = () => {
+        const map = {};
+        for (let i = 0; i < n; i++)
+            map[i] = [];
+        for (let edge of edges) {
+            let [nA, nB] = edge;
+            map[nA].push(nB);
+            map[nB].push(nA);
+        }
+        return map;
+    };
+    const DFS = (node, map) => {
         visited.add(node);
         let neighbors = map[node];
         for (let nb of neighbors) {
             if (!visited.has(nb))
-                DFS(nb);
+                DFS(nb, map);
         }
     };
+    const map = buildMap();
+    const visited = new Set();
+    let count = 0;
     for (let node in map) {
         if (visited.has(Number(node)))
             continue;
         count++;
-        DFS(Number(node));
+        DFS(Number(node), map);
     }
     return count;
 };

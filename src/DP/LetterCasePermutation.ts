@@ -1,18 +1,10 @@
 /**
- * AlgoExpert
- * 
- * ''
- * 
- * 'a' 'A'
- * 
- * 'a1' 'A1'
- * 
- * 
+ * 784. Letter Case Permutation 
  */
 
 import { PrintMatrix } from "../utils/Utilities";
 
-const longestCommonSubsequence = (str: string): string[] => {
+const letterCasePermutation = (str: string): string[] => {
   let result: string[] = ['']
 
   for (let char of str) {
@@ -38,7 +30,9 @@ const longestCommonSubsequence = (str: string): string[] => {
   return result;
 }
 
+
+
 export default () => {
-    const str1 = "e";
-    console.log(longestCommonSubsequence(str1));
+    const str1 = "a1b2";
+    console.log(letterCasePermutation(str1));
 };

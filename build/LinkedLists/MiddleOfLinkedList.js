@@ -2,6 +2,30 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 876. Middle of the Linked List
+ *
+ * Odd List:
+ *         s       f
+ * 1 > 2 > 3 > 4 > 5
+ * When using slow/fast and condition is (f&f.next),
+ * then odd list fast pointer will end at the tail.
+ *
+ * Even List:
+ *             s           f
+ * 1 > 2 > 3 > 4 > 5 > 6
+ * When using slow/fast and condition is (f&f.next),
+ * then even list fast pointer will end past tail (null)
+ *
+ * Odd list:
+ *     s   f
+ * 1 > 2 > 3
+ *
+ * Even list:
+ *         s       f
+ * 1 > 2 > 3 > 4
+ *
+ * Edge Case:
+ * sf
+ * 1 > null
  */
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
 const middleOfLinkedList = (head) => {

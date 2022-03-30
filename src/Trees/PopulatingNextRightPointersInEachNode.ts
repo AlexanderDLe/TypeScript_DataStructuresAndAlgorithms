@@ -1,5 +1,5 @@
 /**
- * 105. Construct Binary Tree From Preorder and Inorder Traversal
+ * 116. Populating Next Right Pointers in Each Node
  */
 import { TreeNode, BinaryPreorderTraversal } from '../DataStructures/TreeClass';
 

@@ -4,10 +4,10 @@ import NextInterval from "./NextInterval";
 import SlidingWindowMedian from "./SlidingWindowMedian";
 
 const TwoHeapsMain = () => {
-    // FindMedianOfNumberStream();
-    // SlidingWindowMedian();
-    // MaximizeCapital();
-    NextInterval();
+  // FindMedianOfNumberStream();
+  // SlidingWindowMedian();
+  // MaximizeCapital();
+  // NextInterval();
 };
 
 export default TwoHeapsMain;

@@ -1,6 +1,5 @@
 "use strict";
 /**
- *  242. Valid Anagram
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const isPalindromeA = (s) => {

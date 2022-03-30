@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
- * 105. Construct Binary Tree From Preorder and Inorder Traversal
+ * 116. Populating Next Right Pointers in Each Node
  */
 const TreeClass_1 = require("../DataStructures/TreeClass");
 function connect(root) {

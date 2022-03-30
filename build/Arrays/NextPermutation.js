@@ -4,6 +4,7 @@
  * https://www.youtube.com/watch?v=goUlyp4rwiU&t=192s
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const Utilities_1 = require("../utils/Utilities");
 const nextPermutationOld = (nums) => {
     // if pivot is -2 by end, then pivot does not exist
     // if pivot is -1 by end, then nums[] is in desc order
@@ -107,7 +108,7 @@ const nextPermutationB = (nums) => {
     console.log(`Concat reversed subarray to original array: \n${nums}\n `);
     return nums;
 };
-const nextPermutation = (nums) => {
+const nextPermutationC = (nums) => {
     let pivot = -1;
     let swap = -1;
     for (let i = 0; i < nums.length - 1; i++) {
@@ -124,7 +125,26 @@ const nextPermutation = (nums) => {
     nums.push.apply(nums, endArray);
     return nums;
 };
+const nextPermutation = (nums) => {
+    let pivot = -1;
+    let swap = -1;
+    for (let i = 0; i < nums.length - 1; i++) {
+        if (nums[i] < nums[i + 1])
+            pivot = i;
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > nums[pivot])
+            swap = i;
+    }
+    if (pivot === -1)
+        return nums.sort((a, b) => a - b);
+    [nums[pivot], nums[swap]] = [nums[swap], nums[pivot]];
+    let end = nums.splice(pivot + 1);
+    end.reverse();
+    nums = [...nums, ...end];
+    return nums;
+};
 exports.default = () => {
-    const nums = [1, 2, 3];
-    console.log(nextPermutation(nums));
+    (0, Utilities_1.PrintArray)(nextPermutation([1, 2, 3]));
+    (0, Utilities_1.PrintArray)(nextPermutation([1, 2, 3, 4, 8, 6, 9, 7]));
 };

@@ -1,10 +1,15 @@
 /**
- * 328. Odd Even Linked List
+ * 203. Remove Linked List Elements
  * 
- * dum > 1 > 2 > 3 > 4 > 5 > 6 > null
- *                       n
+ * dum > 1 > 2 > 6 > 6 > 6 > 3 > 4 > 5 > 6
+ *           p
  *  
- * dum > 7 > null
+ * When next element is one to remove, you can it using a while loop.
+ * 
+ * While (next element is to be removed), remove next element.
+ * 
+ * The while loop is necessary in case of adjacent removals.
+ * 
  */
 
 import { ListNode, LinkedList } from '../DataStructures/LinkedListClass';

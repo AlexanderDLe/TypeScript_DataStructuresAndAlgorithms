@@ -17,7 +17,7 @@
  *
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-const intervalListIntersections = (firstList, secondList) => {
+const intervalListIntersectionsRef = (firstList, secondList) => {
     const result = [];
     let p = 0;
     let q = 0;
@@ -35,6 +35,28 @@ const intervalListIntersections = (firstList, secondList) => {
         let interB = secondList[q];
         processOverlap(interA, interB);
         if (interA[1] < interB[1])
+            p++;
+        else
+            q++;
+    }
+    return result;
+};
+const intervalListIntersections = (firstList, secondList) => {
+    const result = [];
+    const processOverlap = (intervalA, intervalB) => {
+        const [Astart, Aend] = intervalA;
+        const [Bstart, Bend] = intervalB;
+        if (Astart > Bend || Bstart > Aend)
+            return;
+        result.push([Math.max(Astart, Bstart), Math.min(Aend, Bend)]);
+    };
+    let p = 0;
+    let q = 0;
+    while (p < firstList.length && q < secondList.length) {
+        let intervalA = firstList[p];
+        let intervalB = secondList[q];
+        processOverlap(intervalA, intervalB);
+        if (intervalA[1] < intervalB[1])
             p++;
         else
             q++;

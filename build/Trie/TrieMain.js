@@ -1,15 +1,14 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const PalindromePairs_1 = __importDefault(require("./PalindromePairs"));
 const TrieMain = () => {
     // ConcatenatedWords();
+    // DesignSearchAutocompleteSystem();
     // ImplementPrefixTrie();
     // LongestWordInDictionary();
-    (0, PalindromePairs_1.default)();
+    // PalindromePairs();
     // PrefixAndSuffixSearch();
+    // SearchSuggestionSystem();
     // WordSearch2();
+    // WordSquares();
 };
 exports.default = TrieMain;

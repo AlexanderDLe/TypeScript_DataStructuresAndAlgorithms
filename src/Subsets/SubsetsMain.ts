@@ -17,7 +17,7 @@ const SubsetsMain = () => {
     // UniqueGeneralizedAbbreviations();
     // EvaluateExpression();
     // StructurallyUniqueBinaryTrees();
-    CountOfUniqueBSTs();
+    // CountOfUniqueBSTs();
 };
 
 export default SubsetsMain;

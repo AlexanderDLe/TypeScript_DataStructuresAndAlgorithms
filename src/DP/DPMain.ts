@@ -52,7 +52,7 @@ const DPMain = () => {
   // MaxSumIncreasingSubsequence();
   // MinNumberOfCoinsForChange();
   // MinNumberOfJumps();
-  NumberOfLongestIncreasingSubsequence();
+  // NumberOfLongestIncreasingSubsequence();
   // NumberOfWaysToMakeChange();
   // NumberOfWaysToTraverseGraph();
   // PalindromePartitioning();

@@ -3,18 +3,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 234. Palindrome Linked List
  *
- *        s     f
+ *
+ * Odd List: s will be at middle
+ * q will be behind. Iterate s before comparing palindrome.
+ *
+ * After inital loop: if (f) then s = s.next
+ *
+ *     q  s     f
  * [1, 4, 2, 4, 1]
  *
- * rq  sf
- *      1 > 4 > 4 > 1]
  *
- *   r  q   s   f
- *    < 1   4 > 4 > 1]
+ * Even List: s will be one past middle
+ * q will be behind. Start comparing palindrome.
  *
- *      r   q   s      f
- *    < 1 < 4   4 > 1]
+ *        q  s        f
+ * [1, 4, 2, 2, 4, 1]
  *
+ *
+ *
+
  */
 const LinkedListClass_1 = require("../DataStructures/LinkedListClass");
 const isPalindromeB = (head) => {

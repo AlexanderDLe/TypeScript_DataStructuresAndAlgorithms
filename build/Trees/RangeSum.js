@@ -4,7 +4,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const TreeClass_1 = require("../DataStructures/TreeClass");
-const Solution = (root, L, R) => {
+const SolutionRef = (root, L, R) => {
     let result = 0;
     const traversalSum = (n) => {
         if (!n)
@@ -16,6 +16,19 @@ const Solution = (root, L, R) => {
         traversalSum(n.right);
     };
     traversalSum(root);
+    return result;
+};
+const Solution = (root, L, R) => {
+    let result = 0;
+    const DFS = (n) => {
+        if (!n)
+            return;
+        if (n.val >= L && n.val <= R)
+            result += n.val;
+        DFS(n.left);
+        DFS(n.right);
+    };
+    DFS(root);
     return result;
 };
 const RangeSum = () => {

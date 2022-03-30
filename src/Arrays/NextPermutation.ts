@@ -3,147 +3,172 @@
  * https://www.youtube.com/watch?v=goUlyp4rwiU&t=192s
  */
 
+import { PrintArray } from "../utils/Utilities";
+
 const nextPermutationOld = (nums: number[]): number[] => {
-    // if pivot is -2 by end, then pivot does not exist
-    // if pivot is -1 by end, then nums[] is in desc order
-    let pivot: number = -2;
-    let i: number;
-    let j: number;
-    let ascending: boolean = false;
+  // if pivot is -2 by end, then pivot does not exist
+  // if pivot is -1 by end, then nums[] is in desc order
+  let pivot: number = -2;
+  let i: number;
+  let j: number;
+  let ascending: boolean = false;
 
-    for (i = 0, j = 1; j < nums.length; i++, j++) {
-        // if last ascends; swap last two nums
-        if (nums[j] > nums[i]) {
-            ascending = true;
-            pivot = -2;
-        }
-        // if last descends/identical; then pivot
-        if (nums[j] <= nums[i]) {
-            ascending = false;
-            if (pivot === -2) pivot = i - 1;
-        }
+  for (i = 0, j = 1; j < nums.length; i++, j++) {
+    // if last ascends; swap last two nums
+    if (nums[j] > nums[i]) {
+      ascending = true;
+      pivot = -2;
     }
-
-    // i & j failed go out of bounds of nums[] and fail check above;
-    // therefore, we decrement to point at last two digits of nums[]
-    i--, j--;
-    // if nums[] last ascends, then we simply swap the two last vals
-    if (ascending) [nums[i], nums[j]] = [nums[j], nums[i]];
-    else {
-        // if pivot is -1, then nums[] is in desc order - therefore
-        // we simply sort in ascending order.
-        if (pivot === -1) nums.sort((a, b) => a - b);
-        if (pivot > -1) {
-            let pivotVal = nums[pivot];
-            let swapVal = nums[pivot + 1];
-            let swapIndex = pivot + 1;
-            // pivot point should be the point before the nums[] vals
-            // begins to descend. therefore, we should replace it with the next
-            // larger value.
-            for (let x = pivot + 2; x < nums.length; x++) {
-                if (nums[x] > pivotVal) {
-                    swapVal = Math.min(swapVal, nums[x]);
-                    swapIndex = x;
-                }
-            }
-            // swap the values
-            [nums[pivot], nums[swapIndex]] = [nums[swapIndex], nums[pivot]];
-
-            // once swapped, we need to sort everything after the pivot point.
-            let unsorted = nums.slice(pivot + 1);
-            unsorted.sort((a, b) => a - b);
-            nums.length = pivot + 1;
-            nums.push.apply(nums, unsorted);
-        }
+    // if last descends/identical; then pivot
+    if (nums[j] <= nums[i]) {
+      ascending = false;
+      if (pivot === -2) pivot = i - 1;
     }
+  }
 
-    return nums;
+  // i & j failed go out of bounds of nums[] and fail check above;
+  // therefore, we decrement to point at last two digits of nums[]
+  i--, j--;
+  // if nums[] last ascends, then we simply swap the two last vals
+  if (ascending) [nums[i], nums[j]] = [nums[j], nums[i]];
+  else {
+    // if pivot is -1, then nums[] is in desc order - therefore
+    // we simply sort in ascending order.
+    if (pivot === -1) nums.sort((a, b) => a - b);
+    if (pivot > -1) {
+      let pivotVal = nums[pivot];
+      let swapVal = nums[pivot + 1];
+      let swapIndex = pivot + 1;
+      // pivot point should be the point before the nums[] vals
+      // begins to descend. therefore, we should replace it with the next
+      // larger value.
+      for (let x = pivot + 2; x < nums.length; x++) {
+        if (nums[x] > pivotVal) {
+          swapVal = Math.min(swapVal, nums[x]);
+          swapIndex = x;
+        }
+      }
+      // swap the values
+      [nums[pivot], nums[swapIndex]] = [nums[swapIndex], nums[pivot]];
+
+      // once swapped, we need to sort everything after the pivot point.
+      let unsorted = nums.slice(pivot + 1);
+      unsorted.sort((a, b) => a - b);
+      nums.length = pivot + 1;
+      nums.push.apply(nums, unsorted);
+    }
+  }
+
+  return nums;
 };
 
 const nextPermutationA = (nums: number[]): number[] => {
-    const result: number[] = [];
+  const result: number[] = [];
 
-    let largestI = -1;
-    for (let i = 0; i < nums.length - 1; i++) {
-        if (nums[i] < nums[i + 1]) {
-            largestI = i;
-        }
+  let largestI = -1;
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] < nums[i + 1]) {
+      largestI = i;
     }
+  }
 
-    let largestJ = -1;
-    for (let j = 0; j < nums.length; j++) {
-        if (nums[largestI] < nums[j]) {
-            largestJ = j;
-        }
+  let largestJ = -1;
+  for (let j = 0; j < nums.length; j++) {
+    if (nums[largestI] < nums[j]) {
+      largestJ = j;
     }
-    
-    console.log(largestI);
-    console.log(largestJ);
-    [nums[largestI], nums[largestJ]] = [nums[largestJ], nums[largestI]];
+  }
+  
+  console.log(largestI);
+  console.log(largestJ);
+  [nums[largestI], nums[largestJ]] = [nums[largestJ], nums[largestI]];
 
-    let endArray = nums.splice(largestI + 1);
-    endArray.reverse();
-    nums = nums.concat(endArray);
+  let endArray = nums.splice(largestI + 1);
+  endArray.reverse();
+  nums = nums.concat(endArray);
 
-    console.log(nums);
+  console.log(nums);
 
-    return result;
+  return result;
 }
 
 const nextPermutationB = (nums: number[]): number[] => {
-    let largestI = -1;
-    for (let i = 0; i < nums.length - 1; i++) {
-        if (nums[i] < nums[i + 1]) largestI = i;
-    }
-    
-    let largestJ;
-    for (let j = 0; j < nums.length; j++) {
-        if (nums[largestI] < nums[j]) largestJ = j;
-    }
+  let largestI = -1;
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] < nums[i + 1]) largestI = i;
+  }
+  
+  let largestJ;
+  for (let j = 0; j < nums.length; j++) {
+    if (nums[largestI] < nums[j]) largestJ = j;
+  }
 
-    console.log(`largestI - index: ${largestI}, value: ${nums[largestI]} (where nums[i] < nums[i + 1])`);
-    console.log(`largestJ - index: ${largestJ}, value: ${nums[largestJ]} (where nums[largestI] < nums[j]) \n`);
-    console.log(`Original array: \n${nums.slice()}\n`);
-    
-    [nums[largestI], nums[largestJ]] = [nums[largestJ], nums[largestI]];
-    console.log(`After swapping nums[largestI] and nums[largestJ]`);
-    console.log(nums.slice() + '\n');
-    
-    
-    let endArray = nums.splice(largestI + 1);
-    console.log(`Subarray after largestI: \n${endArray}\n `);
+  console.log(`largestI - index: ${largestI}, value: ${nums[largestI]} (where nums[i] < nums[i + 1])`);
+  console.log(`largestJ - index: ${largestJ}, value: ${nums[largestJ]} (where nums[largestI] < nums[j]) \n`);
+  console.log(`Original array: \n${nums.slice()}\n`);
+  
+  [nums[largestI], nums[largestJ]] = [nums[largestJ], nums[largestI]];
+  console.log(`After swapping nums[largestI] and nums[largestJ]`);
+  console.log(nums.slice() + '\n');
+  
+  
+  let endArray = nums.splice(largestI + 1);
+  console.log(`Subarray after largestI: \n${endArray}\n `);
 
-    endArray.reverse();
-    console.log(`Reversed array after largestI: \n${endArray}\n`);
-    
-    nums = nums.concat(endArray);
-    console.log(`Concat reversed subarray to original array: \n${nums}\n `);
+  endArray.reverse();
+  console.log(`Reversed array after largestI: \n${endArray}\n`);
+  
+  nums = nums.concat(endArray);
+  console.log(`Concat reversed subarray to original array: \n${nums}\n `);
 
-    return nums;
+  return nums;
+}
+
+const nextPermutationC = (nums: number[]): number[] => {
+  let pivot = -1;
+  let swap = -1;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] < nums[i + 1]) pivot = i;
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > nums[pivot]) swap = i;
+  }
+
+  [nums[pivot], nums[swap]] = [nums[swap], nums[pivot]];
+
+  let endArray = nums.splice(pivot + 1);
+  endArray.reverse();
+  nums.push.apply(nums, endArray);
+
+  return nums;
 }
 
 const nextPermutation = (nums: number[]): number[] => {
-    let pivot = -1;
-    let swap = -1;
+  let pivot = -1;
+  let swap = -1;
 
-    for (let i = 0; i < nums.length - 1; i++) {
-        if (nums[i] < nums[i + 1]) pivot = i;
-    }
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] < nums[i + 1]) pivot = i;
+  }
 
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] > nums[pivot]) swap = i;
-    }
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > nums[pivot]) swap = i;
+  }
 
-    [nums[pivot], nums[swap]] = [nums[swap], nums[pivot]];
+  if (pivot === -1) return nums.sort((a, b) => a - b);
 
-    let endArray = nums.splice(pivot + 1);
-    endArray.reverse();
-    nums.push.apply(nums, endArray);
+  [nums[pivot], nums[swap]] = [nums[swap], nums[pivot]];
 
-    return nums;
+  let end = nums.splice(pivot + 1);
+  end.reverse();
+  nums = [...nums, ...end];
+
+  return nums;
 }
 
 export default () => {
-    const nums = [1,2,3];
-    console.log(nextPermutation(nums));
+  PrintArray(nextPermutation([1,2,3]));
+  PrintArray(nextPermutation([1,2,3,4,8,6,9,7]));
 };

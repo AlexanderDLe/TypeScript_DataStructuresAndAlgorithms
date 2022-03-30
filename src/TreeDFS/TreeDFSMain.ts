@@ -3,23 +3,29 @@ import BinaryTreeMaximumPathSum from "./BinaryTreeMaximumPathSum";
 import BinaryTreePathSum from "./BinaryTreePathSum";
 import CountPathsForASum from "./CountPathsForASum";
 import DiameterOfBinaryTree from "./DiameterOfBinaryTree";
+import FindLeavesOfBinaryTree from "./FindLeavesOfBinaryTree";
+import LowestCommonAncestorOfDeepestLeaves from "./LowestCommonAncestorOfDeepestLeaves";
 import PathOfMaximumSum from "./PathOfMaximumSum";
 import PathSum2 from "./PathSum2";
 import PathSum3 from "./PathSum3";
 import PathWithGivenSequence from "./PathWithGivenSequence";
 import SumOfPathNumbers from "./SumOfPathNumbers";
+import VerticalOrderTraversalOfABinaryTree from "./VerticalOrderTraversalOfABinaryTree";
 
 const TreeDFSMain = () => {
-  BinaryTreeMaximumPathSum();
-  // BinaryTreePathSum();
   // AllPathsForASum();
-  // SumOfPathNumbers();
-  // PathWithGivenSequence();
+  // BinaryTreeMaximumPathSum();
+  // BinaryTreePathSum();
   // CountPathsForASum();
   // DiameterOfBinaryTree();
+  // FindLeavesOfBinaryTree();
+  LowestCommonAncestorOfDeepestLeaves();
   // PathOfMaximumSum();
   // PathSum2();
   // PathSum3();
+  // PathWithGivenSequence();
+  // SumOfPathNumbers();
+  // VerticalOrderTraversalOfABinaryTree();
 };
 
 export default TreeDFSMain;

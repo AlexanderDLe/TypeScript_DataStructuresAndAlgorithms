@@ -17,7 +17,7 @@ const IntervalsMain = () => {
   // CalendarMatching();
   // ConflictingAppointments();
   // EmployeeFreeTimeGrokking();
-  EmployeeFreeTimeLeetcode();
+  // EmployeeFreeTimeLeetcode();
   // InsertInterval();
   // IntervalListIntersections();
   // IntervalsIntersection();

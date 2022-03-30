@@ -1,6 +1,8 @@
+import AlgorithmSwap from './AlgorithmSwap';
 import quicksort from './QuickSort';
 
 
 export default () => {
-    quicksort();
+  // AlgorithmSwap();
+  // quicksort();
 };

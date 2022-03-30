@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  *
  */
 const Utilities_1 = require("../utils/Utilities");
-const combineA = (n, k) => {
+const combinationsA = (n, k) => {
     let result = [];
     const recurse = (num, subarr) => {
         if (subarr.length === k) {
@@ -43,7 +43,7 @@ const combineA = (n, k) => {
     recurse(0, []);
     return result;
 };
-const combineB = (n, k) => {
+const combinationsB = (n, k) => {
     const result = [];
     const recurse = (num, subarr) => {
         if (subarr.length === k) {
@@ -61,7 +61,7 @@ const combineB = (n, k) => {
     recurse(0, []);
     return result;
 };
-const combine = (n, k) => {
+const combinationsC = (n, k) => {
     let result = [];
     const recurse = (index, subarr) => {
         if (subarr.length === k)
@@ -77,6 +77,36 @@ const combine = (n, k) => {
     recurse(0, []);
     return result;
 };
+/*
+
+  n = 4, k = 2
+
+                      1
+                  .   .   .
+               12     13     14
+            .  .      .
+        123   124    134
+
+        
+            v
+        1,2,3,4  k = 2
+*/
+const combinations = (n, k) => {
+    const result = [];
+    const backtrack = (num, subarr) => {
+        if (subarr.length === k) {
+            result.push([...subarr]);
+            return;
+        }
+        for (let i = num; i <= n; i++) {
+            subarr.push(i);
+            backtrack(i + 1, subarr);
+            subarr.pop();
+        }
+    };
+    backtrack(1, []);
+    return result;
+};
 exports.default = () => {
-    (0, Utilities_1.PrintMatrix)(combine(4, 2));
+    (0, Utilities_1.PrintMatrix)(combinations(4, 2));
 };

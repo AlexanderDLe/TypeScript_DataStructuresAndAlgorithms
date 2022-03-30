@@ -1,6 +1,46 @@
 /**
  * 239. Sliding Window Maximum
  * 
+ * [1  3  -1  -3  -5  3  6  7]
+ * | |
+ * 
+ * Queue = [1]
+ * 
+ ***************************** 
+ * 
+ * [1  3  -1  -3  -5  3  6  7]
+ * |    |
+ * 
+ * Queue = [3]
+ * 
+ ***************************** 
+ * 
+ * [1  3  -1  -3  -5  3  6  7]
+ * |        |
+ * 
+ * Queue = [3, -1]
+ * 
+ ***************************** 
+ * 
+ * [1  3  -1  -3  -5  3  6  7]
+ *    |         |
+ * 
+ * Queue = [3, -1, -3]
+ * 
+ ***************************** 
+ * 
+ * [1  3  -1  -3  -5  3  6  7]
+ *        |         |
+ * 
+ * Queue = [-1, -3, -5]
+ * 
+ ***************************** 
+ * 
+ * [1  3  -1  -3  -5   3   6   7]
+ *            |         |
+ * 
+ * Queue = [3]
+ * 
 */
 
 import { PrintArray } from "../utils/Utilities";
@@ -30,7 +70,7 @@ const maxSlidingWindowRef = (nums: number[], k: number): number[] => {
   return result;
 }
 
-const maxSlidingWindow = (nums: number[], k: number): number[] => {
+const maxSlidingWindowA = (nums: number[], k: number): number[] => {
   if (nums.length === 0 || k <= 0) return [];
 
   const result: number[] = [];
@@ -52,6 +92,26 @@ const maxSlidingWindow = (nums: number[], k: number): number[] => {
   return result;
 }
 
+const maxSlidingWindow = (nums: number[], k: number): number[] => {
+  const lastQElement = (Q: number[]) => nums[Q[Q.length - 1]];
+  
+  const Q: number[] = [];
+  const result:number[] = [];
+
+  let i = 0;
+  while (i < nums.length) {
+    while (Q.length && lastQElement(Q) < nums[i]) {
+      Q.pop();
+    }
+    Q.push(i);
+
+    if (Q[0] === i - k) Q.shift();
+    if (i >= k - 1) result.push(nums[Q[0]]);
+    i++;
+  }
+
+  return result;
+}
 
 export default () => {
   console.log(maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3));

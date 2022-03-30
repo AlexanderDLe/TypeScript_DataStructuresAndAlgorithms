@@ -1,11 +1,22 @@
 /**
  * 303. Range Sum Query - Immutable
+ * 
+ *    -2   0   3   -5   2   -1
+ * S  -2  -2   1   -4  -2   -3
+ * 
+ * Ex. 0, 2
+ * S  -2  -2   1   -4   2   -3
+ *    |         | = 1
+ * 
+ * Ex. 2, 5
+ * S  -2  -2   1   -4   2   -3
+ *            |               | = -3 - (-2) = -1
  */
 
 import ThreeSum from "../Arrays/ThreeSum";
 import { PrintArray } from "../utils/Utilities";
 
-class NumArray {
+class NumArrayRef {
   totalSum: number;
   sumsLeft: number[];
   sumsRight: number[];
@@ -33,6 +44,26 @@ class NumArray {
     let removeLefts = this.sumsLeft[left - 1] || 0;
     let removeRights = this.sumsRight[right + 1] || 0;
     return this.totalSum - removeLefts - removeRights;
+  }
+}
+
+class NumArray {
+  sums:number[];
+
+  constructor(array:number[]) {
+    this.sums = [];
+    let currSum = 0;
+
+    for (let num of array) {
+      currSum += num;
+      this.sums.push(currSum);
+    }
+  }
+
+  sumRange(left:number, right:number) {
+    let prevVal = this.sums[left - 1] || 0;
+    let sumVal = this.sums[right];
+    return sumVal - prevVal;
   }
 }
 

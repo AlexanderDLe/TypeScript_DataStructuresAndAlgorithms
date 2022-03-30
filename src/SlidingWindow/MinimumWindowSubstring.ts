@@ -14,7 +14,7 @@
 
 import { PrintArray } from "../utils/Utilities";
 
-const minWindow = (s:string, t:string): string => {
+const minWindowRef = (s:string, t:string): string => {
   const map: any = {};
   for (let char of t) map[char] = (map[char] || 0) + 1;
   let count = Object.keys(map).length;
@@ -31,7 +31,7 @@ const minWindow = (s:string, t:string): string => {
     }
 
     while (!count && L < R) {
-      let len = R - L + 1;
+      let len = R - L;
       if (len < minLen) {
         result = s.substring(L, R);
         minLen = len;
@@ -47,6 +47,42 @@ const minWindow = (s:string, t:string): string => {
   return result;
 }
 
+const minWindow = (s:string, t:string): string => {
+  const map: any = {};
+  for (let char of t) map[char] = (map[char] || 0) + 1;
+  let count = Object.keys(map).length;
+  let result = '';
+  let minLen = Infinity;
+  
+  let L = 0;
+  let R = 0;
+  while (R < s.length) {
+    let Rval = s[R];
+    R++;
+    
+    if (Rval in map) {
+      map[Rval]--;
+      if (map[Rval] === 0) count--;
+    }
+
+    while (!count && L < R) {
+      let Lval = s[L];
+
+      if (R - L < minLen) {
+        minLen = R - L;
+        result = s.substring(L, R);
+      }
+
+      if (Lval in map) {
+        map[Lval]++;
+        if (map[Lval] === 1) count++;
+      }
+      L++;
+    }
+  }
+  
+  return result;
+}
 
 export default () => {
   console.log(minWindow("ADOBECODEBANC", 'ABC'));

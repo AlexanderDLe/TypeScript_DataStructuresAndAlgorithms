@@ -9,7 +9,7 @@ const KWayMergeMain = () => {
     // KthSmallestNumberInMSortedLists();
     // KthSmallestInASortedMatrix();
     // SmallestNumberRange();
-    KPairsWithLargestSum();
+    // KPairsWithLargestSum();
 };
 
 export default KWayMergeMain;

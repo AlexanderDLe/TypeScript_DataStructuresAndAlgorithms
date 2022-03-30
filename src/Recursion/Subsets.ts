@@ -33,7 +33,7 @@ const subsetsB = (nums: number[]): number[][] => {
     return result;
 }
 
-const subsets = (nums: number[]): number[][] => {
+const subsetsC = (nums: number[]): number[][] => {
   const result: number[][] = [];
 
   const recurse = (index:number, subarr:number[]) => {
@@ -46,6 +46,24 @@ const subsets = (nums: number[]): number[][] => {
     recurse(index + 1, [...subarr, nums[index]]);
   }
   recurse(0, []);
+  return result;
+}
+
+const subsets = (nums: number[]): number[][] => {
+  const result: number[][] = []
+
+  const backtrack = (index:number, subarr:number[]) => {
+    if (index >= nums.length) {
+      result.push([...subarr]);
+      return;
+    }
+    backtrack(index + 1, subarr);
+    subarr.push(nums[index]);
+    backtrack(index + 1, subarr);
+    subarr.pop();
+  }
+
+  backtrack(0, []);
   return result;
 }
 

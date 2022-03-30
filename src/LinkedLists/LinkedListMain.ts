@@ -35,7 +35,7 @@ const LinkedListMain = () => {
     // LinkedListCycle();
     // LinkedListCycle2();
     // MergedTwoSortedLists();
-    MergeKSortedLists();
+    // MergeKSortedLists();
     // MiddleOfLinkedList();
     // PalindromeLinkedList();
     // OddEvenLinkedList();

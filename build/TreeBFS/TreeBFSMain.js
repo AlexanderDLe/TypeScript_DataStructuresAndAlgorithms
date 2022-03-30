@@ -1,13 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const AllNodesKDistanceInBinaryTree_1 = __importDefault(require("./AllNodesKDistanceInBinaryTree"));
 const TreeBFSMain = () => {
-    (0, AllNodesKDistanceInBinaryTree_1.default)();
+    // AllNodesKDistanceInBinaryTree();
     // binaryTreeLevelOrderTraversal();
     // binaryTreeLevelOrderTraversal2();
+    // BinaryTreeVerticalOrderTraversal();
     // connectAllLevelOrderSiblings();
     // connectLevelOrderSiblings();
     // levelAverages();
@@ -17,6 +14,7 @@ const TreeBFSMain = () => {
     // PopulateNextRightPointers();
     // PopulateNextRightPointers2();
     // RightViewOfBinaryTree();
+    // StepByStepDirectionsFromNodeToNode();
     // zigzagTraversal();
 };
 exports.default = TreeBFSMain;

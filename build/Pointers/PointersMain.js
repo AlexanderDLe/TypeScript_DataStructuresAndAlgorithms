@@ -1,9 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const TrappingRainWater_1 = __importDefault(require("./TrappingRainWater"));
 const PointersMain = () => {
     // ComparingStringsContainingBackspaces();
     // ContainerWithMostWater();
@@ -18,7 +14,7 @@ const PointersMain = () => {
     // SubarraysWithProductLessThanK();
     // ThreeSum();
     // ThreeSumClosest();
-    (0, TrappingRainWater_1.default)();
+    // TrappingRainWater();
     // TripletSumToZero();
     // TripletSumCloseToTarget();
     // TripletsWithSmallerSum();

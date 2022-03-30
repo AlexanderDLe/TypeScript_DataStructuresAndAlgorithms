@@ -30,7 +30,7 @@ const PointersMain = () => {
   // SubarraysWithProductLessThanK();
   // ThreeSum();
   // ThreeSumClosest();
-  TrappingRainWater();
+  // TrappingRainWater();
   // TripletSumToZero();
   // TripletSumCloseToTarget();
   // TripletsWithSmallerSum();

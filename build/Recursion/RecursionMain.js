@@ -1,9 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const NQueens_1 = __importDefault(require("./NQueens"));
 exports.default = () => {
     // Combinations()
     // CombinationSum();
@@ -15,7 +11,8 @@ exports.default = () => {
     // InterweavingStrings();
     // LetterCombinationsOfAPhoneNumber();
     // LowestCommonManager();
-    (0, NQueens_1.default)();
+    // NestedListWeightSum();
+    // NQueens();
     // Permutations();
     // Permutations2();
     // Powerset();

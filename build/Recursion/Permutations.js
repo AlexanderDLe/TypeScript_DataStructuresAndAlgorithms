@@ -5,7 +5,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
  *
  * []
  *
- * [1] [2] [3] [4]
+ * 1   2   3   4
+ *
+ * v
+ * 1   2   3   4
  *
  *
  */
@@ -76,19 +79,19 @@ const permuteD = (nums) => {
     return result;
 };
 const permute = (nums) => {
-    let result = [];
-    const recurse = (index) => {
-        if (index >= nums.length) {
+    const result = [];
+    const backtrack = (index) => {
+        if (index === nums.length) {
             result.push([...nums]);
             return;
         }
         for (let i = index; i < nums.length; i++) {
-            [nums[index], nums[i]] = [nums[i], nums[index]];
-            recurse(index + 1);
-            [nums[index], nums[i]] = [nums[i], nums[index]];
+            [nums[i], nums[index]] = [nums[index], nums[i]];
+            backtrack(index + 1);
+            [nums[i], nums[index]] = [nums[index], nums[i]];
         }
     };
-    recurse(0);
+    backtrack(0);
     return result;
 };
 exports.default = () => {

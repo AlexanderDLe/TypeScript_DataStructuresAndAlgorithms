@@ -1,20 +1,6 @@
 /**
  * 128. Longest Consecutive Subsequence
  * 
- * [0,3,7,2,5,8,6,0,1,10] -> 0, 1, 2, 3, , 6, 7, 8
- * 
- * {
- *  0: 1
- *  3: 1
- *  7: 0
- *  2: 1
- *  5: 0
- *  8: 0
- *  6: 0
- *  0: 0
- *  1: 1
- * 10: 0
- * }
  */
 
 const longestConsecutiveSubsequenceDiscovery = (nums: number[]): number => {
@@ -49,7 +35,7 @@ const longestConsecutiveSubsequenceDiscovery = (nums: number[]): number => {
   return maxSubsequence;
 };
 
-const longestConsecutiveSubsequence = (nums: number[]): number => {
+const longestConsecutiveSubsequenceA = (nums: number[]): number => {
   const set = new Set();
   for (let num of nums) {
     set.add(num);
@@ -73,9 +59,30 @@ const longestConsecutiveSubsequence = (nums: number[]): number => {
   return longestSubsequence;
 }
 
+const longestConsecutiveSubsequence = (nums: number[]): number => {
+  const set = new Set();
+  for (let num of nums) set.add(num);
+
+  let longestSubsequence = 0;
+  for (let num of nums) {
+    if (set.has(num - 1)) continue;
+    let currSequence = 1;
+    let currNum = num;
+
+    while (set.has(currNum + 1)) {
+      currSequence++;
+      currNum++;
+    }
+    
+    longestSubsequence = Math.max(longestSubsequence, currSequence);
+  }
+
+  return longestSubsequence;
+}
+
 export default () => {
   const nums1 = [100,4,200,1,3,2];
   const nums2 = [0,3,7,2,5,8,4,6,0,1];
-  console.log(longestConsecutiveSubsequenceDiscovery(nums1));
-  console.log(longestConsecutiveSubsequenceDiscovery(nums2));
+  console.log(longestConsecutiveSubsequence(nums1));
+  console.log(longestConsecutiveSubsequence(nums2));
 };

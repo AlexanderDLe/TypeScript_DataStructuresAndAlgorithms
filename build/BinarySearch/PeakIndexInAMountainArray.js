@@ -1,6 +1,6 @@
 "use strict";
 /**
- * 744. Find Smallest Letter Greater Than Target
+ * Peak Index In A Mountain Array
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const peakIndexInAMountainArray = (arr) => {

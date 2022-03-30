@@ -1,16 +1,16 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const FindMedianFromDataStream_1 = __importDefault(require("./FindMedianFromDataStream"));
 exports.default = () => {
+    // CountPrimes();
+    // ExcelSheetColumnNumber();
+    // FactorialTrailingZeroes();
+    // FindMedianFromDataStream();
+    // FindNUniqueIntegersSumUpToZero();
     // HappyNumber();
     // PlusOne();
     // PowerOfThree();
-    // FactorialTrailingZeroes();
+    // PowXN();
+    // RandomPickWithWeight();
     // Sqrtx();
-    // CountPrimes();
-    // ExcelSheetColumnNumber();
-    (0, FindMedianFromDataStream_1.default)();
+    // ValidNumber();
 };

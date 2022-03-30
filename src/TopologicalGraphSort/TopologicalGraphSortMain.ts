@@ -7,12 +7,12 @@ import TopologicalSort from "./TopologicalSort";
 
 
 const TopologicalGraphSortMain = () => {
-    // TopologicalSort();
-    // TasksScheduling();
-    // TasksSchedulingOrder();
-    // AllTasksSchedulingOrders();
-    // AlienDictionary();
-    ReconstructingASequence();
+  // TopologicalSort();
+  // TasksScheduling();
+  // TasksSchedulingOrder();
+  // AllTasksSchedulingOrders();
+  // AlienDictionary();
+  // ReconstructingASequence();
 };
 
 export default TopologicalGraphSortMain;

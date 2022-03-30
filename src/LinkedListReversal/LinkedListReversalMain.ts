@@ -9,7 +9,7 @@ const LinkedListReversalMain = () => {
     // ReverseSublist();
     // ReverseKSublists();
     // ReverseAlternatingKElementSublist();
-    RotateLinkedList();
+    // RotateLinkedList();
 };
 
 export default LinkedListReversalMain;

@@ -81,6 +81,8 @@ const findDisappearedNumbersFlipping = (nums: number[]): number[] => {
 const findDisappearedNumbers = (nums: number[]): number[] => {
   let result: number[] = [];
 
+  // Cyclic sort all the numbers. If you find a duplicate number then
+  // break current loop and continue next.
   for (let i = 0; i < nums.length; i++) {
     while (nums[i] !== i + 1) {
       let val = nums[i];
@@ -90,6 +92,8 @@ const findDisappearedNumbers = (nums: number[]): number[] => {
     }
   }
 
+  // Iterate once more - if you encounter a number not in its correct position,
+  // then that its index + 1 is a missing number (zero index array)
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== i + 1) result.push(i + 1);
   }

@@ -3,12 +3,15 @@ import FindMedianFromDataStream from './FindMedianFromDataStream';
 import JavascriptHeapArray from './JavascriptHeapArray';
 import KClosestPointsToOrigin from './KClosestPointsToOrigin';
 import KthLargestElementInAnArray from './KthLargestElementInAnArray';
+import LongestHappyString from './LongestHappyString';
+import MaximumSwap from './MaximumSwap';
 import MinHeapConstruction from './MinHeapConstruction';
 import RearrangeStringKDistanceApart from './RearrangeStringKDistanceApart';
 import ReorganizeString from './ReorganizeString';
 import SlidingWindowMedian from './SlidingWindowMedian';
 import SmallestRangeCoveringElementsFromKLists from './SmallestRangeCoveringElementsFromKLists';
 import SortCharactersByFrequency from './SortCharactersByFrequency';
+import StockPriceFluctation from './StockPriceFluctation';
 import TopKFrequentElements from './TopKFrequentElements';
 
 export default () => {
@@ -17,11 +20,14 @@ export default () => {
   // JavascriptHeapArray();
   // KClosestPointsToOrigin();
   // KthLargestElementInAnArray();
+  // LongestHappyString();
+  // MaximumSwap();
   // MinHeapConstruction();
   // RearrangeStringKDistanceApart();
   // ReorganizeString();
-  SlidingWindowMedian();
+  // SlidingWindowMedian();
   // SmallestRangeCoveringElementsFromKLists();
   // SortCharactersByFrequency();
+  // StockPriceFluctation();
   // TopKFrequentElements();
 };

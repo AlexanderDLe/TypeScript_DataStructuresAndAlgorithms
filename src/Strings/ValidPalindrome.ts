@@ -18,7 +18,7 @@ const isPalindromeA = (s: string): boolean => {
     return true;
 };
 
-const isPalindrome = (s: string): boolean => {
+const isPalindromeB = (s: string): boolean => {
     let L = 0;
     let R = s.length - 1;
 
@@ -30,8 +30,41 @@ const isPalindrome = (s: string): boolean => {
     return true;
 }
 
-export default () => {
-    const s = "racecar"
+const isPalindrome = (s: string): boolean => {
+  s = s.toLowerCase();
 
-    console.log(isPalindrome(s));
+  const isValid = (char:string) => {
+    let Lstart = 'a'.charCodeAt(0);
+    let Lend = 'z'.charCodeAt(0);
+    let Nstart = '0'.charCodeAt(0);
+    let Nend = '9'.charCodeAt(0);
+
+    if (char.charCodeAt(0) >= Lstart && char.charCodeAt(0) <= Lend) return true;
+    if (char.charCodeAt(0) >= Nstart && char.charCodeAt(0) <= Nend) return true;
+    return false;
+  }
+
+  let L = 0;
+  let R = s.length - 1;
+
+  while (L < R) {
+    // Check for bounds
+    while (L < s.length && !isValid(s[L])) L++;
+    while (R >= 0 && !isValid(s[R])) R--;
+    if (L > R) break;
+
+    if (s[L] !== s[R]) return false;
+    L++, R--;
+  }
+
+  return true;
+}
+
+export default () => {
+  const s = "racecar"
+  console.log(isPalindrome(s)); 
+  console.log(isPalindrome(' '));
+  console.log(isPalindrome('a man a plan a canal panamaa'));
+  console.log(isPalindrome('.,'));
+  console.log(isPalindrome('0P'));
 };

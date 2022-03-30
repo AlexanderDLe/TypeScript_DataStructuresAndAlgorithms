@@ -3,7 +3,7 @@ import PublisherSubscriber from "./PublisherSubscriber";
 
 
 const ObjectOrientationMain = () => {
-  FactoryPattern();
+  // FactoryPattern();
   // PublisherSubscriber();
 };
 

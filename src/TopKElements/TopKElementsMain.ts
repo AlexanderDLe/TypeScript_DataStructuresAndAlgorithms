@@ -15,20 +15,20 @@ import TopKNumbers from "./TopKNumbers";
 
 
 const TopKElementsMain = () => {
-    // TopKNumbers();
-    // KthSmallestNumber();
-    // KClosestPointsToOrigin();
-    // ConnectRopes();
-    // TopKFrequentNumbers();
-    // FrequencySort();
-    // KthLargestNumberInStream();
-    // KClosestNumbers();
-    // MaximumDistinctElements();
-    // SumOfElements();
-    // RearrangeString();
-    // RearrangeStringKDistanceApart();
-    // SchedulingTasks();
-    FrequencyStack();
+  // TopKNumbers();
+  // KthSmallestNumber();
+  // KClosestPointsToOrigin();
+  // ConnectRopes();
+  // TopKFrequentNumbers();
+  // FrequencySort();
+  // KthLargestNumberInStream();
+  // KClosestNumbers();
+  // MaximumDistinctElements();
+  // SumOfElements();
+  // RearrangeString();
+  // RearrangeStringKDistanceApart();
+  // SchedulingTasks();
+  // FrequencyStack();
 };
 
 export default TopKElementsMain;

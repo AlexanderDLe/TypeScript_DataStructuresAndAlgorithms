@@ -1,7 +1,7 @@
 import KthSmallestElementInABST from "./KthSmallestElementInABST";
 
 const BinarySearchTreeMain = () => {
-  KthSmallestElementInABST();
+  // KthSmallestElementInABST();
 };
 
 export default BinarySearchTreeMain;

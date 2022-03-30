@@ -4,7 +4,7 @@
 */
 
 import { PrintArray, PrintMatrix } from "../utils/Utilities";
-const eraseOverlapIntervals = (intervals: number[][]): number => {
+const eraseOverlapIntervalsRef = (intervals: number[][]): number => {
   intervals = intervals.sort((a, b) => {
     if (a[0] === b[0]) return a[1] - b[1];
     return a[0] - b[0];
@@ -24,6 +24,28 @@ const eraseOverlapIntervals = (intervals: number[][]): number => {
       count++;
     } else {
       // If no overlapping, simply move forward.
+      prev = curr;
+    }
+  }
+
+  return count;
+}
+
+const eraseOverlapIntervals = (intervals: number[][]): number => {
+  intervals.sort((a, b) => a[0] - b[0]);
+
+  let count = 0;
+  let prev = intervals[0];
+  for (let i = 1; i < intervals.length; i++) {
+    let curr = intervals[i];
+
+    if (curr[0] < prev[1]) {
+      // Mistake: since you're removing an interval upon overlapping,
+      // you want to keep the one least likely to overlap the next.
+      // Therefore, remove the later one/keep the earlier one.
+      if (curr[1] < prev[1]) prev = curr;
+      count++;
+    } else {
       prev = curr;
     }
   }
