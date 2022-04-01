@@ -12,6 +12,7 @@ import MergeIntervals from "./MergeIntervals";
 import MinimumMeetingRooms from "./MinimumMeetingRooms";
 import MinimumNumberOfArrowsToBurstBalloons from "./MinimumNumberOfArrowsToBurstBalloons";
 import NonOverlappingIntervals from "./NonOverlappingIntervals";
+import PeopleAlive from "./PeopleAlive";
 
 const IntervalsMain = () => {
   // CalendarMatching();
@@ -27,6 +28,7 @@ const IntervalsMain = () => {
   // MinimumMeetingRooms();
   // MinimumNumberOfArrowsToBurstBalloons();
   // MaximumCPULoad();
+  // PeopleAlive();
   // NonOverlappingIntervals();
 };
 

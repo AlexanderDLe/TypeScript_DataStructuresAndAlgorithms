@@ -27,7 +27,7 @@ const intervalsIntersection = (intervals_a, intervals_b) => {
             overlap[1] = Math.min(curr1[1], curr2[1]);
             result.push(overlap);
         }
-        // Iterate earlier interval forward
+        // Iterate earlier END time interval forward
         if (curr1[1] <= curr2[1])
             i++;
         else

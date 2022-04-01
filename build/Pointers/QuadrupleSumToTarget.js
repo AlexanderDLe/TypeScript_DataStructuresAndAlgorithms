@@ -6,32 +6,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const quadrupleSumToTarget = (arr, target) => {
     let result = [];
     arr = arr.sort((a, b) => a - b);
-    for (let L = 0; L < arr.length - 3; L++) {
-        for (let LM = L + 1; LM < arr.length - 2; LM++) {
-            let RM = LM + 1;
+    for (let i = 0; i < arr.length - 3; i++) {
+        for (let j = i + 1; j < arr.length - 2; j++) {
+            let L = j + 1;
             let R = arr.length - 1;
-            while (RM < R) {
-                let sum = arr[L] + arr[LM] + arr[RM] + arr[R];
+            while (L < R) {
+                let sum = arr[i] + arr[j] + arr[L] + arr[R];
                 if (sum === target) {
-                    result.push([arr[L], arr[LM], arr[RM], arr[R]]);
-                    while (arr[RM] === arr[RM + 1])
-                        RM++;
+                    result.push([arr[i], arr[j], arr[L], arr[R]]);
+                    while (arr[L] === arr[L + 1])
+                        L++;
                     while (arr[R] === arr[R - 1])
                         R--;
-                    RM++, R--;
+                    L++, R--;
                 }
                 else if (sum < target) {
-                    RM++;
+                    L++;
                 }
                 else {
                     R--;
                 }
             }
-            while (arr[LM] === arr[LM + 1])
-                LM++;
+            while (arr[j] === arr[j + 1])
+                j++;
         }
-        while (arr[L] === arr[L + 1])
-            L++;
+        while (arr[i] === arr[i + 1])
+            i++;
     }
     return result;
 };
@@ -41,4 +41,3 @@ exports.default = () => {
     console.log(quadrupleSumToTarget(arr1, target1));
     console.log(quadrupleSumToTarget(arr2, target2));
 };
-[0, 0, 1, 1, 2];

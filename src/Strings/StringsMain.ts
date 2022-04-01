@@ -41,6 +41,9 @@ import VerifyingAnAlientDictionary from './VerifyingAnAlientDictionary';
 import GroupShiftedStrings from './GroupShiftedStrings';
 import AccountsMerge from './AccountsMerge';
 import SimplifyPath from './SimplifyPath';
+import GoatLatin from './GoatLatin';
+import RemoveInvalidParentheses from './RemoveInvalidParentheses';
+import RemoveAllAdjacentDuplicates from './RemoveAllAdjacentDuplicates';
 
 export default () => {
   // BackspaceStringCompare();
@@ -58,6 +61,7 @@ export default () => {
   // FizzBuzz();
   // FlipStringToMonotoneIncreasing();
   // GenerateDocument();
+  // GoatLatin();
   // GroupAnagrams();
   // GroupShiftedStrings();
   // ImplementStrStr();
@@ -69,6 +73,8 @@ export default () => {
   // MinimumCharacterForWords();
   // MinimumWindowSubstring();
   // PartitionLabels();
+  // RemoveAllAdjacentDuplicates();
+  // RemoveInvalidParentheses();
   // ReorderDataInLogFiles();
   // ReverseInteger();
   // ReverseString();

@@ -28,10 +28,12 @@ import ShortestPathInBinaryMatrix from './ShortestPathInBinaryMatrix';
 import ShortestDistanceFromAllBuildings from './ShortestDistanceFromAllBuildings';
 import ToeplitzMatrix from './ToeplitzMatrix';
 import IslandPerimeter from './IslandPerimeter';
+import DiagonalTraverse from './DiagonalTraverse';
 
 export default () => {
   // BoggleBoard();
   // Convert1DArrayInto2DArray()
+  // DiagonalTraverse();
   // GameOfLife();
   // IslandPerimeter();
   // KthSmallestElementInSortedMatrix();

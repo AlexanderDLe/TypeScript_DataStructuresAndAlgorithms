@@ -18,58 +18,59 @@
  *
  * 1. [1, 4, 2]
  *
- *    minHeap = [[1, 4, 2]]
- *    First element goes into the minHeap. Add load onto maxLoad.
- *    currentMaxLoad = 3
- *    maxLoad = 3
+ *  minHeap = [[1, 4, 2]]
+ *  First element goes into the minHeap. Add load onto maxLoad.
+ *  currentMaxLoad = 3
+ *  maxLoad = 3
  *
  ******************************************************************
  *
  * 2. [2, 5, 4]
  *
- *    minHeap = [[1, 4, 2], [2, 5, 4]]
- *                   ^
- *            Earliest job
+ *  minHeap = [[1, 4, 2], [2, 5, 4]]
+ *           ^
+ *      Earliest job
  *
- *    End time of earliest job is compared with starting time of current job.
- *    2 < 4 = true
- *    Since starting time of current is lower than end time of earliest job, then it overlaps.
- *    We add load onto maxLoad.
- *    currentMaxLoad = 7
- *    maxLoad = 7.
+ *  End time of earliest job is compared with starting time of current job.
+ *  2 < 4 = true
+ *  Since starting time of current is lower than end time of earliest job, then it overlaps.
+ *  We add load onto maxLoad.
+ *  currentMaxLoad = 7
+ *  maxLoad = 7.
  *
  ******************************************************************
  *
  * 3. [7,9,6]
  *
- *    minHeap = [[1, 4, 2], [2, 5, 4]]
- *                   ^
- *            Earliest job
+ *  minHeap = [[1, 4, 2], [2, 5, 4]]
+ *           ^
+ *      Earliest job
  *
- *    Starting time of current is higher than end time of earliest job, then it does not overlap.
- *    7 < 4 = false
- *    Therefore, we pop earliest job and subtract the maxLoad with load of earliest job.
- *    currentMaxLoad = 4
- *    maxLoad = 7
+ *  Starting time of current is higher than end time of earliest job, then it does not overlap.
+ *  7 < 4 = false
+ *  Therefore, we pop earliest job and subtract the maxLoad with load of earliest job.
+ *  currentMaxLoad = 4
+ *  maxLoad = 7
  *
- *    minHeap = [[2, 5, 4]]
- *                   ^
- *            Earliest job
+ *  minHeap = [[2, 5, 4]]
+ *           ^
+ *      Earliest job
  *
- *    Since starting time of current is higher than end time of earliest job, then it does not overlap.
- *    7 < 5 = false
- *    Therefore, we pop earliest job and subtract the maxLoad with load of earliest job.
- *    currentMaxLoad = 3
- *    maxLoad = 7
+ *  Since starting time of current is higher than end time of earliest job, then it does not overlap.
+ *  7 < 5 = false
+ *  Therefore, we pop earliest job and subtract the maxLoad with load of earliest job.
+ *  currentMaxLoad = 3
+ *  maxLoad = 7
  *
- *    Since heap is empty, we can simply add current job onto heap and add load to the maxLoad.
- *    [[7, 9, 6]]
- *    currentMaxLoad = 6
- *    maxLoad = 7
+ *  Since heap is empty, we can simply add current job onto heap and add load to the maxLoad.
+ *  [[7, 9, 6]]
+ *  currentMaxLoad = 6
+ *  maxLoad = 7
 */
 Object.defineProperty(exports, "__esModule", { value: true });
+const priority_queue_1 = require("@datastructures-js/priority-queue");
 let Heap = require('collections/heap');
-const maximumCPULoad = (jobs) => {
+const maximumCPULoadRef = (jobs) => {
     jobs = jobs.sort((a, b) => a[0] - b[0]);
     let minHeap = new Heap([], null, (a, b) => b[1] - a[1]);
     let currMaxLoad = 0;
@@ -82,6 +83,32 @@ const maximumCPULoad = (jobs) => {
         minHeap.push(job);
         currMaxLoad += job[2];
         maxLoad = Math.max(maxLoad, currMaxLoad);
+    }
+    return maxLoad;
+};
+/*
+      |
+  =====
+      ====
+      |
+*/
+const maximumCPULoad = (jobs) => {
+    // Sort by start time
+    jobs = jobs.sort((a, b) => a[0] - b[0]);
+    // Min heap prioritized by earlier end time.
+    const minHeap = new priority_queue_1.MinPriorityQueue({ priority: (job) => job[1] });
+    let maxLoad = 0;
+    let currLoad = 0;
+    for (let [start, end, load] of jobs) {
+        // console.log(start, end, load)
+        // While start time is NOT overlapping with previous end times, dequeue.
+        while (minHeap.size() && start >= minHeap.front().element[1]) {
+            let earliestEndingJob = minHeap.dequeue().element;
+            currLoad -= earliestEndingJob[2];
+        }
+        minHeap.enqueue([start, end, load]);
+        currLoad += load;
+        maxLoad = Math.max(maxLoad, currLoad);
     }
     return maxLoad;
 };

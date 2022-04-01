@@ -31,4 +31,3 @@ exports.default = () => {
     console.log(MinimumWindowSort(arr3));
     console.log(MinimumWindowSort(arr4));
 };
-[0, 0, 1, 1, 2];

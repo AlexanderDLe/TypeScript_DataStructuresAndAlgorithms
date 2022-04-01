@@ -60,7 +60,7 @@
 
 import { PrintArray } from "../utils/Utilities";
 
-const checkSubarraySums = (nums: number[], k:number): boolean => {
+const checkSubarraySumsRef = (nums: number[], k:number): boolean => {
   let sum = 0;
   let prefix = 0;
   const hash = new Set();
@@ -77,6 +77,30 @@ const checkSubarraySums = (nums: number[], k:number): boolean => {
     prefix = sum;
     console.log(hash);
   }
+  return false;
+}
+
+/*
+    k = 6
+    23   2   4   6   7
+S:0  5   1   5 <--- 5 exists in the set, which means there was a complete mod cycle.
+P:0  0   5
+Set: [0, 5]
+*/
+const checkSubarraySums = (nums: number[], k:number): boolean => {
+  const set = new Set();
+  let sum = 0;
+  let pre = 0;
+  
+  for (let num of nums) {
+    sum += num;
+    if (k) sum %= k;
+
+    if (set.has(sum)) return true;
+    set.add(pre);
+    pre = sum;
+  }
+
   return false;
 }
 

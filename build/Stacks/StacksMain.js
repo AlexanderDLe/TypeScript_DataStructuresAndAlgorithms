@@ -4,6 +4,7 @@ exports.default = () => {
     // BasicCalculator2();
     // BalancedBrackets();
     // DailyTemperatures();
+    // ExclusiveTimeOfFunctions();
     // MaximumFrequencyStack();
     // MinimumAddToMakeParenthesesValid();
     // MinimumRemoveToMakeValidParentheses();

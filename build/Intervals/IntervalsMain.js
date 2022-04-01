@@ -14,6 +14,7 @@ const IntervalsMain = () => {
     // MinimumMeetingRooms();
     // MinimumNumberOfArrowsToBurstBalloons();
     // MaximumCPULoad();
+    // PeopleAlive();
     // NonOverlappingIntervals();
 };
 exports.default = IntervalsMain;

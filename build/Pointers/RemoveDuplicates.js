@@ -1,7 +1,6 @@
 "use strict";
 /**
  * Grokking the Coding Interview
- * 1. Average Contiguous Subarrays of Size K
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const removeDuplicates = (arr) => {

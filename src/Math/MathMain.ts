@@ -3,6 +3,7 @@ import ExcelSheetColumnNumber from './ExcelSheetColumnNumber';
 import FactorialTrailingZeroes from './FactorialTrailingZeroes';
 import FindMedianFromDataStream from './FindMedianFromDataStream';
 import FindNUniqueIntegersSumUpToZero from './FindNUniqueIntegersSumUpToZero';
+import FractionToRecurringDecimal from './FractionToRecurringDecimal';
 import HappyNumber from './HappyNumber';
 import PlusOne from './PlusOne';
 import PowerOfThree from './PowerOfThree';
@@ -17,6 +18,7 @@ export default () => {
   // FactorialTrailingZeroes();
   // FindMedianFromDataStream();
   // FindNUniqueIntegersSumUpToZero();
+  // FractionToRecurringDecimal();
   // HappyNumber();
   // PlusOne();
   // PowerOfThree();

@@ -5,41 +5,39 @@
 import { PrintArray } from "../utils/Utilities";
 
 const quadrupleSumToTarget = (arr: number[], target: number): number[][] => {
-    let result: number[][] = [];
-    arr = arr.sort((a, b) => a - b);
+  let result: number[][] = [];
+  arr = arr.sort((a, b) => a - b);
 
-    for (let L = 0; L < arr.length - 3; L++) {
-        for (let LM = L + 1; LM < arr.length - 2; LM++) {
-            let RM = LM + 1;
-            let R = arr.length - 1;
+  for (let i = 0; i < arr.length - 3; i++) {
+    for (let j = i + 1; j < arr.length - 2; j++) {
+      let L = j + 1;
+      let R = arr.length - 1;
 
-            while (RM < R) {
-                let sum = arr[L] + arr[LM] + arr[RM] + arr[R];
+      while (L < R) {
+        let sum = arr[i] + arr[j] + arr[L] + arr[R];
 
-                if (sum === target) {
-                    result.push([arr[L], arr[LM], arr[RM], arr[R]]);
-                    while (arr[RM] === arr[RM + 1]) RM++;
-                    while (arr[R] === arr[R - 1]) R--;
-                    RM++, R--;
-                } else if (sum < target) {
-                    RM++;
-                } else {
-                    R--;
-                }
-            }
-            while (arr[LM] === arr[LM + 1]) LM++;
+        if (sum === target) {
+          result.push([arr[i], arr[j], arr[L], arr[R]]);
+          while (arr[L] === arr[L + 1]) L++;
+          while (arr[R] === arr[R - 1]) R--;
+          L++, R--;
+        } else if (sum < target) {
+          L++;
+        } else {
+          R--;
         }
-        while (arr[L] === arr[L + 1]) L++;
+      }
+      while (arr[j] === arr[j + 1]) j++;
     }
-    return result;
+    while (arr[i] === arr[i + 1]) i++;
+  }
+  return result;
 }
 
 export default () => {
-    let arr1 = [4, 1, 2, -1, 1, -3], target1 = 1;
-    let arr2 = [2, 0, -1, 1, -2, 2], target2 = 2;
+  let arr1 = [4, 1, 2, -1, 1, -3], target1 = 1;
+  let arr2 = [2, 0, -1, 1, -2, 2], target2 = 2;
 
-    console.log(quadrupleSumToTarget(arr1, target1));
-    console.log(quadrupleSumToTarget(arr2, target2));
+  console.log(quadrupleSumToTarget(arr1, target1));
+  console.log(quadrupleSumToTarget(arr2, target2));
 };
-
-[0, 0, 1, 1, 2]

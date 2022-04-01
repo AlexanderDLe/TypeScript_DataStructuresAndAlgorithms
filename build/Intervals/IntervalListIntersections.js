@@ -56,6 +56,20 @@ const intervalListIntersections = (firstList, secondList) => {
         let intervalA = firstList[p];
         let intervalB = secondList[q];
         processOverlap(intervalA, intervalB);
+        /*
+          =====
+                =====
+          How to determine which interval to increment?
+          We want to increment the EARLIER END time because:
+    
+          1. Increment the LATER END time would yield the same result.
+          2. Assuming intervals are sorted by START, we should not be concerend with START.
+    
+          ==== ===
+          =======  <---- May still overlap
+    
+          3. The LATER END time may still overlap the next upcoming interval in other array.
+        */
         if (intervalA[1] < intervalB[1])
             p++;
         else

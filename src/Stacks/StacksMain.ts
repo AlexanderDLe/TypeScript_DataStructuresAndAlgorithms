@@ -1,6 +1,7 @@
 import BalancedBrackets from './BalancedBrackets';
 import BasicCalculator2 from './BasicCalculator2';
 import DailyTemperatures from './DailyTemperatures';
+import ExclusiveTimeOfFunctions from './ExclusiveTimeOfFunctions';
 import MaximumFrequencyStack from './MaximumFrequencyStack';
 import MinimumAddToMakeParenthesesValid from './MinimumAddToMakeParenthesesValid';
 import MinimumRemoveToMakeValidParentheses from './MinimumRemoveToMakeValidParentheses';
@@ -16,6 +17,7 @@ export default () => {
   // BasicCalculator2();
   // BalancedBrackets();
   // DailyTemperatures();
+  // ExclusiveTimeOfFunctions();
   // MaximumFrequencyStack();
   // MinimumAddToMakeParenthesesValid();
   // MinimumRemoveToMakeValidParentheses();

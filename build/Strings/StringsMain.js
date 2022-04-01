@@ -16,6 +16,7 @@ exports.default = () => {
     // FizzBuzz();
     // FlipStringToMonotoneIncreasing();
     // GenerateDocument();
+    // GoatLatin();
     // GroupAnagrams();
     // GroupShiftedStrings();
     // ImplementStrStr();
@@ -27,6 +28,8 @@ exports.default = () => {
     // MinimumCharacterForWords();
     // MinimumWindowSubstring();
     // PartitionLabels();
+    // RemoveAllAdjacentDuplicates();
+    // RemoveInvalidParentheses();
     // ReorderDataInLogFiles();
     // ReverseInteger();
     // ReverseString();
