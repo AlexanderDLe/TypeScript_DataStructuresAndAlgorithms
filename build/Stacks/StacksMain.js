@@ -13,6 +13,8 @@ exports.default = () => {
     // NextGreaterElement();
     // NextGreaterElementLeetcode();
     // SortStack();
+    // SumOfSubarrayMinimums();
+    // SumOfSubarrayRanges();
     // SunsetViews();
     // ValidParentheses();
 };

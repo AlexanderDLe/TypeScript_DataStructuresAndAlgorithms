@@ -1,11 +1,5 @@
 "use strict";
 /**
- * Grokking the Coding Interview
- *
- *
- * [1, 2, 3, 4, 7]
- *
- * [1, 2, 3, 5, 6]
 */
 Object.defineProperty(exports, "__esModule", { value: true });
 const taskAssignment = (k, tasks) => {

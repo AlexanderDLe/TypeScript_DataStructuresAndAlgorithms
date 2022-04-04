@@ -29,6 +29,7 @@ import ShortestDistanceFromAllBuildings from './ShortestDistanceFromAllBuildings
 import ToeplitzMatrix from './ToeplitzMatrix';
 import IslandPerimeter from './IslandPerimeter';
 import DiagonalTraverse from './DiagonalTraverse';
+import LeftmostColumnWithAtLeastAOne from './LeftmostColumnWithAtLeastAOne';
 
 export default () => {
   // BoggleBoard();
@@ -37,6 +38,7 @@ export default () => {
   // GameOfLife();
   // IslandPerimeter();
   // KthSmallestElementInSortedMatrix();
+  // LeftmostColumnWithAtLeastAOne();
   // MakingALargeIsland();
   // MaximumNumberOfPointsWithCost();
   // MaximalSquare();

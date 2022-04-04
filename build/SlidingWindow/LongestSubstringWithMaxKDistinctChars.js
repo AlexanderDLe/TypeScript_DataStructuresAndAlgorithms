@@ -7,7 +7,7 @@
  *
 Time Complexity#
 The above algorithm’s time complexity will be O(N),
-where NN is the number of characters in the input string.
+where N is the number of characters in the input string.
 The outer for loop runs for all characters, and the inner
 while loop processes each character only once; therefore,
 the time complexity of the algorithm will be O(N+N),

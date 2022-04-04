@@ -21,6 +21,7 @@ import CombinationSum4 from './CombinationSum4';
 import SudokuLeetcode from './SudokuLeetcode';
 import NQueens from './NQueens';
 import NestedListWeightSum from './NestedListWeightSum';
+import ExpressionAddOperators from './ExpressionAddOperators';
 
 export default () => {
   // Combinations()
@@ -28,6 +29,7 @@ export default () => {
   // CombinationSum2();
   // CombinationSum3();
   // CombinationSum4();
+  // ExpressionAddOperators();
   // Fibonacci();
   // GenerateParentheses();
   // InterweavingStrings();

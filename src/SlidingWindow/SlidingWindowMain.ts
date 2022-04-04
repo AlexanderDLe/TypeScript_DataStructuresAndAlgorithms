@@ -10,6 +10,7 @@ import LongestSubstringWithoutRepeatingCharacters from "./LongestSubstringWithou
 import LongestSubstringWithSameLettersAfterReplacement from "./LongestSubstringWithSameLettersAfterReplacement.ts";
 import MaximumSumSubarrayOfSizeK from "./MaximumSumSubarrayOfSizeK";
 import MinimumSizeSubarraySum from "./MinimumSizeSubarraySum";
+import MinimumSwapsToGroupAll1sTogether from "./MinimumSwapsToGroupAll1sTogether";
 import MinimumWindowSubstring from "./MinimumWindowSubstring";
 import PermutationInAStringGrokking from "./PermutationInAStringGrokking";
 import PermutationInAStringLeetcode from "./PermutationInAStringLeetcode";
@@ -35,6 +36,7 @@ const SlidingWindowMain = () => {
   // LongestSubstringWithSameLettersAfterReplacement();
   // MaximumSumSubarrayOfSizeK();
   // MinimumSizeSubarraySum();
+  // MinimumSwapsToGroupAll1sTogether();
   // MinimumWindowSubstring();
   // PermutationInAStringLeetcode();
   // PermutationInAStringGrokking();

@@ -1,6 +1,7 @@
 import ComparingStringsContainingBackspaces from "./ComparingStringsContainingBackspaces";
 import ContainerWithMostWater from "./ContainerWithMostWater";
 import DutchNationalFlag from "./DutchNationalFlag";
+import MergeSortedArray from "./MergeSortedArray";
 import MinimumWindowSort from "./MinimumWindowSort";
 import PairWithTargetSum from "./PairWithTargetSum";
 import QuadrupleSumToTarget from "./QuadrupleSumToTarget";
@@ -20,6 +21,7 @@ const PointersMain = () => {
   // ComparingStringsContainingBackspaces();
   // ContainerWithMostWater();
   // DutchNationalFlag();
+  // MergeSortedArray();
   // MinimumWindowSort();
   // PairWithTargetSum();
   // QuadrupleSumToTarget();

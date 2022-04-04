@@ -25,7 +25,7 @@ const minWindow = (s, p) => {
         // No need to subtract by 1 (R - 1) for this condition.
         // L
         // cbae
-        //    R <---  Once Rval is assigned, R increments forward
+        //    R <---  Once Rval is assigned, if already R increments forward
         //            and already meets the condition R === p.length.
         if (R >= p.length) {
             let Lval = s[L++];

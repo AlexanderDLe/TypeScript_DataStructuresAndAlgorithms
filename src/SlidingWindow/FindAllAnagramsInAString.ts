@@ -29,7 +29,7 @@ const minWindow = (s:string, p:string): number[] => {
 
     // L
     // cbae
-    //    R <---  Once Rval is assigned, R increments forward
+    //    R <---  Once Rval is assigned, if already R increments forward
     //            and already meets the condition R === p.length.
     if (R >= p.length) {
       let Lval = s[L++];

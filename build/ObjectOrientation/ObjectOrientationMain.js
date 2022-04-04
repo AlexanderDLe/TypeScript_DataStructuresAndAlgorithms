@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const ObjectOrientationMain = () => {
+    // Command();
+    // Elevator();
     // FactoryPattern();
-    // PublisherSubscriber();
+    // PubSub();
 };
 exports.default = ObjectOrientationMain;

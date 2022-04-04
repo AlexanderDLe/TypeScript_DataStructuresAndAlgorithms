@@ -4,6 +4,7 @@ const PointersMain = () => {
     // ComparingStringsContainingBackspaces();
     // ContainerWithMostWater();
     // DutchNationalFlag();
+    // MergeSortedArray();
     // MinimumWindowSort();
     // PairWithTargetSum();
     // QuadrupleSumToTarget();

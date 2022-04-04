@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const GreedyMain = () => {
     // ClassPhoto();
+    // MaximumUnitsOnATruck();
     // MinimumWaitingTime();
     // TandemBicycle();
     // TaskAssignment();

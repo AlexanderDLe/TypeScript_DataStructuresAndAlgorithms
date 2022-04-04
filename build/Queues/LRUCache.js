@@ -128,22 +128,9 @@ class LRUCacheMapMethod {
     }
 }
 exports.default = () => {
-    /*
-    const lRUCache = new LRUCache(2);
-    lRUCache.put(1, 1);            // cache is {1=1}
-    lRUCache.put(2, 2);            // cache is {1=1, 2=2}
-    console.log(lRUCache.get(1));  // return 1
-    lRUCache.put(3, 3);            // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
-    console.log(lRUCache.get(2));  // returns -1 (not found)
-    lRUCache.put(4, 4);            // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
-    console.log(lRUCache.get(1));  // return -1 (not found)
-    console.log(lRUCache.get(3));  // return 3
-    console.log(lRUCache.get(4));  // return 4
-   */
     const lRUCache2 = new LRUCache(5);
     console.log(lRUCache2.get(2));
     lRUCache2.put(2, 6);
-    // console.log(lRUCache2.get(1));  
     lRUCache2.put(1, 5);
     lRUCache2.print();
     lRUCache2.put(1, 2);
@@ -161,10 +148,4 @@ exports.default = () => {
     lRUCache2.print();
     lRUCache2.put(5, 5);
     lRUCache2.print();
-    //
-    /*
-    console.log(lRUCache2.get(1));
-    console.log(lRUCache2.get(3));
-    console.log(lRUCache2.get(4));
-     */
 };

@@ -1,3 +1,4 @@
+import AddStrings from './AddStrings';
 import CountPrimes from './CountPrimes';
 import ExcelSheetColumnNumber from './ExcelSheetColumnNumber';
 import FactorialTrailingZeroes from './FactorialTrailingZeroes';
@@ -10,9 +11,11 @@ import PowerOfThree from './PowerOfThree';
 import PowXN from './PowXN';
 import RandomPickWithWeight from './RandomPickWithWeight';
 import Sqrtx from './Sqrtx';
+import TheKthFactorOfN from './TheKthFactorOfN';
 import ValidNumber from './ValidNumber';
 
 export default () => {
+  // AddStrings();
   // CountPrimes();
   // ExcelSheetColumnNumber();
   // FactorialTrailingZeroes();
@@ -20,6 +23,7 @@ export default () => {
   // FindNUniqueIntegersSumUpToZero();
   // FractionToRecurringDecimal();
   // HappyNumber();
+  // TheKthFactorOfN();
   // PlusOne();
   // PowerOfThree();
   // PowXN();

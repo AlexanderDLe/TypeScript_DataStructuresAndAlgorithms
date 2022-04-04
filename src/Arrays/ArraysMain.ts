@@ -68,6 +68,8 @@ import BestSightseeingPair from './BestSightseeingPair';
 import FindOriginalArrayFromDoubledArray from './FindOriginalArrayFromDoubledArray';
 import ContiguousSubarraySum from './ContiguousSubarraySum';
 import IntersectionOf3SortedArrays from './IntersectionOf3SortedArrays';
+import BestTimeToBuyAndSellStock3 from './BestTimeToBuyAndSellStock3';
+import RangeAddition from './RangeAddition';
 
 const ArraysMain = () => {
   // AnalyzeUserWebPatterns();
@@ -76,6 +78,7 @@ const ArraysMain = () => {
   // BestSightseeingPair();
   // BestTimeToBuyAndSellStock();
   // BestTimeToBuyAndSellStock2();
+  // BestTimeToBuyAndSellStock3();
   // BuildingsWithAnOceanView();
   // ContainerWithMostWater();
   // ContainsDuplicate();
@@ -122,6 +125,7 @@ const ArraysMain = () => {
   // PascalsTriangle();
   // ProductOfArrayExceptSelf();
   // Quickselect();
+  RangeAddition();
   // RemoveDuplicatesFromSortedArray();
   // SearchInRotatedSortedArray();
   // SearchInsertPosition();

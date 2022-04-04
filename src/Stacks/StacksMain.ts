@@ -10,6 +10,8 @@ import MinStack from './MinStack';
 import NextGreaterElement from './NextGreaterElement';
 import NextGreaterElementLeetcode from './NextGreaterElementLeetcode';
 import SortStack from './SortStack';
+import SumOfSubarrayMinimums from './SumOfSubarrayMinimums';
+import SumOfSubarrayRanges from './SumOfSubarrayRanges';
 import SunsetViews from './SunsetViews';
 import ValidParentheses from './ValidParentheses';
 
@@ -26,6 +28,8 @@ export default () => {
   // NextGreaterElement();
   // NextGreaterElementLeetcode();
   // SortStack();
+  // SumOfSubarrayMinimums();
+  // SumOfSubarrayRanges();
   // SunsetViews();
   // ValidParentheses();
 };

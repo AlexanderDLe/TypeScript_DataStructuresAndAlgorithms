@@ -1,10 +1,13 @@
+import Command from "./Command/Command";
+import Elevator from "./Elevator/Elevator";
 import FactoryPattern from "./Factory/FactoryPattern";
-import PublisherSubscriber from "./PublisherSubscriber";
-
+import PubSub from "./PubSub/PubSub";
 
 const ObjectOrientationMain = () => {
+  // Command();
+  // Elevator();
   // FactoryPattern();
-  // PublisherSubscriber();
+  // PubSub();
 };
 
 export default ObjectOrientationMain;

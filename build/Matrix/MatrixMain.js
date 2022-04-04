@@ -7,6 +7,7 @@ exports.default = () => {
     // GameOfLife();
     // IslandPerimeter();
     // KthSmallestElementInSortedMatrix();
+    // LeftmostColumnWithAtLeastAOne();
     // MakingALargeIsland();
     // MaximumNumberOfPointsWithCost();
     // MaximalSquare();

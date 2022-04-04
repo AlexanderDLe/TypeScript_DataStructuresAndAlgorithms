@@ -1,5 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const RangeAddition_1 = __importDefault(require("./RangeAddition"));
 const ArraysMain = () => {
     // AnalyzeUserWebPatterns();
     // ArrayQuadruplet();
@@ -7,6 +11,7 @@ const ArraysMain = () => {
     // BestSightseeingPair();
     // BestTimeToBuyAndSellStock();
     // BestTimeToBuyAndSellStock2();
+    // BestTimeToBuyAndSellStock3();
     // BuildingsWithAnOceanView();
     // ContainerWithMostWater();
     // ContainsDuplicate();
@@ -53,6 +58,7 @@ const ArraysMain = () => {
     // PascalsTriangle();
     // ProductOfArrayExceptSelf();
     // Quickselect();
+    (0, RangeAddition_1.default)();
     // RemoveDuplicatesFromSortedArray();
     // SearchInRotatedSortedArray();
     // SearchInsertPosition();

@@ -2,6 +2,7 @@ import BinarySearch from "./BinarySearch";
 import BitonicArrayMaximum from "./BitonicArrayMaximum";
 import CeilingOfANumber from "./CeilingOfANumber";
 import CountOfRangeSum from "./CountOfRangeSum";
+import CuttingRibbons from "./CuttingRibbons";
 import FindKClosestElements from "./FindKClosestElements";
 import FindMinimumInRotatedSortedArray from "./FindMinimumInRotatedSortedArray";
 import FindPeakElement from "./FindPeakElement";
@@ -27,6 +28,7 @@ const BinarySearchMain = () => {
   // BitonicArrayMaximum();
   // CeilingOfANumber();
   // CountOfRangeSum();
+  // CuttingRibbons();
   // FindKClosestElements();
   // FindMinimumInRotatedSortedArray();
   // FindPeakElement();

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = () => {
+    // AddStrings();
     // CountPrimes();
     // ExcelSheetColumnNumber();
     // FactorialTrailingZeroes();
@@ -8,6 +9,7 @@ exports.default = () => {
     // FindNUniqueIntegersSumUpToZero();
     // FractionToRecurringDecimal();
     // HappyNumber();
+    // TheKthFactorOfN();
     // PlusOne();
     // PowerOfThree();
     // PowXN();
